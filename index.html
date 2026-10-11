@@ -99,7 +99,7 @@
   .thread-message.vela { align-self:flex-end; background:#d9f4ee; border:1px solid #b7e5dc; border-bottom-right-radius:4px; }
   .thread-file { display:inline-block; margin-top:6px; padding:5px 8px; border:1px solid #acd6da; border-radius:6px; background:#f4ffff; color:#397a89; font-size:11px; }
 
-  /* Evento posterior: Fondo SOLAMENTE verde cuando la entidad toma el control */
+  /* Evento posterior: Fondo SOLAMENTE verde cuando la entidad toma el control y se estabiliza */
   body.coralia-pure-green {
     background-color:#20482d !important;
     background-image:
@@ -272,7 +272,7 @@ No soy yo quien está escribiendo esto.</div></div>
         </div>
       </div>
 
-      <div class="mailview" id="view-el-busca-cuerpos">
+      <div class="mailview" id="view-busca-cuerpos">
         <button class="fakebutton back" data-back>← Volver</button>
         <h2>EL BUSCA CUERPOS</h2>
         <div class="meta">Entidad detectada en sector desconocido</div>
@@ -307,22 +307,20 @@ No soy yo quien está escribiendo esto.</div></div>
       window.location.reload();
     });
   }
-  const refreshKey = 'coralia_corruption_loads_v10';
-  const cooldownKey = 'coralia_refresh_cooldown_until_v7';
+  const refreshKey = 'coralia_corruption_loads_v12';
+  const cooldownKey = 'coralia_refresh_cooldown_until_v9';
   let refreshCount = Number(localStorage.getItem(refreshKey) || '0');
-  const frenzyMailKey = 'coralia_frenzy_mail_persisted_v10';
-  const unknownRoom1Key = 'coralia_unknown_room_1_v7';
-  const unknownRoom2Key = 'coralia_unknown_room_2_v7';
-  const finalMessageKey = 'coralia_final_message_v2';
-  const spamTomKey = 'coralia_ofertas_tom_visible_v7';
-  const movistarReadKey = 'coralia_movistar_audio_heard_v4';
-  const sentPsycoRevealedKey = 'coralia_sent_psyco_revealed_v4';
-  const frenzyAudioHeardKey = 'coralia_frenzy_audio_heard_v3';
-  const voidResolvedKey = 'coralia_frenzy_void_resolved_v3';
-  const postFrenzyUpdatesKey = 'coralia_post_frenzy_updates_v3';
-  const firstUpdateKey = 'coralia_first_update_seen_v7';
-  const blackoutSeenKey = 'coralia_frenzy_blackout_seen_v7';
-  const readKey = 'coralia_read_messages_v6';
+  const frenzyMailKey = 'coralia_frenzy_mail_persisted_v12';
+  const unknownRoom1Key = 'coralia_unknown_room_1_v9';
+  const unknownRoom2Key = 'coralia_unknown_room_2_v9';
+  const finalMessageKey = 'coralia_final_message_v4';
+  const spamTomKey = 'coralia_ofertas_tom_visible_v9';
+  const movistarReadKey = 'coralia_movistar_audio_heard_v6';
+  const sentPsycoRevealedKey = 'coralia_sent_psyco_revealed_v6';
+  const postFrenzyUpdatesKey = 'coralia_post_frenzy_updates_v5';
+  const firstUpdateKey = 'coralia_first_update_seen_v9';
+  const blackoutSeenKey = 'coralia_frenzy_blackout_seen_v9';
+  const readKey = 'coralia_read_messages_v8';
   
   let frenzyMailExists = localStorage.getItem(frenzyMailKey) === 'true';
   let unknownRoom1Exists = localStorage.getItem(unknownRoom1Key) === 'true';
@@ -333,7 +331,7 @@ No soy yo quien está escribiendo esto.</div></div>
 
   function applyCorruptionPhase() {
     document.body.classList.remove('coralia-pure-green');
-    if (localStorage.getItem(voidResolvedKey) === 'true') {
+    if (frenzyMailExists) {
       document.body.classList.add('coralia-pure-green');
     }
   }
@@ -352,7 +350,6 @@ No soy yo quien está escribiendo esto.</div></div>
   let unlocked = { recovered:false, frenzy:false, unknownRoom1:false, unknownRoom2:false, finalMessage:false };
 
   function openView(name) {
-    if (document.body.classList.contains('coralia-void') && name !== 'frenzy') return;
     currentView = name;
     Object.values(folderBoxes).forEach(el => { if (el) el.style.display = 'none'; });
     document.querySelectorAll('.mailview').forEach(el => el.classList.remove('show'));
@@ -361,7 +358,6 @@ No soy yo quien está escribiendo esto.</div></div>
   }
 
   function showFolder(name) {
-    if (document.body.classList.contains('coralia-void')) name = 'inbox';
     currentFolder = name;
     document.querySelectorAll('.mailview').forEach(el => el.classList.remove('show'));
     Object.entries(folderBoxes).forEach(([key, el]) => { if (el) el.style.display = key === name ? 'block' : 'none'; });
@@ -450,7 +446,6 @@ No soy yo quien está escribiendo esto.</div></div>
 
   function search() {
     const value = input.value.trim().toLowerCase();
-    if (document.body.classList.contains('coralia-void')) { feedback.textContent = 'La cuenta no responde.'; return; }
     feedback.classList.remove('error');
     if (!value) { feedback.textContent = 'Escribe algo para buscar.'; feedback.classList.add('error'); return; }
     
@@ -496,22 +491,7 @@ No soy yo quien está escribiendo esto.</div></div>
   input.addEventListener('keydown', e => { if (e.key === 'Enter') search(); });
 
   const refreshButton = document.getElementById('refreshButton');
-  const brand = document.getElementById('brand');
   const tagline = document.getElementById('tagline');
-
-  function enterVoidMode() {
-    document.body.classList.add('coralia-void');
-    if (brand) brand.textContent = '◈ C̷̫͝Ö̵̻́R̶̈́͜A̸̻͝L̴͙̚I̶͙̍Ä̷͚́ ⟁⟟⟒⟒';
-    if (tagline) tagline.textContent = 'N̷o̷ ̷c̷i̷e̷r̷r̷e̷s̷ ̷e̷s̷t̷a̷ ̷v̷e̷n̷t̷a̷n̷a̷.';
-    document.querySelectorAll('.mailrow').forEach(row => { if (row.dataset.dynamicMail !== 'frenzy') row.style.display = 'none'; });
-    const frenzyRow = document.querySelector('[data-dynamic-mail="frenzy"]');
-    if (frenzyRow) frenzyRow.style.display = 'grid';
-    Object.keys(folderBoxes).forEach(key => { if (folderBoxes[key]) folderBoxes[key].style.display = key === 'inbox' ? 'block' : 'none'; });
-    document.querySelectorAll('.mailview').forEach(view => view.classList.remove('show'));
-  }
-
-  if (frenzyMailExists && localStorage.getItem(voidResolvedKey) !== 'true') enterVoidMode();
-
   const toast = document.getElementById('toast');
   const toastTitle = document.getElementById('toastTitle');
   const toastBody = document.getElementById('toastBody');
@@ -545,7 +525,6 @@ No soy yo quien está escribiendo esto.</div></div>
   }
 
   function triggerBlackout() {
-    enterVoidMode();
     if (localStorage.getItem(blackoutSeenKey)) return;
     localStorage.setItem(blackoutSeenKey, 'true');
     const blackout = document.getElementById('blackout');
@@ -573,7 +552,6 @@ No soy yo quien está escribiendo esto.</div></div>
     if (lastAccess) lastAccess.textContent = 'Último acceso: 11/10/2005';
     updateUnreadCounts();
     showToast('Mensaje recuperado', 'Se restauró el correo que Vela envió a Psyco.', 5000);
-    feedback.textContent = 'La grabación terminó. Se ha recuperado un mensaje de enviados.';
   }
 
   function revealFrenzyMail() {
@@ -581,6 +559,8 @@ No soy yo quien está escribiendo esto.</div></div>
     localStorage.setItem(frenzyMailKey, 'true');
     frenzyMailExists = true;
     addMessage('frenzy');
+    revealSentPsyco();
+    applyCorruptionPhase();
     triggerBlackout();
     showToast('Nuevo mensaje', 'Frenzy · Gracias por preocuparte.', 5000);
     feedback.textContent = 'Se detectó un mensaje sin registro de envío.';
@@ -592,38 +572,26 @@ No soy yo quien está escribiendo esto.</div></div>
     return initialRows.length > 0 && initialRows.every(row => read.includes(row.dataset.mail));
   }
 
-  function revealPostFrenzyMessages(count) {
-    if (count >= 1) {
+  function revealPostFrenzyMessages() {
+    let postCount = Number(localStorage.getItem(postFrenzyUpdatesKey) || '0') + 1;
+    localStorage.setItem(postFrenzyUpdatesKey, String(postCount));
+
+    if (postCount === 1) {
       localStorage.setItem(unknownRoom1Key, 'true');
       unknownRoom1Exists = true;
       addMessage('unknown-room-1');
-    }
-    if (count >= 2) {
+      showToast('Mensaje recibido', 'usuario_desconocido@coralia.net · ¿Cuántas puertas había?', 4200);
+    } else if (postCount === 2) {
       localStorage.setItem(unknownRoom2Key, 'true');
       unknownRoom2Exists = true;
       addMessage('unknown-room-2');
-    }
-    if (refreshCount >= 10 || count >= 3) {
+      showToast('Mensaje recibido', 'usuario_desconocido@coralia.net · La habitación sin ventanas', 4200);
+    } else if (postCount >= 3) {
       localStorage.setItem(finalMessageKey, 'true');
       finalMessageExists = true;
       addMessage('final-message');
+      showToast('Mensaje recibido', 'vela.skyline@coralia.net · FINAL', 4200);
     }
-  }
-
-  function exitVoidMode() {
-    document.body.classList.remove('coralia-void');
-    document.body.classList.add('coralia-pure-green');
-    if (brand) brand.textContent = '◈ CORALIA MAIL';
-    if (tagline) tagline.textContent = localStorage.getItem(firstUpdateKey) === 'true' ? 'Estate atento, nunca sabes cuándo llegará un mensaje importante.' : '¡Escribe tu historia!';
-    document.querySelectorAll('.mailrow').forEach(row => { row.style.display = ''; });
-    const frenzyRow = document.querySelector('[data-dynamic-mail="frenzy"]');
-    if (frenzyRow) frenzyRow.style.display = 'grid';
-    if (spamLoveRow && localStorage.getItem(spamTomKey) !== 'true') spamLoveRow.style.display = 'none';
-    const sentRow = document.getElementById('sentPsycoRow');
-    if (sentRow) sentRow.style.display = localStorage.getItem(sentPsycoRevealedKey) === 'true' ? 'grid' : 'none';
-    document.querySelectorAll('.mailview').forEach(view => view.classList.remove('show'));
-    currentView = '';
-    showFolder('inbox');
   }
 
   const movistarAudio = document.querySelector('#view-movistar audio');
@@ -631,12 +599,6 @@ No soy yo quien está escribiendo esto.</div></div>
     localStorage.setItem(movistarReadKey, 'true');
     feedback.textContent = 'Mensaje de voz escuchado. Coralia ha guardado el registro.';
     showToast('Mensaje de voz escuchado', 'El registro se ha guardado.', 3000);
-  });
-
-  const frenzyAudio = document.querySelector('#view-frenzy audio');
-  if (frenzyAudio) frenzyAudio.addEventListener('ended', () => {
-    localStorage.setItem(frenzyAudioHeardKey, 'true');
-    revealSentPsyco();
   });
 
   function advanceStory() {
@@ -657,21 +619,16 @@ No soy yo quien está escribiendo esto.</div></div>
       feedback.textContent = 'Se ha detectado un nuevo mensaje en correo no deseado.';
     } else {
       showToast(refreshCount === 1 ? 'Mensajes actualizados..?' : 'Sincronización completada', refreshCount === 1 ? '3 notificaciones nuevas' : 'No hay mensajes nuevos.', refreshCount === 1 ? 2600 : 2200);
-      feedback.textContent = 'Sincronización completada. No se han añadido mensajes importantes.';
+      feedback.textContent = 'Sincronización completada.';
     }
 
-    if (localStorage.getItem(voidResolvedKey) === 'true') {
-      const postCount = Number(localStorage.getItem(postFrenzyUpdatesKey) || '0') + 1;
-      localStorage.setItem(postFrenzyUpdatesKey, String(postCount));
-      revealPostFrenzyMessages(postCount);
-      if (postCount === 1) showToast('Mensaje recibido', 'usuario_desconocido@coralia.net · ¿Cuántas puertas había?', 4200);
-      if (postCount === 2) showToast('Mensaje recibido', 'usuario_desconocido@coralia.net · La habitación sin ventanas', 4200);
-      if (postCount >= 3 || refreshCount >= 10) {
-        showToast('Mensaje recibido', 'vela.skyline@coralia.net · FINAL', 4200);
-      }
+    // Si Frenzy ya apareció, las siguientes recargas traen los mensajes misteriosos uno por uno
+    if (frenzyMailExists) {
+      revealPostFrenzyMessages();
     }
 
-    if (!frenzyMailExists && refreshCount >= 6) {
+    // Frenzy aparece a partir de al menos 4 recargas de página
+    if (!frenzyMailExists && refreshCount >= 4) {
       if (localStorage.getItem(movistarReadKey) === 'true' && allInitialInboxMessagesRead()) {
         revealFrenzyMail();
       } else {
@@ -682,27 +639,6 @@ No soy yo quien está escribiendo esto.</div></div>
   }
 
   function runRefresh() {
-    if (document.body.classList.contains('coralia-void') && currentView === 'frenzy') {
-      if (localStorage.getItem(frenzyAudioHeardKey) !== 'true') {
-        feedback.textContent = 'La grabación todavía no ha terminado. Escúchala completa antes de actualizar.';
-        feedback.classList.add('error');
-        return;
-      }
-      feedback.classList.remove('error');
-      localStorage.setItem(voidResolvedKey, 'true');
-      const postCount = 1;
-      localStorage.setItem(postFrenzyUpdatesKey, String(postCount));
-      localStorage.setItem(cooldownKey, String(Date.now() + 30000));
-      refreshCount += 1;
-      localStorage.setItem(refreshKey, String(refreshCount));
-      localStorage.setItem(firstUpdateKey, 'true');
-      exitVoidMode();
-      revealPostFrenzyMessages(postCount);
-      showToast('Conexión restablecida', 'La bandeja de Coralia vuelve a responder.', 4200);
-      feedback.textContent = 'Sincronización completada. Hay mensajes nuevos en la bandeja.';
-      refreshCooldown();
-      return;
-    }
     const until = Number(localStorage.getItem(cooldownKey) || '0');
     if (until > Date.now()) {
       feedback.textContent = 'Coralia necesita un momento antes de volver a sincronizar.';
@@ -731,10 +667,7 @@ No soy yo quien está escribiendo esto.</div></div>
   if (frenzyMailExists) addMessage('frenzy');
   if (unknownRoom1Exists) addMessage('unknown-room-1');
   if (unknownRoom2Exists) addMessage('unknown-room-2');
-  if (finalMessageExists || (Number(localStorage.getItem(postFrenzyUpdatesKey) || '0') >= 3) || refreshCount >= 10) addMessage('final-message');
-  
-  if (frenzyMailExists && localStorage.getItem(voidResolvedKey) !== 'true') enterVoidMode();
-  if (frenzyMailExists && localStorage.getItem(voidResolvedKey) !== 'true' && !localStorage.getItem(blackoutSeenKey)) triggerBlackout();
+  if (finalMessageExists) addMessage('final-message');
   
   applyCorruptionPhase();
   if (frenzyMailExists) feedback.textContent = 'Sincronización completada.';
