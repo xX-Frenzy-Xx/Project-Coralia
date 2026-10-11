@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coralia Mail - Bandeja de entrada</title>
+<style>
+  :root { --navy:#164c78; --blue:#287db4; --pale:#eaf5fc; --line:#9fc5df; --text:#20384b; }
+  * { box-sizing:border-box; }
+  body { margin:0; color:var(--text); font:13px Tahoma, Verdana, Arial, sans-serif; background:#b7d9ed; background-image:linear-gradient(135deg,#d9effa 0%,#9cc9e6 45%,#d5eaf6 100%); min-height:100vh; }
+  .topbar { background:linear-gradient(#4d9fd1,#17629b); color:white; border-bottom:3px solid #0e4c7a; padding:13px max(16px,calc((100% - 1050px)/2)); box-shadow:0 2px 5px #4e7591; }
+  .brand { font-size:29px; font-weight:bold; letter-spacing:1px; text-shadow:1px 2px #124b76; }
+  .tagline { font-size:11px; margin-top:3px; color:#e3f4ff; }
+  .status { margin-top:10px; font-size:11px; color:#e7f6ff; }
+  .window { max-width:1050px; margin:22px auto; padding:0 12px; }
+  .account { background:#e9f5fc; border:1px solid #6b9fc1; box-shadow:0 4px 14px #477a9b55; }
+  .windowbar { background:linear-gradient(#d5eafa,#a8d0eb); padding:8px 12px; border-bottom:1px solid #7da9c6; font-weight:bold; color:#174e79; display:flex; justify-content:space-between; gap:12px; }
+  .window-controls { color:#35698c; letter-spacing:4px; white-space:nowrap; }
+  .accountline { padding:10px 13px; background:#f6fbff; border-bottom:1px solid #bdd9e9; display:flex; justify-content:space-between; gap:8px; flex-wrap:wrap; }
+  .accountline strong { color:#185987; }
+  .toolbar { display:flex; gap:6px; flex-wrap:wrap; padding:9px 12px; background:#d8ebf8; border-bottom:1px solid #9fc5df; }
+  .fakebutton { border:1px solid #82abc7; background:linear-gradient(#fff,#d8eaf5); padding:6px 11px; color:#3e6885; box-shadow:inset 0 1px #fff; cursor:default; user-select:none; }
+  .layout { display:grid; grid-template-columns:185px 1fr; min-height:370px; }
+  .sidebar { padding:12px 10px; background:#e2f1fa; border-right:1px solid #b3d1e3; }
+  .sidehead { font-weight:bold; color:#205d87; padding:5px 7px 9px; }
+  .folder { padding:7px; border:1px solid transparent; color:#3e6179; cursor:pointer; }
+  .folder.active { background:#c6e3f5; border-color:#a3c9e2; font-weight:bold; color:#174f79; }
+  .folder .count { float:right; color:#5f88a5; }
+  .side-note { margin:22px 5px 0; font-size:11px; line-height:1.5; color:#6a879b; }
+  .main { min-width:0; background:#f8fcff; }
+  .listhead { display:grid; grid-template-columns: minmax(110px, 1fr) minmax(150px, 2fr) 90px; padding:8px 12px; background:#dceefa; color:#346889; border-bottom:1px solid #b6d4e6; font-weight:bold; }
+  .mailrow { display:grid; grid-template-columns:minmax(110px,1fr) minmax(150px,2fr) 90px; padding:12px; gap:8px; border-bottom:1px solid #d9e8f1; cursor:pointer; align-items:center; }
+  .mailrow:hover { background:#edf7fd; }
+  .mailrow.unread { font-weight:bold; color:#244f6b; }
+  .mailrow .sender,.mailrow .subject { overflow-wrap:anywhere; }
+  .mailrow .date { font-size:11px; color:#7895a8; text-align:right; }
+  .deleted { color:#9aabb5 !important; font-weight:normal !important; }
+  .deleted .subject { text-decoration:line-through; }
+  .mailview { display:none; padding:20px; min-height:300px; }
+  .mailview.show { display:block; }
+  .mailview h2 { color:#1b5c88; font-size:19px; margin:0 0 16px; }
+  .meta { border-top:1px solid #d3e5f0; border-bottom:1px solid #d3e5f0; padding:10px 0; line-height:1.8; color:#52758d; font-size:12px; }
+  .bodytext { white-space:pre-line; line-height:1.7; padding:18px 0; font-size:13px; }
+  .attachment { display:inline-block; padding:10px 12px; background:#e8f4fb; border:1px solid #bad7e8; color:#366c8c; margin-top:8px; }
+  .back { margin-bottom:15px; }
+  .empty { padding:35px 20px; text-align:center; color:#7894a6; line-height:1.8; }
+  .unlock { margin:14px 0 0; border:1px solid #9fc5df; background:#eaf5fc; padding:12px; }
+  .unlock label { display:block; color:#315f7b; font-weight:bold; margin-bottom:7px; }
+  .unlockrow { display:flex; gap:7px; }
+  input { min-width:0; flex:1; padding:9px; border:1px solid #8fb5ce; background:white; font:13px Tahoma,Verdana,sans-serif; outline-color:#438fbe; }
+  .unlock button { border:1px solid #4b8ab4; color:white; background:linear-gradient(#5ca6d5,#2876aa); padding:0 14px; font:13px Tahoma,Verdana,sans-serif; cursor:pointer; }
+  .feedback { min-height:17px; margin-top:7px; font-size:11px; color:#6a879b; }
+  .feedback.error { color:#a54a4a; }
+  .footer { max-width:1050px; margin:0 auto 24px; padding:0 15px; text-align:center; font-size:10px; color:#477a9b; }
+  .boot { position:fixed; inset:0; background:#e5f3fb; z-index:5; display:flex; align-items:center; justify-content:center; transition:opacity .7s ease; }
+  .bootbox { width:min(380px,90vw); padding:24px; background:#f7fcff; border:1px solid #75a9ca; box-shadow:0 5px 22px #477a9b55; text-align:center; color:#205d87; }
+  .bootlogo { font-size:27px; font-weight:bold; margin-bottom:8px; }
+  .progress { height:13px; border:1px solid #90b7d0; padding:2px; margin-top:17px; background:#e4f1f8; }
+  .progress span { display:block; height:100%; width:0; background:linear-gradient(90deg,#5ca6d5,#17629b); animation:load 1.7s ease forwards; }
+  @keyframes load { to { width:100%; } }
+
+  .folder { user-select:none; }
+  .folder[data-folder] { cursor:pointer; }
+  .folder[data-folder]:hover { background:#d8f3ee; }
+  .mailview .attachment audio { display:block; }
+  .thread-intro { margin:10px 0 16px; color:#65818d; font-size:12px; }
+  .thread-chat { display:flex; flex-direction:column; gap:10px; padding:14px; border:1px solid #c8e6e8; border-radius:12px; background:linear-gradient(145deg,#f5ffff,#e9f7f5); }
+  .thread-message { max-width:86%; padding:10px 12px; border-radius:13px; box-shadow:0 2px 5px #2e87951a; font-size:13px; line-height:1.5; }
+  .thread-message .who { display:block; margin-bottom:4px; font-size:11px; font-weight:bold; color:#3b788b; }
+  .thread-message .when { display:block; margin-top:5px; font-size:10px; color:#73949b; text-align:right; }
+  .thread-message.frenzy, .thread-message.friend { align-self:flex-start; background:#fff; border:1px solid #d0e7ed; border-bottom-left-radius:4px; }
+  .thread-message.vela { align-self:flex-end; background:#d9f4ee; border:1px solid #b7e5dc; border-bottom-right-radius:4px; }
+  .thread-file { display:inline-block; margin-top:6px; padding:5px 8px; border:1px solid #acd6da; border-radius:6px; background:#f4ffff; color:#397a89; font-size:11px; }
+  @media(max-width:650px) { .layout { grid-template-columns:1fr; } .sidebar { border-right:0; border-bottom:1px solid #b3d1e3; display:flex; flex-wrap:wrap; gap:3px; } .sidehead { width:100%; } .side-note { display:none; } .listhead { grid-template-columns:1fr 1.5fr; } .listhead span:last-child { display:none; } .mailrow { grid-template-columns:1fr 1.5fr; } .mailrow .date { display:none; } .brand { font-size:25px; } }
+
+  /* Coralia: Frutiger Aero luminoso con una rareza sutil */
+  :root { --navy:#236b7d; --blue:#3198b0; --pale:#e8f8f5; --line:#a2d8d5; --text:#244b58; }
+  body {
+    color:var(--text);
+    background-color:#c6ece7;
+    background-image:
+      radial-gradient(ellipse at 13% 16%, #f4ffff 0%, #d8f8f0 18%, transparent 38%),
+      radial-gradient(ellipse at 88% 28%, #b8e8ee 0%, transparent 34%),
+      radial-gradient(ellipse at 68% 83%, #a6d9d6 0%, transparent 39%),
+      linear-gradient(145deg,#dff8f1 0%,#b9e4e7 48%,#d3f0e8 100%);
+    background-attachment:fixed;
+  }
+  /* Burbujas translúcidas: bonitas al primer vistazo, un poco demasiado quietas al segundo. */
+  body::before { content:""; position:fixed; inset:0; pointer-events:none; z-index:0; opacity:.78;
+    background-image:
+      radial-gradient(circle at 9% 22%, #ffffffa8 0 3px, #ffffff38 4px 13px, #68bdc52b 14px 15px, transparent 17px),
+      radial-gradient(circle at 83% 17%, #ffffffb8 0 2px, #ffffff3d 3px 9px, #5eb9c32b 10px 11px, transparent 13px),
+      radial-gradient(circle at 74% 72%, #ffffffa0 0 4px, #ffffff35 5px 18px, #58aeb72b 19px 20px, transparent 22px),
+      radial-gradient(circle at 20% 78%, #ffffff90 0 2px, #ffffff30 3px 10px, #6bbec32b 11px 12px, transparent 14px),
+      radial-gradient(circle at 48% 40%, #ffffff80 0 1px, transparent 3px),
+      radial-gradient(circle at 94% 53%, #ffffff90 0 2px, transparent 4px);
+    background-size:230px 250px,310px 280px,390px 360px,280px 310px,140px 170px,190px 210px;
+  }
+  body::after { content:""; position:fixed; inset:0; pointer-events:none; z-index:0; opacity:.5;
+    background-image:
+      radial-gradient(ellipse at 25% 20%, #ffffffb8 0%, #ffffff20 22%, transparent 37%),
+      radial-gradient(ellipse at 79% 62%, #ffffff60 0%, transparent 25%),
+      linear-gradient(115deg, transparent 38%, #eaffff20 48%, transparent 59%);
+    mix-blend-mode:screen;
+  }
+  .topbar { position:relative; z-index:1; background:linear-gradient(180deg,#5eb9c7f2,#328da7 58%,#287b93); border-bottom:2px solid #8ccfc9; box-shadow:0 4px 18px #4b9da54a,inset 0 1px #ffffffa8; }
+  .brand { color:#f5ffff; text-shadow:1px 2px #28718a,0 0 10px #d8ffff80; }
+  .tagline { color:#e1fffa; }
+  .status { color:#d5f7f1; }
+  .window { position:relative; z-index:1; }
+  .account { background:#effbf8f2; border:1px solid #8cc9c8; box-shadow:0 12px 32px #3d89913b,0 0 20px #ffffff8a,inset 0 1px #ffffff; }
+  .windowbar { background:linear-gradient(180deg,#e9fffb,#bce9e7 58%,#a6d9dc); border-bottom:1px solid #8fc9cc; color:#236578; text-shadow:0 1px #ffffffb8; }
+  .window-controls { color:#4d8d99; }
+  .accountline { background:#f5fffc; border-bottom:1px solid #c2e6df; color:#5b8589; }
+  .accountline strong { color:#277a8b; }
+  .toolbar { background:linear-gradient(90deg,#d4f2eb,#c3e9e8,#d8f5ee); border-bottom:1px solid #a8d8d5; }
+  .fakebutton { border:1px solid #8bc7c9; background:linear-gradient(180deg,#ffffff,#d9f4ef); color:#397887; box-shadow:inset 0 1px #fff,0 1px 2px #4e9a9b20; }
+  .fakebutton:hover { background:linear-gradient(#ffffff,#c8ece9); }
+  .sidebar { background:linear-gradient(180deg,#e5f8f2,#d0eeea); border-right:1px solid #b0dcd8; }
+  .sidehead { color:#32788a; }
+  .folder { color:#477984; }
+  .folder.active { background:linear-gradient(90deg,#c0ece7,#d9f6ee); border-color:#a0d6d3; color:#236c7d; box-shadow:inset 3px 0 #53b8b5,0 0 12px #5dbab51c; }
+  .folder .count { color:#6e9da0; font-size:10px; white-space:nowrap; }
+  .side-note { color:#739a9a; }
+  .main { background:#f7fffcf2; }
+  .listhead { background:linear-gradient(90deg,#d4f2ed,#dff7f4); color:#397b8b; border-bottom:1px solid #b6dfda; }
+  .mailrow { border-bottom:1px solid #d9eeea; color:#426d78; }
+  .mailrow:hover { background:linear-gradient(90deg,#e8fbf6,#f2fffc); }
+  .mailrow.unread { color:#245b70; }
+  .mailrow .date { color:#7b9da3; }
+  .deleted { color:#9aaead !important; }
+  .mailview h2 { color:#28788c; text-shadow:0 1px #ffffff; }
+  .meta { border-color:#d0e9e4; color:#648991; }
+  .bodytext { color:#365d68; }
+  .attachment { background:linear-gradient(135deg,#e3f7f2,#d4eeef); border-color:#b3dcd9; color:#397788; box-shadow:inset 0 1px #ffffffb8; }
+  .empty { color:#789c9e; }
+  .unlock { position:relative; z-index:1; border-color:#a5d8d5; background:linear-gradient(135deg,#e9faf5,#d7efee); box-shadow:0 8px 22px #4a93951c; }
+  .unlock label { color:#397889; }
+  input { border:1px solid #a3d0d0; background:#fbfffe; color:#315d68; }
+  input::placeholder { color:#9ab6b7; }
+  .unlock button { border:1px solid #4599a8; background:linear-gradient(#55b5c1,#32869d); }
+  .feedback { color:#769b9d; }
+  .footer { position:relative; z-index:1; color:#56888e; }
+  .boot { background:radial-gradient(ellipse at 50% 38%,#f4fffc,#c2e9e8 68%,#9fd4d8); }
+  .bootbox { background:linear-gradient(145deg,#f7fffd,#d9f4ef); border:1px solid #8bc9ca; box-shadow:0 8px 35px #397f8830,0 0 25px #ffffffa8; color:#2d788a; }
+  .bootbox div[style*="color:#6689a0"] { color:#6c9b9f !important; }
+  .progress { border-color:#a3d3d2; background:#e7f8f4; }
+  .progress span { background:linear-gradient(90deg,#80d8cc,#48a9c0,#d3fff6); box-shadow:0 0 8px #69cfc466; }
+  /* La cuenta se siente un poco distinta del resto: un reflejo frío y casi imperceptible. */
+  .account { outline:1px solid #d7ffff55; }
+  .accountline strong { text-shadow:0 0 8px #63c4c533; }
+  @media(max-width:650px) { .sidebar { border-bottom-color:#b0dcd8; } }
+
+  /* La anomalía cambia con cada recarga, pero no altera ni elimina los mensajes. */
+  body { transition: background-color .7s ease, color .7s ease; }
+  body.coralia-glitch-1 {
+    background-color:#739b79;
+    background-image:
+      radial-gradient(ellipse at 13% 16%, #c4d8b7 0%, #91b69a 18%, transparent 38%),
+      radial-gradient(ellipse at 88% 28%, #709f86 0%, transparent 34%),
+      radial-gradient(ellipse at 68% 83%, #62886a 0%, transparent 39%),
+      linear-gradient(145deg,#b0c9a9 0%,#739b83 48%,#9eb69a 100%);
+    color:#294b3e;
+  }
+  body.coralia-glitch-1::before { filter:hue-rotate(42deg) saturate(1.2) brightness(.78); opacity:.88; }
+  body.coralia-glitch-1::after { background-image:linear-gradient(115deg,#243c2b12 0%,#344a2d48 52%,#15291e35 100%); mix-blend-mode:multiply; opacity:.8; }
+  body.coralia-glitch-1 .topbar { background:linear-gradient(180deg,#6e9d83,#3c765e 58%,#2f604d); border-bottom-color:#71977a; }
+  body.coralia-glitch-1 .account { background:#e0ecdcf2; border-color:#7da58a; box-shadow:0 12px 32px #284e354a,inset 0 1px #eaf4e2; }
+  body.coralia-glitch-1 .windowbar, body.coralia-glitch-1 .listhead { background:linear-gradient(90deg,#c6d9bd,#b0ceb8); color:#3c634b; border-color:#91b09a; }
+  body.coralia-glitch-1 .sidebar { background:linear-gradient(180deg,#d0e1c7,#b7d1bb); border-color:#9ebda5; }
+  body.coralia-glitch-1 .main { background:#e5eee0f2; }
+  body.coralia-glitch-1 .accountline, body.coralia-glitch-1 .mailrow { background-color:#e0eadb; border-color:#b5cdb5; color:#45644d; }
+  body.coralia-glitch-1 .toolbar, body.coralia-glitch-1 .unlock { background:linear-gradient(90deg,#b9d4b7,#c5d9b8,#b1cdb7); border-color:#8eae95; }
+  body.coralia-glitch-1 .fakebutton, body.coralia-glitch-1 .attachment { background:linear-gradient(#e7efdf,#bdcfb7); border-color:#89a68c; color:#45634b; }
+  body.coralia-glitch-1 .mailview h2 { color:#456b4d; }
+  body.coralia-glitch-1 .folder.active { background:#b5d1b3; border-color:#8fb69b; color:#365f43; box-shadow:inset 3px 0 #6c9d78; }
+  body.coralia-glitch-2 {
+    background-color:#3f6249;
+    background-image:
+      radial-gradient(ellipse at 13% 16%, #8aa78a 0%, #5d8065 18%, transparent 38%),
+      radial-gradient(ellipse at 88% 28%, #476d57 0%, transparent 34%),
+      radial-gradient(ellipse at 68% 83%, #34513b 0%, transparent 39%),
+      linear-gradient(145deg,#78947a 0%,#486b53 48%,#5c765b 100%);
+    color:#d4e1cc;
+  }
+  body.coralia-glitch-2::before { filter:hue-rotate(65deg) saturate(.85) brightness(.48); opacity:.95; }
+  body.coralia-glitch-2::after { background-image:linear-gradient(115deg,#0c1c1045 0%,#203b244d 48%,#0a170f70 100%); mix-blend-mode:multiply; opacity:1; }
+  body.coralia-glitch-2 .topbar { background:linear-gradient(180deg,#426b50,#294c38 58%,#203d2d); border-bottom-color:#4e7655; box-shadow:0 4px 18px #172d1e80; }
+  body.coralia-glitch-2 .account { background:#c8d7c2ed; border-color:#597c60; box-shadow:0 12px 32px #1427198a; }
+  body.coralia-glitch-2 .windowbar, body.coralia-glitch-2 .listhead { background:linear-gradient(90deg,#8da88b,#78977e); color:#263f2d; border-color:#607e65; }
+  body.coralia-glitch-2 .sidebar { background:linear-gradient(180deg,#a8bca0,#849f87); border-color:#6d8c72; }
+  body.coralia-glitch-2 .main { background:#cbd8c5f2; }
+  body.coralia-glitch-2 .accountline, body.coralia-glitch-2 .mailrow { background-color:#c5d2be; border-color:#a1b49b; color:#354f3a; }
+  body.coralia-glitch-2 .toolbar, body.coralia-glitch-2 .unlock { background:linear-gradient(90deg,#8ba78b,#9bb39a,#829f88); border-color:#607e65; }
+  body.coralia-glitch-2 .fakebutton, body.coralia-glitch-2 .attachment { background:linear-gradient(#c6d4bd,#91a88d); border-color:#6d886f; color:#344e38; }
+  body.coralia-glitch-2 .mailview h2 { color:#355c3e; }
+  body.coralia-glitch-2 .folder.active { background:#92ad91; border-color:#67886c; color:#294b32; box-shadow:inset 3px 0 #436c4b; }
+  body.coralia-glitch-3 { background-color:#263e2e; background-image:radial-gradient(ellipse at 13% 16%,#617b5d 0%,#3b5943 18%,transparent 38%),radial-gradient(ellipse at 88% 28%,#2e4b39 0%,transparent 34%),radial-gradient(ellipse at 68% 83%,#1c3023 0%,transparent 39%),linear-gradient(145deg,#536b50 0%,#2b4634 48%,#344a35 100%); color:#d4e1cc; }
+  body.coralia-glitch-3::before { filter:hue-rotate(70deg) saturate(.7) brightness(.35); opacity:1; }
+  body.coralia-glitch-3::after { background-image:linear-gradient(115deg,#08150b70 0%,#10271875 48%,#050e087d 100%); mix-blend-mode:multiply; opacity:1; }
+  body.coralia-glitch-3 .topbar { background:linear-gradient(180deg,#304d38,#1c3325 58%,#14271b); border-bottom-color:#36583e; box-shadow:0 4px 18px #09140caa; }
+  body.coralia-glitch-3 .account { background:#aebda5ed; border-color:#3c5941; box-shadow:0 12px 32px #09140caa; }
+  body.coralia-glitch-3 .windowbar, body.coralia-glitch-3 .listhead { background:linear-gradient(90deg,#697f67,#536d59); color:#1e3325; border-color:#3f5c45; }
+  body.coralia-glitch-3 .sidebar { background:linear-gradient(180deg,#82977a,#637d68); border-color:#3e5b44; }
+  body.coralia-glitch-3 .main { background:#aebca7f2; }
+  body.coralia-glitch-3 .accountline, body.coralia-glitch-3 .mailrow { background-color:#a9b8a0; border-color:#83977e; color:#2d4633; }
+  body.coralia-glitch-3 .toolbar, body.coralia-glitch-3 .unlock { background:linear-gradient(90deg,#71886e,#80947a,#627b68); border-color:#435d48; }
+  body.coralia-glitch-3 .fakebutton, body.coralia-glitch-3 .attachment { background:linear-gradient(#b2c0a7,#758d72); border-color:#526d55; color:#293f2e; }
+  body.coralia-glitch-3 .mailview h2 { color:#2c4a33; }
+  body.coralia-glitch-3 .folder.active { background:#758d73; border-color:#4b6b51; color:#1d3825; box-shadow:inset 3px 0 #314f39; }
+  body.coralia-glitch-1 .boot { background:radial-gradient(ellipse at 50% 38%,#dce9d4,#a5c5a9 68%,#719c7c); }
+  body.coralia-glitch-2 .boot { background:radial-gradient(ellipse at 50% 38%,#9fb99a,#5d8064 68%,#34563d); }
+  body.coralia-glitch-3 .boot { background:radial-gradient(ellipse at 50% 38%,#617b5d,#2b4634 68%,#14271b); }
+  .tagline { transition:opacity .8s ease, max-height .8s ease, margin .8s ease; max-height:24px; overflow:hidden; }
+  body.coralia-tagline-gone .tagline { opacity:1; max-height:42px; margin-top:3px; }
+  #refreshButton { cursor:pointer; }
+  #refreshButton.cooldown { opacity:.55; cursor:not-allowed; filter:grayscale(.45); }
+  .toast { position:fixed; z-index:12; top:18px; right:18px; width:min(310px,calc(100vw - 36px)); padding:13px 16px; border:1px solid #85b7bd; background:linear-gradient(145deg,#f5fffcf5,#c8e8e5f5); color:#315f68; box-shadow:0 7px 28px #173d3d35; opacity:0; transform:translateY(-12px); pointer-events:none; transition:opacity .35s ease,transform .35s ease; }
+  .toast strong,.toast span { display:block; }
+  .toast strong { font-size:13px; margin-bottom:5px; }
+  .toast span { font-size:11px; }
+  .toast.show { opacity:1; transform:translateY(0); }
+  .blackout { position:fixed; inset:0; z-index:30; background:#000; opacity:0; visibility:hidden; pointer-events:none; transition:opacity 1.2s ease,visibility 1.2s ease; }
+  .blackout.active { opacity:1; visibility:visible; pointer-events:all; }
+  .blackout.fadeout { opacity:0; }
+  body.coralia-glitch-1 .toast, body.coralia-glitch-2 .toast, body.coralia-glitch-3 .toast { background:#d5dfcf; border-color:#708d75; color:#314d37; }
+
+
+  /* Estado final: Coralia ya no recupera sus colores. */
+  body.coralia-void { background:#000 !important; background-image:none !important; color:#55d86a !important; }
+  body.coralia-void::before, body.coralia-void::after { display:none !important; }
+  body.coralia-void .topbar, body.coralia-void .account, body.coralia-void .windowbar,
+  body.coralia-void .accountline, body.coralia-void .toolbar, body.coralia-void .sidebar,
+  body.coralia-void .main, body.coralia-void .unlock, body.coralia-void .listhead,
+  body.coralia-void .mailrow, body.coralia-void .mailview, body.coralia-void .footer {
+    background:#000 !important; background-image:none !important; color:#55d86a !important;
+    border-color:#173d20 !important; box-shadow:none !important; text-shadow:none !important;
+  }
+  body.coralia-void .window, body.coralia-void .account { border-color:#173d20 !important; outline:none !important; }
+  body.coralia-void .brand { color:#56d56b !important; text-shadow:none !important; }
+  body.coralia-void .tagline { color:#55d86a !important; }
+  body.coralia-void .status, body.coralia-void .sidehead, body.coralia-void .side-note,
+  body.coralia-void .folder, body.coralia-void .folder .count, body.coralia-void .mailrow .date,
+  body.coralia-void .meta, body.coralia-void .bodytext, body.coralia-void .mailview h2,
+  body.coralia-void .empty, body.coralia-void .feedback, body.coralia-void .unlock label { color:#55d86a !important; }
+  body.coralia-void .fakebutton, body.coralia-void input, body.coralia-void .attachment {
+    background:#050805 !important; color:#55d86a !important; border-color:#24552d !important;
+  }
+  body.coralia-void .mailrow:not([data-dynamic-mail="frenzy"]) { display:none !important; }
+  body.coralia-void .mailrow[data-dynamic-mail="frenzy"] { display:grid !important; }
+  body.coralia-void .mailrow[data-dynamic-mail="frenzy"] .sender,
+  body.coralia-void #view-frenzy .meta { color:#55d86a !important; }
+  body.coralia-void #view-frenzy .frenzy-name { color:#ff3434 !important; font-weight:bold; }
+  body.coralia-void .mailview:not(#view-frenzy) { display:none !important; }
+  body.coralia-void .folder:not([data-folder="inbox"]) { display:none !important; }
+  body.coralia-void .toolbar .fakebutton:not(#refreshButton), body.coralia-void .unlock { display:none !important; }
+  body.coralia-void #refreshButton { opacity:1; pointer-events:auto; cursor:pointer; }
+  body.coralia-void .toast { background:#000 !important; color:#55d86a !important; border-color:#24552d !important; }
+  body.coralia-void .mailview .back { display:none !important; }
+  body.coralia-void #view-frenzy .meta span { color:#55d86a !important; }
+  body.coralia-void .boot { background:#000 !important; }
+  body.coralia-void .bootbox { background:#000 !important; border-color:#24552d !important; color:#55d86a !important; box-shadow:none !important; }
+
+</style>
+</head>
+<body>
+<div class="blackout" id="blackout" aria-hidden="true"></div>
+<div id="testPanel" style="display:none;position:fixed;z-index:10000;right:12px;bottom:12px;background:#fff6cc;border:2px solid #a68b36;color:#40370c;padding:10px;font:12px Tahoma,Arial,sans-serif;box-shadow:0 2px 12px #0004;border-radius:4px"><strong>MODO DE PRUEBA</strong><div style="margin:5px 0">Progreso local de Coralia</div><button id="resetProgress" type="button">Reiniciar ARG</button></div>
+<div class="toast" id="toast" role="status" aria-live="polite"><strong id="toastTitle">Mensajes actualizados..?</strong><span id="toastBody">3 notificaciones nuevas</span></div>
+<div class="boot" id="boot"><div class="bootbox"><div class="bootlogo">CORALIA MAIL</div><div>Entrando a Coralia Mail...</div><div style="font-size:11px;margin-top:7px;color:#6689a0">Recuperando bandeja de entrada</div><div class="progress"><span></span></div></div></div>
+<header class="topbar"><div class="brand" id="brand">◈ CORALIA MAIL</div><div class="tagline" id="tagline">¡Escribe tu historia!</div><div class="status">● Servicio disponible &nbsp; | &nbsp; Coralia Mail v2.0 Beta &nbsp; | &nbsp; 2005</div></header>
+<div class="window"><section class="account">
+  <div class="windowbar"><span>Bandeja de entrada - Coralia Mail</span><span class="window-controls">_ □ ×</span></div>
+  <div class="accountline"><span>Sesión iniciada como: <strong>vela.skyline@coralia.net</strong></span><span>Último acceso: 10/10/2005</span></div>
+  <div class="toolbar"><span class="fakebutton">✉ Redactar</span><span class="fakebutton" id="refreshButton" role="button" tabindex="0" aria-disabled="false">↻ Actualizar</span><span class="fakebutton">▣ Eliminar</span><span class="fakebutton">⚙ Opciones</span></div>
+  <div class="layout">
+    <aside class="sidebar"><div class="sidehead">Carpetas personales</div><div class="folder active" data-folder="inbox">▣ Bandeja de entrada <span class="count" id="count-inbox">5 sin leer</span></div><div class="folder" data-folder="sent">▤ Mensajes enviados <span class="count" id="count-sent">6 sin leer</span></div><div class="folder" data-folder="drafts">▧ Borradores <span class="count" id="count-drafts">2 sin leer</span></div><div class="folder" data-folder="trash">♲ Elementos eliminados <span class="count" id="count-trash">0</span></div><div class="folder" data-folder="junk">▣ Correo no deseado <span class="count" id="count-junk">5 sin leer</span></div><div class="side-note">Algunos mensajes podrían no estar disponibles.<br><br>Última sincronización: 10/10/2005 23:41</div></aside>
+    <main class="main">
+      <div id="inbox">
+        <div class="listhead"><span>Remitente</span><span>Asunto</span><span style="text-align:right">Fecha</span></div>
+        <div class="mailrow unread" data-mail="movistar"><span class="sender">Buzon_Movistar_Auto@movistar.com</span><span class="subject">Nuevo mensaje de voz de Movistar - 555-3492</span><span class="date">10/10/05</span></div>
+        <div class="mailrow unread" data-mail="welcome"><span class="sender">Coralia Mail</span><span class="subject">Bienvenida a Coralia</span><span class="date">03/09/05</span></div>
+        <div class="mailrow unread" data-mail="inbox-class"><span class="sender">andrea.mora@hotmail.com</span><span class="subject">¿Me pasas los apuntes?</span><span class="date">09/10/05</span></div>
+        <div class="mailrow unread" data-mail="inbox-party"><span class="sender">nora.paz@hotmail.com</span><span class="subject">Re: Lo del sábado</span><span class="date">08/10/05</span></div>
+        <div class="mailrow unread" data-mail="inbox-random"><span class="sender">nico_93@hotmail.com</span><span class="subject">jajaja mira esto</span><span class="date">06/10/05</span></div>
+        <div class="mailrow unread" data-mail="thread-frenzy"><span class="sender">Frenzy</span><span class="subject">te dejo tunear el correo :)</span><span class="date">04/10/05</span></div>
+        <div class="mailrow unread" data-mail="thread-psyco"><span class="sender">Psyco</span><span class="subject">RE: apodos horribles</span><span class="date">05/10/05</span></div>
+        <div class="empty" id="hint">Sincronización parcial.<br>Algunos mensajes podrían no aparecer en el registro.</div>
+      </div>
+      <div id="sentbox" style="display:none">
+        <div class="listhead"><span>Destinatario</span><span>Asunto</span><span style="text-align:right">Fecha</span></div>
+        <div class="mailrow unread" data-mail="sent-party"><span class="sender">nora.paz@hotmail.com</span><span class="subject">Fotos de la fiesta</span><span class="date">10/10/05</span></div>
+        <div class="mailrow unread" data-mail="sent-class"><span class="sender">grupo.universidad@hotmail.com</span><span class="subject">Apuntes de la semana</span><span class="date">09/10/05</span></div>
+        <div class="mailrow unread" data-mail="sent-psyco" id="sentPsycoRow" style="display:none"><span class="sender">psycoone12@hotmail.com</span><span class="subject">Frenzy URGENTE</span><span class="date">10/10/05</span></div>
+        <div class="mailrow unread" data-mail="sent-old"><span class="sender">soporte@coralia.net</span><span class="subject">Problema con la cuenta</span><span class="date">08/10/05</span></div>
+        <div class="mailrow unread" data-mail="sent-mom"><span class="sender">mamá</span><span class="subject">No olvides llamar</span><span class="date">07/10/05</span></div>
+        <div class="mailrow unread" data-mail="sent-notes"><span class="sender">tutorias@universidad.edu</span><span class="subject">Confirmación de tutoría</span><span class="date">05/10/05</span></div>
+      </div>
+      <div id="junkbox" style="display:none">
+        <div class="listhead"><span>Remitente</span><span>Asunto</span><span style="text-align:right">Fecha</span></div>
+        <div class="mailrow unread" data-mail="spam-love" id="spamLoveRow" style="display:none"><span class="sender">Ofertas Tom</span><span class="subject">¿QUIERES CONSEGUIR AMOR?</span><span class="date">10/10/05</span></div>
+        <div class="mailrow unread" data-mail="spam-prize"><span class="sender">Premios Internacionales</span><span class="subject">¡Has ganado un teléfono móvil!</span><span class="date">11/10/05</span></div>
+        <div class="mailrow unread" data-mail="spam-pharmacy"><span class="sender">Farmacia Mundial</span><span class="subject">RE: Oferta exclusiva — solo hoy</span><span class="date">07/10/05</span></div>
+        <div class="mailrow unread" data-mail="spam-chain"><span class="sender">Cadena de la suerte</span><span class="subject">RE: RE: Reenvía esto a 10 personas</span><span class="date">06/10/05</span></div>
+        <div class="mailrow unread" data-mail="spam-dialup"><span class="sender">Internet Fácil</span><span class="subject">¡Conéctate más rápido!</span><span class="date">04/10/05</span></div>
+      </div>
+      <div id="trashbox" style="display:none"><div class="empty">La papelera está vacía.<br><span style="font-size:11px">No hay elementos eliminados.</span></div></div>
+      <div id="draftsbox" style="display:none">
+        <div class="listhead"><span>Destinatario</span><span>Asunto</span><span style="text-align:right">Fecha</span></div>
+        <div class="mailrow unread" data-mail="draft-birthday"><span class="sender">nora.paz@hotmail.com</span><span class="subject">Feliz cumple!!</span><span class="date">08/10/05</span></div>
+        <div class="mailrow unread" data-mail="draft-question"><span class="sender">(sin destinatario)</span><span class="subject">Pregunta sobre el edificio</span><span class="date">10/10/05</span></div>
+      </div>
+      <div class="mailview" id="view-thread-frenzy"><button class="fakebutton back" data-back>← Volver a la bandeja</button><h2>te dejo tunear el correo :)</h2><div class="meta">Conversación entre Frenzy y Vela<br>Fecha: Martes, 4 de octubre de 2005</div><div class="thread-intro">Frenzy acaba de enterarse de que Vela ya tiene su propia dirección de Coralia. La conversación sigue guardada en la bandeja.</div><div class="thread-chat"><div class="thread-message frenzy"><span class="who">Frenzy · frenzy.x@hotmail.com</span>¡¡POR FIN tienes correo propio!! Te voy a pasar un par de cositas para que dejes esa cuenta bonita. La interfaz por defecto parece hecha por alguien que odia los colores jajaja.<span class="thread-file">▧ aero_theme.cor · tema para Coralia</span><span class="when">16:42</span></div><div class="thread-message vela"><span class="who">Vela · vela.skyline@coralia.net</span>JAJAJA llevo diez minutos intentando cambiar el fondo. ¿Por qué todo tiene que estar escondido en Opciones? Pásame eso, por favor. Pero nada de poner mi correo rosa chicle.</div><div class="thread-message frenzy"><span class="who">Frenzy · frenzy.x@hotmail.com</span>Rosa chicle era mi segunda opción 😔. También te mando unos iconitos y una firma que hice. Si algo se rompe, no fui yo. (Sí fui yo.)<span class="thread-file">▧ mini_icons.zip · 4 iconos</span><span class="when">16:47</span></div><div class="thread-message vela"><span class="who">Vela · vela.skyline@coralia.net</span>La firma quedó bonita, no te voy a mentir. Te debo una. Cuando nos veamos me ayudas a dejarlo todo bien y te invito algo. Gracias por emocionarte más que yo con mi propio correo, tontito 💚<span class="when">16:51</span></div></div></div>
+      <div class="mailview" id="view-thread-psyco"><button class="fakebutton back" data-back>← Volver a la bandeja</button><h2>RE: apodos horribles</h2><div class="meta">Conversación entre Psyco y Vela<br>Fecha: Miércoles, 5 de octubre de 2005</div><div class="thread-intro">Un intercambio viejo entre dos amigos que ya se escribían antes de que todo esto pasara.</div><div class="thread-chat"><div class="thread-message friend"><span class="who">Psyco · psycoone12@hotmail.com</span>Te guardé como “Vela la dramática” y el teléfono me pregunta si quiero corregirlo a “Vela la gramática”. Creo que el celular te conoce demasiado bien.<span class="when">19:08</span></div><div class="thread-message vela"><span class="who">Vela · vela.skyline@coralia.net</span>Y yo te tengo como “Psyco de oferta”, porque uno nunca sabe cuándo le van a salir defectos de fábrica. No te quejes, es un honor tener apodo personalizado.</div><div class="thread-message friend"><span class="who">Psyco · psycoone12@hotmail.com</span>JAJAJA. A ver, Vela, tú empezaste. Además, si algún día te quedas sin ideas, ya sabes que me puedes escribir a este correo. Lo reviso más que el teléfono del trabajo.</div><div class="thread-message vela"><span class="who">Vela · vela.skyline@coralia.net</span>Trato hecho. Pero si me vuelves a decir “dramática” voy a inventarte uno peor. Gracias por estar ahí, en serio. Eres un buen amigo, aunque tus apodos sean criminales 💚<span class="when">19:13</span></div></div></div>
+      <div class="mailview" id="view-spam-love"><button class="fakebutton back" data-back>← Volver a correo no deseado</button><h2>ASUNTO: ¿QUIERES CONSEGUIR AMOR?</h2><div class="meta">De: ofertas_tom@ofertas-mail.net<br>Para: vela.skyline@coralia.net<br>Fecha: Lunes, 10 de octubre de 2005, 09:12<br>Clasificación: Correo no deseado</div><div class="bodytext">¡¡¡HOLA, [AMIG@]!!! ¿¿¿QUIERES CONSEGUIR AMOR???
+
+Vamos todos en este mundo necesitamos, AMOR, dulce y poderoso AMOR salido de nuestra alma, este te lleva al cielo, no es AMOR del corazón, porque es de seguro ya conseguiste MAMITA, solamente tienes que entrar a mi sitio web y te mostraré cómo ganar el AMOR de 199.7 dólares sin ningún esfuerzo!
+
+¡¡¡OFERTA POR TIEMPO LIMITADO!!! ¡¡¡NO DEJES QUE EL AMOR SE TE ESCAPE!!! [¡HAZ CLIC, GRAN CLIENTE!]</div><div class="attachment">[HIPERVÍNCULO BLOQUEADO]<br><span style="font-size:11px">Coralia ha bloqueado este enlace porque podría ser peligroso.</span></div><div class="side-note" style="margin:14px 0 0">Mensaje detectado automáticamente como correo no deseado.</div></div>
+      <div class="mailview" id="view-spam-prize"><button class="fakebutton back" data-back>← Volver a correo no deseado</button><h2>¡Has ganado un teléfono móvil!</h2><div class="meta">De: premios_urgentes@win-big.example<br>Para: vela.skyline@coralia.net<br>Fecha: Martes, 11 de octubre de 2005, 10:44</div><div class="bodytext">FELICIDADES!!! Su dirección ha sido seleccionada al azar para recibir un teléfono móvil completamente GRATIS.
+
+Responda con su nombre completo, dirección y número de tarjeta para confirmar el envío.
+
+NO PIERDA ESTA OPORTUNIDAD ÚNICA!!!</div><div class="attachment">[ADJUNTO BLOQUEADO] premio.exe</div></div>
+      <div class="mailview" id="view-spam-pharmacy"><button class="fakebutton back" data-back>← Volver a correo no deseado</button><h2>RE: Oferta exclusiva — solo hoy</h2><div class="meta">De: ofertas_medicas@bulk-mail.example<br>Para: vela.skyline@coralia.net<br>Fecha: Viernes, 7 de octubre de 2005, 02:08</div><div class="bodytext">Hello dear customer!
+
+Special offer just for YOU. Buy today and get 70% discount. This message is not spam, please do not report us.
+
+Click here to unsubscribe from all future messages.</div><div class="attachment">[HIPERVÍNCULO BLOQUEADO]</div></div>
+      <div class="mailview" id="view-movistar"><button class="fakebutton back" data-back>← Volver a la bandeja</button><h2>Nuevo mensaje de voz de Movistar - 555-3492</h2><div class="meta">De: Buzon_Movistar_Auto@movistar.com<br>Para: vela.skyline@coralia.net<br>Fecha: Lunes, 10 de octubre de 2005, 2:00 AM</div><div class="bodytext">Estimado cliente,
+
+Usted tiene un nuevo mensaje de voz en su buzón automático. Puede escuchar la grabación adjunta a continuación.</div><div class="attachment" style="display:block;max-width:520px"><div style="font-weight:bold;margin-bottom:8px">♫ MOVISTAR_VM_05_REC.AMR.mp3</div><div style="font-size:11px;margin-bottom:10px">Mensaje de voz · Archivo de audio</div><audio controls preload="metadata" style="width:100%"><source src="MOVISTAR_VM_05_REC.AMR.mp3" type="audio/mpeg">Tu navegador no puede reproducir este audio.</audio></div></div>
+      <div class="mailview" id="view-welcome"><button class="fakebutton back" data-back>← Volver a la bandeja</button><h2>Bienvenida a Coralia</h2><div class="meta">De: equipo@coralia.net<br>Para: vela.skyline@coralia.net<br>Fecha: Sábado, 3 de septiembre de 2005, 16:20</div><div class="bodytext">¡Hola!
+
+Gracias por crear tu cuenta Coralia Mail. Aquí podrás mantenerte en contacto con tus amigos, compartir archivos y guardar tus mensajes importantes.
+
+Esperamos que disfrutes de tu pequeño espacio en Internet.
+
+— El equipo de Coralia</div></div>
+      <div class="mailview" id="view-inbox-class"><button class="fakebutton back" data-back>← Volver a la bandeja</button><h2>¿Me pasas los apuntes?</h2><div class="meta">De: andrea.mora@hotmail.com<br>Para: vela.skyline@coralia.net<br>Fecha: Domingo, 9 de octubre de 2005, 18:21</div><div class="bodytext">Holaa, ¿me puedes pasar lo que anotaste de la última clase? Me perdí cuando el profesor empezó a explicar lo del trabajo y después no entendí qué había que entregar. Creo que dijo que era para el jueves, pero no estoy segura. Si tienes también la parte del tablero, mejor, porque la foto que tomé salió toda borrosa. Te debo una :)</div></div>
+      <div class="mailview" id="view-inbox-party"><button class="fakebutton back" data-back>← Volver a la bandeja</button><h2>Re: Lo del sábado</h2><div class="meta">De: nora.paz@hotmail.com<br>Para: vela.skyline@coralia.net<br>Fecha: Sábado, 8 de octubre de 2005, 13:04</div><div class="bodytext">Vela, acuérdate de avisarme cuando llegues y de no volver sola tan tarde. Si vas a la fiesta, lleva el teléfono cargado y dime con quién vas a estar. Dejé algo de comer en la nevera por si llegas con hambre. Y, por favor, no olvides las llaves; la copia sigue en el mismo lugar de siempre. Cuídate.</div></div>
+      <div class="mailview" id="view-inbox-random"><button class="fakebutton back" data-back>← Volver a la bandeja</button><h2>jajaja mira esto</h2><div class="meta">De: nico_93@hotmail.com<br>Para: vela.skyline@coralia.net<br>Fecha: Jueves, 6 de octubre de 2005, 21:36</div><div class="bodytext">No sé por qué me dio tanta risa esto, pero tenía que mandártelo. Me lo pasó alguien del grupo y nadie sabe quién lo hizo primero. La imagen se ve fatal porque la reenviaron como cinco veces, pero mira la esquina de abajo, parece que hay algo escrito ahí. Seguro es un error de compresión o una tontería. Después me dices si te acuerdas de dónde salió.</div><div class="attachment">▧ imagen_adjunta.jpg &nbsp; (vista previa no disponible)</div></div>
+      <div class="mailview" id="view-sent-party"><button class="fakebutton back" data-back>← Volver a enviados</button><h2>Fotos de la fiesta</h2><div class="meta">De: vela.skyline@coralia.net<br>Para: nora.paz@hotmail.com<br>Fecha: Lunes, 10 de octubre de 2005, 18:32</div><div class="bodytext">Te mando las fotos que tomé en la reunión familiar. Algunas salieron movidas, pero hay unas bonitas. Las comprimí para que no pesaran tanto; si quieres las originales, te las paso cuando llegue a casa. Gracias por ayudarme a guardar todo al final. Avísame si prefieres que imprima alguna.</div></div>
+      <div class="mailview" id="view-sent-class"><button class="fakebutton back" data-back>← Volver a enviados</button><h2>Apuntes de la semana</h2><div class="meta">De: vela.skyline@coralia.net<br>Para: grupo.universidad@hotmail.com<br>Fecha: Domingo, 9 de octubre de 2005, 20:06</div><div class="bodytext">Hola, adjunto los apuntes de hoy. Si alguien tiene lo que explicó el profesor al final, ¿me lo puede pasar? Creo que mencionó unas páginas del libro y una actividad para la próxima semana, pero justo estaba copiando lo anterior y no alcancé a escucharlo. Revisen también la fecha del documento por si me equivoqué al guardarlo. Gracias.</div><div class="attachment">▧ apuntes_semana.doc &nbsp; (archivo no disponible)</div></div>
+      <div class="mailview" id="view-sent-psyco"><button class="fakebutton back" data-back>← Volver a enviados</button><h2>Frenzy URGENTE</h2><div class="meta">De: vela.skyline@coralia.net<br>Para: psycoone12@hotmail.com<br>Fecha: <span id="sentPsycoDate">Lunes, 10 de octubre de 2005, 16:00</span></div><div class="bodytext">Frenzy está en estado de shock en el Hospital Central.
+
+En la madrugada, luego de la fiesta a la que nunca pudo llegar, lo encontraron cerca del edificio unos guardias; está frío y con la mirada perdida. Su corazón late como siempre, pero está... ¡¿en shock?! No está herido, solamente... está frío, ¡no lo entiendo!
+
+Es como si algo se le metió, o como si no tuviera algo. De verdad, al inicio cuando me dijeron pensé que era una broma, ojalá hubiera sido así... Me tocó llegar y tomar las llaves en su tapete para buscar sus papeles; solo encontré sus cosas de la universidad y una cédula. ¡No sé qué hacer! No puedo hacer esto sola. Lo único que sé es que me envió este mensaje de voz y... te lo voy a adjuntar.
+
+No te asustes, ¿ok? Es tu compañero de trabajo, es nuestro amigo, tú sabes que no está loco. Creo que alguien lo asustó o le hizo algo crítico. O tal vez no debió meterse en ese lugar tan paranormal.
+
+Por favor, no me respondas a este mensaje. Y si vas a ayudarme, ve al Hospital Central.</div><div class="attachment" style="display:block;max-width:520px"><div style="font-weight:bold;margin-bottom:7px">♫ MOVISTAR_VM_05_REC.AMR.mp3</div><div style="font-size:11px;color:#a54a4a">Archivo adjunto no disponible</div><div style="margin-top:8px;padding:8px;background:#f8eaea;border:1px solid #e0b4b4;color:#944848">No se puede encontrar el archivo. Es posible que se haya movido o eliminado.</div></div></div>
+      <div class="mailview" id="view-sent-old"><button class="fakebutton back" data-back>← Volver a enviados</button><h2>Problema con la cuenta</h2><div class="meta">De: vela.skyline@coralia.net<br>Para: soporte@coralia.net<br>Fecha: Sábado, 8 de octubre de 2005, 11:48</div><div class="bodytext">Hola. Algunos mensajes antiguos no aparecen en mi bandeja y no recuerdo haberlos borrado. ¿Hay alguna forma de recuperarlos?</div></div>
+      <div class="mailview" id="view-sent-mom"><button class="fakebutton back" data-back>← Volver a enviados</button><h2>No olvides llamar</h2><div class="meta">De: vela.skyline@coralia.net<br>Para: mamá<br>Fecha: Viernes, 7 de octubre de 2005, 17:02</div><div class="bodytext">Hola, hoy salgo un poco tarde de la universidad porque nos dejaron terminar una actividad en grupo. Te llamo cuando llegue, no te preocupes. Puede que pase primero por la tienda a comprar algo para cenar, así que si no contesto enseguida es por eso. Dejo las llaves donde siempre.</div></div>
+      <div class="mailview" id="view-sent-notes"><button class="fakebutton back" data-back>← Volver a enviados</button><h2>Confirmación de tutoría</h2><div class="meta">De: vela.skyline@coralia.net<br>Para: tutorias@universidad.edu<br>Fecha: Miércoles, 5 de octubre de 2005, 09:18</div><div class="bodytext">Buenos días. Confirmo que asistiré a la tutoría del viernes. ¿Podrían indicarme si debo llevar el ejercicio que quedó pendiente o si lo revisaremos directamente durante la sesión? También quería confirmar que el horario sigue siendo el de las nueve de la mañana. Muchas gracias.</div></div>
+      <div class="mailview" id="view-spam-chain"><button class="fakebutton back" data-back>← Volver a correo no deseado</button><h2>RE: RE: Reenvía esto a 10 personas</h2><div class="meta">De: suerte_infinita@cadena-mail.example<br>Para: vela.skyline@coralia.net<br>Fecha: Jueves, 6 de octubre de 2005, 06:10</div><div class="bodytext">Si no reenvías este correo antes de medianoche, tendrás siete años de mala suerte. Si lo reenvías, recibirás una sorpresa increíble. ¡No rompas la cadena!</div></div>
+      <div class="mailview" id="view-spam-dialup"><button class="fakebutton back" data-back>← Volver a correo no deseado</button><h2>¡Conéctate más rápido!</h2><div class="meta">De: ventas@internet-facil.example<br>Para: vela.skyline@coralia.net<br>Fecha: Martes, 4 de octubre de 2005, 11:42</div><div class="bodytext">¿Cansado de esperar mientras carga una página? ¡Cambia hoy mismo a nuestro nuevo servicio de conexión ultrarrápida! Oferta válida por tiempo limitado.</div><div class="attachment">[INFORMACIÓN DEL SERVICIO NO DISPONIBLE]</div></div>
+      <div class="mailview" id="view-draft-birthday"><button class="fakebutton back" data-back>← Volver a borradores</button><h2>Feliz cumple!!</h2><div class="meta">Para: nora.paz@hotmail.com<br>Guardado: Sábado, 8 de octubre de 2005, 22:14</div><div class="bodytext">Mamá, feliz cumpleaños. Espero que tengas un día tranquilo y bonito. No te voy a decir todavía qué te compré, pero espero que te guste. Gracias por estar pendiente de mí incluso cuando ando distraída con la universidad. Te doy el regalo cuando nos veamos. Y guarda un pedazo de torta para mí.</div><div class="attachment">Borrador sin enviar</div></div>
+      <div class="mailview" id="view-draft-question"><button class="fakebutton back" data-back>← Volver a borradores</button><h2>Pregunta sobre el edificio</h2><div class="meta">Para: (sin destinatario)<br>Guardado: Lunes, 10 de octubre de 2005, 23:08</div><div class="bodytext">¿Alguien sabe cómo se llama el edificio que queda detrás de la avenida? El que tiene las ventanas tapadas.</div><div class="attachment">Borrador sin enviar</div></div>
+      <div class="mailview" id="view-recovered"><button class="fakebutton back" data-back>← Volver a la bandeja</button><h2>Mensaje recuperado</h2><div class="meta">De: <span>remitente desconocido</span><br>Para: vela.skyline@coralia.net<br>Fecha: Martes, 11 de octubre de 2005, 00:03</div><div class="bodytext">Este mensaje no debería aparecer aquí.
+
+Si has conseguido verlo, significa que todavía queda algo en esta cuenta que no pudieron borrar.</div></div>
+      <div class="mailview" id="view-frenzy"><button class="fakebutton back" data-back>← Volver a la bandeja</button><h2>Gracias por preocuparte.</h2><div class="meta">De: <span class="frenzy-name">Frenzy</span> &lt;frenzy.x@hotmail.com&gt;<br>Para: vela.skyline@coralia.net<br>Fecha: Martes, 11 de octubre de 2005, 00:17<br><span style="color:#8ca5a7">Este mensaje no aparece en el registro de actividad.</span></div><div class="bodytext">Gracias por preocuparte.
+
+No hacía falta que hablaras tan alto cuando entraste.
+
+— F.</div><div class="attachment" style="display:block;max-width:520px"><div style="font-weight:bold;margin-bottom:8px">♫ Sin titulo.wav</div><div style="font-size:11px;margin-bottom:10px">Archivo adjunto · Grabación recuperada</div><audio controls preload="metadata" style="width:100%"><source src="Sin%20titulo.wav" type="audio/wav">Tu navegador no puede reproducir este audio.</audio><div style="font-size:11px;margin-top:8px;color:#668f95">Nota: el remitente no figura en el historial de envío.</div></div></div>
+      <div class="mailview" id="view-unknown-room-1"><button class="fakebutton back" data-back>← Volver a la bandeja</button><h2>¿Cuántas puertas había?</h2><div class="meta">De: usuario_desconocido@coralia.net<br>Para: vela.skyline@coralia.net<br>Fecha: Martes, 11 de octubre de 2005, 01:26<br><span style="color:#8ca5a7">El servidor no pudo verificar el remitente.</span></div><div class="bodytext">No recuerdo que hubiera tantas puertas.
+
+La habitación del fondo no estaba en el plano. Desde el pasillo parecía pequeña, pero por dentro seguía y seguía.
+
+¿Tú también la viste?</div></div>
+      <div class="mailview" id="view-unknown-room-2"><button class="fakebutton back" data-back>← Volver a la bandeja</button><h2>La habitación sin ventanas</h2><div class="meta">De: usuario_desconocido@coralia.net<br>Para: vela.skyline@coralia.net<br>Fecha: Martes, 11 de octubre de 2005, 02:11<br><span style="color:#8ca5a7">Mensaje recibido sin conexión activa.</span></div><div class="bodytext">Había una silla en el centro. Nada más.
+
+No había ventanas, pero entraba luz por alguna parte. Cuando me di la vuelta, la puerta ya no estaba donde la había dejado.
+
+No vuelvas a buscarla.</div></div>
+      <div class="mailview" id="view-hidden-room"><button class="fakebutton back" data-back>← Volver</button><h2>IMG_111005_0317.JPG</h2><div class="meta">Archivo recuperado · 11/10/2005 · 03:17 AM</div><div class="bodytext">La imagen está dañada. Sin embargo, hay algo escrito en los datos del archivo:</div><div class="attachment" style="display:block;text-align:center;padding:28px 12px"><div style="font-size:44px;letter-spacing:8px;color:#72b7b6">◌ ◯ ◌</div><div style="margin-top:14px;color:#527e85">NO ESTABAS SOLA</div><div style="font-size:11px;margin-top:8px">Vista previa no disponible</div></div></div>
+      <div class="mailview" id="view-hidden-note"><button class="fakebutton back" data-back>← Volver</button><h2>Nota sin remitente</h2><div class="meta">Ubicación: datos temporales de Coralia<br>Fecha: desconocida</div><div class="bodytext">No abras la puerta cuando vuelva a sonar.
+
+No soy yo quien está escribiendo esto.</div></div>
+
+    </main>
+  </div>
+</section>
+<div class="unlock"><label for="secret">Buscar un mensaje o introducir una palabra</label><div class="unlockrow"><input id="secret" type="text" placeholder="Escribe aquí..." autocomplete="off"><button id="submit">Buscar</button></div><div class="feedback" id="feedback">Coralia Mail está listo.</div></div>
+</div>
+<footer class="footer">© 2005 Coralia Network · Todos los derechos reservados · Coralia Mail v2.0 Beta</footer>
+<script>
+  const boot = document.getElementById('boot');
+  // El progreso narrativo se guarda localmente. Recargar nunca hace avanzar la historia.
+  const testMode = new URLSearchParams(window.location.search).get('test') === '1';
+  const testPanel = document.getElementById('testPanel');
+  if (testMode && testPanel) {
+    testPanel.style.display = 'block';
+    document.getElementById('resetProgress').addEventListener('click', () => {
+      Object.keys(localStorage).filter(key => key.startsWith('coralia_')).forEach(key => localStorage.removeItem(key));
+      window.location.reload();
+    });
+  }
+  const refreshKey = 'coralia_corruption_loads_v8';
+  const cooldownKey = 'coralia_refresh_cooldown_until_v5';
+  let refreshCount = Number(localStorage.getItem(refreshKey) || '0');
+  const frenzyMailKey = 'coralia_frenzy_mail_persisted_v8';
+  const unknownRoom1Key = 'coralia_unknown_room_1_v5';
+  const unknownRoom2Key = 'coralia_unknown_room_2_v5';
+  const spamTomKey = 'coralia_ofertas_tom_visible_v5';
+  const movistarReadKey = 'coralia_movistar_audio_heard_v2';
+  const sentPsycoRevealedKey = 'coralia_sent_psyco_revealed_v2';
+  const frenzyAudioHeardKey = 'coralia_frenzy_audio_heard_v1';
+  const voidResolvedKey = 'coralia_frenzy_void_resolved_v1';
+  const postFrenzyUpdatesKey = 'coralia_post_frenzy_updates_v1';
+  const firstUpdateKey = 'coralia_first_update_seen_v5';
+  const blackoutSeenKey = 'coralia_frenzy_blackout_seen_v5';
+  const readKey = 'coralia_read_messages_v4';
+  let frenzyMailExists = localStorage.getItem(frenzyMailKey) === 'true';
+  let unknownRoom1Exists = localStorage.getItem(unknownRoom1Key) === 'true';
+  let unknownRoom2Exists = localStorage.getItem(unknownRoom2Key) === 'true';
+  const spamLoveRow = document.getElementById('spamLoveRow');
+  if (spamLoveRow && localStorage.getItem(spamTomKey) === 'true') spamLoveRow.style.display = 'grid';
+  function applyCorruptionPhase() {
+    document.body.classList.remove('coralia-glitch-1','coralia-glitch-2','coralia-glitch-3');
+    const phase = refreshCount % 5;
+    if (phase === 1) document.body.classList.add('coralia-glitch-1');
+    if (phase === 2) document.body.classList.add('coralia-glitch-2');
+    if (phase === 3 || phase === 4) document.body.classList.add('coralia-glitch-3');
+  }
+  window.addEventListener('load', () => setTimeout(() => { boot.style.opacity = '0'; setTimeout(() => boot.remove(), 750); }, 1800));
+  const folderBoxes = {
+    inbox: document.getElementById('inbox'), sent: document.getElementById('sentbox'),
+    junk: document.getElementById('junkbox'), trash: document.getElementById('trashbox'),
+    drafts: document.getElementById('draftsbox')
+  };
+  let currentFolder = 'inbox';
+  let currentView = '';
+  const feedback = document.getElementById('feedback');
+  const input = document.getElementById('secret');
+  let unlocked = { recovered:false, frenzy:false, unknownRoom1:false, unknownRoom2:false };
+  function openView(name) {
+    if (document.body.classList.contains('coralia-void') && name !== 'frenzy') return;
+    currentView = name;
+    Object.values(folderBoxes).forEach(el => { if (el) el.style.display = 'none'; });
+    document.querySelectorAll('.mailview').forEach(el => el.classList.remove('show'));
+    const view = document.getElementById('view-' + name);
+    if (view) view.classList.add('show');
+
+  }
+  function showFolder(name) {
+    if (document.body.classList.contains('coralia-void')) name = 'inbox';
+    currentFolder = name;
+    document.querySelectorAll('.mailview').forEach(el => el.classList.remove('show'));
+    Object.entries(folderBoxes).forEach(([key, el]) => { if (el) el.style.display = key === name ? 'block' : 'none'; });
+    document.querySelectorAll('[data-folder]').forEach(el => el.classList.toggle('active', el.dataset.folder === name));
+    const title = document.querySelector('.windowbar span');
+    const labels = { inbox:'Bandeja de entrada', sent:'Mensajes enviados', junk:'Correo no deseado', trash:'Elementos eliminados', drafts:'Borradores' };
+    if (title) title.textContent = (labels[name] || 'Bandeja de entrada') + ' - Coralia Mail';
+  }
+  function backToFolder() { currentView = ''; showFolder(currentFolder); }
+  document.querySelectorAll('[data-folder]').forEach(folder => folder.addEventListener('click', () => showFolder(folder.dataset.folder)));
+  function messageKey(row) { return row.dataset.mail || row.dataset.dynamicMail || ''; }
+  function getReadMessages() { try { return JSON.parse(localStorage.getItem(readKey) || '[]'); } catch (_) { return []; } }
+  function updateUnreadCounts() {
+    const mapping = { inbox:['#inbox','#count-inbox'], sent:['#sentbox','#count-sent'], drafts:['#draftsbox','#count-drafts'], trash:['#trashbox','#count-trash'], junk:['#junkbox','#count-junk'] };
+    Object.entries(mapping).forEach(([name, pair]) => {
+      const container = document.querySelector(pair[0]);
+      const badge = document.querySelector(pair[1]);
+      if (!container || !badge) return;
+      const unread = Array.from(container.querySelectorAll('.mailrow.unread')).filter(row => getComputedStyle(row).display !== 'none').length;
+      badge.textContent = unread ? (unread + ' sin leer') : '0';
+    });
+  }
+  function markRead(row) {
+    const key = messageKey(row);
+    if (key) {
+      const read = getReadMessages();
+      if (!read.includes(key)) read.push(key);
+      localStorage.setItem(readKey, JSON.stringify(read));
+    }
+    row.classList.remove('unread');
+    updateUnreadCounts();
+  }
+  function bindMailRow(row) { row.addEventListener('click', () => { markRead(row); openView(row.dataset.mail || row.dataset.dynamicMail); }); }
+  const previouslyRead = getReadMessages();
+  document.querySelectorAll('.mailrow').forEach(row => {
+    if (previouslyRead.includes(messageKey(row))) row.classList.remove('unread');
+    bindMailRow(row);
+  });
+  updateUnreadCounts();
+  document.querySelectorAll('[data-back]').forEach(btn => btn.addEventListener('click', backToFolder));
+  function insertInboxRow(sender, subject, date, viewName) {
+    if (document.querySelector('#inbox [data-dynamic-mail="' + viewName + '"]')) return;
+    const row = document.createElement('div');
+    row.className = 'mailrow unread';
+    row.dataset.dynamicMail = viewName;
+    if (getReadMessages().includes(viewName)) row.classList.remove('unread');
+    row.innerHTML = '<span class="sender"></span><span class="subject"></span><span class="date"></span>';
+    row.querySelector('.sender').textContent = sender;
+    row.querySelector('.subject').textContent = subject;
+    row.querySelector('.date').textContent = date;
+    bindMailRow(row);
+    document.getElementById('inbox').insertBefore(row, document.getElementById('hint'));
+    updateUnreadCounts();
+  }
+  function addMessage(key) {
+    if (key === 'recovered' && !unlocked.recovered) {
+      unlocked.recovered = true;
+      insertInboxRow('[remitente desconocido]', 'Mensaje recuperado', '11/10/05', 'recovered');
+    }
+    if (key === 'frenzy' && !unlocked.frenzy) {
+      unlocked.frenzy = true;
+      insertInboxRow('Frenzy', 'Gracias por preocuparte.', '11/10/05', 'frenzy');
+    }
+    if (key === 'unknown-room-1' && !unlocked.unknownRoom1) {
+      unlocked.unknownRoom1 = true;
+      insertInboxRow('usuario_desconocido@coralia.net', '¿Cuántas puertas había?', '11/10/05', 'unknown-room-1');
+    }
+    if (key === 'unknown-room-2' && !unlocked.unknownRoom2) {
+      unlocked.unknownRoom2 = true;
+      insertInboxRow('usuario_desconocido@coralia.net', 'La habitación sin ventanas', '11/10/05', 'unknown-room-2');
+    }
+    updateUnreadCounts();
+  }
+  function search() {
+    const value = input.value.trim().toLowerCase();
+    if (document.body.classList.contains('coralia-void')) { feedback.textContent = 'La cuenta no responde.'; return; }
+    feedback.classList.remove('error');
+    if (!value) { feedback.textContent = 'Escribe algo para buscar.'; feedback.classList.add('error'); return; }
+    const routes = {
+      'coralia': () => { addMessage('recovered'); feedback.textContent = 'Se ha recuperado un mensaje de la cuenta.'; },
+      'recuperar': () => { addMessage('recovered'); feedback.textContent = 'Se ha recuperado un mensaje de la cuenta.'; },
+      'recuperado': () => { addMessage('recovered'); feedback.textContent = 'Se ha recuperado un mensaje de la cuenta.'; },
+      '03:17': () => { openView('hidden-room'); feedback.textContent = 'Abriendo archivo temporal...'; },
+      '0317': () => { openView('hidden-room'); feedback.textContent = 'Abriendo archivo temporal...'; },
+      'no estabas sola': () => { openView('hidden-note'); feedback.textContent = 'Se ha encontrado una nota oculta.'; },
+      '199.7': () => { openView('hidden-note'); feedback.textContent = 'Se ha encontrado una nota oculta.'; },
+      'habitacion': () => { if (unknownRoom1Exists) { openView('unknown-room-1'); feedback.textContent = 'Mensaje encontrado.'; } else { feedback.textContent = 'No se encontraron resultados.'; feedback.classList.add('error'); } },
+      'habitación': () => { if (unknownRoom1Exists) { openView('unknown-room-1'); feedback.textContent = 'Mensaje encontrado.'; } else { feedback.textContent = 'No se encontraron resultados.'; feedback.classList.add('error'); } },
+      'amor': () => { showFolder('junk'); openView('spam-love'); feedback.textContent = 'Coincidencia encontrada en correo no deseado.'; },
+      'spamton': () => { showFolder('junk'); openView('spam-love'); feedback.textContent = 'Coincidencia encontrada en correo no deseado.'; }
+    };
+    if (['grabadora','frenzy','preocuparte'].includes(value)) {
+      if (!frenzyMailExists) {
+        feedback.textContent = 'No se encontraron resultados. La cuenta todavía está sincronizando.';
+        feedback.classList.add('error'); input.value = ''; return;
+      }
+      addMessage('frenzy'); feedback.textContent = 'Se ha recuperado un mensaje de la cuenta.'; input.value = ''; return;
+    }
+    if (routes[value]) { routes[value](); input.value = ''; return; }
+    feedback.textContent = 'No se encontraron resultados.'; feedback.classList.add('error');
+  }
+  document.getElementById('submit').addEventListener('click', search);
+  input.addEventListener('keydown', e => { if (e.key === 'Enter') search(); });
+  // Tanto el botón como una recarga real respetan un cooldown persistente de 30 segundos.
+  const refreshButton = document.getElementById('refreshButton');
+  const brand = document.getElementById('brand');
+  const tagline = document.getElementById('tagline');
+  function enterVoidMode() {
+    document.body.classList.add('coralia-void');
+    if (brand) brand.textContent = '◈ C̷̫͝Ö̵̻́R̶̈́͜A̸̻͝L̴͙̚I̶͙̍Ä̷͚́ ⟁⟟⟒⟒';
+    if (tagline) tagline.textContent = 'N̷o̷ ̷c̷i̷e̷r̷r̷e̷s̷ ̷e̷s̷t̷a̷ ̷v̷e̷n̷t̷a̷n̷a̷.';
+    document.querySelectorAll('.mailrow').forEach(row => { if (row.dataset.dynamicMail !== 'frenzy') row.style.display = 'none'; });
+    const frenzyRow = document.querySelector('[data-dynamic-mail="frenzy"]');
+    if (frenzyRow) frenzyRow.style.display = 'grid';
+    Object.keys(folderBoxes).forEach(key => { if (folderBoxes[key]) folderBoxes[key].style.display = key === 'inbox' ? 'block' : 'none'; });
+    document.querySelectorAll('.mailview').forEach(view => view.classList.remove('show'));
+  }
+  if (frenzyMailExists && localStorage.getItem(voidResolvedKey) !== 'true') enterVoidMode();
+  const toast = document.getElementById('toast');
+  const toastTitle = document.getElementById('toastTitle');
+  const toastBody = document.getElementById('toastBody');
+  let toastTimer;
+  if (localStorage.getItem(firstUpdateKey) === 'true') { document.body.classList.add('coralia-tagline-gone'); if (tagline && !frenzyMailExists) tagline.textContent = refreshCount === 1 ? '¡No olvides los mensajes!' : 'Estate atento, nunca sabes cuándo llegará un mensaje importante.'; }
+  function showToast(title, body, duration=4500) {
+    toastTitle.textContent = title;
+    toastBody.textContent = body;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove('show'), duration);
+  }
+  function refreshCooldown() {
+    const until = Number(localStorage.getItem(cooldownKey) || '0');
+    const remaining = Math.ceil((until - Date.now()) / 1000);
+    if (remaining > 0) {
+      refreshButton.classList.add('cooldown');
+      refreshButton.setAttribute('aria-disabled', 'true');
+      refreshButton.textContent = '↻ Espera ' + remaining + ' s';
+    } else {
+      refreshButton.classList.remove('cooldown');
+      refreshButton.setAttribute('aria-disabled', 'false');
+      refreshButton.textContent = '↻ Actualizar';
+    }
+  }
+  function triggerBlackout() {
+    enterVoidMode();
+    if (localStorage.getItem(blackoutSeenKey)) return;
+    localStorage.setItem(blackoutSeenKey, 'true');
+    const blackout = document.getElementById('blackout');
+    blackout.classList.add('active');
+    setTimeout(() => {
+      blackout.classList.add('fadeout');
+      setTimeout(() => blackout.classList.remove('active','fadeout'), 1300);
+    }, 3800);
+  }
+  function revealSentPsyco() {
+    if (localStorage.getItem(sentPsycoRevealedKey) === 'true') return;
+    localStorage.setItem(sentPsycoRevealedKey, 'true');
+    const row = document.getElementById('sentPsycoRow');
+    if (row) {
+      row.style.display = 'grid';
+      const date = row.querySelector('.date');
+      if (date) date.textContent = '11/10/05';
+    }
+    const messageDate = document.getElementById('sentPsycoDate');
+    if (messageDate) messageDate.textContent = 'Martes, 11 de octubre de 2005, 00:17';
+    const sideNote = document.querySelector('.sidebar .side-note');
+    if (sideNote) sideNote.innerHTML = 'Algunos mensajes podrían no estar disponibles.<br><br>Última sincronización: 11/10/2005 00:17';
+    const lastAccess = document.querySelector('.accountline span:last-child');
+    if (lastAccess) lastAccess.textContent = 'Último acceso: 11/10/2005';
+    updateUnreadCounts();
+    showToast('Mensaje recuperado', 'Se restauró el correo que Vela envió a Psyco.', 5000);
+    feedback.textContent = 'La grabación terminó. Se ha recuperado un mensaje de enviados.';
+  }
+  function revealFrenzyMail() {
+    if (frenzyMailExists) return;
+    localStorage.setItem(frenzyMailKey, 'true');
+    frenzyMailExists = true;
+    addMessage('frenzy');
+    triggerBlackout();
+    showToast('Nuevo mensaje', 'Frenzy · Gracias por preocuparte.', 5000);
+    feedback.textContent = 'Se detectó un mensaje sin registro de envío.';
+  }
+  function allInitialInboxMessagesRead() {
+    const read = getReadMessages();
+    const initialRows = Array.from(document.querySelectorAll('#inbox .mailrow[data-mail]'));
+    return initialRows.length > 0 && initialRows.every(row => read.includes(row.dataset.mail));
+  }
+  function revealPostFrenzyMessages(count) {
+    if (count >= 1) {
+      localStorage.setItem(unknownRoom1Key, 'true');
+      unknownRoom1Exists = true;
+      addMessage('unknown-room-1');
+    }
+    if (count >= 2) {
+      localStorage.setItem(unknownRoom2Key, 'true');
+      unknownRoom2Exists = true;
+      addMessage('unknown-room-2');
+    }
+  }
+  function exitVoidMode() {
+    document.body.classList.remove('coralia-void','coralia-glitch-1','coralia-glitch-2','coralia-glitch-3');
+    if (brand) brand.textContent = '◈ CORALIA MAIL';
+    if (tagline) tagline.textContent = localStorage.getItem(firstUpdateKey) === 'true' ? 'Estate atento, nunca sabes cuándo llegará un mensaje importante.' : '¡Escribe tu historia!';
+    document.querySelectorAll('.mailrow').forEach(row => { row.style.display = ''; });
+    const frenzyRow = document.querySelector('[data-dynamic-mail="frenzy"]');
+    if (frenzyRow) frenzyRow.style.display = 'grid';
+    if (spamLoveRow && localStorage.getItem(spamTomKey) !== 'true') spamLoveRow.style.display = 'none';
+    const sentRow = document.getElementById('sentPsycoRow');
+    if (sentRow) sentRow.style.display = localStorage.getItem(sentPsycoRevealedKey) === 'true' ? 'grid' : 'none';
+    document.querySelectorAll('.mailview').forEach(view => view.classList.remove('show'));
+    currentView = '';
+    showFolder('inbox');
+  }
+  // La grabación de Movistar cuenta como escuchada solo al terminar de reproducirse.
+  const movistarAudio = document.querySelector('#view-movistar audio');
+  if (movistarAudio) movistarAudio.addEventListener('ended', () => {
+    localStorage.setItem(movistarReadKey, 'true');
+    feedback.textContent = 'Mensaje de voz escuchado. Coralia ha guardado el registro.';
+    showToast('Mensaje de voz escuchado', 'El registro se ha guardado.', 3000);
+  });
+  // La grabación de Frenzy desbloquea el mensaje enviado a Psyco únicamente al terminar.
+  const frenzyAudio = document.querySelector('#view-frenzy audio');
+  if (frenzyAudio) frenzyAudio.addEventListener('ended', () => {
+    localStorage.setItem(frenzyAudioHeardKey, 'true');
+    revealSentPsyco();
+  });
+  function advanceStory() {
+    refreshCount += 1;
+    localStorage.setItem(refreshKey, String(refreshCount));
+    localStorage.setItem(cooldownKey, String(Date.now() + 30000));
+    localStorage.setItem(firstUpdateKey, 'true');
+    document.body.classList.add('coralia-tagline-gone');
+    if (tagline) tagline.textContent = 'Estate atento, nunca sabes cuándo llegará un mensaje importante.';
+    document.body.classList.remove('coralia-glitch-1','coralia-glitch-2','coralia-glitch-3');
+
+    if (refreshCount >= 2 && localStorage.getItem(spamTomKey) !== 'true') {
+      localStorage.setItem(spamTomKey, 'true');
+      if (spamLoveRow) spamLoveRow.style.display = 'grid';
+      updateUnreadCounts();
+      showToast('Correo no deseado', 'Ofertas Tom · ¿Quieres conseguir AMOR?', 3500);
+      feedback.textContent = 'Se ha detectado un nuevo mensaje en correo no deseado.';
+    } else {
+      showToast(refreshCount === 1 ? 'Mensajes actualizados..?' : 'Sincronización completada', refreshCount === 1 ? '3 notificaciones nuevas' : 'No hay mensajes nuevos.', refreshCount === 1 ? 2600 : 2200);
+      feedback.textContent = 'Sincronización completada. No se han añadido mensajes importantes.';
+    }
+
+    // Tras el primer evento extraño, el día se queda en 11/10 y los mensajes llegan por actualizaciones.
+    if (localStorage.getItem(voidResolvedKey) === 'true') {
+      const postCount = Number(localStorage.getItem(postFrenzyUpdatesKey) || '0') + 1;
+      localStorage.setItem(postFrenzyUpdatesKey, String(postCount));
+      revealPostFrenzyMessages(postCount);
+      if (postCount === 1) showToast('Mensaje recibido', 'usuario_desconocido@coralia.net · ¿Cuántas puertas había?', 4200);
+      if (postCount === 2) showToast('Mensaje recibido', 'usuario_desconocido@coralia.net · La habitación sin ventanas', 4200);
+    }
+
+    // Frenzy aparece solo después de escuchar Movistar, leer la bandeja histórica y actualizar.
+    if (!frenzyMailExists && refreshCount >= 5) {
+      if (localStorage.getItem(movistarReadKey) === 'true' && allInitialInboxMessagesRead()) {
+        revealFrenzyMail();
+      } else {
+        feedback.textContent = 'La sincronización sigue incompleta. Revisa los mensajes antiguos y escucha la grabación de Movistar hasta el final.';
+      }
+    }
+    refreshCooldown();
+  }
+  function runRefresh() {
+    // En la escena de Frenzy, Actualizar es la salida del modo negro, sin cooldown.
+    if (document.body.classList.contains('coralia-void') && currentView === 'frenzy') {
+      if (localStorage.getItem(frenzyAudioHeardKey) !== 'true') {
+        feedback.textContent = 'La grabación todavía no ha terminado. Escúchala completa antes de actualizar.';
+        feedback.classList.add('error');
+        return;
+      }
+      feedback.classList.remove('error');
+      localStorage.setItem(voidResolvedKey, 'true');
+      const postCount = 1;
+      localStorage.setItem(postFrenzyUpdatesKey, String(postCount));
+      localStorage.setItem(cooldownKey, String(Date.now() + 30000));
+      refreshCount += 1;
+      localStorage.setItem(refreshKey, String(refreshCount));
+      localStorage.setItem(firstUpdateKey, 'true');
+      exitVoidMode();
+      revealPostFrenzyMessages(postCount);
+      showToast('Conexión restablecida', 'La bandeja de Coralia vuelve a responder.', 4200);
+      feedback.textContent = 'Sincronización completada. Hay mensajes nuevos en la bandeja.';
+      refreshCooldown();
+      return;
+    }
+    const until = Number(localStorage.getItem(cooldownKey) || '0');
+    if (until > Date.now()) {
+      feedback.textContent = 'Coralia necesita un momento antes de volver a sincronizar.';
+      feedback.classList.add('error');
+      refreshCooldown();
+      return;
+    }
+    feedback.classList.remove('error');
+    advanceStory();
+  }
+  refreshButton.addEventListener('click', runRefresh);
+  refreshButton.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); runRefresh(); } });
+  refreshCooldown();
+  setInterval(refreshCooldown, 1000);
+  // El progreso persistente se restaura, pero cargar o recargar no avanza la historia.
+  const sentPsycoRow = document.getElementById('sentPsycoRow');
+  if (localStorage.getItem(sentPsycoRevealedKey) === 'true' && sentPsycoRow) {
+    sentPsycoRow.style.display = 'grid';
+    const sentDate = sentPsycoRow.querySelector('.date'); if (sentDate) sentDate.textContent = '11/10/05';
+    const messageDate = document.getElementById('sentPsycoDate'); if (messageDate) messageDate.textContent = 'Martes, 11 de octubre de 2005, 00:17';
+    const sideNote = document.querySelector('.sidebar .side-note'); if (sideNote) sideNote.innerHTML = 'Algunos mensajes podrían no estar disponibles.<br><br>Última sincronización: 11/10/2005 00:17';
+    const lastAccess = document.querySelector('.accountline span:last-child'); if (lastAccess) lastAccess.textContent = 'Último acceso: 11/10/2005';
+  }
+  if (frenzyMailExists) addMessage('frenzy');
+  if (unknownRoom1Exists) addMessage('unknown-room-1');
+  if (unknownRoom2Exists) addMessage('unknown-room-2');
+  if (frenzyMailExists && localStorage.getItem(voidResolvedKey) !== 'true') enterVoidMode();
+  if (frenzyMailExists && localStorage.getItem(voidResolvedKey) !== 'true' && !localStorage.getItem(blackoutSeenKey)) triggerBlackout();
+  if (frenzyMailExists) feedback.textContent = 'Sincronización completada.';
+  updateUnreadCounts();
+</script>
+</body>
+</html>
