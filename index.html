@@ -394,6 +394,21 @@ No soy yo quien está escribiendo esto.</div></div>
 </div>
 <footer class="footer">© 2005 Coralia Network · Todos los derechos reservados · Coralia Mail v2.0 Beta</footer>
 <script>
+  // Verificar la versión del progreso guardado
+  const STORAGE_VERSION_KEY = "arg_storage_version";
+  const CURRENT_STORAGE_VERSION = "2026-10-12-v3";
+
+  if (localStorage.getItem(STORAGE_VERSION_KEY) !== CURRENT_STORAGE_VERSION) {
+    // Borrar solamente los datos de progreso de Coralia Mail
+    Object.keys(localStorage).forEach(key => {
+      if (key.startsWith("coralia_")) {
+        localStorage.removeItem(key);
+      }
+    });
+
+    // Registrar la versión nueva para no repetir el reinicio
+    localStorage.setItem(STORAGE_VERSION_KEY, CURRENT_STORAGE_VERSION);
+  }
   const boot = document.getElementById('boot');
   const testMode = new URLSearchParams(window.location.search).get('test') === '1';
   const testPanel = document.getElementById('testPanel');
