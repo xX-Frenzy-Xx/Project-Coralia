@@ -150,6 +150,9 @@
   body.coralia-void .mailview:not(#view-frenzy) { display:none !important; }
   body.coralia-void #view-frenzy { display:block !important; min-height:100vh; padding:clamp(20px,5vw,54px); background:#000 !important; color:#39ff72 !important; }
   body.coralia-void #view-frenzy .back { display:none !important; }
+  #returnVoidButton { display:none; margin:0 0 22px auto; padding:5px 11px; border:1px solid #2e9d4b; border-radius:4px; background:#238342; color:#fff; font:600 11px/1.2 Arial,sans-serif; letter-spacing:.35px; cursor:pointer; box-shadow:0 1px 3px #0002; }
+  #returnVoidButton:hover, #returnVoidButton:focus-visible { background:#2b9b4d; outline:2px solid #8bffab; outline-offset:2px; }
+  body.coralia-void #returnVoidButton { display:block; }
   body.coralia-void #view-frenzy h2, body.coralia-void #view-frenzy .meta,
   body.coralia-void #view-frenzy .bodytext, body.coralia-void #view-frenzy .attachment,
   body.coralia-void #view-frenzy .attachment div, body.coralia-void #view-frenzy .meta span { color:#39ff72 !important; background:#000 !important; border-color:#164d27 !important; text-shadow:none !important; }
@@ -355,7 +358,7 @@ Por favor, no me respondas a este mensaje. Y si vas a ayudarme, ve al Hospital C
       <div class="mailview" id="view-recovered"><button class="fakebutton back" data-back>← Volver a la bandeja</button><h2>Mensaje recuperado</h2><div class="meta">De: <span>remitente desconocido</span><br>Para: vela.skyline@coralia.net<br>Fecha: Martes, 11 de octubre de 2005, 00:03</div><div class="bodytext">Este mensaje no debería aparecer aquí.
 
 Si has conseguido verlo, significa que todavía queda algo en esta cuenta que no pudieron borrar.</div></div>
-      <div class="mailview" id="view-frenzy"><button class="fakebutton back" data-back>← Volver a la bandeja</button><h2>Gracias por preocuparte.</h2><div class="meta">De: <span class="frenzy-name">Frenzy</span> &lt;frenzy.x@hotmail.com&gt;<br>Para: vela.skyline@coralia.net<br>Fecha: Martes, 11 de octubre de 2005, 00:17<br><span style="color:#8ca5a7">Este mensaje no aparece en el registro de actividad.</span></div><div class="bodytext">Gracias por preocuparte.
+      <div class="mailview" id="view-frenzy"><button class="fakebutton back" data-back>← Volver a la bandeja</button><button type="button" id="returnVoidButton" aria-label="Salir de Void Mode y volver a Coralia Mail">RETORNAR</button><h2>Gracias por preocuparte.</h2><div class="meta">De: <span class="frenzy-name">Frenzy</span> &lt;frenzy.x@hotmail.com&gt;<br>Para: vela.skyline@coralia.net<br>Fecha: Martes, 11 de octubre de 2005, 00:17<br><span style="color:#8ca5a7">Este mensaje no aparece en el registro de actividad.</span></div><div class="bodytext">Gracias por preocuparte.
 
 No hacía falta que hablaras tan alto cuando entraste.
 
@@ -430,7 +433,7 @@ No soy yo quien está escribiendo esto.</div></div>
 <script>
   // Verificar la versión del progreso guardado
   const STORAGE_VERSION_KEY = "arg_storage_version";
-  const CURRENT_STORAGE_VERSION = "2026-10-14-v4";
+  const CURRENT_STORAGE_VERSION = "2026-10-14-v5";
 
   if (localStorage.getItem(STORAGE_VERSION_KEY) !== CURRENT_STORAGE_VERSION) {
     // Borrar solamente los datos de progreso de Coralia Mail
@@ -503,6 +506,15 @@ No soy yo quien está escribiendo esto.</div></div>
     localStorage.removeItem(voidModeActiveKey);
     applyCorruptionPhase();
   }
+
+  // Salida de emergencia: nunca depende de que el audio haya terminado ni de Actualizar.
+  const returnVoidButton = document.getElementById('returnVoidButton');
+  if (returnVoidButton) returnVoidButton.addEventListener('click', () => {
+    exitVoidMode();
+    showFolder('inbox');
+    feedback.classList.remove('error');
+    feedback.textContent = 'Has vuelto a Coralia Mail. Pulsa Actualizar cuando quieras continuar.';
+  });
 
   window.addEventListener('load', () => setTimeout(() => { boot.style.opacity = '0'; setTimeout(() => boot.remove(), 750); }, 1800));
   
