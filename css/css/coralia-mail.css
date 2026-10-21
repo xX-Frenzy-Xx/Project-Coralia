@@ -1,0 +1,232 @@
+:root { --navy:#164c78; --blue:#287db4; --pale:#eaf5fc; --line:#9fc5df; --text:#20384b; }
+  * { box-sizing:border-box; }
+  
+  /* Fondo permanente: Azul con verde degradado difuminado y burbujas */
+  body {
+    margin:0;
+    color:var(--text);
+    font:13px Tahoma, Verdana, Arial, sans-serif;
+    background-color:#5ba393;
+    background-image:
+      radial-gradient(ellipse at 15% 20%, #b8f2e6 0%, #469684 35%, transparent 70%),
+      radial-gradient(ellipse at 85% 75%, #387b9c 0%, transparent 50%),
+      linear-gradient(135deg, #70bcce 0%, #469188 50%, #2f6b82 100%);
+    background-attachment:fixed;
+    min-height:100vh;
+  }
+  body::before { content:""; position:fixed; inset:0; pointer-events:none; z-index:0; opacity:.78;
+    background-image:
+      radial-gradient(circle at 9% 22%, #ffffffa8 0 3px, #ffffff38 4px 13px, #68bdc52b 14px 15px, transparent 17px),
+      radial-gradient(circle at 83% 17%, #ffffffb8 0 2px, #ffffff3d 3px 9px, #5eb9c32b 10px 11px, transparent 13px),
+      radial-gradient(circle at 74% 72%, #ffffffa0 0 4px, #ffffff35 5px 18px, #58aeb72b 19px 20px, transparent 22px),
+      radial-gradient(circle at 20% 78%, #ffffff90 0 2px, #ffffff30 3px 10px, #6bbec32b 11px 12px, transparent 14px),
+      radial-gradient(circle at 48% 40%, #ffffff80 0 1px, transparent 3px),
+      radial-gradient(circle at 94% 53%, #ffffff90 0 2px, transparent 4px);
+    background-size:230px 250px,310px 280px,390px 360px,280px 310px,140px 170px,190px 210px;
+  }
+  body::after { content:""; position:fixed; inset:0; pointer-events:none; z-index:0; opacity:.5;
+    background-image:
+      radial-gradient(ellipse at 25% 20%, #ffffffb8 0%, #ffffff20 22%, transparent 37%),
+      radial-gradient(ellipse at 79% 62%, #ffffff60 0%, transparent 25%),
+      linear-gradient(115deg, transparent 38%, #eaffff20 48%, transparent 59%);
+    mix-blend-mode:screen;
+  }
+
+  .topbar { position:relative; z-index:1; background:linear-gradient(180deg,#4ea5b8,#29798c 58%,#1f5f70); color:white; border-bottom:2px solid #71bcce; padding:13px max(16px,calc((100% - 1050px)/2)); box-shadow:0 4px 18px #4b9da54a,inset 0 1px #ffffffa8; }
+  .brand { font-size:29px; font-weight:bold; letter-spacing:1px; color:#f5ffff; text-shadow:1px 2px #28718a,0 0 10px #d8ffff80; }
+  .tagline { font-size:11px; margin-top:3px; color:#e1fffa; }
+  .status { margin-top:10px; font-size:11px; color:#d5f7f1; }
+  .window { position:relative; z-index:1; max-width:1050px; margin:22px auto; padding:0 12px; }
+  .account { background:#d4f2ecf2; border:1px solid #6daea2; box-shadow:0 12px 32px #3d89913b,0 0 20px #ffffff8a,inset 0 1px #ffffff; }
+  .windowbar { background:linear-gradient(180deg,#a2e3d5,#88cec0); padding:8px 12px; border-bottom:1px solid #65ad9f; font-weight:bold; color:#1b4f45; display:flex; justify-content:space-between; gap:12px; text-shadow:0 1px #ffffffb8; }
+  .window-controls { color:#4d8d99; letter-spacing:4px; white-space:nowrap; }
+  .accountline { padding:10px 13px; background:#d4f0e7; border-bottom:1px solid #a2d6c5; display:flex; justify-content:space-between; gap:8px; flex-wrap:wrap; color:#285e54; }
+  .accountline strong { color:#277a8b; }
+  .toolbar { display:flex; gap:6px; flex-wrap:wrap; padding:9px 12px; background:linear-gradient(90deg,#d4f2eb,#c3e9e8,#d8f5ee); border-bottom:1px solid #a8d8d5; }
+  .fakebutton { border:1px solid #8bc7c9; background:linear-gradient(180deg,#ffffff,#d9f4ef); padding:6px 11px; color:#397887; box-shadow:inset 0 1px #fff,0 1px 2px #4e9a9b20; cursor:default; user-select:none; }
+  .fakebutton:hover { background:linear-gradient(#ffffff,#c8ece9); }
+  .layout { display:grid; grid-template-columns:185px 1fr; min-height:370px; }
+  .sidebar { padding:12px 10px; background:linear-gradient(180deg,#b8ebd9,#96d9c4); border-right:1px solid #6daea2; }
+  .sidehead { font-weight:bold; color:#32788a; padding:5px 7px 9px; }
+  .folder { padding:7px; border:1px solid transparent; color:#477984; cursor:pointer; user-select:none; }
+  .folder.active { background:linear-gradient(90deg,#c0ece7,#d9f6ee); border-color:#a0d6d3; font-weight:bold; color:#236c7d; box-shadow:inset 3px 0 #53b8b5,0 0 12px #5dbab51c; }
+  .folder .count { float:right; color:#6e9da0; font-size:10px; white-space:nowrap; }
+  .side-note { margin:22px 5px 0; font-size:11px; line-height:1.5; color:#739a9a; }
+  .main { min-width:0; background:#e2f7f1f2; color:#245850; }
+  .listhead { display:grid; grid-template-columns: minmax(110px, 1fr) minmax(150px, 2fr) 90px; padding:8px 12px; background:linear-gradient(90deg,#88cec0,#a2e3d5); color:#1b4f45; border-bottom:1px solid #65ad9f; font-weight:bold; }
+  .mailrow { display:grid; grid-template-columns:minmax(110px,1fr) minmax(150px,2fr) 90px; padding:12px; gap:8px; border-bottom:1px solid #a2d6c5; cursor:pointer; align-items:center; background-color:#d4f0e7; color:#285e54; }
+  .mailrow:hover { background:linear-gradient(90deg,#e8fbf6,#f2fffc); }
+  .mailrow.unread { font-weight:bold; color:#1b4f45; }
+  .mailrow .sender,.mailrow .subject { overflow-wrap:anywhere; }
+  .mailrow .date { font-size:11px; color:#7b9da3; text-align:right; }
+  .mailview { display:none; padding:20px; min-height:300px; min-width:0; border-left:1px solid #a2d6c5; }
+  .mailview.show { display:block; }
+  /* Escritorio: lista de mensajes a la izquierda y mensaje abierto a la derecha. */
+  .main.mail-open { display:grid; grid-template-columns:minmax(280px, 42%) minmax(0, 1fr); align-items:start; }
+  .main.mail-open > #inbox, .main.mail-open > #sentbox, .main.mail-open > #junkbox,
+  .main.mail-open > #trashbox, .main.mail-open > #draftsbox { min-width:0; }
+  .main.mail-open > .mailview.show { min-width:0; overflow-wrap:anywhere; }
+  .mailview h2 { color:#28788c; font-size:19px; margin:0 0 16px; text-shadow:0 1px #ffffff; }
+  .meta { border-top:1px solid #d0e9e4; border-bottom:1px solid #d0e9e4; padding:10px 0; line-height:1.8; color:#648991; font-size:12px; }
+  .bodytext { white-space:pre-line; line-height:1.7; padding:18px 0; font-size:13px; color:#365d68; }
+  .attachment { display:inline-block; padding:10px 12px; background:linear-gradient(135deg,#e3f7f2,#d4eeef); border:1px solid #b3dcd9; color:#397788; margin-top:8px; box-shadow:inset 0 1px #ffffffb8; }
+  .back { margin-bottom:15px; }
+  .empty { padding:35px 20px; text-align:center; color:#789c9e; line-height:1.8; }
+  .unlock { position:relative; z-index:1; margin:14px 0 0; border:1px solid #a5d8d5; background:linear-gradient(135deg,#e9faf5,#d7efee); padding:12px; box-shadow:0 8px 22px #4a93951c; }
+  .unlock label { display:block; color:#397889; font-weight:bold; margin-bottom:7px; }
+  .unlockrow { display:flex; gap:7px; }
+  input { min-width:0; flex:1; padding:9px; border:1px solid #a3d0d0; background:#fbfffe; font:13px Tahoma,Verdana,sans-serif; outline-color:#438fbe; color:#315d68; }
+  input::placeholder { color:#9ab6b7; }
+  .unlock button { border:1px solid #4599a8; color:white; background:linear-gradient(#55b5c1,#32869d); padding:0 14px; font:13px Tahoma,Verdana,sans-serif; cursor:pointer; }
+  .feedback { min-height:17px; margin-top:7px; font-size:11px; color:#769b9d; }
+  .feedback.error { color:#a54a4a; }
+  .footer { position:relative; z-index:1; max-width:1050px; margin:0 auto 24px; padding:0 15px; text-align:center; font-size:10px; color:#56888e; }
+  .boot { position:fixed; inset:0; background:radial-gradient(ellipse at 50% 38%,#f4fffc,#c2e9e8 68%,#9fd4d8); z-index:5; display:flex; align-items:center; justify-content:center; transition:opacity .7s ease; }
+  .bootbox { width:min(380px,90vw); padding:24px; background:linear-gradient(145deg,#f7fffd,#d9f4ef); border:1px solid #8bc9ca; box-shadow:0 8px 35px #397f8830,0 0 25px #ffffffa8; text-align:center; color:#2d788a; }
+  .bootlogo { font-size:27px; font-weight:bold; margin-bottom:8px; }
+  .progress { height:13px; border:1px solid #a3d3d2; padding:2px; margin-top:17px; background:#e7f8f4; }
+  .progress span { display:block; height:100%; width:0; background:linear-gradient(90deg,#80d8cc,#48a9c0,#d3fff6); box-shadow:0 0 8px #69cfc466; animation:load 1.7s ease forwards; }
+  @keyframes load { to { width:100%; } }
+
+  .thread-intro { margin:10px 0 16px; color:#65818d; font-size:12px; }
+  .thread-chat { display:flex; flex-direction:column; gap:10px; padding:14px; border:1px solid #c8e6e8; border-radius:12px; background:linear-gradient(145deg,#f5ffff,#e9f7f5); }
+  .thread-message { max-width:86%; padding:10px 12px; border-radius:13px; box-shadow:0 2px 5px #2e87951a; font-size:13px; line-height:1.5; }
+  .thread-message .who { display:block; margin-bottom:4px; font-size:11px; font-weight:bold; color:#3b788b; }
+  .thread-message .when { display:block; margin-top:5px; font-size:10px; color:#73949b; text-align:right; }
+  .thread-message.frenzy, .thread-message.friend { align-self:flex-start; background:#fff; border:1px solid #d0e7ed; border-bottom-left-radius:4px; }
+  .thread-message.vela { align-self:flex-end; background:#d9f4ee; border:1px solid #b7e5dc; border-bottom-right-radius:4px; }
+  .thread-file { display:inline-block; margin-top:6px; padding:5px 8px; border:1px solid #acd6da; border-radius:6px; background:#f4ffff; color:#397a89; font-size:11px; }
+
+  /* Tema verde posterior: toda la interfaz, incluidos los chats, adopta el mismo ambiente. */
+  body.coralia-pure-green { background:#315c48 !important; background-image:none !important; color:#f2f5ef !important; }
+  body.coralia-pure-green::before, body.coralia-pure-green::after { display:none; }
+  body.coralia-pure-green .topbar { background:#243d34; border-color:#587a64; color:#f2f5ef; }
+  body.coralia-pure-green .brand, body.coralia-pure-green .tagline, body.coralia-pure-green .status { color:#f2f5ef; text-shadow:none; }
+  body.coralia-pure-green .account { background:#355f4a; border-color:#668a70; color:#f2f5ef; }
+  body.coralia-pure-green .windowbar, body.coralia-pure-green .listhead { background:#365d49; color:#f2f5ef; border-color:#668a70; text-shadow:none; }
+  body.coralia-pure-green .sidebar { background:#2d5140; border-color:#668a70; color:#f2f5ef; }
+  body.coralia-pure-green .sidehead, body.coralia-pure-green .folder, body.coralia-pure-green .folder .count, body.coralia-pure-green .side-note { color:#f2f5ef; }
+  body.coralia-pure-green .folder.active { background:#496f56; border-color:#8ba58b; color:#fff; box-shadow:inset 3px 0 #b7c8a9; }
+  body.coralia-pure-green .main { background:#365f4a; color:#f2f5ef; }
+  body.coralia-pure-green .accountline, body.coralia-pure-green .mailrow { background:#3b654f; border-color:#668a70; color:#f2f5ef; }
+  body.coralia-pure-green .accountline strong, body.coralia-pure-green .mailrow.unread, body.coralia-pure-green .mailrow .date { color:#f2f5ef; }
+  body.coralia-pure-green .mailrow:hover { background:#496f56; }
+  body.coralia-pure-green .toolbar, body.coralia-pure-green .unlock { background:#2d5140; border-color:#668a70; color:#f2f5ef; }
+  body.coralia-pure-green .fakebutton, body.coralia-pure-green .attachment, body.coralia-pure-green .thread-file { background:#416a52; border-color:#77967b; color:#f2f5ef; }
+  body.coralia-pure-green .mailview h2, body.coralia-pure-green .meta, body.coralia-pure-green .bodytext,
+  body.coralia-pure-green .thread-intro, body.coralia-pure-green .feedback, body.coralia-pure-green .empty,
+  body.coralia-pure-green .mailview .meta span { color:#f2f5ef !important; text-shadow:none; }
+  body.coralia-pure-green .meta { border-color:#668a70; }
+  body.coralia-pure-green .thread-chat { background:#2d5140; border-color:#668a70; }
+  body.coralia-pure-green .thread-message.frenzy, body.coralia-pure-green .thread-message.friend { background:#3b654f; border-color:#668a70; color:#f2f5ef; }
+  body.coralia-pure-green .thread-message.vela { background:#496f56; border-color:#77967b; color:#fff; }
+  body.coralia-pure-green .thread-message .who, body.coralia-pure-green .thread-message .when { color:#f2f5ef; }
+  body.coralia-pure-green input { background:#243d34; border-color:#668a70; color:#f2f5ef; }
+  body.coralia-pure-green input::placeholder { color:#c8d8c7; }
+  body.coralia-pure-green .footer { color:#f2f5ef; }
+  .mailrow.glitched { color:#62766b !important; text-shadow:1px 0 #a7b5a6,-1px 0 #d5c4c4; letter-spacing:.15px; }
+  .mailrow.glitched .sender, .mailrow.glitched .subject { text-decoration:line-through; text-decoration-color:#a8b5a8; }
+  .mailview.glitched-view h2, .mailview.glitched-view .meta, .mailview.glitched-view .bodytext { text-shadow:1px 0 #c7d4c6,-1px 0 #8ca398; }
+  .mailview.glitched-view .bodytext { overflow-wrap:anywhere; }
+
+  /* Void Mode: pantalla realmente negra, sin paneles ajenos al correo de Frenzy. */
+  body.coralia-void { background:#000 !important; background-image:none !important; color:#39ff72 !important; min-height:100vh; }
+  body.coralia-void::before, body.coralia-void::after { display:none; }
+  body.coralia-void .topbar, body.coralia-void .accountline, body.coralia-void .toolbar,
+  body.coralia-void .sidebar, body.coralia-void .windowbar, body.coralia-void .unlock,
+  body.coralia-void .footer, body.coralia-void .toast { display:none !important; }
+  body.coralia-void .window { margin:0 auto; padding:0; max-width:760px; }
+  body.coralia-void .account, body.coralia-void .layout, body.coralia-void .main,
+  body.coralia-void #inbox, body.coralia-void #sentbox, body.coralia-void #junkbox,
+  body.coralia-void #trashbox, body.coralia-void #draftsbox { display:block !important; background:#000 !important; border:0 !important; box-shadow:none !important; color:#39ff72 !important; }
+  body.coralia-void .listhead, body.coralia-void .mailrow, body.coralia-void .empty,
+  body.coralia-void .mailview:not(#view-frenzy) { display:none !important; }
+  body.coralia-void #view-frenzy { display:block !important; min-height:100vh; padding:clamp(20px,5vw,54px); background:#000 !important; color:#39ff72 !important; }
+  body.coralia-void #view-frenzy .back { display:none !important; }
+  #returnVoidButton { display:none; margin:0 0 22px auto; padding:5px 11px; border:1px solid #2e9d4b; border-radius:4px; background:#238342; color:#fff; font:600 11px/1.2 Arial,sans-serif; letter-spacing:.35px; cursor:pointer; box-shadow:0 1px 3px #0002; }
+  #returnVoidButton:hover, #returnVoidButton:focus-visible { background:#2b9b4d; outline:2px solid #8bffab; outline-offset:2px; }
+  body.coralia-void #returnVoidButton { display:block; }
+  body.coralia-void #view-frenzy h2, body.coralia-void #view-frenzy .meta,
+  body.coralia-void #view-frenzy .bodytext, body.coralia-void #view-frenzy .attachment,
+  body.coralia-void #view-frenzy .attachment div, body.coralia-void #view-frenzy .meta span { color:#39ff72 !important; background:#000 !important; border-color:#164d27 !important; text-shadow:none !important; }
+  body.coralia-void #view-frenzy audio { filter:grayscale(1) sepia(1) hue-rotate(70deg) saturate(3); max-width:100%; }
+
+  /* Ajustes reales de distribución móvil: columnas apiladas y sin desbordamiento horizontal. */
+  html, body { max-width:100%; overflow-x:hidden; }
+  .window, .account, .layout, .main, .mailview, #inbox, #sentbox, #junkbox, #draftsbox { min-width:0; max-width:100%; }
+  .mailrow, .listhead { grid-template-columns:minmax(0,1fr) minmax(0,1.5fr) 68px; gap:6px; }
+  .mailrow { overflow-wrap:anywhere; }
+  @media (max-width:680px) {
+    .topbar { padding:12px 14px; }
+    .brand { font-size:23px; }
+    .status { line-height:1.5; }
+    .window { margin:10px auto; padding:0 8px; }
+    .layout { display:flex; flex-direction:column; min-height:0; }
+    .sidebar { border-right:0; border-bottom:1px solid #6daea2; padding:8px; }
+    .sidehead { padding:4px 5px 7px; }
+    .folder { display:inline-block; vertical-align:top; width:calc(50% - 5px); min-height:35px; margin:2px; padding:8px 6px; overflow-wrap:anywhere; }
+    .folder .count { float:none; display:block; margin-top:3px; white-space:normal; }
+    .side-note { margin:8px 5px 2px; }
+    .accountline { display:block; line-height:1.7; overflow-wrap:anywhere; }
+    .accountline span { display:block; }
+    .toolbar { gap:5px; padding:8px; }
+    .fakebutton { padding:7px 8px; }
+    .listhead { grid-template-columns:minmax(0,1fr) minmax(0,1.2fr) 58px; padding:8px; font-size:11px; }
+    .mailrow { grid-template-columns:minmax(0,1fr) minmax(0,1.2fr) 58px; padding:10px 8px; font-size:11px; gap:5px; }
+    .mailrow .date { font-size:10px; }
+    .main.mail-open { display:block; }
+    .main.mail-open > #inbox, .main.mail-open > #sentbox, .main.mail-open > #junkbox,
+    .main.mail-open > #trashbox, .main.mail-open > #draftsbox { display:none !important; }
+    .mailview { padding:14px 12px; overflow-wrap:anywhere; border-left:0; }
+    .thread-chat { padding:9px; }
+    .thread-message { max-width:96%; }
+    .unlock { margin-top:10px; }
+    .footer { padding:0 10px; line-height:1.5; }
+    body.coralia-pure-green .sidebar { border-bottom-color:#4aa660; }
+  }
+  @media (max-width:390px) {
+    .folder { width:100%; margin:2px 0; }
+    .listhead { grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr) 52px; font-size:10px; }
+    .mailrow { grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr) 52px; font-size:10px; }
+  }
+
+  /* Vistas especiales para las imágenes de los códigos */
+  .secret-image-view { text-align:center; padding:10px; }
+  .secret-image-view img { max-width:100%; height:auto; border:2px solid #6daea2; box-shadow:0 4px 18px #0005; border-radius:6px; margin-bottom:12px; }
+
+  .toast { position:fixed; z-index:12; cursor:default; top:18px; right:18px; width:min(310px,calc(100vw - 36px)); padding:13px 16px; border:1px solid #85b7bd; background:linear-gradient(145deg,#f5fffcf5,#c8e8e5f5); color:#315f68; box-shadow:0 7px 28px #173d3d35; opacity:0; transform:translateY(-12px); pointer-events:none; transition:opacity .35s ease,transform .35s ease; }
+  .toast strong,.toast span { display:block; }
+  .toast strong { font-size:13px; margin-bottom:5px; }
+  .toast span { font-size:11px; }
+  .toast.show { opacity:1; transform:translateY(0); }
+  .toast[data-target]:not([data-target=""]) { pointer-events:auto; cursor:pointer; }
+  .toast[data-target]:not([data-target=""]):hover { filter:brightness(1.04); }
+  .toast:focus-visible { outline:2px solid #287db4; outline-offset:3px; }
+  .blackout { position:fixed; inset:0; z-index:30; background:#000; opacity:0; visibility:hidden; pointer-events:none; transition:opacity 1.2s ease,visibility 1.2s ease; }
+  .blackout.active { opacity:1; visibility:visible; pointer-events:all; }
+  .blackout.fadeout { opacity:0; }
+
+/* Cabecera compacta: mantiene el aire de web de 2005 */
+.topbar { padding: 9px 14px !important; min-height: 0 !important; text-align: left !important; }
+.topbar .brand { font-family: Tahoma, Arial, sans-serif !important; font-weight: 700 !important; font-size: 20px !important; letter-spacing: .2px !important; }
+.topbar .tagline { font-size: 12px !important; margin-top: 2px !important; }
+.topbar .status { font-size: 10px !important; }
+@media (max-width: 600px) { .topbar { padding: 8px 10px !important; } .topbar .brand { font-size: 18px !important; } .topbar .status { line-height: 1.5; } }
+
+
+/* Ajuste visual 1.5: fondo y cabecera más sencillos; se conserva la interfaz del correo. */
+body:not(.coralia-pure-green):not(.coralia-void){background:#9fcfc7!important;background-image:none!important;background-attachment:fixed}
+body::before,body::after{display:none!important}
+.topbar{background:#287a86!important;border:0!important;border-bottom:1px solid #1e626d!important;box-shadow:none!important}
+.brand{font-family:Tahoma,Verdana,Arial,sans-serif!important;color:#fff!important;text-shadow:none!important;font-weight:700!important;letter-spacing:.5px!important}
+.tagline,.status{color:#e8f7f5!important;text-shadow:none!important}
+.boot{background:#b9dfda!important;background-image:none!important}
+.bootbox{background:#e7f5f2!important;border:1px solid #a1cfc9!important;box-shadow:0 5px 16px #275b5b18!important}
+.progress span{box-shadow:none!important}
+
+/* V2: estas reglas deben prevalecer sobre el fondo minimalista de la versión anterior. */
+body.coralia-pure-green:not(.coralia-void){background:#315c48!important;background-image:none!important;color:#f2f5ef!important}
+body.coralia-void{background:#000!important;background-image:none!important;color:#39ff72!important}
+body.coralia-pure-green .topbar{background:#243d34!important;border-color:#587a64!important;color:#f2f5ef!important}
+body.coralia-pure-green .brand,body.coralia-pure-green .tagline,body.coralia-pure-green .status{color:#f2f5ef!important;text-shadow:none!important}
+#refreshButton[aria-disabled="true"]{opacity:.48;cursor:not-allowed;filter:grayscale(.25)}
