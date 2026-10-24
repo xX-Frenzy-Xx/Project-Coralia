@@ -1,5 +1,5 @@
-Bienvenidos a Coralia (Mail)
+A short web-based alternate reality game that aims to invoke a 2000s style. Use the refresh button to move forward at times—and remember, don't leave anything unread! 😉
 
-Un pequeño juego de realidad alterna y para navegador que busca apelar el estilo de los 2000 usa el botón de actualizar para avanzar en algunos momentos, y recuerda, no dejes nada sin leer :wink:
+There will be more updates, but since the page will evolve, this is a one-time opportunity!
 
-Abran mas actualizaciones, pero la pagina cambiara asi que es una "oportunidad única"
+Original Version is made on Spanish
