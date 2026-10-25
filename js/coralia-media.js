@@ -32,10 +32,10 @@
           const msPart = String(safe % 1000).padStart(3, '0');
           return h + ':' + m + ':' + s + '.' + msPart;
         };
-        const vtt = 'WEBVTT\\n\\n' + cues.map((cue, index) =>
-          (index + 1) + '\\n' + vttTime(cue[0]) + ' --> ' + vttTime(cue[1]) + '\\n' +
+        const vtt = 'WEBVTT\n\n' + cues.map((cue, index) =>
+          (index + 1) + '\n' + vttTime(cue[0]) + ' --> ' + vttTime(cue[1]) + '\n' +
           ((cue[2] && cue[2] !== 'EFECTO') ? cue[2] + ': ' : '') + cue[3]
-        ).join('\\n\\n');
+        ).join('\n\n');
         const track = document.createElement('track');
         track.kind = 'subtitles';
         track.label = lang === 'es' ? 'Español' : 'English';
@@ -47,5 +47,28 @@
     }
     return { videoId, language: lang, source: source.src };
   }
-  window.CoraliaMedia = { configureVideo };
+  function initializeVideos(root = document) {
+    root.querySelectorAll('video[data-localized-video]').forEach(video => {
+      if (video.dataset.coraliaConfigured === 'true') return;
+      video.dataset.coraliaConfigured = 'true';
+      const lang = localStorage.getItem('coralia_language') || document.documentElement.lang || 'es';
+      configureVideo(video, video.dataset.localizedVideo, lang).catch(error => {
+        console.warn('No se pudo preparar el VHS localizado:', error);
+      });
+    });
+  }
+  window.CoraliaMedia = { configureVideo, initializeVideos };
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => initializeVideos());
+  } else {
+    initializeVideos();
+  }
+  new MutationObserver(records => records.forEach(record => {
+    record.addedNodes.forEach(node => {
+      if (node.nodeType === 1) {
+        if (node.matches && node.matches('video[data-localized-video]')) initializeVideos(node.parentNode || document);
+        else initializeVideos(node);
+      }
+    });
+  })).observe(document.documentElement, { childList: true, subtree: true });
 })();
