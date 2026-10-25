@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coralia Mail · Preparación bilingüe</title>
+  <link rel="stylesheet" href="css/coralia-mail.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <div class="brand" data-i18n="mail.brand">Coralia Mail</div>
+      <div class="tagline" data-i18n="mail.tagline">Tu correo de siempre, ahora en línea.</div>
+    </div>
+    <div class="language-picker" aria-label="Idioma">
+      <span data-i18n="languagePrompt">¿Cuál es tu idioma?</span>
+      <button type="button" data-language="es" aria-pressed="true">ES</button>
+      <button type="button" data-language="en" aria-pressed="false">EN</button>
+    </div>
+  </header>
+
+  <main class="window">
+    <section class="account">
+      <div class="accountline"><strong data-i18n="mail.account">Cuenta</strong></div>
+      <div class="layout">
+        <aside class="sidebar">
+          <div class="sidehead" data-i18n="mail.account">Cuenta</div>
+          <button class="folder active" type="button" data-i18n="mail.folders.inbox">Bandeja de entrada</button>
+          <button class="folder" type="button" data-i18n="mail.folders.sent">Enviados</button>
+          <button class="folder" type="button" data-i18n="mail.folders.drafts">Borradores</button>
+          <button class="folder" type="button" data-i18n="mail.folders.trash">Elementos eliminados</button>
+          <button class="folder" type="button" data-i18n="mail.folders.junk">Correo no deseado</button>
+        </aside>
+        <section class="main">
+          <div class="toolbar">
+            <button type="button" data-i18n="mail.actions.compose">Redactar</button>
+            <button type="button" data-i18n="mail.actions.delete">Eliminar</button>
+            <button type="button" data-i18n="mail.actions.options">Opciones</button>
+            <button type="button" id="refreshButton" data-i18n="mail.actions.refresh">Actualizar</button>
+          </div>
+          <div class="listhead">
+            <span data-i18n="mail.columns.sender">Remitente</span>
+            <span data-i18n="mail.columns.subject">Asunto</span>
+            <span data-i18n="mail.columns.date">Fecha</span>
+          </div>
+          <div class="empty" data-i18n="mail.states.noMessages">No hay mensajes para mostrar.</div>
+          <p id="feedback" data-i18n="mail.states.ready">Coralia Mail está listo.</p>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const languageButtons = document.querySelectorAll('[data-language]');
+    async function setLanguage(language) {
+      const response = await fetch('locales/' + language + '.json');
+      if (!response.ok) throw new Error('No se pudo cargar el idioma: ' + language);
+      const dictionary = await response.json();
+      document.documentElement.lang = language;
+      document.querySelectorAll('[data-i18n]').forEach(element => {
+        const value = element.dataset.i18n.split('.').reduce((node, key) => node && node[key], dictionary);
+        if (typeof value === 'string') element.textContent = value;
+      });
+      languageButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.language === language)));
+      localStorage.setItem('coralia_language', language);
+    }
+    languageButtons.forEach(button => button.addEventListener('click', () => {
+      setLanguage(button.dataset.language).catch(console.error);
+    }));
+    setLanguage(localStorage.getItem('coralia_language') || 'es').catch(console.error);
+  </script>
+</body>
+</html>
