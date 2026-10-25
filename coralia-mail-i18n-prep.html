@@ -122,7 +122,7 @@
   const wrapped = document.createElement('script');
   wrapped.textContent = originalScript.replace(
     "function insertInboxRow(sender, subject, date, viewName) {",
-    "function insertInboxRow(sender, subject, date, viewName) {\n    const translated = (dynamicLocale.dynamicRows || {})[viewName];\n    if (translated) { sender = translated.sender || sender; subject = translated.subject || subject; }"
+    "function insertInboxRow(sender, subject, date, viewName) {\n    const translated = ((window.CORALIA_LOCALE || {}).dynamicRows || {})[viewName];\n    if (translated) { sender = translated.sender || sender; subject = translated.subject || subject; }"
   );
   document.body.appendChild(wrapped);
 })().catch(error => { console.error('Coralia localization failed:', error); });
