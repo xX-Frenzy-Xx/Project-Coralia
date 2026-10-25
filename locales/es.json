@@ -413,5 +413,12 @@
   "subtitleFiles": {
     "movistarVm05": "subtitles/es.json#movistarVm05",
     "sinTitulo": "subtitles/es.json#sinTitulo"
+  },
+  "futureContentWorkflow": {
+    "messageViews": "Añade la vista de cada mensaje una sola vez dentro de messages con una clave estable. El contenido se mantiene en español aquí; la versión inglesa usará la misma clave.",
+    "mailRows": "Añade remitente, asunto y fecha a mailRows para mensajes iniciales o a dynamicRows para mensajes revelados después.",
+    "datedUpdates": "Registra las actualizaciones en updates con una clave de fecha YYYY-MM-DD y las claves de contenido de esa tanda.",
+    "videos": "Dentro de un mensaje, usa <video controls data-localized-video=\"halloween-vhs-01\"></video>. Registra archivos y subtítulos por idioma en media/videos.json.",
+    "important": "La progresión narrativa sigue conectada al JavaScript original. Los textos nuevos ya no tendrán que extraerse dos veces, pero una nueva tanda narrativa debe conectarse una vez a la lógica de actualización."
   }
 }
