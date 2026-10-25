@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "instructions": "Añade cada VHS aquí una sola vez. El reproductor escogerá src y subtítulos según el idioma elegido; el HTML del mensaje solo necesita data-localized-video con el id.",
+  "videos": {
+    "halloween-vhs-01": {
+      "title": "VHS 01",
+      "es": {
+        "src": "media/videos/halloween-vhs-01-es.mp4",
+        "subtitleFile": "subtitles/es.vtt"
+      },
+      "en": {
+        "src": "media/videos/halloween-vhs-01-en.mp4",
+        "subtitleFile": "subtitles/en.vtt"
+      }
+    },
+    "halloween-vhs-02": {
+      "title": "VHS 02",
+      "es": {
+        "src": "media/videos/halloween-vhs-02-es.mp4",
+        "subtitleFile": "subtitles/es.vtt"
+      },
+      "en": {
+        "src": "media/videos/halloween-vhs-02-en.mp4",
+        "subtitleFile": "subtitles/en.vtt"
+      }
+    }
+  }
+}
