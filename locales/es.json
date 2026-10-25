@@ -1,0 +1,60 @@
+{
+  "languagePrompt": "¿Cuál es tu idioma?",
+  "languageSpanish": "Español",
+  "languageEnglish": "English",
+  "hub": {
+    "brand": "Project Coralia",
+    "version": "Archivo del proyecto · V2",
+    "nav": {
+      "home": "Inicio",
+      "archive": "Archivos",
+      "people": "Personas",
+      "about": "Sobre el proyecto"
+    },
+    "eyebrow": "ARCHIVO CORALIA",
+    "title": "Hay cosas que no deberían haberse perdido.",
+    "intro": "Un archivo dedicado a reconstruir una parte olvidada de internet y a encontrar las pistas que quedaron atrás.",
+    "sections": {
+      "foundCodes": "Códigos encontrados",
+      "foundAudios": "Audios encontrados",
+      "foundVideos": "Vídeos encontrados"
+    },
+    "pending": "Todavía no se ha encontrado nada.",
+    "fictionDisclaimer": "Project Coralia es una obra de ficción interactiva."
+  },
+  "mail": {
+    "brand": "Coralia Mail",
+    "tagline": "Tu correo de siempre, ahora en línea.",
+    "account": "Cuenta",
+    "folders": {
+      "inbox": "Bandeja de entrada",
+      "sent": "Enviados",
+      "drafts": "Borradores",
+      "trash": "Elementos eliminados",
+      "junk": "Correo no deseado"
+    },
+    "columns": {
+      "sender": "Remitente",
+      "subject": "Asunto",
+      "date": "Fecha"
+    },
+    "actions": {
+      "search": "Buscar",
+      "refresh": "Actualizar",
+      "compose": "Redactar",
+      "delete": "Eliminar",
+      "options": "Opciones",
+      "back": "Volver"
+    },
+    "states": {
+      "ready": "Coralia Mail está listo.",
+      "loading": "Cargando mensajes…",
+      "noMessages": "No hay mensajes para mostrar.",
+      "cooldown": "Coralia necesita un momento antes de volver a sincronizar.",
+      "audioIncomplete": "La grabación sigue incompleta. Escucha el audio hasta el final antes de actualizar."
+    }
+  },
+  "subtitles": {
+    "velaColor": "green"
+  }
+}
