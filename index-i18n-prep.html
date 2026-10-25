@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project Coralia · Preparación bilingüe</title>
+  <link rel="stylesheet" href="css/coralia-hub.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <div>
+        <div class="brand" data-i18n="hub.brand">Project Coralia</div>
+        <p class="version" data-i18n="hub.version">Archivo del proyecto · V2</p>
+      </div>
+      <div class="language-picker" aria-label="Idioma">
+        <span data-i18n="languagePrompt">¿Cuál es tu idioma?</span>
+        <button type="button" data-language="es" aria-pressed="true">ES</button>
+        <button type="button" data-language="en" aria-pressed="false">EN</button>
+      </div>
+    </header>
+
+    <nav class="nav" aria-label="Navegación">
+      <button type="button" aria-current="true" data-i18n="hub.nav.home">Inicio</button>
+      <button type="button" data-i18n="hub.nav.archive">Archivos</button>
+      <button type="button" data-i18n="hub.nav.people">Personas</button>
+      <button type="button" data-i18n="hub.nav.about">Sobre el proyecto</button>
+    </nav>
+
+    <main class="view">
+      <section class="hero">
+        <div class="eyebrow" data-i18n="hub.eyebrow">ARCHIVO CORALIA</div>
+        <h1 data-i18n="hub.title">Hay cosas que no deberían haberse perdido.</h1>
+        <p data-i18n="hub.intro">Un archivo dedicado a reconstruir una parte olvidada de internet y a encontrar las pistas que quedaron atrás.</p>
+      </section>
+      <section aria-label="Progreso del archivo">
+        <div class="section-head"><h2 data-i18n="hub.sections.foundCodes">Códigos encontrados</h2></div>
+        <p data-i18n="hub.pending">Todavía no se ha encontrado nada.</p>
+        <div class="section-head"><h2 data-i18n="hub.sections.foundAudios">Audios encontrados</h2></div>
+        <p data-i18n="hub.pending">Todavía no se ha encontrado nada.</p>
+        <div class="section-head"><h2 data-i18n="hub.sections.foundVideos">Vídeos encontrados</h2></div>
+        <p data-i18n="hub.pending">Todavía no se ha encontrado nada.</p>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <span data-i18n="hub.fictionDisclaimer">Project Coralia es una obra de ficción interactiva.</span>
+    </footer>
+  </div>
+  <script>
+    const languageButtons = document.querySelectorAll('[data-language]');
+    async function setLanguage(language) {
+      const response = await fetch('locales/' + language + '.json');
+      if (!response.ok) throw new Error('No se pudo cargar el idioma: ' + language);
+      const dictionary = await response.json();
+      document.documentElement.lang = language;
+      document.querySelectorAll('[data-i18n]').forEach(element => {
+        const value = element.dataset.i18n.split('.').reduce((node, key) => node && node[key], dictionary);
+        if (typeof value === 'string') element.textContent = value;
+      });
+      languageButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.language === language)));
+      localStorage.setItem('coralia_language', language);
+    }
+    languageButtons.forEach(button => button.addEventListener('click', () => {
+      setLanguage(button.dataset.language).catch(console.error);
+    }));
+    setLanguage(localStorage.getItem('coralia_language') || 'es').catch(console.error);
+  </script>
+</body>
+</html>
