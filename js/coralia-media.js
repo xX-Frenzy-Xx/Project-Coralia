@@ -10,9 +10,42 @@
     const s = String(Math.floor((safe % 60000) / 1000)).padStart(2, '0');
     return h + ':' + m + ':' + s + '.' + String(safe % 1000).padStart(3, '0');
   };
+  const isEffect = speaker => ['EFECTO','EFFECT','EFECT','SFX'].includes(String(speaker || '').toUpperCase());
+  const speakerColor = speaker => {
+    const key = String(speaker || '').toUpperCase();
+    if (key === 'VELA' || key === 'VELLA') return '#8ee6a5';
+    if (key === 'FRENZY') return '#9bd9ff';
+    if (key === 'MOVISTAR') return '#c7b4ff';
+    if (key === 'PSYCO') return '#d8b4fe';
+    if (isEffect(key)) return '#b9c8cf';
+    return '#e2edf3';
+  };
   const captionText = cue => {
-    const speaker = cue[2] && !['EFECTO','EFFECT','EFECT','SFX'].includes(String(cue[2]).toUpperCase()) ? cue[2] + ': ' : '';
+    const speaker = cue[2] && !isEffect(cue[2]) ? cue[2] + ': ' : '';
     return speaker + cue[3];
+  };
+  function renderCaption(panel, cue) {
+    panel.replaceChildren();
+    if (!cue) return;
+    const speaker = cue[2] || '';
+    const color = speakerColor(speaker);
+    panel.style.borderLeftColor = color;
+    if (speaker && !isEffect(speaker)) {
+      const label = document.createElement('span');
+      label.textContent = speaker + ': ';
+      label.style.cssText = 'font-weight:700;color:' + color + ';';
+      panel.appendChild(label);
+    }
+    const line = document.createElement('span');
+    line.textContent = cue[3] || '';
+    line.style.color = color;
+    panel.appendChild(line);
+  }
+  const captionVtt = cue => {
+    const speaker = cue[2] || '';
+    const safeText = captionText(cue).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    const voice = isEffect(speaker) ? 'Effect' : speaker.replace(/[^a-zA-Z0-9 _-]/g, '');
+    return '<v ' + voice + '>' + safeText + '</v>';
   };
   async function loadCues(id, lang) {
     const response = await fetch('subtitles/' + lang + '.json');
@@ -29,7 +62,7 @@
       panel.className = 'coralia-audio-subtitles';
       panel.setAttribute('role', 'status');
       panel.setAttribute('aria-live', 'polite');
-      panel.style.cssText = 'box-sizing:border-box;width:100%;min-height:2.6em;margin-top:8px;padding:8px 10px;background:#101a25;color:#e2edf3;border-left:2px solid #79a9b6;font:12px/1.55 Tahoma,Arial,sans-serif;white-space:normal;';
+      panel.style.cssText = 'box-sizing:border-box;width:100%;min-height:2.6em;margin-top:8px;padding:8px 10px;background:rgba(16,26,37,.58);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);color:#e2edf3;border-left:2px solid rgba(121,169,182,.8);font:12px/1.55 Tahoma,Arial,sans-serif;white-space:normal;';
       media.insertAdjacentElement('afterend', panel);
     }
     return panel;
@@ -48,9 +81,13 @@
     const update = () => {
       const now = audio.currentTime * 1000;
       const cue = cues.find(item => now >= item[0] && now < item[1]);
-      panel.textContent = cue ? captionText(cue) : (audio.paused ? languageLabel + (lang === 'en' ? ' · Play the audio to see captions.' : ' · Reproduce el audio para ver los subtítulos.') : '');
+      if (cue) renderCaption(panel, cue);
+      else {
+        panel.style.borderLeftColor = 'rgba(121,169,182,.8)';
+        panel.textContent = audio.paused ? languageLabel + (lang === 'en' ? ' · Play the audio to see captions.' : ' · Reproduce el audio para ver los subtítulos.') : '';
+      }
     };
-    const end = () => { panel.textContent = languageLabel + (lang === 'en' ? ' · End of recording.' : ' · Fin de la grabación.'); };
+    const end = () => { panel.style.borderLeftColor = 'rgba(121,169,182,.8)'; panel.textContent = languageLabel + (lang === 'en' ? ' · End of recording.' : ' · Fin de la grabación.'); };
     audio._coraliaCaptionUpdate = update;
     audio._coraliaCaptionEnd = end;
     audio.addEventListener('timeupdate', update);
@@ -81,9 +118,9 @@
       if (subtitleResponse.ok) {
         const subtitleData = await subtitleResponse.json();
         const cues = subtitleData.cues || [];
-        const vtt = 'WEBVTT\\n\\n' + cues.map((cue, index) =>
+        const vtt = 'WEBVTT\\n\\nSTYLE\\n::cue { background-color: rgba(0, 0, 0, 0.42); }\\n::cue(v[voice="Vela"]), ::cue(v[voice="Vella"]) { color: #8ee6a5; }\\n::cue(v[voice="Frenzy"]) { color: #9bd9ff; }\\n::cue(v[voice="Movistar"]) { color: #c7b4ff; }\\n::cue(v[voice="Psyco"]) { color: #d8b4fe; }\\n::cue(v[voice="Effect"]) { color: #b9c8cf; }\\n\\n' + cues.map((cue, index) =>
           (index + 1) + '\\n' + timeText(cue[0]) + ' --> ' + timeText(cue[1]) + '\\n' +
-          captionText(cue)
+          captionVtt(cue)
         ).join('\\n\\n');
         const track = document.createElement('track');
         track.kind = 'subtitles';
