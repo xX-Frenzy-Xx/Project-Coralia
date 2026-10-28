@@ -3,15 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Coralia Mail - Bandeja de entrada</title>
+<title>Coralia Mail</title>
 <link rel="stylesheet" href="css/coralia-mail.css">
 </head>
 <body>
+<div id="languageGate" style="position:fixed;inset:0;z-index:20000;display:none;align-items:center;justify-content:center;padding:20px;background:#e7f3fb;color:#20384b;font-family:Tahoma,Verdana,Arial,sans-serif"><div style="width:min(420px,100%);padding:28px 22px;border:1px solid #9fc5df;border-radius:5px;background:linear-gradient(145deg,#f9fdff,#dceefa);box-shadow:0 10px 45px #163a5533;text-align:center"><div style="font-size:12px;letter-spacing:.18em;color:#6689a0;margin-bottom:16px">◈ CORALIA MAIL</div><h1 style="font-size:21px;font-weight:normal;letter-spacing:.12em;margin:0 0 22px">LANGUAGE</h1><div style="display:flex;gap:10px;justify-content:center"><button type="button" data-gate-language="es" style="flex:1;min-width:0;padding:12px 8px;border:1px solid #8ab7d3;border-radius:4px;background:#fff;color:#20384b;font:inherit;cursor:pointer">Español Latino</button><button type="button" data-gate-language="en" style="flex:1;min-width:0;padding:12px 8px;border:1px solid #8ab7d3;border-radius:4px;background:#fff;color:#20384b;font:inherit;cursor:pointer">English</button></div></div></div>
 <div class="blackout" id="blackout" aria-hidden="true"></div>
 <div id="testPanel" style="display:none;position:fixed;z-index:10000;right:12px;bottom:12px;background:#fff6cc;border:2px solid #a68b36;color:#40370c;padding:10px;font:12px Tahoma,Arial,sans-serif;box-shadow:0 2px 12px #0004;border-radius:4px"><strong>MODO DE PRUEBA</strong><div style="margin:5px 0">Progreso local de Coralia</div><button id="resetProgress" type="button">Reiniciar ARG</button></div>
 <div class="toast" id="toast" role="button" tabindex="0" aria-label="Abrir el mensaje recibido" aria-live="polite" data-target=""><strong id="toastTitle">Mensajes actualizados..?</strong><span id="toastBody">3 notificaciones nuevas</span></div>
 <div class="boot" id="boot"><div class="bootbox"><div class="bootlogo">CORALIA MAIL</div><div>Entrando a Coralia Mail...</div><div style="font-size:11px;margin-top:7px;color:#6689a0">Recuperando bandeja de entrada</div><div class="progress"><span></span></div></div></div>
-<header class="topbar"><div class="brand" id="brand">◈ CORALIA MAIL</div><div class="tagline" id="tagline">¡Escribe tu historia!</div><div class="status"><a href="index.html" style="color:inherit;text-decoration:underline;margin-right:8px">← Project Coralia</a> ● Servicio disponible &nbsp; | &nbsp; Coralia Mail v2.0 Beta &nbsp; | &nbsp; 2005</div></header>
+<header class="topbar"><div class="brand" id="brand">◈ CORALIA MAIL</div><div class="tagline" id="tagline">¡Escribe tu historia!</div><div class="status"><a href="index.html" style="color:inherit;text-decoration:underline;margin-right:8px">← Project Coralia</a> ● Servicio disponible &nbsp; | &nbsp; Coralia Mail v2.0 Beta &nbsp; | &nbsp; 2005</div><div id="languagePicker" aria-label="Selector de idioma" style="display:flex;align-items:center;gap:5px;flex-wrap:wrap;font:12px Tahoma,Verdana,Arial,sans-serif;margin-left:auto;padding:4px 7px;border:1px solid #9fc5df;border-radius:4px;background:#eaf5fc;color:#20384b"><span data-language-prompt>LANGUAGE</span><button type="button" data-language="es" style="cursor:pointer;padding:3px 7px">Español Latino</button><button type="button" data-language="en" style="cursor:pointer;padding:3px 7px">English</button></div></header>
 <div class="window"><section class="account">
   <div class="windowbar"><span>Bandeja de entrada - Coralia Mail</span><span class="window-controls">_ □ ×</span></div>
   <div class="accountline"><span>Sesión iniciada como: <strong>vela.skyline@coralia.net</strong></span><span>Último acceso: 10/10/2005</span></div>
@@ -57,164 +58,7 @@
       </div>
       
       <!-- Vistas de correos -->
-      <div class="mailview" id="view-thread-frenzy"><button class="fakebutton back" data-back>← Volver a la bandeja</button><h2>te dejo tunear el correo :)</h2><div class="meta">Conversación entre Frenzy y Vela<br>Fecha: Martes, 4 de octubre de 2005</div><div class="thread-intro">Frenzy acaba de enterarse de que Vela ya tiene su propia dirección de Coralia. La conversación sigue guardada en la bandeja.</div><div class="thread-chat"><div class="thread-message frenzy"><span class="who">Frenzy · frenzy.x@hotmail.com</span>¡¡POR FIN tienes correo propio!! Te voy a pasar un par de cositas para que dejes esa cuenta bonita. La interfaz por defecto parece hecha por alguien que odia los colores jajaja.<span class="thread-file">▧ aero_theme.cor · tema para Coralia</span><span class="when">16:42</span></div><div class="thread-message vela"><span class="who">Vela · vela.skyline@coralia.net</span>JAJAJA llevo diez minutos intentando cambiar el fondo. ¿Por qué todo tiene que estar escondido en Opciones? Pásame eso, por favor. Pero nada de poner mi correo rosa chicle.</div><div class="thread-message frenzy"><span class="who">Frenzy · frenzy.x@hotmail.com</span>Rosa chicle era mi segunda opción 😔. También te mando unos iconitos y una firma que hice. Si algo se rompe, no fui yo. (Sí fui yo.)<span class="thread-file">▧ mini_icons.zip · 4 iconos</span><span class="when">16:47</span></div><div class="thread-message vela"><span class="who">Vela · vela.skyline@coralia.net</span>La firma quedó bonita, no te voy a mentir. Te debo una. Cuando nos veamos me ayudas a dejarlo todo bien y te invito algo. Gracias por emocionarte más que yo con mi propio correo, tontito 💚<span class="when">16:51</span></div><div class="thread-message frenzy" style="margin-top:10px"><span class="who">Frenzy · frenzy.x@hotmail.com</span>Jeje, gracias, pero no si yo te invito primero, listilla 🩵<span class="when">16:53</span></div></div></div></div>
-      <div class="mailview" id="view-thread-psyco"><button class="fakebutton back" data-back>← Volver a la bandeja</button><h2>RE: apodos horribles</h2><div class="meta">Conversación entre Psyco y Vela<br>Fecha: Miércoles, 5 de octubre de 2005</div>
-      <div class="thread-intro">Un intercambio viejo entre dos amigos que ya se escribían antes de que todo esto pasara.</div>
-      <div class="thread-chat">
-        <div class="thread-message friend"><span class="who">Psyco · psycoone12@hotmail.com</span>Por cierto, te guardé como Avellana.<span class="when">19:08</span></div>
-        <div class="thread-message vela"><span class="who">Vela · vela.skyline@coralia.net</span>Jajaja, ¿¡!? Yo te agregué como Sicótico, pareces uno cuando hablas.</div>
-        <div class="thread-message friend"><span class="who">Psyco · psycoone12@hotmail.com</span>Bueno, al menos no sueno como un fruto seco, y tiene un estilo Psyco-Delico. Da igual. Escríbeme por acá, no reviso mucho el celular del trabajo, y también te pasaré chisme.</div>
-        <div class="thread-message vela"><span class="who">Vela · vela.skyline@coralia.net</span>Bueno, la verdad es que esto es mucho más cómodo. Eres un buen amigo, aunque tus apodos sean criminales.<span class="when">19:13</span></div>
-      </div>
-      </div>
-      <div class="mailview" id="view-spam-love"><button class="fakebutton back" data-back>← Volver a correo no deseado</button><h2>ASUNTO: ¿QUIERES CONSEGUIR AMOR?</h2><div class="meta">De: ofertas_tom@ofertas-mail.net<br>Para: vela.skyline@coralia.net<br>Fecha: Lunes, 10 de octubre de 2005, 09:12<br>Clasificación: Correo no deseado</div><div class="bodytext">¡¡¡HOLA, [AMIG@]!!! ¿¿¿QUIERES CONSEGUIR AMOR???
-
-Vamos todos en este mundo necesitamos, AMOR, dulce y poderoso AMOR salido de nuestra alma, este te lleva al cielo, no es AMOR del corazón, porque es de seguro ya conseguiste MAMITA, solamente tienes que entrar a mi sitio web y te mostraré cómo ganar el AMOR de 199.7 dólares sin ningún esfuerzo!
-
-¡¡¡OFERTA POR TIEMPO LIMITADO!!! ¡¡¡NO DEJES QUE EL AMOR SE TE ESCAPE!!! [¡HAZ CLIC, GRAN CLIENTE!]
-
-P. D.: Los clientes más atentos siempre encuentran palabras especiales escondidas por la página y la red. ¡El premio grande no se anuncia dos veces!</div><div class="attachment">[HIPERVÍNCULO BLOQUEADO]<br><span style="font-size:11px">Coralia ha bloqueado este enlace porque podría ser peligroso.</span></div><div class="side-note" style="margin:14px 0 0">Mensaje detectado automáticamente como correo no deseado.</div></div>
-      <div class="mailview" id="view-spam-prize"><button class="fakebutton back" data-back>← Volver a correo no deseado</button><h2>¡Has ganado un teléfono móvil!</h2><div class="meta">De: premios_urgentes@win-big.example<br>Para: vela.skyline@coralia.net<br>Fecha: Martes, 11 de octubre de 2005, 10:44</div><div class="bodytext">FELICIDADES!!! Su dirección ha sido seleccionada al azar para recibir un teléfono móvil completamente GRATIS.
-
-Responda con su nombre completo, dirección y número de tarjeta para confirmar el envío.
-
-NO PIERDA ESTA OPORTUNIDAD ÚNICA!!!</div><div class="attachment">[ADJUNTO BLOQUEADO] premio.exe</div></div>
-      <div class="mailview" id="view-spam-pharmacy"><button class="fakebutton back" data-back>← Volver a correo no deseado</button><h2>RE: Oferta exclusiva — solo hoy</h2><div class="meta">De: ofertas_medicas@bulk-mail.example<br>Para: vela.skyline@coralia.net<br>Fecha: Viernes, 7 de octubre de 2005, 02:08</div><div class="bodytext">Hello dear customer!
-
-Special offer just for YOU. Buy today and get 70% discount. This message is not spam, please do not report us.
-
-Click here to unsubscribe from all future messages.</div><div class="attachment">[HIPERVÍNCULO BLOQUEADO]</div></div>
-      <div class="mailview" id="view-movistar"><button class="fakebutton back" data-back>← Volver a la bandeja</button><h2>Nuevo mensaje de voz de Movistar - 555-3492</h2><div class="meta">De: Buzon_Movistar_Auto@movistar.com<br>Para: vela.skyline@coralia.net<br>Fecha: Lunes, 10 de octubre de 2005, 2:00 AM</div><div class="bodytext">Estimado cliente,
-
-Usted tiene un nuevo mensaje de voz en su buzón automático. Puede escuchar la grabación adjunta a continuación.</div><div class="attachment" style="display:block;max-width:520px"><div style="font-weight:bold;margin-bottom:8px">♫ MOVISTAR_VM_05_REC.AMR.mp3</div><div style="font-size:11px;margin-bottom:10px">Mensaje de voz · Archivo de audio</div><audio controls preload="metadata" style="width:100%"><source src="MOVISTAR_VM_05_REC.AMR.mp3" type="audio/mpeg">Tu navegador no puede reproducir este audio.</audio></div></div>
-      <div class="mailview" id="view-welcome"><button class="fakebutton back" data-back>← Volver a la bandeja</button><h2>Bienvenida a Coralia</h2><div class="meta">De: equipo@coralia.net<br>Para: vela.skyline@coralia.net<br>Fecha: Sábado, 3 de septiembre de 2005, 16:20</div><div class="bodytext">¡Hola!
-
-Gracias por crear tu cuenta Coralia Mail. Aquí podrás mantenerte en contacto con tus amigos, compartir archivos y guardar tus mensajes importantes.
-
-Esperamos que disfrutes de tu pequeño espacio en Internet.
-
-— El equipo de Coralia</div></div>
-      <div class="mailview" id="view-support-sync"><button class="fakebutton back" data-back>← Volver a la bandeja</button><h2>¿No encuentras un mensaje?</h2><div class="meta">De: soporte@coralia.net<br>Para: vela.skyline@coralia.net<br>Fecha: Martes, 11 de octubre de 2005, 08:02</div><div class="bodytext">Hola, Vela:
-
-A veces algunos mensajes tardan un poco en aparecer mientras se completa la sincronización del buzón. Si notas que falta alguno, prueba a actualizar la página dentro de unos minutos.
-
-Gracias por usar Coralia Mail.
-— Soporte técnico</div></div>
-      <div class="mailview" id="view-daily-friend"><button class="fakebutton back" data-back>← Volver a la bandeja</button><h2>¿Te fuiste tan rápido?</h2><div class="meta">De: rafa_05@hotmail.com<br>Para: vela.skyline@coralia.net<br>Fecha: <span class="message-date">Lunes, 10 de octubre de 2005, 09:14</span></div><div class="bodytext">Ey, ¿todo bien? Ayer desapareciste rapidísimo después de vernos jajaja. Te iba a mandar el meme del grupo, pero creo que al final se lo envié a todo el mundo menos a ti 💀. Cuando llegues a la U me cuentas qué pasó. Ah, y encontré el enlace de esa página rara que te dije; luego te lo paso.</div></div>
-      <div class="mailview" id="view-sync-incomplete"><button class="fakebutton back" data-back>← Volver a la bandeja</button><h2>Sincronización incompleta</h2><div class="meta">De: sistema@coralia.net<br>Para: vela.skyline@coralia.net<br>Fecha: <span class="message-date">Lunes, 10 de octubre de 2005, 11:06</span></div><div class="bodytext">No todos los mensajes se han descargado correctamente.
-
-Algunos elementos podrían aparecer después de la próxima actualización. No es necesario volver a iniciar sesión.</div></div>
-      <div class="mailview" id="view-did-you-get-it"><button class="fakebutton back" data-back>← Volver a la bandeja</button><h2>¿Te llegó lo que te mandé?</h2><div class="meta">De: andrea.mora@hotmail.com<br>Para: vela.skyline@coralia.net<br>Fecha: <span class="message-date">Lunes, 10 de octubre de 2005, 15:37</span></div><div class="bodytext">Oye, te mandé una cosa anoche y no sé si te llegó. No es urgente, pero dime cuando puedas porque el archivo me tardó siglos en subir jajaja.</div></div>
-      <div class="mailview" id="view-breakfast-note"><button class="fakebutton back" data-back>← Volver a la bandeja</button><h2>¿Vas a desayunar?</h2><div class="meta">De: nora.paz@hotmail.com<br>Para: vela.skyline@coralia.net<br>Fecha: <span class="message-date">Lunes, 10 de octubre de 2005, 08:03</span></div><div class="bodytext">Vela, te dejé algo preparado por si te levantas con hambre. No te vayas sin comer nada, ¿sí? Ayer estabas distraída y casi se te olvida hasta despedirte. Cuando puedas me cuentas cómo te fue.</div></div>
-      <div class="mailview" id="view-halloween-event"><button class="fakebutton back" data-back>← Volver a la bandeja</button><h2>Halloween está a la vuelta de la esquina</h2><div class="meta">De: novedades@moda-coralia.net<br>Para: vela.skyline@coralia.net<br>Fecha: Lunes, 10 de octubre de 2005, 09:36</div><div class="bodytext">¡Prepara tu look para Halloween!
-
-Esta semana llegaron accesorios nuevos: cinturones anchos, collares, pulseras, hebillas y maquillaje de fantasía. También tenemos ideas sencillas para armar un disfraz con ropa que ya tienes en casa.
-
-¿Lo mejor? ¡No necesitas gastar mucho para destacar en la fiesta!
-
-Moda Coralia · Tu estilo, a tu manera.</div><div class="attachment">▧ catalogo_halloween_05.jpg &nbsp; (vista previa no disponible)</div></div>
-      <div class="mailview" id="view-halloween-costume"><button class="fakebutton back" data-back>← Volver a la bandeja</button><h2>¿Ya sabes de qué te vas a disfrazar?</h2><div class="meta">De: andrea.mora@hotmail.com<br>Para: vela.skyline@coralia.net<br>Fecha: Lunes, 10 de octubre de 2005, 10:12</div><div class="bodytext">Oye, pregunta importante: ¿ya sabes de qué te vas a disfrazar para Halloween? Yo sigo sin decidirme y no quiero terminar poniéndome lo primero que encuentre jajaja.
-
-Si ves algo bonito en la tienda de tus papás, mándame una foto. Prometo no copiarte… demasiado.</div></div>
-      <div class="mailview" id="view-halloween-party"><button class="fakebutton back" data-back>← Volver a la bandeja</button><h2>Re: ¿Hacemos algo para Halloween?</h2><div class="meta">De: rafa_05@hotmail.com<br>Para: vela.skyline@coralia.net<br>Fecha: Lunes, 10 de octubre de 2005, 14:48</div><div class="bodytext">La gente del grupo está hablando de hacer algo para Halloween el sábado 29. Nada confirmado todavía, pero dijeron que cada uno puede llevar algo de comer y que no hace falta un disfraz caro.
-
-Si se arma, te aviso. Y no, no pienso ir vestido de fantasma con una sábana, ya lo hice una vez y casi me caigo por las escaleras.</div></div>
-      <div class="mailview" id="view-reload-clue"><button class="fakebutton back" data-back>← Volver a la bandeja</button><h2>Una nota de sincronización</h2><div class="meta">De: sistema@coralia.net<br>Para: vela.skyline@coralia.net<br>Fecha: Lunes, 10 de octubre de 2005, 08:04</div><div class="bodytext">Hay ecos que solo se distinguen cuando el cristal vuelve a su sitio. El cuarto reflejo no será igual al primero.</div></div>
-      <div class="mailview" id="view-hospital-papers"><button class="fakebutton back" data-back>← Volver a la bandeja</button><h2>Documentación pendiente — Hospital Central</h2><div class="meta">De: admisiones@hospitalcentral.example<br>Para: vela.skyline@coralia.net<br>Fecha: <span class="message-date">Lunes, 10 de octubre de 2005, 16:03</span></div><div class="bodytext">Buenas tardes. Seguimos pendientes de los documentos personales del paciente Frenzy que se mencionaron durante la llamada. ¿Podría traerlos o confirmar cuándo estarán disponibles? Por ahora solo tenemos un registro incompleto y no podemos cerrar el ingreso.</div></div>
-      <div class="mailview" id="view-post-psyco"><button class="fakebutton back" data-back>← Volver a la bandeja</button><h2>Vela, contesta cuando despiertes</h2><div class="meta">De: psycoone12@hotmail.com<br>Para: vela.skyline@coralia.net<br>Fecha: Martes, 11 de octubre de 2005, 00:26</div><div class="bodytext">Avellana, sé que es tardísimo, pero ¿estás despierta?
-
-Me acaba de llegar una notificación rarísima relacionada con Frenzy y no sé si escribirte o esperar a mañana. Si ves esto, mándame aunque sea un punto para saber que estás bien.</div></div>
-      <div class="mailview" id="view-post-rushia"><button class="fakebutton back" data-back>← Volver a la bandeja</button><h2>Te guardé el puesto</h2><div class="meta">De: rushia.mori@hotmail.com<br>Para: vela.skyline@coralia.net<br>Fecha: Martes, 11 de octubre de 2005, 10:18</div><div class="bodytext">Holiii, mañana voy a llegar un poco antes a la universidad. Te guardo puesto como siempre. Ah, y encontré una tienda con unos accesorios que te gustarían demasiado jajaja. Luego te paso la dirección.</div></div>
-      <div class="mailview" id="view-post-lewis"><button class="fakebutton back" data-back>← Volver a la bandeja</button><h2>¿Tienes los apuntes de hoy?</h2><div class="meta">De: lewis.ramirez@hotmail.com<br>Para: vela.skyline@coralia.net<br>Fecha: Martes, 11 de octubre de 2005, 16:42</div><div class="bodytext">Vela, perdón por escribirte tan tarde. ¿Tienes los apuntes de la clase? Me distraje con lo del trabajo grupal y me perdí la mitad de la explicación. Te debo un café.</div></div>
-      <div class="mailview" id="view-inbox-class"><button class="fakebutton back" data-back>← Volver a la bandeja</button><h2>¿Me pasas los apuntes?</h2><div class="meta">De: andrea.mora@hotmail.com<br>Para: vela.skyline@coralia.net<br>Fecha: Domingo, 9 de octubre de 2005, 18:21</div><div class="bodytext">Holaa, ¿me puedes pasar lo que anotaste de la última clase? Me perdí cuando el profesor empezó a explicar lo del trabajo y después no entendí qué había que entregar. Creo que dijo que era para el jueves, pero no estoy segura. Si tienes también la parte del tablero, mejor, porque la foto que tomé salió toda borrosa. Te debo una :)</div></div>
-      <div class="mailview" id="view-inbox-party"><button class="fakebutton back" data-back>← Volver a la bandeja</button><h2>Re: Lo del sábado</h2><div class="meta">De: nora.paz@hotmail.com<br>Para: vela.skyline@coralia.net<br>Fecha: Sábado, 8 de octubre de 2005, 13:04</div><div class="bodytext">Vela, acuérdate de avisarme cuando llegues y de no volver sola tan tarde. Si vas a la fiesta, lleva el teléfono cargado y dime con quién vas a estar. Dejé algo de comer en la nevera por si llegas con hambre. Y, por favor, no olvides las llaves; la copia sigue en el mismo lugar de siempre. Cuídate.</div></div>
-      <div class="mailview" id="view-inbox-random"><button class="fakebutton back" data-back>← Volver a la bandeja</button><h2>jajaja mira esto</h2><div class="meta">De: rafa_05@hotmail.com<br>Para: vela.skyline@coralia.net<br>Fecha: Jueves, 6 de octubre de 2005, 21:36</div><div class="bodytext">No sé por qué me dio tanta risa esto, pero tenía que mandártelo. Me lo pasó alguien del grupo y nadie sabe quién lo hizo primero. La imagen se ve fatal porque la reenviaron como cinco veces, pero mira la esquina de abajo, parece que hay algo escrito ahí. Seguro es un error de compresión o una tontería. Después me dices si te acuerdas de dónde salió.</div><div class="attachment">▧ imagen_adjunta.jpg &nbsp; (vista previa no disponible)</div></div>
-      <div class="mailview" id="view-sent-party"><button class="fakebutton back" data-back>← Volver a enviados</button><h2>Fotos de la fiesta</h2><div class="meta">De: vela.skyline@coralia.net<br>Para: nora.paz@hotmail.com<br>Fecha: Lunes, 10 de octubre de 2005, 18:32</div><div class="bodytext">Te mando las fotos que tomé en la reunión familiar. Algunas salieron movidas, pero hay unas bonitas. Las comprimí para que no pesaran tanto; si quieres las originales, te las paso cuando llegue a casa. Gracias por ayudarme a guardar todo al final. Avísame si prefieres que imprima alguna.</div></div>
-      <div class="mailview" id="view-sent-class"><button class="fakebutton back" data-back>← Volver a enviados</button><h2>Apuntes de la semana</h2><div class="meta">De: vela.skyline@coralia.net<br>Para: grupo.universidad@hotmail.com<br>Fecha: Domingo, 9 de octubre de 2005, 20:06</div><div class="bodytext">Hola, adjunto los apuntes de hoy. Si alguien tiene lo que explicó el profesor al final, ¿me lo puede pasar? Creo que mencionó unas páginas del libro y una actividad para la próxima semana, pero justo estaba copiando lo anterior y no alcancé a escucharlo. Revisen también la fecha del documento por si me equivoqué al guardarlo. Gracias.</div><div class="attachment">▧ apuntes_semana.doc &nbsp; (archivo no disponible)</div></div>
-      <div class="mailview" id="view-sent-psyco"><button class="fakebutton back" data-back>← Volver a enviados</button><h2>Frenzy URGENTE</h2><div class="meta">De: vela.skyline@coralia.net<br>Para: psycoone12@hotmail.com<br>Fecha: <span id="sentPsycoDate">Martes, 11 de octubre de 2005, 00:12</span></div><div class="bodytext">Frenzy está en estado de shock en el Hospital Central.
-
-En la madrugada, luego de la fiesta a la que nunca pudo llegar, lo encontraron cerca del edificio unos guardias; está frío y con la mirada perdida. Su corazón late como siempre, pero está... ¡¿en shock?! No está herido, solamente... está frío, ¡no lo entiendo!
-
-Es como si algo se le metió, o como si no tuviera algo. De verdad, al inicio cuando me dijeron pensé que era una broma, ojalá hubiera sido así... Me tocó llegar y tomar las llaves en su tapete para buscar sus papeles; solo encontré sus cosas de la universidad y una cédula. ¡No sé qué hacer! No puedo hacer esto sola. Lo único que sé es que me envió este mensaje de voz y... te lo voy a adjuntar.
-
-No te asustes, ¿ok? Es tu compañero de trabajo, es nuestro amigo, tú sabes que no está loco. Creo que alguien lo asustó o le hizo algo crítico. O tal vez no debió meterse en ese lugar tan paranormal.
-
-Por favor, no me respondas a este mensaje. Y si vas a ayudarme, ve al Hospital Central.</div><div class="attachment" style="display:block;max-width:520px"><div style="font-weight:bold;margin-bottom:7px">♫ MOVISTAR_VM_05_REC.AMR.mp3</div><div style="font-size:11px;color:#a54a4a">Archivo adjunto no disponible</div><div style="margin-top:8px;padding:8px;background:#f8eaea;border:1px solid #e0b4b4;color:#944848">No se puede encontrar el archivo. Es posible que se haya movido o eliminado.</div></div></div>
-      <div class="mailview" id="view-sent-old"><button class="fakebutton back" data-back>← Volver a enviados</button><h2>Problema con la cuenta</h2><div class="meta">De: vela.skyline@coralia.net<br>Para: soporte@coralia.net<br>Fecha: Sábado, 8 de octubre de 2005, 11:48</div><div class="bodytext">Hola. Algunos mensajes antiguos no aparecen en mi bandeja y no recuerdo haberlos borrado. ¿Hay alguna forma de recuperarlos?</div></div>
-      <div class="mailview" id="view-sent-mom"><button class="fakebutton back" data-back>← Volver a enviados</button><h2>No olvides llamar</h2><div class="meta">De: vela.skyline@coralia.net<br>Para: nora.paz@hotmail.com<br>Fecha: Viernes, 7 de octubre de 2005, 17:02</div><div class="bodytext">Hola, hoy salgo un poco tarde de la universidad porque nos dejaron terminar una actividad en grupo. Te llamo cuando llegue, no te preocupes. Puede que pase primero por la tienda a comprar algo para cenar, así que si no contesto enseguida es por eso. Dejo las llaves donde siempre.</div></div>
-      <div class="mailview" id="view-sent-notes"><button class="fakebutton back" data-back>← Volver a enviados</button><h2>Confirmación de tutoría</h2><div class="meta">De: vela.skyline@coralia.net<br>Para: tutorias@universidad.edu<br>Fecha: Miércoles, 5 de octubre de 2005, 09:18</div><div class="bodytext">Buenos días. Confirmo que asistiré a la tutoría del viernes. ¿Podrían indicarme si debo llevar el ejercicio que quedó pendiente o si lo revisaremos directamente durante la sesión? También quería confirmar que el horario sigue siendo el de las nueve de la mañana. Muchas gracias.</div></div>
-      <div class="mailview" id="view-spam-chain"><button class="fakebutton back" data-back>← Volver a correo no deseado</button><h2>RE: RE: Reenvía esto a 10 personas</h2><div class="meta">De: suerte_infinita@cadena-mail.example<br>Para: vela.skyline@coralia.net<br>Fecha: Jueves, 6 de octubre de 2005, 06:10</div><div class="bodytext">Si no reenvías este correo antes de medianoche, tendrás siete años de mala suerte. Si lo reenvías, recibirás una sorpresa increíble. ¡No rompas la cadena!</div></div>
-      <div class="mailview" id="view-spam-dialup"><button class="fakebutton back" data-back>← Volver a correo no deseado</button><h2>¡Conéctate más rápido!</h2><div class="meta">De: ventas@internet-facil.example<br>Para: vela.skyline@coralia.net<br>Fecha: Martes, 4 de octubre de 2005, 11:42</div><div class="bodytext">¿Cansado de esperar mientras carga una página? ¡Cambia hoy mismo a nuestro nuevo servicio de conexión ultrarrápida! Oferta válida por tiempo limitado.</div><div class="attachment">[INFORMACIÓN DEL SERVICIO NO DISPONIBLE]</div></div>
-      <div class="mailview" id="view-draft-birthday"><button class="fakebutton back" data-back>← Volver a borradores</button><h2>Feliz cumple!!</h2><div class="meta">Para: alexasanch3z@hotmail.com<br>Guardado: Sábado, 8 de octubre de 2005, 22:14</div><div class="bodytext">¡Alexa!, feliz cumpleaños. Espero que tengas un día tranquilo y bonito. No te voy a decir todavía qué te compré, pero espero que te guste. Gracias por estar pendiente de mí incluso cuando ando distraída con la universidad. Te doy el regalo cuando nos veamos. Y guarda un pedazo de torta para mí.</div><div class="attachment">Borrador sin enviar</div></div>
-      <div class="mailview" id="view-draft-question"><button class="fakebutton back" data-back>← Volver a borradores</button><h2>Pregunta sobre el edificio</h2><div class="meta">Para: (sin destinatario)<br>Guardado: Lunes, 10 de octubre de 2005, 23:08</div><div class="bodytext">¿Alguien sabe cómo se llama el edificio que queda detrás de la avenida? El que tiene las ventanas tapadas.</div><div class="attachment">Borrador sin enviar</div></div>
-      <div class="mailview" id="view-recovered"><button class="fakebutton back" data-back>← Volver a la bandeja</button><h2>Mensaje recuperado</h2><div class="meta">De: <span>remitente desconocido</span><br>Para: vela.skyline@coralia.net<br>Fecha: Martes, 11 de octubre de 2005, 00:03</div><div class="bodytext">Este mensaje no debería aparecer aquí.
-
-Si has conseguido verlo, significa que todavía queda algo en esta cuenta que no pudieron borrar.</div></div>
-      <div class="mailview" id="view-frenzy"><button class="fakebutton back" data-back>← Volver a la bandeja</button><button type="button" id="returnVoidButton" aria-label="Salir de Void Mode y volver a Coralia Mail">RETORNAR</button><h2>Gracias por preocuparte.</h2><div class="meta">De: <span class="frenzy-name">Frenzy</span> &lt;frenzy.x@hotmail.com&gt;<br>Para: vela.skyline@coralia.net<br>Fecha: Martes, 11 de octubre de 2005, 00:17<br><span style="color:#8ca5a7">Este mensaje no aparece en el registro de actividad.</span></div><div class="bodytext">Gracias por preocuparte.
-
-No hacía falta que hablaras tan alto cuando entraste.
-
-— F.</div><div class="attachment" style="display:block;max-width:520px"><div style="font-weight:bold;margin-bottom:8px">♫ Sin título.wav</div><div style="font-size:11px;margin-bottom:10px">Archivo adjunto · Grabación recuperada</div><audio controls preload="metadata" style="width:100%"><source src="Sin%20titulo.wav" type="audio/wav">Tu navegador no puede reproducir este audio.</audio><div style="font-size:11px;margin-top:8px;color:#668f95">Nota: el remitente no figura en el historial de envío.</div></div></div>
-      <div class="mailview" id="view-unknown-room-1"><button class="fakebutton back" data-back>← Volver a la bandeja</button><h2>¿Cuántas puertas había?</h2><div class="meta">De: usuario_desconocido@coralia.net<br>Para: vela.skyline@coralia.net<br>Fecha: Martes, 11 de octubre de 2005, 01:26<br><span style="color:#8ca5a7">El servidor no pudo verificar el remitente.</span></div><div class="bodytext">No recuerdo que hubiera tantas puertas.
-
-La habitación del fondo no estaba en el plano. Desde el pasillo parecía pequeña, pero por dentro seguía y seguía.
-
-¿Tú también la viste?</div></div>
-      <div class="mailview" id="view-unknown-room-2"><button class="fakebutton back" data-back>← Volver a la bandeja</button><h2>La habitación sin ventanas</h2><div class="meta">De: usuario_desconocido@coralia.net<br>Para: vela.skyline@coralia.net<br>Fecha: Martes, 11 de octubre de 2005, 02:11<br><span style="color:#8ca5a7">Mensaje recibido sin conexión activa.</span></div><div class="bodytext">Había una silla en el centro. Nada más.
-
-No había ventanas, pero entraba luz por alguna parte. Cuando me di la vuelta, la puerta ya no estaba donde la había dejado.
-
-No vuelvas a buscarla.</div></div>
-      <div class="mailview" id="view-final-message"><button class="fakebutton back" data-back>← Volver a la bandeja</button><h2>FINAL</h2><div class="meta">De: vela.skyline@coralia.net<br>Para: vela.skyline@coralia.net<br>Fecha: Martes, 11 de octubre de 2005, 23:59</div><div class="bodytext">Revisa tus mensajes mañana</div></div>
-      <div class="mailview" id="view-prepared-message"><button class="fakebutton back" data-back>← Volver a la bandeja</button><h2>¿PREPARADOS?</h2><div class="meta">De: bofinderdy@howmail.html<br>Para: vela.skyline@coralia.net<br>Fecha: Miércoles, 12 de octubre de 2005, 00:14<br><span style="color:#8ca5a7">El servidor no pudo verificar el remitente.</span></div><div class="bodytext">Oh, amiguita…
-
-Tu amante seguro estará.
-
-Créeme, después de esto,
-nadie los querrá volver a mirar.
-
-Pero otro problema encontrarás…
-¿Cómo sabes que esto no va a regresar?
-
-La cinta verás,
-al edificio llegarás
-y me vas a encontrar.
-
-Pero dime, ¿estás segura
-de cuál es la realidad?</div></div>
-      <div class="mailview" id="view-hidden-room"><button class="fakebutton back" data-back>← Volver</button><h2>IMG_111005_0317.JPG</h2><div class="meta">Archivo recuperado · 11/10/2005 · 03:17 AM</div><div class="bodytext">La imagen está dañada. Sin embargo, hay algo escrito en los datos del archivo:</div><div class="attachment" style="display:block;text-align:center;padding:28px 12px"><div style="font-size:44px;letter-spacing:8px;color:#72b7b6">◌ ◯ ◌</div><div style="margin-top:14px;color:#527e85">NO ESTABAS SOLA</div><div style="font-size:11px;margin-top:8px">Vista previa no disponible</div></div></div>
-      <div class="mailview" id="view-hidden-note"><button class="fakebutton back" data-back>← Volver</button><h2>Nota sin remitente</h2><div class="meta">Ubicación: datos temporales de Coralia<br>Fecha: desconocida</div><div class="bodytext">No abras la puerta cuando vuelva a sonar.
-
-No soy yo quien está escribiendo esto.</div></div>
-
-      <!-- Vistas especiales para las imágenes de los códigos -->
-      <div class="mailview" id="view-cuerpo-fallido">
-        <button class="fakebutton back" data-back>← Volver</button>
-        <h2>Archivo de registro: Cuerpo Fallido</h2>
-        <div class="meta">Ubicación: Sistema de respaldo · 555-3492</div>
-        <div class="secret-image-view">
-          <img src="Cuerpo_fallido.jpg" alt="Cuerpo Fallido - Frenzy">
-          <div class="bodytext" style="text-align:center">El registro visual muestra anomalías térmicas y distorsión en el sujeto[cite: 2].</div>
-        </div>
-      </div>
-
-      <div class="mailview" id="view-busca-cuerpos">
-        <button class="fakebutton back" data-back>← Volver</button>
-        <h2>EL BUSCA CUERPOS</h2>
-        <div class="meta">Entidad detectada en sector desconocido</div>
-        <div class="secret-image-view">
-          <img src="recuerda.jpg" alt="El Busca Cuerpos">
-          <div class="bodytext" style="text-align:center; white-space:pre-line; color:#244b58; font-weight:bold;">
-            No se quien soy
-            Tu si lo sabes
-            Tal vez en algun momento
-            Dejaras de escapar
-            Pero mientras tanto
-            Me daras algo de ti
-            Y yo te recordare.
-          </div>
-        </div>
-      </div>
+      <div id="localizedMailViews"></div>
 
     </main>
   </div>
@@ -223,692 +67,99 @@ No soy yo quien está escribiendo esto.</div></div>
 </div>
 <footer class="footer">© 2005 Coralia Network · Todos los derechos reservados · Coralia Mail v2.0 Beta</footer>
 <script>
-  // Verificar la versión del progreso guardado
-  const STORAGE_VERSION_KEY = "arg_storage_version";
-  const CURRENT_STORAGE_VERSION = "2026-10-21-v2";
-
-  if (localStorage.getItem(STORAGE_VERSION_KEY) !== CURRENT_STORAGE_VERSION) {
-    // Borrar solamente los datos de progreso de Coralia Mail
-    Object.keys(localStorage).forEach(key => {
-      if (key.startsWith("coralia_")) {
-        localStorage.removeItem(key);
-      }
-    });
-
-    // Registrar la versión nueva para no repetir el reinicio
-    localStorage.setItem(STORAGE_VERSION_KEY, CURRENT_STORAGE_VERSION);
+(async function bootLocalizedCoralia(){
+  const languageKey = 'coralia_language';
+  const savedLanguage = localStorage.getItem(languageKey) || 'es';
+  let language = savedLanguage;
+  let locale;
+  async function loadLocale(lang) {
+    const response = await fetch('locales/' + lang + '.json');
+    if (!response.ok) throw new Error('No se pudo cargar el idioma: ' + lang);
+    return response.json();
   }
-  const boot = document.getElementById('boot');
-  const testMode = new URLSearchParams(window.location.search).get('test') === '1';
-  const testPanel = document.getElementById('testPanel');
-  if (testMode && testPanel) {
-    testPanel.style.display = 'block';
-    document.getElementById('resetProgress').addEventListener('click', () => {
-      Object.keys(localStorage).filter(key => key.startsWith('coralia_')).forEach(key => localStorage.removeItem(key));
-      window.location.reload();
-    });
+  try {
+    locale = await loadLocale(language);
+  } catch (error) {
+    language = 'es';
+    locale = await loadLocale('es');
+    localStorage.setItem(languageKey, 'es');
   }
-  const refreshKey = 'coralia_corruption_loads_v12';
-  const cooldownKey = 'coralia_refresh_cooldown_until_v9';
-  let refreshCount = Number(localStorage.getItem(refreshKey) || '0');
-  const frenzyMailKey = 'coralia_frenzy_mail_persisted_v12';
-  const unknownRoom1Key = 'coralia_unknown_room_1_v9';
-  const unknownRoom2Key = 'coralia_unknown_room_2_v9';
-  const finalMessageKey = 'coralia_final_message_v4';
-  const preparedMessageKey = 'coralia_prepared_message_v1';
-  const spamTomKey = 'coralia_ofertas_tom_visible_v9';
-  const movistarReadKey = 'coralia_movistar_audio_heard_v6';
-  const sentPsycoRevealedKey = 'coralia_sent_psyco_revealed_v6';
-  const postFrenzyUpdatesKey = 'coralia_post_frenzy_updates_v5';
-  const frenzyAudioHeardKey = 'coralia_frenzy_audio_heard_v1';
-  const voidResolvedKey = 'coralia_void_resolved_v1';
-  const voidModeActiveKey = 'coralia_void_mode_active_v1';
-  const dailyMailStageKey = 'coralia_daily_mail_stage_v1';
-  const firstUpdateKey = 'coralia_first_update_seen_v9';
-  const blackoutSeenKey = 'coralia_frenzy_blackout_seen_v9';
-  const readKey = 'coralia_read_messages_v8';
-  
-  let frenzyMailExists = localStorage.getItem(frenzyMailKey) === 'true';
-  let unknownRoom1Exists = localStorage.getItem(unknownRoom1Key) === 'true';
-  let unknownRoom2Exists = localStorage.getItem(unknownRoom2Key) === 'true';
-  let finalMessageExists = localStorage.getItem(finalMessageKey) === 'true';
-  let preparedMessageExists = localStorage.getItem(preparedMessageKey) === 'true';
-  const spamLoveRow = document.getElementById('spamLoveRow');
-  if (spamLoveRow && localStorage.getItem(spamTomKey) === 'true') {
-    spamLoveRow.style.display = 'grid';
-    const prizeRow = document.querySelector('#junkbox [data-mail="spam-prize"]');
-    if (prizeRow && prizeRow.nextSibling !== spamLoveRow) document.getElementById('junkbox').insertBefore(spamLoveRow, prizeRow.nextSibling);
-  }
-
-  function applyCorruptionPhase() {
-    document.body.classList.remove('coralia-pure-green');
-    if (localStorage.getItem(voidResolvedKey) === 'true') document.body.classList.add('coralia-pure-green');
-  }
-
-  function enterVoidMode() {
-    if (localStorage.getItem(voidResolvedKey) === 'true') return;
-    localStorage.setItem(voidModeActiveKey, 'true');
-    document.body.classList.add('coralia-void');
-    document.body.classList.remove('coralia-pure-green');
-  }
-
-  function exitVoidMode() {
-    document.body.classList.remove('coralia-void');
-    localStorage.setItem(voidResolvedKey, 'true');
-    localStorage.removeItem(voidModeActiveKey);
-    applyCorruptionPhase();
-  }
-
-  // Salida de emergencia: nunca depende de que el audio haya terminado ni de Actualizar.
-  const returnVoidButton = document.getElementById('returnVoidButton');
-  if (returnVoidButton) returnVoidButton.addEventListener('click', () => {
-    exitVoidMode();
-    showFolder('inbox');
-    feedback.classList.remove('error');
-    feedback.textContent = 'Has vuelto a Coralia Mail. Pulsa Actualizar cuando quieras continuar.';
+  window.CORALIA_LOCALE = locale;
+  window.CORALIA_LANGUAGE = language;
+  document.documentElement.lang = language;
+  const viewsRoot = document.getElementById('localizedMailViews');
+  Object.entries(locale.messages || {}).forEach(([key, message]) => {
+    const view = document.createElement('div');
+    view.className = 'mailview';
+    view.id = 'view-' + key;
+    view.innerHTML = message.html || '';
+    viewsRoot.appendChild(view);
   });
-
-  window.addEventListener('load', () => setTimeout(() => { boot.style.opacity = '0'; setTimeout(() => boot.remove(), 750); }, 1800));
-  
-  const folderBoxes = {
-    inbox: document.getElementById('inbox'), sent: document.getElementById('sentbox'),
-    junk: document.getElementById('junkbox'), trash: document.getElementById('trashbox'),
-    drafts: document.getElementById('draftsbox')
-  };
-  let currentFolder = 'inbox';
-  let currentView = '';
-  const feedback = document.getElementById('feedback');
-  const input = document.getElementById('secret');
-  let unlocked = { recovered:false, frenzy:false, unknownRoom1:false, unknownRoom2:false, finalMessage:false };
-
-  function openView(name) {
-    currentView = name;
-    // Mantener visible la lista de la carpeta actual en escritorio; el mensaje abre a su derecha.
-    Object.entries(folderBoxes).forEach(([key, el]) => { if (el) el.style.display = key === currentFolder ? 'block' : 'none'; });
-    document.querySelectorAll('.mailview').forEach(el => el.classList.remove('show'));
-    const view = document.getElementById('view-' + name);
-    const main = document.querySelector('.main');
-    // Most mail views were outside .main in the markup, so they fell beneath the list.
-    // Put the selected view beside the active folder list; the mobile media query stacks it.
-    if (view && main && view.parentElement !== main) main.appendChild(view);
-    if (view) view.classList.add('show');
-    if (main) main.classList.add('mail-open');
-    if (name === 'frenzy' && localStorage.getItem(voidResolvedKey) !== 'true') enterVoidMode();
-    else if (localStorage.getItem(voidResolvedKey) === 'true') applyCorruptionPhase();
-  }
-
-  function showFolder(name) {
-    currentFolder = name;
-    currentView = '';
-    const main = document.querySelector('.main');
-    if (main) main.classList.remove('mail-open');
-    document.querySelectorAll('.mailview').forEach(el => el.classList.remove('show'));
-    Object.entries(folderBoxes).forEach(([key, el]) => { if (el) el.style.display = key === name ? 'block' : 'none'; });
-    document.querySelectorAll('[data-folder]').forEach(el => el.classList.toggle('active', el.dataset.folder === name));
-    const title = document.querySelector('.windowbar span');
-    const labels = { inbox:'Bandeja de entrada', sent:'Mensajes enviados', junk:'Correo no deseado', trash:'Elementos eliminados', drafts:'Borradores' };
-    if (title) title.textContent = (labels[name] || 'Bandeja de entrada') + ' - Coralia Mail';
-  }
-
-  function backToFolder() { currentView = ''; showFolder(currentFolder); }
-  document.querySelectorAll('[data-folder]').forEach(folder => folder.addEventListener('click', () => showFolder(folder.dataset.folder)));
-  
-  function messageKey(row) { return row.dataset.mail || row.dataset.dynamicMail || ''; }
-  function getReadMessages() { try { return JSON.parse(localStorage.getItem(readKey) || '[]'); } catch (_) { return []; } }
-  
-  function updateUnreadCounts() {
-    const mapping = { inbox:['#inbox','#count-inbox'], sent:['#sentbox','#count-sent'], drafts:['#draftsbox','#count-drafts'], trash:['#trashbox','#count-trash'], junk:['#junkbox','#count-junk'] };
-    Object.entries(mapping).forEach(([name, pair]) => {
-      const container = document.querySelector(pair[0]);
-      const badge = document.querySelector(pair[1]);
-      if (!container || !badge) return;
-      const visibleRows = Array.from(container.querySelectorAll('.mailrow')).filter(row => row.style.display !== 'none');
-      if (name === 'trash') {
-        const total = visibleRows.length;
-        badge.textContent = total + (total === 1 ? ' elemento' : ' elementos');
-      } else {
-        const unread = visibleRows.filter(row => row.classList.contains('unread')).length;
-        badge.textContent = unread ? (unread + ' sin leer') : '0 sin leer';
-      }
+  function applyRowTranslations() {
+    document.querySelectorAll('.mailrow[data-mail]').forEach(row => {
+      const data = (locale.mailRows || {})[row.dataset.mail];
+      if (!data) return;
+      const sender = row.querySelector('.sender'), subject = row.querySelector('.subject'), date = row.querySelector('.date');
+      if (sender) sender.textContent = data.sender;
+      if (subject) subject.textContent = data.subject;
+      if (date && data.date) date.textContent = data.date;
     });
   }
-
-  function markRead(row) {
-    const key = messageKey(row);
-    if (key) {
-      const read = getReadMessages();
-      if (!read.includes(key)) read.push(key);
-      localStorage.setItem(readKey, JSON.stringify(read));
-    }
-    row.classList.remove('unread');
-    updateUnreadCounts();
-  }
-
-  function bindMailRow(row) { row.addEventListener('click', () => { markRead(row); openView(row.dataset.mail || row.dataset.dynamicMail); }); }
-  
-  const previouslyRead = getReadMessages();
-  document.querySelectorAll('.mailrow').forEach(row => {
-    if (previouslyRead.includes(messageKey(row))) row.classList.remove('unread');
-    bindMailRow(row);
+  applyRowTranslations();
+  const languageGate = document.getElementById('languageGate');
+  if (!localStorage.getItem(languageKey) && languageGate) languageGate.style.display = 'flex';
+  document.querySelectorAll('[data-gate-language]').forEach(button => button.addEventListener('click', () => {
+    localStorage.setItem(languageKey, button.dataset.gateLanguage);
+    location.reload();
+  }));
+  document.querySelectorAll('[data-language-prompt]').forEach(el => el.textContent = 'LANGUAGE');
+  document.querySelectorAll('[data-language]').forEach(button => {
+    button.setAttribute('aria-pressed', String(button.dataset.language === language));
+    button.addEventListener('click', () => {
+      localStorage.setItem(languageKey, button.dataset.language);
+      location.reload();
+    });
   });
-  updateUnreadCounts();
-  document.querySelectorAll('[data-back]').forEach(btn => btn.addEventListener('click', backToFolder));
-
-  function insertInboxRow(sender, subject, date, viewName) {
-    let row = document.querySelector('#inbox [data-dynamic-mail="' + viewName + '"]');
-    if (row) {
-      row.querySelector('.date').textContent = date;
-      return;
-    }
-    row = document.createElement('div');
-    row.className = 'mailrow unread';
-    row.dataset.dynamicMail = viewName;
-    if (getReadMessages().includes(viewName)) row.classList.remove('unread');
-    row.innerHTML = '<span class="sender"></span><span class="subject"></span><span class="date"></span>';
-    row.querySelector('.sender').textContent = sender;
-    row.querySelector('.subject').textContent = subject;
-    row.querySelector('.date').textContent = date;
-    bindMailRow(row);
-    const inbox = document.getElementById('inbox');
-    const firstMail = inbox.querySelector('.mailrow');
-    inbox.insertBefore(row, firstMail || document.getElementById('hint'));
-    updateUnreadCounts();
-  }
-
-  function addMessage(key) {
-    if (key === 'recovered' && !unlocked.recovered) {
-      unlocked.recovered = true;
-      insertInboxRow('[remitente desconocido]', 'Mensaje recuperado', '11/10/05', 'recovered');
-    }
-    if (key === 'frenzy' && !unlocked.frenzy) {
-      unlocked.frenzy = true;
-      insertInboxRow('Frenzy', 'Gracias por preocuparte.', '11/10/05', 'frenzy');
-    }
-    if (key === 'unknown-room-1' && !unlocked.unknownRoom1) {
-      unlocked.unknownRoom1 = true;
-      unknownRoom1Exists = true;
-      localStorage.setItem(unknownRoom1Key, 'true');
-      insertInboxRow('usuario_desconocido@coralia.net', '¿Cuántas puertas había?', '11/10/05', 'unknown-room-1');
-    }
-    if (key === 'unknown-room-2' && !unlocked.unknownRoom2) {
-      unlocked.unknownRoom2 = true;
-      unknownRoom2Exists = true;
-      localStorage.setItem(unknownRoom2Key, 'true');
-      insertInboxRow('usuario_desconocido@coralia.net', 'La habitación sin ventanas', '11/10/05', 'unknown-room-2');
-    }
-    if (key === 'final-message' && !unlocked.finalMessage) {
-      unlocked.finalMessage = true;
-      insertInboxRow('vela.skyline@coralia.net', 'FINAL', '11/10/05', 'final-message');
-    }
-    const postVoid = localStorage.getItem(voidResolvedKey) === 'true';
-    const dayShort = postVoid ? '11/10/05' : '10/10/05';
-    const dayLong = postVoid ? 'Martes, 11 de octubre de 2005' : 'Lunes, 10 de octubre de 2005';
-    if (key === 'breakfast-note') insertInboxRow('Nora Paz', '¿Vas a desayunar?', '10/10/05 08:03', 'breakfast-note');
-    if (key === 'reload-clue') insertInboxRow('sistema@coralia.net', 'Una nota de sincronización', '10/10/05 08:04', 'reload-clue');
-    if (key === 'hospital-papers') insertInboxRow('Hospital Central', 'Documentación pendiente', '10/10/05 16:03', 'hospital-papers');
-    if (key === 'post-psyco') insertInboxRow('Psyco', 'Vela, contesta cuando despiertes', '11/10/05 00:26', 'post-psyco');
-    if (key === 'post-rushia') insertInboxRow('Rushia', 'Te guardé el puesto', '11/10/05 10:18', 'post-rushia');
-    if (key === 'post-lewis') insertInboxRow('Lewis', '¿Tienes los apuntes de hoy?', '11/10/05 16:42', 'post-lewis');
-    if (key === 'daily-friend') {
-      insertInboxRow('Rafa · rafa_05@hotmail.com', '¿Te fuiste tan rápido?', dayShort + ' 09:14', 'daily-friend');
-      const date = document.querySelector('#view-daily-friend .message-date'); if (date) date.textContent = dayLong + ', 09:14';
-    }
-    if (key === 'sync-incomplete') {
-      insertInboxRow('Coralia Mail', 'Sincronización incompleta', dayShort + ' 11:06', 'sync-incomplete');
-      const date = document.querySelector('#view-sync-incomplete .message-date'); if (date) date.textContent = dayLong + ', 11:06';
-    }
-    if (key === 'did-you-get-it') {
-      insertInboxRow('Andrea', '¿Te llegó lo que te mandé?', dayShort + ' 15:37', 'did-you-get-it');
-      const date = document.querySelector('#view-did-you-get-it .message-date'); if (date) date.textContent = dayLong + ', 15:37';
-    }
-    if (key === 'halloween-event') insertInboxRow('Moda Coralia', 'Halloween está a la vuelta de la esquina', '10/10/05 09:36', 'halloween-event');
-    if (key === 'halloween-costume') insertInboxRow('Andrea', '¿Ya sabes de qué te vas a disfrazar?', '10/10/05 10:12', 'halloween-costume');
-    if (key === 'halloween-party') insertInboxRow('Rafa', 'Re: ¿Hacemos algo para Halloween?', '10/10/05 14:48', 'halloween-party');
-    if (key === 'prepared-message') {
-      if (!preparedMessageExists) {
-        preparedMessageExists = true;
-        localStorage.setItem(preparedMessageKey, 'true');
-      }
-      insertInboxRow('bofinderdy@howmail.html', '¿PREPARADOS?', '12/10/05 00:14', 'prepared-message');
-      applyCorruptionPhase();
-    }
-    updateUnreadCounts();
-  }
-
-  function insertTrashRow(sender, subject, date, viewName) {
-    const box = document.getElementById('trashbox');
-    let row = box.querySelector('[data-dynamic-mail="' + viewName + '"]');
-    if (row) return row;
-    const empty = box.querySelector('.empty');
-    if (empty) empty.remove();
-    row = document.createElement('div');
-    row.className = 'mailrow glitched';
-    row.dataset.dynamicMail = viewName;
-    row.innerHTML = '<span class="sender"></span><span class="subject"></span><span class="date"></span>';
-    row.querySelector('.sender').textContent = sender;
-    row.querySelector('.subject').textContent = subject;
-    row.querySelector('.date').textContent = date;
-    bindMailRow(row);
-    box.appendChild(row);
-    return row;
-  }
-
-  function moveWeirdMessagesToTrash() {
-    if (localStorage.getItem(preparedMessageKey) !== 'true') return;
-    const items = [
-      { key:'unknown-room-1', sender:'u̸s̴u̶a̷r̸i̷o̴_̶d̸e̷s̷c̸o̷n̵o̶c̴i̷d̵o̴', subject:'¿Cuántas pue�tas hab██?', date:'11/10/05 01:26' },
-      { key:'unknown-room-2', sender:'u̸s̴u̶a̷r̸i̷o̴_̶d̸e̷s̷c̸o̷n̵o̶c̴i̷d̵o̴', subject:'La habitaci▒n sin venta▒as', date:'11/10/05 02:11' },
-      { key:'recovered', sender:'[remitente d̷e̸s̷c̴o̵n̷o̴c̵i̷d̵o̴]', subject:'M̸e̷n̵s̶a̵j̷e̴ r̸e̷c̵u̸p̷e̴r̷a̵d̴o̸', date:'11/10/05 00:03' }
-    ];
-    items.forEach(item => {
-      const inboxRow = document.querySelector('#inbox [data-dynamic-mail="' + item.key + '"]');
-      const exists = item.key === 'unknown-room-1' ? unknownRoom1Exists : item.key === 'unknown-room-2' ? unknownRoom2Exists : unlocked.recovered || !!document.querySelector('#inbox [data-dynamic-mail="recovered"]');
-      if (!exists) return;
-      if (inboxRow) inboxRow.remove();
-      const read = getReadMessages();
-      if (!read.includes(item.key)) { read.push(item.key); localStorage.setItem(readKey, JSON.stringify(read)); }
-      insertTrashRow(item.sender, item.subject, item.date, item.key);
-      const view = document.getElementById('view-' + item.key);
-      if (view) {
-        view.classList.add('glitched-view');
-        const h2 = view.querySelector('h2');
-        const meta = view.querySelector('.meta');
-        const body = view.querySelector('.bodytext');
-        if (item.key === 'unknown-room-1') {
-          if (h2) h2.textContent = '¿Cuántas pue�tas hab██?';
-          if (meta) meta.innerHTML = 'De: u̸s̴u̶a̷r̸i̷o̴_̶d̸e̷s̷c̸o̷n̵o̶c̴i̷d̵o̴@coralia.net<br>Para: vela.skyline@coralia.net<br>Fecha: 11/10/2005, 01:26<br>[REGISTRO DE ELIMINACIÓN DAÑADO]';
-          if (body) body.textContent = `No recuerdo que hubiera tantas pue�tas.\n\nLa habitación del fondo no estaba en el plano. Desde el pasillo parecía pequeña, pero por dentro seguía y seguía.\n\n¿Tú también la viste?\n\n[ERROR: FRAGMENTO RECUPERADO]`;
-        } else if (item.key === 'unknown-room-2') {
-          if (h2) h2.textContent = 'La habitaci▒n sin venta▒as';
-          if (meta) meta.innerHTML = 'De: u̸s̴u̶a̷r̸i̷o̴_̶d̸e̷s̷c̸o̷n̵o̶c̴i̷d̵o̴@coralia.net<br>Para: vela.skyline@coralia.net<br>Fecha: 11/10/2005, 02:11<br>[MENSAJE PARCIALMENTE SOBRESCRITO]';
-          if (body) body.textContent = `Había una silla en el centro. N̸a̴d̷a̶ m̸á̷s̵.\n\nNo había ventanas, pero entraba luz por alguna parte. Cuando me di la vuelta, la puerta ya no estaba donde la había dejado.\n\nNo vuelvas a buscarla.\n\n[ELIMINADO POR VELA · CONTENIDO INESTABLE]`;
-        } else {
-          if (h2) h2.textContent = 'M̸e̷n̵s̶a̵j̷e̴ r̸e̷c̵u̸p̷e̴r̷a̵d̴o̸';
-          if (meta) meta.innerHTML = 'De: [D̷A̸T̷O̴ C̷O̴R̷R̷U̸P̴T̸O̴]<br>Para: vela.skyline@coralia.net<br>Fecha: 11/10/2005, 00:03<br>[CABECERA NO DISPONIBLE]';
-          if (body) body.textContent = `Este mensaje no debería aparecer aquí.\n\nSi has conseguido verlo, significa que todavía queda algo en esta cuenta que no pudieron borrar.\n\n[EL REGISTRO YA NO COINCIDE CON SU COPIA]`;
-        }
-      }
-    });
-    updateUnreadCounts();
-  }
-
-  function search() {
-    const value = input.value.trim().toLowerCase();
-    feedback.classList.remove('error');
-    if (!value) { feedback.textContent = 'Escribe algo para buscar.'; feedback.classList.add('error'); return; }
-    
-    if (value === '555-3492' || value === '3492') {
-      openView('cuerpo-fallido');
-      feedback.textContent = 'Código de buzón reconocido. Abriendo archivo...';
-      input.value = '';
-      return;
-    }
-
-    if (value === 'busca cuerpos' || value === 'buscacuerpos' || value === 'criatura') {
-      openView('busca-cuerpos');
-      feedback.textContent = 'Entidad localizada. Mostrando registro...';
-      input.value = '';
-      return;
-    }
-
-    const routes = {
-      'coralia': () => { addMessage('recovered'); feedback.textContent = 'Se ha recuperado un mensaje de la cuenta.'; },
-      'sincronizacion': () => { openView('sync-incomplete'); feedback.textContent = 'Mensaje encontrado.'; },
-      'sincronización': () => { openView('sync-incomplete'); feedback.textContent = 'Mensaje encontrado.'; },
-      'recuperar': () => { addMessage('recovered'); feedback.textContent = 'Se ha recuperado un mensaje de la cuenta.'; },
-      'recuperado': () => { addMessage('recovered'); feedback.textContent = 'Se ha recuperado un mensaje de la cuenta.'; },
-      '03:17': () => { openView('hidden-room'); feedback.textContent = 'Abriendo archivo temporal...'; },
-      '0317': () => { openView('hidden-room'); feedback.textContent = 'Abriendo archivo temporal...'; },
-      'no estabas sola': () => { openView('hidden-note'); feedback.textContent = 'Se ha encontrado una nota oculta.'; },
-      '199.7': () => { openView('hidden-note'); feedback.textContent = 'Se ha encontrado una nota oculta.'; },
-      'habitacion': () => { if (unknownRoom1Exists) { openView('unknown-room-1'); feedback.textContent = 'Mensaje encontrado.'; } else { feedback.textContent = 'No se encontraron resultados.'; feedback.classList.add('error'); } },
-      'habitación': () => { if (unknownRoom1Exists) { openView('unknown-room-1'); feedback.textContent = 'Mensaje encontrado.'; } else { feedback.textContent = 'No se encontraron resultados.'; feedback.classList.add('error'); } },
-      'amor': () => { showFolder('junk'); openView('spam-love'); feedback.textContent = 'Coincidencia encontrada en correo no deseado.'; },
-      'ofertas tom': () => { showFolder('junk'); openView('spam-love'); feedback.textContent = 'Coincidencia encontrada en correo no deseado.'; }
-    };
-    if (['grabadora','frenzy','preocuparte'].includes(value)) {
-      if (!frenzyMailExists) {
-        feedback.textContent = 'No se encontraron resultados. La cuenta todavía está sincronizando.';
-        feedback.classList.add('error'); input.value = ''; return;
-      }
-      addMessage('frenzy'); feedback.textContent = 'Se ha recuperado un mensaje de la cuenta.'; input.value = ''; return;
-    }
-    if (routes[value]) { routes[value](); input.value = ''; return; }
-    feedback.textContent = 'No se encontraron resultados.'; feedback.classList.add('error');
-  }
-
-  document.getElementById('submit').addEventListener('click', search);
-  input.addEventListener('keydown', e => { if (e.key === 'Enter') search(); });
-
-  const refreshButton = document.getElementById('refreshButton');
-  const tagline = document.getElementById('tagline');
-  const toast = document.getElementById('toast');
-  const toastTitle = document.getElementById('toastTitle');
-  const toastBody = document.getElementById('toastBody');
-  let toastTimer;
-  const notificationAudio = new Audio('mail_notification.wav');
-  function playNotificationSound() {
-    try {
-      notificationAudio.currentTime = 0;
-      const playback = notificationAudio.play();
-      if (playback && typeof playback.catch === 'function') playback.catch(() => playFallbackChime());
-    } catch (_) { playFallbackChime(); }
-  }
-  function playFallbackChime() {
-    try {
-      const AudioContextClass = window.AudioContext || window.webkitAudioContext;
-      if (!AudioContextClass) return;
-      const ctx = new AudioContextClass();
-      const now = ctx.currentTime;
-      [880, 1174.66].forEach((frequency, i) => {
-        const oscillator = ctx.createOscillator();
-        const gain = ctx.createGain();
-        oscillator.type = 'sine';
-        oscillator.frequency.value = frequency;
-        gain.gain.setValueAtTime(0.0001, now + i * 0.09);
-        gain.gain.exponentialRampToValueAtTime(0.12, now + i * 0.09 + 0.015);
-        gain.gain.exponentialRampToValueAtTime(0.0001, now + i * 0.09 + 0.18);
-        oscillator.connect(gain); gain.connect(ctx.destination);
-        oscillator.start(now + i * 0.09); oscillator.stop(now + i * 0.09 + 0.2);
+  if (language === 'en') {
+function replaceFlexible(value, from, to) {
+   value = value.split(from).join(to);
+   const pattern = from.split(/\s+/).map(part => part.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('\\s+');
+   return value.replace(new RegExp(pattern, 'g'), to);
+ }
+    const translationPairs = Object.entries(locale.translations || {}).sort((a,b) => b[0].length-a[0].length);
+    function translateRoot(root) {
+      const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+      const nodes=[]; while(walker.nextNode()) nodes.push(walker.currentNode);
+      nodes.forEach(node => {
+        if (!node.nodeValue.trim()) return;
+        let value=node.nodeValue;
+        translationPairs.forEach(([from,to]) => { if (from) value = replaceFlexible(value, from, to); });
+        node.nodeValue=value;
       });
-      setTimeout(() => ctx.close(), 600);
-    } catch (_) { /* Audio is optional if the browser blocks it. */ }
-  }
-
-  if (localStorage.getItem(firstUpdateKey) === 'true') { 
-    document.body.classList.add('coralia-tagline-gone'); 
-    if (tagline && !frenzyMailExists) tagline.textContent = refreshCount === 1 ? '¡No olvides los mensajes!' : 'Estate atento, nunca sabes cuándo llegará un mensaje importante.'; 
-  }
-
-  function showToast(title, body, duration=4500, target='') {
-    toastTitle.textContent = title;
-    toastBody.textContent = body;
-    toast.dataset.target = target || '';
-    toast.setAttribute('aria-label', target ? 'Abrir mensaje: ' + body : 'Notificación: ' + body);
-    toast.classList.add('show');
-    if (target) playNotificationSound();
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => toast.classList.remove('show'), duration);
-  }
-
-  function openToastMessage() {
-    const target = toast.dataset.target;
-    if (!target) return;
-    const row = Array.from(document.querySelectorAll('.mailrow')).find(item =>
-      item.dataset.mail === target || item.dataset.dynamicMail === target
-    );
-    if (row) {
-      markRead(row);
-      const folderForBox = { inbox:'inbox', sentbox:'sent', junkbox:'junk', trashbox:'trash', draftsbox:'drafts' };
-      const folder = folderForBox[row.parentElement && row.parentElement.id] || currentFolder;
-      showFolder(folder);
-      openView(target);
-      toast.classList.remove('show');
-    } else {
-      openView(target);
-      toast.classList.remove('show');
+      const attrs=['placeholder','title','aria-label','alt'];
+      root.querySelectorAll?.('*').forEach(el=>attrs.forEach(attr=>{
+        const value=el.getAttribute(attr); if(!value)return;
+        let next=value; translationPairs.forEach(([from,to]) => { if (from) next=replaceFlexible(next,from,to); });
+        if(next!==value)el.setAttribute(attr,next);
+      }));
     }
+    translateRoot(document.body);
+    new MutationObserver(records=>records.forEach(record=>record.addedNodes.forEach(node=>{
+      if(node.nodeType===1 && !['SCRIPT','STYLE'].includes(node.tagName)) translateRoot(node);
+      translationPairs.forEach(([from,to])=>{if(from)value=replaceFlexible(value,from,to);});node.nodeValue=value;
+    }))).observe(document.body,{childList:true,subtree:true});
+    document.title='Coralia Mail';
   }
-  toast.addEventListener('click', openToastMessage);
-  toast.addEventListener('keydown', event => {
-    if ((event.key === 'Enter' || event.key === ' ') && toast.dataset.target) {
-      event.preventDefault(); openToastMessage();
-    }
-  });
-
-  function refreshCooldown() {
-    const until = Number(localStorage.getItem(cooldownKey) || '0');
-    const remaining = Math.ceil((until - Date.now()) / 1000);
-    if (remaining > 0) {
-      refreshButton.classList.add('cooldown');
-      refreshButton.setAttribute('aria-disabled', 'true');
-      refreshButton.textContent = '↻ Actualizar';
-      refreshButton.title = 'La sincronización todavía está bloqueada.';
-    } else {
-      refreshButton.classList.remove('cooldown');
-      refreshButton.setAttribute('aria-disabled', 'false');
-      refreshButton.textContent = '↻ Actualizar';
-      refreshButton.removeAttribute('title');
-    }
-  }
-
-  function triggerBlackout() {
-    if (localStorage.getItem(blackoutSeenKey)) return;
-    localStorage.setItem(blackoutSeenKey, 'true');
-    const blackout = document.getElementById('blackout');
-    blackout.classList.add('active');
-    setTimeout(() => {
-      blackout.classList.add('fadeout');
-      setTimeout(() => blackout.classList.remove('active','fadeout'), 1300);
-    }, 3800);
-  }
-
-  function revealSentPsyco() {
-    if (localStorage.getItem(sentPsycoRevealedKey) === 'true') return;
-    localStorage.setItem(sentPsycoRevealedKey, 'true');
-    const row = document.getElementById('sentPsycoRow');
-    if (row) {
-      row.style.display = 'grid';
-      const sentBox = document.getElementById('sentbox');
-      const firstSentRow = sentBox && sentBox.querySelector('.mailrow');
-      if (sentBox && firstSentRow && firstSentRow !== row) sentBox.insertBefore(row, firstSentRow);
-      const date = row.querySelector('.date');
-      if (date) date.textContent = '11/10/05';
-    }
-    const messageDate = document.getElementById('sentPsycoDate');
-    if (messageDate) messageDate.textContent = 'Martes, 11 de octubre de 2005, 00:12';
-    const sideNote = document.querySelector('.sidebar .side-note');
-    if (sideNote) sideNote.innerHTML = 'Algunos mensajes podrían no estar disponibles.<br><br>Última sincronización: 11/10/2005 00:17';
-    const lastAccess = document.querySelector('.accountline span:last-child');
-    if (lastAccess) lastAccess.textContent = 'Último acceso: 11/10/2005';
-    updateUnreadCounts();
-    showToast('Mensaje recuperado', 'Se restauró el correo que Vela envió a Psyco.', 5000);
-  }
-
-  function revealFrenzyMail() {
-    if (frenzyMailExists) return;
-    localStorage.setItem(frenzyMailKey, 'true');
-    frenzyMailExists = true;
-    addMessage('frenzy');
-    revealSentPsyco();
-    triggerBlackout();
-    showToast('Nuevo mensaje', 'Frenzy · Gracias por preocuparte.', 5000, 'frenzy');
-    feedback.textContent = 'Se detectó un mensaje sin registro de envío.';
-  }
-
-  function allInitialInboxMessagesRead() {
-    const read = getReadMessages();
-    const initialIds = ['movistar','welcome','support-sync','inbox-class','inbox-party','inbox-random','thread-frenzy','thread-psyco'];
-    return initialIds.every(id => read.includes(id));
-  }
-
-  function revealPostFrenzyMessages() {
-    const postCount = Number(localStorage.getItem(postFrenzyUpdatesKey) || '0') + 1;
-    localStorage.setItem(postFrenzyUpdatesKey, String(postCount));
-
-    if (postCount === 1) {
-      addMessage('post-psyco');
-      revealSentPsyco();
-      const sideNote = document.querySelector('.sidebar .side-note');
-      if (sideNote) sideNote.innerHTML = 'Algunos mensajes podrían no estar disponibles.<br><br>Última sincronización: 11/10/2005 00:26';
-      showToast('Mensaje recibido · 00:26', 'Psyco · Vela, contesta cuando despiertes', 4500, 'post-psyco');
-    } else if (postCount === 2) {
-      addMessage('daily-friend');
-      addMessage('post-rushia');
-      showToast('Mensajes recibidos · mañana', 'Rafa y Rushia te han escrito.', 4200, 'post-rushia');
-    } else if (postCount === 3) {
-      addMessage('sync-incomplete');
-      addMessage('unknown-room-1');
-      showToast('Mensajes recibidos', 'Hay un mensaje nuevo y otro sin remitente verificable.', 4200, 'unknown-room-1');
-    } else if (postCount === 4) {
-      addMessage('did-you-get-it');
-      addMessage('post-lewis');
-      addMessage('unknown-room-2');
-      showToast('Mensajes recibidos · tarde', 'Andrea, Lewis y un remitente desconocido te han escrito.', 4200, 'post-lewis');
-    } else if (postCount === 5 && !finalMessageExists) {
-      localStorage.setItem(finalMessageKey, 'true');
-      finalMessageExists = true;
-      addMessage('final-message');
-      showToast('Mensaje recibido', 'vela.skyline@coralia.net · FINAL', 4200, 'final-message');
-    } else if (postCount >= 6 && !preparedMessageExists) {
-      addMessage('prepared-message');
-      moveWeirdMessagesToTrash();
-      showToast('Mensaje recibido · 12/10/2005', 'bofinderdy@howmail.html · ¿PREPARADOS?', 4800, 'prepared-message');
-      feedback.textContent = 'Se ha recuperado un correo y varios mensajes eliminados están dañados.';
-    }
-  }
-
-  function restorePostFrenzyMessages() {
-    const postCount = Number(localStorage.getItem(postFrenzyUpdatesKey) || '0');
-    if (postCount >= 1) { addMessage('post-psyco'); }
-    if (postCount >= 2) { addMessage('daily-friend'); addMessage('post-rushia'); }
-    if (postCount >= 3) { addMessage('sync-incomplete'); addMessage('unknown-room-1'); }
-    if (postCount >= 4) { addMessage('did-you-get-it'); addMessage('post-lewis'); addMessage('unknown-room-2'); }
-    if (postCount >= 5 && finalMessageExists) addMessage('final-message');
-    if (preparedMessageExists) { addMessage('prepared-message'); moveWeirdMessagesToTrash(); }
-  }
-
-  const movistarAudio = document.querySelector('#view-movistar audio');
-  if (movistarAudio) movistarAudio.addEventListener('ended', () => {
-    localStorage.setItem(movistarReadKey, 'true');
-    feedback.textContent = 'Mensaje de voz escuchado. Coralia ha guardado el registro.';
-    showToast('Mensaje de voz escuchado', 'El registro se ha guardado.', 3000);
-  });
-  const frenzyAudio = document.querySelector('#view-frenzy audio');
-  if (frenzyAudio) frenzyAudio.addEventListener('ended', () => {
-    localStorage.setItem(frenzyAudioHeardKey, 'true');
-    feedback.textContent = 'Grabación completada. Actualiza para restablecer Coralia Mail.';
-  });
-
-  function advanceStory() {
-    if (document.body.classList.contains('coralia-void') && localStorage.getItem(frenzyAudioHeardKey) !== 'true') {
-      feedback.textContent = 'La grabación sigue incompleta. Escucha el audio hasta el final antes de actualizar.';
-      feedback.classList.add('error');
-      return;
-    }
-    refreshCount += 1;
-    localStorage.setItem(refreshKey, String(refreshCount));
-    localStorage.setItem(cooldownKey, String(Date.now() + 30000));
-    localStorage.setItem(firstUpdateKey, 'true');
-    document.body.classList.add('coralia-tagline-gone');
-    if (tagline) tagline.textContent = 'Estate atento, nunca sabes cuándo llegará un mensaje importante.';
-    
-    if (document.body.classList.contains('coralia-void')) {
-      exitVoidMode();
-      document.body.dataset.justExitedVoid = 'true';
-      revealPostFrenzyMessages();
-      feedback.textContent = 'Coralia Mail ha recuperado la interfaz. Hay mensajes nuevos.';
-    }
-    applyCorruptionPhase();
-
-    if (refreshCount === 1) {
-      addMessage('breakfast-note');
-      addMessage('reload-clue');
-      addMessage('halloween-event');
-      showToast('3 mensajes recibidos', 'Nora Paz, Coralia Mail y Moda Coralia te han escrito.', 4200, 'halloween-event');
-      feedback.textContent = 'Han llegado tres mensajes nuevos.';
-    } else if (refreshCount >= 2 && localStorage.getItem(spamTomKey) !== 'true') {
-      localStorage.setItem(spamTomKey, 'true');
-      if (spamLoveRow) {
-        spamLoveRow.style.display = 'grid';
-        const prizeRow = document.querySelector('#junkbox [data-mail="spam-prize"]');
-        if (prizeRow && prizeRow.nextSibling !== spamLoveRow) document.getElementById('junkbox').insertBefore(spamLoveRow, prizeRow.nextSibling);
-      }
-      addMessage('halloween-costume');
-      updateUnreadCounts();
-      showToast('Mensajes recibidos', 'Ofertas Tom y Andrea te han escrito.', 3500, 'spam-love');
-      feedback.textContent = 'Han llegado mensajes nuevos, incluido correo no deseado.';
-    } else if (refreshCount === 3) {
-      addMessage('sync-incomplete');
-      addMessage('halloween-party');
-      showToast('Mensajes recibidos', 'Hay un aviso de sincronización y un mensaje de Rafa.', 3500, 'halloween-party');
-      feedback.textContent = 'Algunos mensajes podrían aparecer después.';
-    } else if (refreshCount === 4) {
-      addMessage('did-you-get-it');
-      addMessage('hospital-papers');
-      showToast('2 mensajes recibidos', 'Andrea y Hospital Central te han escrito.', 4200, 'hospital-papers');
-      feedback.textContent = 'Han llegado dos mensajes nuevos.';
-    } else {
-      showToast('Sincronización completada', refreshCount === 5 ? 'No hay mensajes nuevos.' : 'La bandeja está actualizada.', 2400);
-      feedback.textContent = refreshCount === 5 ? 'No hay mensajes nuevos.' : 'Sincronización completada.';
-    }
-
-    // Después de salir de Void, los mensajes llegan en tandas a lo largo del día.
-    if (frenzyMailExists && localStorage.getItem(voidResolvedKey) === 'true' && !document.body.dataset.justExitedVoid) {
-      revealPostFrenzyMessages();
-    }
-    delete document.body.dataset.justExitedVoid;
-
-    // La quinta actualización puede quedar inquietantemente vacía; Frenzy no aparece antes de la sexta.
-    if (!frenzyMailExists && refreshCount >= 6) {
-      if (localStorage.getItem(movistarReadKey) === 'true' && allInitialInboxMessagesRead()) {
-        revealFrenzyMail();
-      } else {
-        feedback.textContent = 'La sincronización sigue incompleta. Revisa los mensajes antiguos y escucha la grabación de Movistar hasta el final.';
-      }
-    }
-    refreshCooldown();
-  }
-
-  function runRefresh() {
-    const until = Number(localStorage.getItem(cooldownKey) || '0');
-    if (until > Date.now()) {
-      feedback.textContent = 'Coralia necesita un momento antes de volver a sincronizar.';
-      feedback.classList.add('error');
-      refreshCooldown();
-      return;
-    }
-    feedback.classList.remove('error');
-    advanceStory();
-  }
-
-  refreshButton.addEventListener('click', runRefresh);
-  refreshButton.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); runRefresh(); } });
-  function showUnavailableAction(message) {
-    feedback.textContent = message;
-    feedback.classList.add('error');
-    showToast('Error de Coralia Mail', message, 3200);
-  }
-  const unavailableActions = [
-    ['composeButton', 'No se pudo abrir Redactar. El editor no está disponible en esta versión beta.'],
-    ['deleteButton', 'Error al eliminar: el servidor no pudo modificar los mensajes. Inténtalo más tarde.'],
-    ['optionsButton', 'Opciones no está disponible mientras se completa la sincronización.']
-  ];
-  unavailableActions.forEach(([id, message]) => {
-    const button = document.getElementById(id);
-    if (!button) return;
-    button.addEventListener('click', () => showUnavailableAction(message));
-    button.addEventListener('keydown', event => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); showUnavailableAction(message); } });
-  });
-  refreshCooldown();
-  setInterval(refreshCooldown, 1000);
-
-  const sentPsycoRow = document.getElementById('sentPsycoRow');
-  if (localStorage.getItem(sentPsycoRevealedKey) === 'true' && sentPsycoRow) {
-    sentPsycoRow.style.display = 'grid';
-    const sentBox = document.getElementById('sentbox');
-    const firstSentRow = sentBox && sentBox.querySelector('.mailrow');
-    if (sentBox && firstSentRow && firstSentRow !== sentPsycoRow) sentBox.insertBefore(sentPsycoRow, firstSentRow);
-    const sentDate = sentPsycoRow.querySelector('.date'); if (sentDate) sentDate.textContent = '11/10/05';
-    const messageDate = document.getElementById('sentPsycoDate'); if (messageDate) messageDate.textContent = 'Martes, 11 de octubre de 2005, 00:12';
-    const sideNote = document.querySelector('.sidebar .side-note'); if (sideNote) sideNote.innerHTML = 'Algunos mensajes podrían no estar disponibles.<br><br>Última sincronización: 11/10/2005 ' + (Number(localStorage.getItem(postFrenzyUpdatesKey) || '0') >= 1 ? '00:26' : '00:17');
-    const lastAccess = document.querySelector('.accountline span:last-child'); if (lastAccess) lastAccess.textContent = 'Último acceso: 11/10/2005';
-  }
-
-  if (refreshCount >= 1) { addMessage('breakfast-note'); addMessage('reload-clue'); addMessage('halloween-event'); }
-  if (refreshCount >= 2) addMessage('halloween-costume');
-  if (refreshCount >= 3) { addMessage('sync-incomplete'); addMessage('halloween-party'); }
-  if (refreshCount >= 4) { addMessage('did-you-get-it'); addMessage('hospital-papers'); }
-  if (frenzyMailExists) addMessage('frenzy');
-  if (frenzyMailExists && localStorage.getItem(voidResolvedKey) !== 'true' && localStorage.getItem(voidModeActiveKey) === 'true') { enterVoidMode(); openView('frenzy'); }
-  if (unknownRoom1Exists) addMessage('unknown-room-1');
-  if (unknownRoom2Exists) addMessage('unknown-room-2');
-  if (finalMessageExists) addMessage('final-message');
-  restorePostFrenzyMessages();
-  if (preparedMessageExists) moveWeirdMessagesToTrash();
-  applyCorruptionPhase();
-  if (frenzyMailExists) feedback.textContent = 'Sincronización completada.';
-  updateUnreadCounts();
+  const dynamicLocale = locale;
+  const originalScript = "\n  // Verificar la versión del progreso guardado\n  const STORAGE_VERSION_KEY = \"arg_storage_version\";\n  const CURRENT_STORAGE_VERSION = \"2026-10-21-v2\";\n\n  if (localStorage.getItem(STORAGE_VERSION_KEY) !== CURRENT_STORAGE_VERSION) {\n    // Borrar solamente los datos de progreso de Coralia Mail\n    Object.keys(localStorage).forEach(key => {\n      if (key.startsWith(\"coralia_\") && key !== \"coralia_language\") {\n        localStorage.removeItem(key);\n      }\n    });\n\n    // Registrar la versión nueva para no repetir el reinicio\n    localStorage.setItem(STORAGE_VERSION_KEY, CURRENT_STORAGE_VERSION);\n  }\n  const boot = document.getElementById('boot');\n  const testMode = new URLSearchParams(window.location.search).get('test') === '1';\n  const testPanel = document.getElementById('testPanel');\n  if (testMode && testPanel) {\n    testPanel.style.display = 'block';\n    document.getElementById('resetProgress').addEventListener('click', () => {\n      Object.keys(localStorage).filter(key => key.startsWith('coralia_') && key !== 'coralia_language').forEach(key => localStorage.removeItem(key));\n      window.location.reload();\n    });\n  }\n  const refreshKey = 'coralia_corruption_loads_v12';\n  const cooldownKey = 'coralia_refresh_cooldown_until_v9';\n  let refreshCount = Number(localStorage.getItem(refreshKey) || '0');\n  const frenzyMailKey = 'coralia_frenzy_mail_persisted_v12';\n  const unknownRoom1Key = 'coralia_unknown_room_1_v9';\n  const unknownRoom2Key = 'coralia_unknown_room_2_v9';\n  const finalMessageKey = 'coralia_final_message_v4';\n  const preparedMessageKey = 'coralia_prepared_message_v1';\n  const spamTomKey = 'coralia_ofertas_tom_visible_v9';\n  const movistarReadKey = 'coralia_movistar_audio_heard_v6';\n  const sentPsycoRevealedKey = 'coralia_sent_psyco_revealed_v6';\n  const postFrenzyUpdatesKey = 'coralia_post_frenzy_updates_v5';\n  const frenzyAudioHeardKey = 'coralia_frenzy_audio_heard_v1';\n  const voidResolvedKey = 'coralia_void_resolved_v1';\n  const voidModeActiveKey = 'coralia_void_mode_active_v1';\n  const dailyMailStageKey = 'coralia_daily_mail_stage_v1';\n  const firstUpdateKey = 'coralia_first_update_seen_v9';\n  const blackoutSeenKey = 'coralia_frenzy_blackout_seen_v9';\n  const readKey = 'coralia_read_messages_v8';\n  \n  let frenzyMailExists = localStorage.getItem(frenzyMailKey) === 'true';\n  let unknownRoom1Exists = localStorage.getItem(unknownRoom1Key) === 'true';\n  let unknownRoom2Exists = localStorage.getItem(unknownRoom2Key) === 'true';\n  let finalMessageExists = localStorage.getItem(finalMessageKey) === 'true';\n  let preparedMessageExists = localStorage.getItem(preparedMessageKey) === 'true';\n  const spamLoveRow = document.getElementById('spamLoveRow');\n  if (spamLoveRow && localStorage.getItem(spamTomKey) === 'true') {\n    spamLoveRow.style.display = 'grid';\n    const prizeRow = document.querySelector('#junkbox [data-mail=\"spam-prize\"]');\n    if (prizeRow && prizeRow.nextSibling !== spamLoveRow) document.getElementById('junkbox').insertBefore(spamLoveRow, prizeRow.nextSibling);\n  }\n\n  function applyCorruptionPhase() {\n    document.body.classList.remove('coralia-pure-green');\n    if (localStorage.getItem(voidResolvedKey) === 'true') document.body.classList.add('coralia-pure-green');\n  }\n\n  function enterVoidMode() {\n    if (localStorage.getItem(voidResolvedKey) === 'true') return;\n    localStorage.setItem(voidModeActiveKey, 'true');\n    document.body.classList.add('coralia-void');\n    document.body.classList.remove('coralia-pure-green');\n  }\n\n  function exitVoidMode() {\n    document.body.classList.remove('coralia-void');\n    localStorage.setItem(voidResolvedKey, 'true');\n    localStorage.removeItem(voidModeActiveKey);\n    applyCorruptionPhase();\n  }\n\n  // Salida de emergencia: nunca depende de que el audio haya terminado ni de Actualizar.\n  const returnVoidButton = document.getElementById('returnVoidButton');\n  if (returnVoidButton) returnVoidButton.addEventListener('click', () => {\n    exitVoidMode();\n    showFolder('inbox');\n    feedback.classList.remove('error');\n    feedback.textContent = 'Has vuelto a Coralia Mail. Pulsa Actualizar cuando quieras continuar.';\n  });\n\n  window.addEventListener('load', () => setTimeout(() => { boot.style.opacity = '0'; setTimeout(() => boot.remove(), 750); }, 1800));\n  \n  const folderBoxes = {\n    inbox: document.getElementById('inbox'), sent: document.getElementById('sentbox'),\n    junk: document.getElementById('junkbox'), trash: document.getElementById('trashbox'),\n    drafts: document.getElementById('draftsbox')\n  };\n  let currentFolder = 'inbox';\n  let currentView = '';\n  const feedback = document.getElementById('feedback');\n  const input = document.getElementById('secret');\n  let unlocked = { recovered:false, frenzy:false, unknownRoom1:false, unknownRoom2:false, finalMessage:false };\n\n  function openView(name) {\n    currentView = name;\n    // Mantener visible la lista de la carpeta actual en escritorio; el mensaje abre a su derecha.\n    Object.entries(folderBoxes).forEach(([key, el]) => { if (el) el.style.display = key === currentFolder ? 'block' : 'none'; });\n    document.querySelectorAll('.mailview').forEach(el => el.classList.remove('show'));\n    const view = document.getElementById('view-' + name);\n    const main = document.querySelector('.main');\n    // Most mail views were outside .main in the markup, so they fell beneath the list.\n    // Put the selected view beside the active folder list; the mobile media query stacks it.\n    if (view && main && view.parentElement !== main) main.appendChild(view);\n    if (view) view.classList.add('show');\n    if (main) main.classList.add('mail-open');\n    if (name === 'frenzy' && localStorage.getItem(voidResolvedKey) !== 'true') enterVoidMode();\n    else if (localStorage.getItem(voidResolvedKey) === 'true') applyCorruptionPhase();\n  }\n\n  function showFolder(name) {\n    currentFolder = name;\n    currentView = '';\n    const main = document.querySelector('.main');\n    if (main) main.classList.remove('mail-open');\n    document.querySelectorAll('.mailview').forEach(el => el.classList.remove('show'));\n    Object.entries(folderBoxes).forEach(([key, el]) => { if (el) el.style.display = key === name ? 'block' : 'none'; });\n    document.querySelectorAll('[data-folder]').forEach(el => el.classList.toggle('active', el.dataset.folder === name));\n    const title = document.querySelector('.windowbar span');\n    const labels = { inbox:'Bandeja de entrada', sent:'Mensajes enviados', junk:'Correo no deseado', trash:'Elementos eliminados', drafts:'Borradores' };\n    if (title) title.textContent = (labels[name] || 'Bandeja de entrada') + ' - Coralia Mail';\n  }\n\n  function backToFolder() { currentView = ''; showFolder(currentFolder); }\n  document.querySelectorAll('[data-folder]').forEach(folder => folder.addEventListener('click', () => showFolder(folder.dataset.folder)));\n  \n  function messageKey(row) { return row.dataset.mail || row.dataset.dynamicMail || ''; }\n  function getReadMessages() { try { return JSON.parse(localStorage.getItem(readKey) || '[]'); } catch (_) { return []; } }\n  \n  function updateUnreadCounts() {\n    const mapping = { inbox:['#inbox','#count-inbox'], sent:['#sentbox','#count-sent'], drafts:['#draftsbox','#count-drafts'], trash:['#trashbox','#count-trash'], junk:['#junkbox','#count-junk'] };\n    Object.entries(mapping).forEach(([name, pair]) => {\n      const container = document.querySelector(pair[0]);\n      const badge = document.querySelector(pair[1]);\n      if (!container || !badge) return;\n      const visibleRows = Array.from(container.querySelectorAll('.mailrow')).filter(row => row.style.display !== 'none');\n      if (name === 'trash') {\n        const total = visibleRows.length;\n        badge.textContent = total + (total === 1 ? ' elemento' : ' elementos');\n      } else {\n        const unread = visibleRows.filter(row => row.classList.contains('unread')).length;\n        badge.textContent = unread ? (unread + ' sin leer') : '0 sin leer';\n      }\n    });\n  }\n\n  function markRead(row) {\n    const key = messageKey(row);\n    if (key) {\n      const read = getReadMessages();\n      if (!read.includes(key)) read.push(key);\n      localStorage.setItem(readKey, JSON.stringify(read));\n    }\n    row.classList.remove('unread');\n    updateUnreadCounts();\n  }\n\n  function bindMailRow(row) { row.addEventListener('click', () => { markRead(row); openView(row.dataset.mail || row.dataset.dynamicMail); }); }\n  \n  const previouslyRead = getReadMessages();\n  document.querySelectorAll('.mailrow').forEach(row => {\n    if (previouslyRead.includes(messageKey(row))) row.classList.remove('unread');\n    bindMailRow(row);\n  });\n  updateUnreadCounts();\n  document.querySelectorAll('[data-back]').forEach(btn => btn.addEventListener('click', backToFolder));\n\n  function insertInboxRow(sender, subject, date, viewName) {\n    let row = document.querySelector('#inbox [data-dynamic-mail=\"' + viewName + '\"]');\n    if (row) {\n      row.querySelector('.date').textContent = date;\n      return;\n    }\n    row = document.createElement('div');\n    row.className = 'mailrow unread';\n    row.dataset.dynamicMail = viewName;\n    if (getReadMessages().includes(viewName)) row.classList.remove('unread');\n    row.innerHTML = '<span class=\"sender\"></span><span class=\"subject\"></span><span class=\"date\"></span>';\n    row.querySelector('.sender').textContent = sender;\n    row.querySelector('.subject').textContent = subject;\n    row.querySelector('.date').textContent = date;\n    bindMailRow(row);\n    const inbox = document.getElementById('inbox');\n    const firstMail = inbox.querySelector('.mailrow');\n    inbox.insertBefore(row, firstMail || document.getElementById('hint'));\n    updateUnreadCounts();\n  }\n\n  function addMessage(key) {\n    if (key === 'recovered' && !unlocked.recovered) {\n      unlocked.recovered = true;\n      insertInboxRow('[remitente desconocido]', 'Mensaje recuperado', '11/10/05', 'recovered');\n    }\n    if (key === 'frenzy' && !unlocked.frenzy) {\n      unlocked.frenzy = true;\n      insertInboxRow('Frenzy', 'Gracias por preocuparte.', '11/10/05', 'frenzy');\n    }\n    if (key === 'unknown-room-1' && !unlocked.unknownRoom1) {\n      unlocked.unknownRoom1 = true;\n      unknownRoom1Exists = true;\n      localStorage.setItem(unknownRoom1Key, 'true');\n      insertInboxRow('usuario_desconocido@coralia.net', '¿Cuántas puertas había?', '11/10/05', 'unknown-room-1');\n    }\n    if (key === 'unknown-room-2' && !unlocked.unknownRoom2) {\n      unlocked.unknownRoom2 = true;\n      unknownRoom2Exists = true;\n      localStorage.setItem(unknownRoom2Key, 'true');\n      insertInboxRow('usuario_desconocido@coralia.net', 'La habitación sin ventanas', '11/10/05', 'unknown-room-2');\n    }\n    if (key === 'final-message' && !unlocked.finalMessage) {\n      unlocked.finalMessage = true;\n      insertInboxRow('vela.skyline@coralia.net', 'FINAL', '11/10/05', 'final-message');\n    }\n    const postVoid = localStorage.getItem(voidResolvedKey) === 'true';\n    const dayShort = postVoid ? '11/10/05' : '10/10/05';\n    const dayLong = postVoid ? 'Martes, 11 de octubre de 2005' : 'Lunes, 10 de octubre de 2005';\n    if (key === 'breakfast-note') insertInboxRow('Nora Paz', '¿Vas a desayunar?', '10/10/05 08:03', 'breakfast-note');\n    if (key === 'reload-clue') insertInboxRow('sistema@coralia.net', 'Una nota de sincronización', '10/10/05 08:04', 'reload-clue');\n    if (key === 'hospital-papers') insertInboxRow('Hospital Central', 'Documentación pendiente', '10/10/05 16:03', 'hospital-papers');\n    if (key === 'post-psyco') insertInboxRow('Psyco', 'Vela, contesta cuando despiertes', '11/10/05 00:26', 'post-psyco');\n    if (key === 'post-rushia') insertInboxRow('Rushia', 'Te guardé el puesto', '11/10/05 10:18', 'post-rushia');\n    if (key === 'post-lewis') insertInboxRow('Lewis', '¿Tienes los apuntes de hoy?', '11/10/05 16:42', 'post-lewis');\n    if (key === 'daily-friend') {\n      insertInboxRow('Rafa · rafa_05@hotmail.com', '¿Te fuiste tan rápido?', dayShort + ' 09:14', 'daily-friend');\n      const date = document.querySelector('#view-daily-friend .message-date'); if (date) date.textContent = dayLong + ', 09:14';\n    }\n    if (key === 'sync-incomplete') {\n      insertInboxRow('Coralia Mail', 'Sincronización incompleta', dayShort + ' 11:06', 'sync-incomplete');\n      const date = document.querySelector('#view-sync-incomplete .message-date'); if (date) date.textContent = dayLong + ', 11:06';\n    }\n    if (key === 'did-you-get-it') {\n      insertInboxRow('Andrea', '¿Te llegó lo que te mandé?', dayShort + ' 15:37', 'did-you-get-it');\n      const date = document.querySelector('#view-did-you-get-it .message-date'); if (date) date.textContent = dayLong + ', 15:37';\n    }\n    if (key === 'halloween-event') insertInboxRow('Moda Coralia', 'Halloween está a la vuelta de la esquina', '10/10/05 09:36', 'halloween-event');\n    if (key === 'halloween-costume') insertInboxRow('Andrea', '¿Ya sabes de qué te vas a disfrazar?', '10/10/05 10:12', 'halloween-costume');\n    if (key === 'halloween-party') insertInboxRow('Rafa', 'Re: ¿Hacemos algo para Halloween?', '10/10/05 14:48', 'halloween-party');\n    if (key === 'prepared-message') {\n      if (!preparedMessageExists) {\n        preparedMessageExists = true;\n        localStorage.setItem(preparedMessageKey, 'true');\n      }\n      insertInboxRow('bofinderdy@howmail.html', '¿PREPARADOS?', '12/10/05 00:14', 'prepared-message');\n      applyCorruptionPhase();\n    }\n    updateUnreadCounts();\n  }\n\n  function insertTrashRow(sender, subject, date, viewName) {\n    const box = document.getElementById('trashbox');\n    let row = box.querySelector('[data-dynamic-mail=\"' + viewName + '\"]');\n    if (row) return row;\n    const empty = box.querySelector('.empty');\n    if (empty) empty.remove();\n    row = document.createElement('div');\n    row.className = 'mailrow glitched';\n    row.dataset.dynamicMail = viewName;\n    row.innerHTML = '<span class=\"sender\"></span><span class=\"subject\"></span><span class=\"date\"></span>';\n    row.querySelector('.sender').textContent = sender;\n    row.querySelector('.subject').textContent = subject;\n    row.querySelector('.date').textContent = date;\n    bindMailRow(row);\n    box.appendChild(row);\n    return row;\n  }\n\n  function moveWeirdMessagesToTrash() {\n    if (localStorage.getItem(preparedMessageKey) !== 'true') return;\n    const items = [\n      { key:'unknown-room-1', sender:'u̸s̴u̶a̷r̸i̷o̴_̶d̸e̷s̷c̸o̷n̵o̶c̴i̷d̵o̴', subject:'¿Cuántas pue�tas hab██?', date:'11/10/05 01:26' },\n      { key:'unknown-room-2', sender:'u̸s̴u̶a̷r̸i̷o̴_̶d̸e̷s̷c̸o̷n̵o̶c̴i̷d̵o̴', subject:'La habitaci▒n sin venta▒as', date:'11/10/05 02:11' },\n      { key:'recovered', sender:'[remitente d̷e̸s̷c̴o̵n̷o̴c̵i̷d̵o̴]', subject:'M̸e̷n̵s̶a̵j̷e̴ r̸e̷c̵u̸p̷e̴r̷a̵d̴o̸', date:'11/10/05 00:03' }\n    ];\n    items.forEach(item => {\n      const inboxRow = document.querySelector('#inbox [data-dynamic-mail=\"' + item.key + '\"]');\n      const exists = item.key === 'unknown-room-1' ? unknownRoom1Exists : item.key === 'unknown-room-2' ? unknownRoom2Exists : unlocked.recovered || !!document.querySelector('#inbox [data-dynamic-mail=\"recovered\"]');\n      if (!exists) return;\n      if (inboxRow) inboxRow.remove();\n      const read = getReadMessages();\n      if (!read.includes(item.key)) { read.push(item.key); localStorage.setItem(readKey, JSON.stringify(read)); }\n      insertTrashRow(item.sender, item.subject, item.date, item.key);\n      const view = document.getElementById('view-' + item.key);\n      if (view) {\n        view.classList.add('glitched-view');\n        const h2 = view.querySelector('h2');\n        const meta = view.querySelector('.meta');\n        const body = view.querySelector('.bodytext');\n        if (item.key === 'unknown-room-1') {\n          if (h2) h2.textContent = '¿Cuántas pue�tas hab██?';\n          if (meta) meta.innerHTML = 'De: u̸s̴u̶a̷r̸i̷o̴_̶d̸e̷s̷c̸o̷n̵o̶c̴i̷d̵o̴@coralia.net<br>Para: vela.skyline@coralia.net<br>Fecha: 11/10/2005, 01:26<br>[REGISTRO DE ELIMINACIÓN DAÑADO]';\n          if (body) body.textContent = `No recuerdo que hubiera tantas pue�tas.\\n\\nLa habitación del fondo no estaba en el plano. Desde el pasillo parecía pequeña, pero por dentro seguía y seguía.\\n\\n¿Tú también la viste?\\n\\n[ERROR: FRAGMENTO RECUPERADO]`;\n        } else if (item.key === 'unknown-room-2') {\n          if (h2) h2.textContent = 'La habitaci▒n sin venta▒as';\n          if (meta) meta.innerHTML = 'De: u̸s̴u̶a̷r̸i̷o̴_̶d̸e̷s̷c̸o̷n̵o̶c̴i̷d̵o̴@coralia.net<br>Para: vela.skyline@coralia.net<br>Fecha: 11/10/2005, 02:11<br>[MENSAJE PARCIALMENTE SOBRESCRITO]';\n          if (body) body.textContent = `Había una silla en el centro. N̸a̴d̷a̶ m̸á̷s̵.\\n\\nNo había ventanas, pero entraba luz por alguna parte. Cuando me di la vuelta, la puerta ya no estaba donde la había dejado.\\n\\nNo vuelvas a buscarla.\\n\\n[ELIMINADO POR VELA · CONTENIDO INESTABLE]`;\n        } else {\n          if (h2) h2.textContent = 'M̸e̷n̵s̶a̵j̷e̴ r̸e̷c̵u̸p̷e̴r̷a̵d̴o̸';\n          if (meta) meta.innerHTML = 'De: [D̷A̸T̷O̴ C̷O̴R̷R̷U̸P̴T̸O̴]<br>Para: vela.skyline@coralia.net<br>Fecha: 11/10/2005, 00:03<br>[CABECERA NO DISPONIBLE]';\n          if (body) body.textContent = `Este mensaje no debería aparecer aquí.\\n\\nSi has conseguido verlo, significa que todavía queda algo en esta cuenta que no pudieron borrar.\\n\\n[EL REGISTRO YA NO COINCIDE CON SU COPIA]`;\n        }\n      }\n    });\n    updateUnreadCounts();\n  }\n\n  function search() {\n    const value = input.value.trim().toLowerCase();\n    feedback.classList.remove('error');\n    if (!value) { feedback.textContent = 'Escribe algo para buscar.'; feedback.classList.add('error'); return; }\n    \n    if (value === '555-3492' || value === '3492') {\n      openView('cuerpo-fallido');\n      feedback.textContent = 'Código de buzón reconocido. Abriendo archivo...';\n      input.value = '';\n      return;\n    }\n\n    if (value === 'busca cuerpos' || value === 'buscacuerpos' || value === 'criatura') {\n      openView('busca-cuerpos');\n      feedback.textContent = 'Entidad localizada. Mostrando registro...';\n      input.value = '';\n      return;\n    }\n\n    const routes = {\n      'coralia': () => { addMessage('recovered'); feedback.textContent = 'Se ha recuperado un mensaje de la cuenta.'; },\n      'sincronizacion': () => { openView('sync-incomplete'); feedback.textContent = 'Mensaje encontrado.'; },\n      'sincronización': () => { openView('sync-incomplete'); feedback.textContent = 'Mensaje encontrado.'; },\n      'recuperar': () => { addMessage('recovered'); feedback.textContent = 'Se ha recuperado un mensaje de la cuenta.'; },\n      'recuperado': () => { addMessage('recovered'); feedback.textContent = 'Se ha recuperado un mensaje de la cuenta.'; },\n      '03:17': () => { openView('hidden-room'); feedback.textContent = 'Abriendo archivo temporal...'; },\n      '0317': () => { openView('hidden-room'); feedback.textContent = 'Abriendo archivo temporal...'; },\n      'no estabas sola': () => { openView('hidden-note'); feedback.textContent = 'Se ha encontrado una nota oculta.'; },\n      '199.7': () => { openView('hidden-note'); feedback.textContent = 'Se ha encontrado una nota oculta.'; },\n      'habitacion': () => { if (unknownRoom1Exists) { openView('unknown-room-1'); feedback.textContent = 'Mensaje encontrado.'; } else { feedback.textContent = 'No se encontraron resultados.'; feedback.classList.add('error'); } },\n      'habitación': () => { if (unknownRoom1Exists) { openView('unknown-room-1'); feedback.textContent = 'Mensaje encontrado.'; } else { feedback.textContent = 'No se encontraron resultados.'; feedback.classList.add('error'); } },\n      'amor': () => { showFolder('junk'); openView('spam-love'); feedback.textContent = 'Coincidencia encontrada en correo no deseado.'; },\n      'ofertas tom': () => { showFolder('junk'); openView('spam-love'); feedback.textContent = 'Coincidencia encontrada en correo no deseado.'; }\n    };\n    if (['grabadora','frenzy','preocuparte'].includes(value)) {\n      if (!frenzyMailExists) {\n        feedback.textContent = 'No se encontraron resultados. La cuenta todavía está sincronizando.';\n        feedback.classList.add('error'); input.value = ''; return;\n      }\n      addMessage('frenzy'); feedback.textContent = 'Se ha recuperado un mensaje de la cuenta.'; input.value = ''; return;\n    }\n    if (routes[value]) { routes[value](); input.value = ''; return; }\n    feedback.textContent = 'No se encontraron resultados.'; feedback.classList.add('error');\n  }\n\n  document.getElementById('submit').addEventListener('click', search);\n  input.addEventListener('keydown', e => { if (e.key === 'Enter') search(); });\n\n  const refreshButton = document.getElementById('refreshButton');\n  const tagline = document.getElementById('tagline');\n  const toast = document.getElementById('toast');\n  const toastTitle = document.getElementById('toastTitle');\n  const toastBody = document.getElementById('toastBody');\n  let toastTimer;\n  const notificationAudio = new Audio('mail_notification.wav');\n  function playNotificationSound() {\n    try {\n      notificationAudio.currentTime = 0;\n      const playback = notificationAudio.play();\n      if (playback && typeof playback.catch === 'function') playback.catch(() => playFallbackChime());\n    } catch (_) { playFallbackChime(); }\n  }\n  function playFallbackChime() {\n    try {\n      const AudioContextClass = window.AudioContext || window.webkitAudioContext;\n      if (!AudioContextClass) return;\n      const ctx = new AudioContextClass();\n      const now = ctx.currentTime;\n      [880, 1174.66].forEach((frequency, i) => {\n        const oscillator = ctx.createOscillator();\n        const gain = ctx.createGain();\n        oscillator.type = 'sine';\n        oscillator.frequency.value = frequency;\n        gain.gain.setValueAtTime(0.0001, now + i * 0.09);\n        gain.gain.exponentialRampToValueAtTime(0.12, now + i * 0.09 + 0.015);\n        gain.gain.exponentialRampToValueAtTime(0.0001, now + i * 0.09 + 0.18);\n        oscillator.connect(gain); gain.connect(ctx.destination);\n        oscillator.start(now + i * 0.09); oscillator.stop(now + i * 0.09 + 0.2);\n      });\n      setTimeout(() => ctx.close(), 600);\n    } catch (_) { /* Audio is optional if the browser blocks it. */ }\n  }\n\n  if (localStorage.getItem(firstUpdateKey) === 'true') { \n    document.body.classList.add('coralia-tagline-gone'); \n    if (tagline && !frenzyMailExists) tagline.textContent = refreshCount === 1 ? '¡No olvides los mensajes!' : 'Estate atento, nunca sabes cuándo llegará un mensaje importante.'; \n  }\n\n  function showToast(title, body, duration=4500, target='') {\n    toastTitle.textContent = title;\n    toastBody.textContent = body;\n    toast.dataset.target = target || '';\n    toast.setAttribute('aria-label', target ? 'Abrir mensaje: ' + body : 'Notificación: ' + body);\n    toast.classList.add('show');\n    if (target) playNotificationSound();\n    clearTimeout(toastTimer);\n    toastTimer = setTimeout(() => toast.classList.remove('show'), duration);\n  }\n\n  function openToastMessage() {\n    const target = toast.dataset.target;\n    if (!target) return;\n    const row = Array.from(document.querySelectorAll('.mailrow')).find(item =>\n      item.dataset.mail === target || item.dataset.dynamicMail === target\n    );\n    if (row) {\n      markRead(row);\n      const folderForBox = { inbox:'inbox', sentbox:'sent', junkbox:'junk', trashbox:'trash', draftsbox:'drafts' };\n      const folder = folderForBox[row.parentElement && row.parentElement.id] || currentFolder;\n      showFolder(folder);\n      openView(target);\n      toast.classList.remove('show');\n    } else {\n      openView(target);\n      toast.classList.remove('show');\n    }\n  }\n  toast.addEventListener('click', openToastMessage);\n  toast.addEventListener('keydown', event => {\n    if ((event.key === 'Enter' || event.key === ' ') && toast.dataset.target) {\n      event.preventDefault(); openToastMessage();\n    }\n  });\n\n  function refreshCooldown() {\n    const until = Number(localStorage.getItem(cooldownKey) || '0');\n    const remaining = Math.ceil((until - Date.now()) / 1000);\n    if (remaining > 0) {\n      refreshButton.classList.add('cooldown');\n      refreshButton.setAttribute('aria-disabled', 'true');\n      refreshButton.textContent = '↻ Actualizar';\n      refreshButton.title = 'La sincronización todavía está bloqueada.';\n    } else {\n      refreshButton.classList.remove('cooldown');\n      refreshButton.setAttribute('aria-disabled', 'false');\n      refreshButton.textContent = '↻ Actualizar';\n      refreshButton.removeAttribute('title');\n    }\n  }\n\n  function triggerBlackout() {\n    if (localStorage.getItem(blackoutSeenKey)) return;\n    localStorage.setItem(blackoutSeenKey, 'true');\n    const blackout = document.getElementById('blackout');\n    blackout.classList.add('active');\n    setTimeout(() => {\n      blackout.classList.add('fadeout');\n      setTimeout(() => blackout.classList.remove('active','fadeout'), 1300);\n    }, 3800);\n  }\n\n  function revealSentPsyco() {\n    if (localStorage.getItem(sentPsycoRevealedKey) === 'true') return;\n    localStorage.setItem(sentPsycoRevealedKey, 'true');\n    const row = document.getElementById('sentPsycoRow');\n    if (row) {\n      row.style.display = 'grid';\n      const sentBox = document.getElementById('sentbox');\n      const firstSentRow = sentBox && sentBox.querySelector('.mailrow');\n      if (sentBox && firstSentRow && firstSentRow !== row) sentBox.insertBefore(row, firstSentRow);\n      const date = row.querySelector('.date');\n      if (date) date.textContent = '11/10/05';\n    }\n    const messageDate = document.getElementById('sentPsycoDate');\n    if (messageDate) messageDate.textContent = 'Martes, 11 de octubre de 2005, 00:12';\n    const sideNote = document.querySelector('.sidebar .side-note');\n    if (sideNote) sideNote.innerHTML = 'Algunos mensajes podrían no estar disponibles.<br><br>Última sincronización: 11/10/2005 00:17';\n    const lastAccess = document.querySelector('.accountline span:last-child');\n    if (lastAccess) lastAccess.textContent = 'Último acceso: 11/10/2005';\n    updateUnreadCounts();\n    showToast('Mensaje recuperado', 'Se restauró el correo que Vela envió a Psyco.', 5000);\n  }\n\n  function revealFrenzyMail() {\n    if (frenzyMailExists) return;\n    localStorage.setItem(frenzyMailKey, 'true');\n    frenzyMailExists = true;\n    addMessage('frenzy');\n    revealSentPsyco();\n    triggerBlackout();\n    showToast('Nuevo mensaje', 'Frenzy · Gracias por preocuparte.', 5000, 'frenzy');\n    feedback.textContent = 'Se detectó un mensaje sin registro de envío.';\n  }\n\n  function allInitialInboxMessagesRead() {\n    const read = getReadMessages();\n    const initialIds = ['movistar','welcome','support-sync','inbox-class','inbox-party','inbox-random','thread-frenzy','thread-psyco'];\n    return initialIds.every(id => read.includes(id));\n  }\n\n  function revealPostFrenzyMessages() {\n    const postCount = Number(localStorage.getItem(postFrenzyUpdatesKey) || '0') + 1;\n    localStorage.setItem(postFrenzyUpdatesKey, String(postCount));\n\n    if (postCount === 1) {\n      addMessage('post-psyco');\n      revealSentPsyco();\n      const sideNote = document.querySelector('.sidebar .side-note');\n      if (sideNote) sideNote.innerHTML = 'Algunos mensajes podrían no estar disponibles.<br><br>Última sincronización: 11/10/2005 00:26';\n      showToast('Mensaje recibido · 00:26', 'Psyco · Vela, contesta cuando despiertes', 4500, 'post-psyco');\n    } else if (postCount === 2) {\n      addMessage('daily-friend');\n      addMessage('post-rushia');\n      showToast('Mensajes recibidos · mañana', 'Rafa y Rushia te han escrito.', 4200, 'post-rushia');\n    } else if (postCount === 3) {\n      addMessage('sync-incomplete');\n      addMessage('unknown-room-1');\n      showToast('Mensajes recibidos', 'Hay un mensaje nuevo y otro sin remitente verificable.', 4200, 'unknown-room-1');\n    } else if (postCount === 4) {\n      addMessage('did-you-get-it');\n      addMessage('post-lewis');\n      addMessage('unknown-room-2');\n      showToast('Mensajes recibidos · tarde', 'Andrea, Lewis y un remitente desconocido te han escrito.', 4200, 'post-lewis');\n    } else if (postCount === 5 && !finalMessageExists) {\n      localStorage.setItem(finalMessageKey, 'true');\n      finalMessageExists = true;\n      addMessage('final-message');\n      showToast('Mensaje recibido', 'vela.skyline@coralia.net · FINAL', 4200, 'final-message');\n    } else if (postCount >= 6 && !preparedMessageExists) {\n      addMessage('prepared-message');\n      moveWeirdMessagesToTrash();\n      showToast('Mensaje recibido · 12/10/2005', 'bofinderdy@howmail.html · ¿PREPARADOS?', 4800, 'prepared-message');\n      feedback.textContent = 'Se ha recuperado un correo y varios mensajes eliminados están dañados.';\n    }\n  }\n\n  function restorePostFrenzyMessages() {\n    const postCount = Number(localStorage.getItem(postFrenzyUpdatesKey) || '0');\n    if (postCount >= 1) { addMessage('post-psyco'); }\n    if (postCount >= 2) { addMessage('daily-friend'); addMessage('post-rushia'); }\n    if (postCount >= 3) { addMessage('sync-incomplete'); addMessage('unknown-room-1'); }\n    if (postCount >= 4) { addMessage('did-you-get-it'); addMessage('post-lewis'); addMessage('unknown-room-2'); }\n    if (postCount >= 5 && finalMessageExists) addMessage('final-message');\n    if (preparedMessageExists) { addMessage('prepared-message'); moveWeirdMessagesToTrash(); }\n  }\n\n  const movistarAudio = document.querySelector('#view-movistar audio');\n  if (movistarAudio) movistarAudio.addEventListener('ended', () => {\n    localStorage.setItem(movistarReadKey, 'true');\n    feedback.textContent = 'Mensaje de voz escuchado. Coralia ha guardado el registro.';\n    showToast('Mensaje de voz escuchado', 'El registro se ha guardado.', 3000);\n  });\n  const frenzyAudio = document.querySelector('#view-frenzy audio');\n  if (frenzyAudio) frenzyAudio.addEventListener('ended', () => {\n    localStorage.setItem(frenzyAudioHeardKey, 'true');\n    feedback.textContent = 'Grabación completada. Actualiza para restablecer Coralia Mail.';\n  });\n\n  function advanceStory() {\n    if (document.body.classList.contains('coralia-void') && localStorage.getItem(frenzyAudioHeardKey) !== 'true') {\n      feedback.textContent = 'La grabación sigue incompleta. Escucha el audio hasta el final antes de actualizar.';\n      feedback.classList.add('error');\n      return;\n    }\n    refreshCount += 1;\n    localStorage.setItem(refreshKey, String(refreshCount));\n    localStorage.setItem(cooldownKey, String(Date.now() + 15000));\n    localStorage.setItem(firstUpdateKey, 'true');\n    document.body.classList.add('coralia-tagline-gone');\n    if (tagline) tagline.textContent = 'Estate atento, nunca sabes cuándo llegará un mensaje importante.';\n    \n    if (document.body.classList.contains('coralia-void')) {\n      exitVoidMode();\n      document.body.dataset.justExitedVoid = 'true';\n      revealPostFrenzyMessages();\n      feedback.textContent = 'Coralia Mail ha recuperado la interfaz. Hay mensajes nuevos.';\n    }\n    applyCorruptionPhase();\n\n    if (refreshCount === 1) {\n      addMessage('breakfast-note');\n      addMessage('reload-clue');\n      addMessage('halloween-event');\n      showToast('3 mensajes recibidos', 'Nora Paz, Coralia Mail y Moda Coralia te han escrito.', 4200, 'halloween-event');\n      feedback.textContent = 'Han llegado tres mensajes nuevos.';\n    } else if (refreshCount >= 2 && localStorage.getItem(spamTomKey) !== 'true') {\n      localStorage.setItem(spamTomKey, 'true');\n      if (spamLoveRow) {\n        spamLoveRow.style.display = 'grid';\n        const prizeRow = document.querySelector('#junkbox [data-mail=\"spam-prize\"]');\n        if (prizeRow && prizeRow.nextSibling !== spamLoveRow) document.getElementById('junkbox').insertBefore(spamLoveRow, prizeRow.nextSibling);\n      }\n      addMessage('halloween-costume');\n      updateUnreadCounts();\n      showToast('Mensajes recibidos', 'Ofertas Tom y Andrea te han escrito.', 3500, 'spam-love');\n      feedback.textContent = 'Han llegado mensajes nuevos, incluido correo no deseado.';\n    } else if (refreshCount === 3) {\n      addMessage('sync-incomplete');\n      addMessage('halloween-party');\n      showToast('Mensajes recibidos', 'Hay un aviso de sincronización y un mensaje de Rafa.', 3500, 'halloween-party');\n      feedback.textContent = 'Algunos mensajes podrían aparecer después.';\n    } else if (refreshCount === 4) {\n      addMessage('did-you-get-it');\n      addMessage('hospital-papers');\n      showToast('2 mensajes recibidos', 'Andrea y Hospital Central te han escrito.', 4200, 'hospital-papers');\n      feedback.textContent = 'Han llegado dos mensajes nuevos.';\n    } else {\n      showToast('Sincronización completada', refreshCount === 5 ? 'No hay mensajes nuevos.' : 'La bandeja está actualizada.', 2400);\n      feedback.textContent = refreshCount === 5 ? 'No hay mensajes nuevos.' : 'Sincronización completada.';\n    }\n\n    // Después de salir de Void, los mensajes llegan en tandas a lo largo del día.\n    if (frenzyMailExists && localStorage.getItem(voidResolvedKey) === 'true' && !document.body.dataset.justExitedVoid) {\n      revealPostFrenzyMessages();\n    }\n    delete document.body.dataset.justExitedVoid;\n\n    // La quinta actualización puede quedar inquietantemente vacía; Frenzy no aparece antes de la sexta.\n    if (!frenzyMailExists && refreshCount >= 6) {\n      if (localStorage.getItem(movistarReadKey) === 'true' && allInitialInboxMessagesRead()) {\n        revealFrenzyMail();\n      } else {\n        feedback.textContent = 'La sincronización sigue incompleta. Revisa los mensajes antiguos y escucha la grabación de Movistar hasta el final.';\n      }\n    }\n    refreshCooldown();\n  }\n\n  function runRefresh() {\n    const until = Number(localStorage.getItem(cooldownKey) || '0');\n    if (until > Date.now()) {\n      feedback.textContent = 'Coralia necesita un momento antes de volver a sincronizar.';\n      feedback.classList.add('error');\n      refreshCooldown();\n      return;\n    }\n    feedback.classList.remove('error');\n    advanceStory();\n  }\n\n  refreshButton.addEventListener('click', runRefresh);\n  refreshButton.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); runRefresh(); } });\n  function showUnavailableAction(message) {\n    feedback.textContent = message;\n    feedback.classList.add('error');\n    showToast('Error de Coralia Mail', message, 3200);\n  }\n  const unavailableActions = [\n    ['composeButton', 'No se pudo abrir Redactar. El editor no está disponible en esta versión beta.'],\n    ['deleteButton', 'Error al eliminar: el servidor no pudo modificar los mensajes. Inténtalo más tarde.'],\n    ['optionsButton', 'Opciones no está disponible mientras se completa la sincronización.']\n  ];\n  unavailableActions.forEach(([id, message]) => {\n    const button = document.getElementById(id);\n    if (!button) return;\n    button.addEventListener('click', () => showUnavailableAction(message));\n    button.addEventListener('keydown', event => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); showUnavailableAction(message); } });\n  });\n  refreshCooldown();\n  setInterval(refreshCooldown, 1000);\n\n  const sentPsycoRow = document.getElementById('sentPsycoRow');\n  if (localStorage.getItem(sentPsycoRevealedKey) === 'true' && sentPsycoRow) {\n    sentPsycoRow.style.display = 'grid';\n    const sentBox = document.getElementById('sentbox');\n    const firstSentRow = sentBox && sentBox.querySelector('.mailrow');\n    if (sentBox && firstSentRow && firstSentRow !== sentPsycoRow) sentBox.insertBefore(sentPsycoRow, firstSentRow);\n    const sentDate = sentPsycoRow.querySelector('.date'); if (sentDate) sentDate.textContent = '11/10/05';\n    const messageDate = document.getElementById('sentPsycoDate'); if (messageDate) messageDate.textContent = 'Martes, 11 de octubre de 2005, 00:12';\n    const sideNote = document.querySelector('.sidebar .side-note'); if (sideNote) sideNote.innerHTML = 'Algunos mensajes podrían no estar disponibles.<br><br>Última sincronización: 11/10/2005 ' + (Number(localStorage.getItem(postFrenzyUpdatesKey) || '0') >= 1 ? '00:26' : '00:17');\n    const lastAccess = document.querySelector('.accountline span:last-child'); if (lastAccess) lastAccess.textContent = 'Último acceso: 11/10/2005';\n  }\n\n  if (refreshCount >= 1) { addMessage('breakfast-note'); addMessage('reload-clue'); addMessage('halloween-event'); }\n  if (refreshCount >= 2) addMessage('halloween-costume');\n  if (refreshCount >= 3) { addMessage('sync-incomplete'); addMessage('halloween-party'); }\n  if (refreshCount >= 4) { addMessage('did-you-get-it'); addMessage('hospital-papers'); }\n  if (frenzyMailExists) addMessage('frenzy');\n  if (frenzyMailExists && localStorage.getItem(voidResolvedKey) !== 'true' && localStorage.getItem(voidModeActiveKey) === 'true') { enterVoidMode(); openView('frenzy'); }\n  if (unknownRoom1Exists) addMessage('unknown-room-1');\n  if (unknownRoom2Exists) addMessage('unknown-room-2');\n  if (finalMessageExists) addMessage('final-message');\n  restorePostFrenzyMessages();\n  if (preparedMessageExists) moveWeirdMessagesToTrash();\n  applyCorruptionPhase();\n  if (frenzyMailExists) feedback.textContent = 'Sincronización completada.';\n  updateUnreadCounts();\n";
+  const wrapped = document.createElement('script');
+  wrapped.textContent = originalScript.replace(
+    "function insertInboxRow(sender, subject, date, viewName) {",
+    "function insertInboxRow(sender, subject, date, viewName) {\n    const translated = ((window.CORALIA_LOCALE || {}).dynamicRows || {})[viewName];\n    if (translated) { sender = translated.sender || sender; subject = translated.subject || subject; }"
+  );
+  document.body.appendChild(wrapped);
+})().catch(error => { console.error('Coralia localization failed:', error); });
 </script>
+<script src="js/coralia-media.js"></script>
 </body>
 </html>
