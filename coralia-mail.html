@@ -7,12 +7,11 @@
 <link rel="stylesheet" href="css/coralia-mail.css">
 </head>
 <body>
-<div id="languageGate" style="position:fixed;inset:0;z-index:20000;display:none;align-items:center;justify-content:center;padding:20px;background:#e7f3fb;color:#20384b;font-family:Tahoma,Verdana,Arial,sans-serif"><div style="width:min(420px,100%);padding:28px 22px;border:1px solid #9fc5df;border-radius:5px;background:linear-gradient(145deg,#f9fdff,#dceefa);box-shadow:0 10px 45px #163a5533;text-align:center"><div style="font-size:12px;letter-spacing:.18em;color:#6689a0;margin-bottom:16px">◈ CORALIA MAIL</div><h1 style="font-size:21px;font-weight:normal;letter-spacing:.12em;margin:0 0 22px">LANGUAGE</h1><div style="display:flex;gap:10px;justify-content:center"><button type="button" data-gate-language="es" style="flex:1;min-width:0;padding:12px 8px;border:1px solid #8ab7d3;border-radius:4px;background:#fff;color:#20384b;font:inherit;cursor:pointer">Español Latino</button><button type="button" data-gate-language="en" style="flex:1;min-width:0;padding:12px 8px;border:1px solid #8ab7d3;border-radius:4px;background:#fff;color:#20384b;font:inherit;cursor:pointer">English</button></div></div></div>
 <div class="blackout" id="blackout" aria-hidden="true"></div>
 <div id="testPanel" style="display:none;position:fixed;z-index:10000;right:12px;bottom:12px;background:#fff6cc;border:2px solid #a68b36;color:#40370c;padding:10px;font:12px Tahoma,Arial,sans-serif;box-shadow:0 2px 12px #0004;border-radius:4px"><strong>MODO DE PRUEBA</strong><div style="margin:5px 0">Progreso local de Coralia</div><button id="resetProgress" type="button">Reiniciar ARG</button></div>
 <div class="toast" id="toast" role="button" tabindex="0" aria-label="Abrir el mensaje recibido" aria-live="polite" data-target=""><strong id="toastTitle">Mensajes actualizados..?</strong><span id="toastBody">3 notificaciones nuevas</span></div>
 <div class="boot" id="boot"><div class="bootbox"><div class="bootlogo">CORALIA MAIL</div><div>Entrando a Coralia Mail...</div><div style="font-size:11px;margin-top:7px;color:#6689a0">Recuperando bandeja de entrada</div><div class="progress"><span></span></div></div></div>
-<header class="topbar"><div class="brand" id="brand">◈ CORALIA MAIL</div><div class="tagline" id="tagline">¡Escribe tu historia!</div><div class="status"><a href="index.html" style="color:inherit;text-decoration:underline;margin-right:8px">← Project Coralia</a> ● Servicio disponible &nbsp; | &nbsp; Coralia Mail v2.0 Beta &nbsp; | &nbsp; 2005</div><div id="languagePicker" aria-label="Selector de idioma" style="display:flex;align-items:center;gap:5px;flex-wrap:wrap;font:12px Tahoma,Verdana,Arial,sans-serif;margin-left:auto;padding:4px 7px;border:1px solid #9fc5df;border-radius:4px;background:#eaf5fc;color:#20384b"><span data-language-prompt>LANGUAGE</span><button type="button" data-language="es" style="cursor:pointer;padding:3px 7px">Español Latino</button><button type="button" data-language="en" style="cursor:pointer;padding:3px 7px">English</button></div></header>
+<header class="topbar"><div class="brand" id="brand">◈ CORALIA MAIL</div><div class="tagline" id="tagline">¡Escribe tu historia!</div><div class="status"><a href="index.html" style="color:inherit;text-decoration:underline;margin-right:8px">← Project Coralia</a> ● Servicio disponible &nbsp; | &nbsp; Coralia Mail v2.5 Beta &nbsp; | &nbsp; 2005</div></header>
 <div class="window"><section class="account">
   <div class="windowbar"><span>Bandeja de entrada - Coralia Mail</span><span class="window-controls">_ □ ×</span></div>
   <div class="accountline"><span>Sesión iniciada como: <strong>vela.skyline@coralia.net</strong></span><span>Último acceso: 10/10/2005</span></div>
@@ -65,7 +64,7 @@
 </section>
 <div class="unlock"><label for="secret">Buscar un mensaje o introducir una palabra</label><div class="unlockrow"><input id="secret" type="text" placeholder="Escribe aquí..." autocomplete="off"><button id="submit">Buscar</button></div><div class="feedback" id="feedback">Coralia Mail está listo.</div></div>
 </div>
-<footer class="footer">© 2005 Coralia Network · Todos los derechos reservados · Coralia Mail v2.0 Beta</footer>
+<footer class="footer">© 2005 Coralia Network · Todos los derechos reservados · Coralia Mail v2.5 Beta</footer>
 <script>
 (async function bootLocalizedCoralia(){
   const languageKey = 'coralia_language';
@@ -95,6 +94,7 @@
     view.innerHTML = message.html || '';
     viewsRoot.appendChild(view);
   });
+  viewsRoot.remove();
   function applyRowTranslations() {
     document.querySelectorAll('.mailrow[data-mail]').forEach(row => {
       const data = (locale.mailRows || {})[row.dataset.mail];
@@ -106,20 +106,6 @@
     });
   }
   applyRowTranslations();
-  const languageGate = document.getElementById('languageGate');
-  if (!localStorage.getItem(languageKey) && languageGate) languageGate.style.display = 'flex';
-  document.querySelectorAll('[data-gate-language]').forEach(button => button.addEventListener('click', () => {
-    localStorage.setItem(languageKey, button.dataset.gateLanguage);
-    location.reload();
-  }));
-  document.querySelectorAll('[data-language-prompt]').forEach(el => el.textContent = 'LANGUAGE');
-  document.querySelectorAll('[data-language]').forEach(button => {
-    button.setAttribute('aria-pressed', String(button.dataset.language === language));
-    button.addEventListener('click', () => {
-      localStorage.setItem(languageKey, button.dataset.language);
-      location.reload();
-    });
-  });
   if (language === 'en') {
 function replaceFlexible(value, from, to) {
    value = value.split(from).join(to);
@@ -146,7 +132,7 @@ function replaceFlexible(value, from, to) {
     translateRoot(document.body);
     new MutationObserver(records=>records.forEach(record=>record.addedNodes.forEach(node=>{
       if(node.nodeType===1 && !['SCRIPT','STYLE'].includes(node.tagName)) translateRoot(node);
-      translationPairs.forEach(([from,to])=>{if(from)value=replaceFlexible(value,from,to);});node.nodeValue=value;
+      else if(node.nodeType===3){let value=node.nodeValue;translationPairs.forEach(([from,to])=>{if(from)value=replaceFlexible(value,from,to);});node.nodeValue=value;}
     }))).observe(document.body,{childList:true,subtree:true});
     document.title='Coralia Mail';
   }
