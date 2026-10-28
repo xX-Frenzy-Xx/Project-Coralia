@@ -373,7 +373,7 @@
       "html": "<button class=\"fakebutton back\" data-back>← Back</button>\n        <h2>Log file: Failed Body</h2>\n        <div class=\"meta\">Location: Backup system · 555-3492</div>\n        <div class=\"secret-image-view\">\n          <img src=\"Cuerpo_fallido.jpg\" alt=\"Cuerpo Fallido - Frenzy\">\n          <div class=\"bodytext\" style=\"text-align:center\">The visual record shows thermal anomalies and distortion in the subject[cite: 2].</div>\n        </div>"
     },
     "busca-cuerpos": {
-      "html": "<button class=\"fakebutton back\" data-back>← Back</button>\n        <h2>THE BODY SEEKER</h2>\n        <div class=\"meta\">Entity detected in an unknown sector</div>\n        <div class=\"secret-image-view\">\n          <img src=\"recuerda.jpg\" alt=\"El Busca Cuerpos\">\n          <div class=\"bodytext\" style=\"text-align:center; white-space:pre-line; color:#244b58; font-weight:bold;\">\n            I don't know who I am\n            You know\n            Maybe someday\n            you'll stop running\n            But until then\n            you'll give me something of yourself\n            And I'll remember you.\n          </div>\n        </div>"
+      "html": "<button class=\"fakebutton back\" data-back>← Back</button>\n        <h2>EL BUSCA CUERPOS</h2>\n        <div class=\"meta\">Entity detected in an unknown sector</div>\n        <div class=\"secret-image-view\">\n          <img src=\"recuerda.jpg\" alt=\"El Busca Cuerpos\">\n          <div class=\"bodytext\" style=\"text-align:center; white-space:pre-line; color:#244b58; font-weight:bold;\">\n            No se quien soy\n            Tu si lo sabes\n            Tal vez en algun momento\n            Dejaras de escapar\n            Pero mientras tanto\n            Me daras algo de ti\n            Y yo te recordare.\n          </div>\n        </div>"
     }
   },
   "updates": {
@@ -658,7 +658,6 @@
     "Archivo de registro: Cuerpo Fallido": "Log file: Failed Body",
     "Ubicación: Sistema de respaldo · 555-3492": "Location: Backup system · 555-3492",
     "El registro visual muestra anomalías térmicas y distorsión en el sujeto[cite: 2].": "The visual record shows thermal anomalies and distortion in the subject[cite: 2].",
-    "EL BUSCA CUERPOS": "THE BODY SEEKER",
     "Entidad detectada en sector desconocido": "Entity detected in an unknown sector",
     "\n            No se quien soy\n            Tu si lo sabes\n            Tal vez en algun momento\n            Dejaras de escapar\n            Pero mientras tanto\n            Me daras algo de ti\n            Y yo te recordare.\n          ": "\n            I don't know who I am\n            You know\n            Maybe someday\n            you'll stop running\n            But until then\n            you'll give me something of yourself\n            And I'll remember you.\n          "
   }
