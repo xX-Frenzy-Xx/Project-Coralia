@@ -1,0 +1,260 @@
+{
+  "language": [
+    "English",
+    "Español"
+  ],
+  "schemaVersion": 1,
+  "movistarVm05": {
+    "title": "MOVISTAR VM 05",
+    "timingStatus": "timestamps-provided-by-creator",
+    "cues": [
+      [
+        240,
+        6390,
+        "Movistar",
+        "The requested line is not answering; it is currently unavailable,"
+      ],
+      [
+        6400,
+        10870,
+        "Movistar",
+        "You may leave a voice message after the tone:"
+      ],
+      [
+        10880,
+        14470,
+        "Frenzy",
+        "Let's see, I was on my way to the party at the building,"
+      ],
+      [
+        14480,
+        19630,
+        "Frenzy",
+        "but I might have gone to the wrong floor. No idea,"
+      ],
+      [
+        19640,
+        25150,
+        "Frenzy",
+        "but when I first came in, some lights were dimly on,"
+      ],
+      [
+        25160,
+        29910,
+        "Frenzy",
+        "and I could hear music in the background, so I walked"
+      ],
+      [
+        30280,
+        33630,
+        "Frenzy",
+        "toward where the party was supposed to be,"
+      ],
+      [
+        33640,
+        40590,
+        "Frenzy",
+        "but something was really weird: there wasn't any door. It was all dark,"
+      ],
+      [
+        40600,
+        47190,
+        "Frenzy",
+        "so I felt along the wall to see if I could find a doorknob or something,"
+      ],
+      [
+        47200,
+        55150,
+        "Frenzy",
+        "but my hand—my hand went right through the wall, and before I could react,"
+      ],
+      [
+        55160,
+        62190,
+        "Frenzy",
+        "my body went through too. I entered a really strange place; it should've been the stairwell,"
+      ],
+      [
+        62200,
+        67790,
+        "Frenzy",
+        "but everything, everything has a green light. A sickly green light,"
+      ],
+      [
+        67800,
+        73670,
+        "Frenzy",
+        "the music was still playing in the distance, so I followed it out of curiosity,"
+      ],
+      [
+        73680,
+        80270,
+        "Frenzy",
+        "eventually I found a strange door, and when I crossed it, I ended up in this room,"
+      ],
+      [
+        80280,
+        86230,
+        "Frenzy",
+        "it's full of cassettes scattered on the floor, and a tape recorder is playing something,"
+      ],
+      [
+        86240,
+        89910,
+        "Frenzy",
+        "it's hard to tell what song it is, but I'll look it up later."
+      ],
+      [
+        91360,
+        95790,
+        "Frenzy",
+        "Listen, just now, as I was getting closer,"
+      ],
+      [
+        95800,
+        101070,
+        "Frenzy",
+        "I think there was a voice in the background, so I decided to get out of here,"
+      ],
+      [
+        101080,
+        106950,
+        "Frenzy",
+        "I'll try to cross back outside, but this is way too strange,"
+      ],
+      [
+        106960,
+        110080,
+        "Frenzy",
+        "I just want you to know that if I don't get back to you"
+      ],
+      [
+        110090,
+        115070,
+        "Frenzy",
+        "it's because something caught up with me,"
+      ],
+      [
+        115080,
+        119910,
+        "Movistar",
+        "Your message has been saved. Thank you for using the service…"
+      ]
+    ]
+  },
+  "sinTitulo": {
+    "title": "Untitled.wav",
+    "timingStatus": "estimated-needs-audio-check",
+    "note": "The cue timing is estimated and must be checked against the final audio before publishing.",
+    "cues": [
+      [
+        0,
+        6500,
+        "Vella",
+        "It's so cold in here... God, please let Frenzy be okay... please let him be okay..."
+      ],
+      [
+        9000,
+        21000,
+        "Vella",
+        "Psyco, please read this. Frenzy is in shock at Central Hospital."
+      ],
+      [
+        21000,
+        33000,
+        "Vella",
+        "Early this morning, after the party he never managed to reach, some guards found him near the building."
+      ],
+      [
+        33000,
+        42000,
+        "Vella",
+        "He's cold and staring blankly. His heart is beating as usual, but he's... in shock!"
+      ],
+      [
+        42000,
+        49000,
+        "Vella",
+        "He's not injured, just... HE'S... freezing. I really don't understand."
+      ],
+      [
+        49000,
+        53000,
+        "EFFECT",
+        "Digital interference; the word “understand” repeats and distorts."
+      ],
+      [
+        53000,
+        65000,
+        "Vella",
+        "It's as if something got inside him, or as if something is missing inside."
+      ],
+      [
+        65000,
+        79000,
+        "Vella",
+        "Honestly, when they first told me, I thought it was a joke... I wish it had been."
+      ],
+      [
+        79000,
+        93000,
+        "Vella",
+        "I had to go to his apartment and take the keys from under his doormat to look for his university papers; I only found his study materials and an ID."
+      ],
+      [
+        93000,
+        101000,
+        "Vella",
+        "I don't know what to do! I can't BUSCA... I can't deal with this alone."
+      ],
+      [
+        101000,
+        111000,
+        "Vella",
+        "All I have is this voicemail he sent me in the early hours... I'll attach it."
+      ],
+      [
+        111000,
+        120000,
+        "Vella",
+        "Please don't panic, okay? He's your coworker, our friend... you know he's not crazy."
+      ],
+      [
+        120000,
+        130000,
+        "Vella",
+        "I think someone scared him or did something serious to him... Or maybe he shouldn't have gone into that paranormal place."
+      ],
+      [
+        130000,
+        139000,
+        "EFFECT",
+        "Total cut. Heavy interference; Frenzy's voice repeats “luces verdes... luces verdes...”"
+      ],
+      [
+        139000,
+        148000,
+        "Vella",
+        "Please don't reply to this email."
+      ],
+      [
+        148000,
+        157000,
+        "Vella",
+        "If CUERPOS... if you're going to help me, go straight to Central Hospital. I'll wait for you there."
+      ],
+      [
+        157000,
+        165000,
+        "EFFECT",
+        "Vella sends the email, shuts down the computer, and leaves the apartment."
+      ],
+      [
+        165000,
+        171000,
+        "Vella",
+        "Please, Frenzy... you have to be okay..."
+      ]
+    ]
+  }
+}
