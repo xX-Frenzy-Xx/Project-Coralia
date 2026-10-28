@@ -1,0 +1,424 @@
+{
+  "languagePrompt": "¿Cuál es tu idioma?",
+  "languageNames": {
+    "es": "Español",
+    "en": "English"
+  },
+  "ui": {
+    "mailBrand": "◈ CORALIA MAIL",
+    "mailTagline": "¡Escribe tu historia!",
+    "backHub": "← Project Coralia",
+    "serviceStatus": "● Servicio disponible",
+    "mailVersion": "Coralia Mail v2.0 Beta",
+    "year": "2005",
+    "windowTitle": "Bandeja de entrada - Coralia Mail",
+    "session": "Sesión iniciada como:",
+    "lastAccess": "Último acceso:",
+    "compose": "✉ Redactar",
+    "refresh": "↻ Actualizar",
+    "delete": "▣ Eliminar",
+    "options": "⚙ Opciones",
+    "folders": "Carpetas personales",
+    "inbox": "▣ Bandeja de entrada",
+    "sent": "▤ Mensajes enviados",
+    "drafts": "▧ Borradores",
+    "trash": "♲ Elementos eliminados",
+    "junk": "▣ Correo no deseado",
+    "sender": "Remitente",
+    "recipient": "Destinatario",
+    "subject": "Asunto",
+    "date": "Fecha",
+    "backInbox": "← Volver a la bandeja",
+    "backSent": "← Volver a enviados",
+    "backJunk": "← Volver a correo no deseado",
+    "back": "← Volver",
+    "searchLabel": "Buscar un mensaje o introducir una palabra",
+    "searchPlaceholder": "Escribe aquí…",
+    "searchButton": "Buscar",
+    "ready": "Coralia Mail está listo.",
+    "noMessages": "No hay mensajes para mostrar.",
+    "languageUnavailable": "La traducción al inglés todavía está en preparación.",
+    "hubVersion": "VERSIÓN 2 · AÚN EN DESARROLLO E INVESTIGACIÓN",
+    "hubStatus": "ARCHIVE SYSTEM · 2026",
+    "hubNav": {
+      "home": "Inicio",
+      "archives": "Archivos",
+      "people": "Personas",
+      "about": "Sobre el proyecto"
+    },
+    "hubEyebrow": "Notas del equipo · archivo en observación",
+    "hubTitle": "No sabemos muy bien<br>qué encontramos.",
+    "hubIntro": "Bienvenido a Project Coralia. Somos el Team Cheeseovery, un pequeño grupo intentando recuperar una página antigua llamada Coralia Mail. Por lo que hemos podido reconstruir, existió entre 2005 y 2006 y dejó de usarse con el tiempo. También parece que su seguridad no era precisamente buena.",
+    "hubFiction": "Project Coralia es una obra de ficción interactiva."
+  },
+  "mailRows": {
+    "support-sync": {
+      "sender": "soporte@coralia.net",
+      "subject": "¿No encuentras un mensaje?",
+      "date": "11/10/05"
+    },
+    "movistar": {
+      "sender": "Buzon_Movistar_Auto@movistar.com",
+      "subject": "Nuevo mensaje de voz de Movistar - 555-3492",
+      "date": "10/10/05"
+    },
+    "inbox-class": {
+      "sender": "andrea.mora@hotmail.com",
+      "subject": "¿Me pasas los apuntes?",
+      "date": "09/10/05"
+    },
+    "inbox-party": {
+      "sender": "nora.paz@hotmail.com",
+      "subject": "Re: Lo del sábado",
+      "date": "08/10/05"
+    },
+    "inbox-random": {
+      "sender": "rafa_05@hotmail.com",
+      "subject": "jajaja mira esto",
+      "date": "06/10/05"
+    },
+    "thread-psyco": {
+      "sender": "Psyco",
+      "subject": "RE: apodos horribles",
+      "date": "05/10/05"
+    },
+    "thread-frenzy": {
+      "sender": "Frenzy",
+      "subject": "te dejo tunear el correo :)",
+      "date": "04/10/05"
+    },
+    "welcome": {
+      "sender": "Coralia Mail",
+      "subject": "Bienvenida a Coralia",
+      "date": "03/09/05"
+    },
+    "sent-party": {
+      "sender": "nora.paz@hotmail.com",
+      "subject": "Fotos de la fiesta",
+      "date": "10/10/05"
+    },
+    "sent-class": {
+      "sender": "grupo.universidad@hotmail.com",
+      "subject": "Apuntes de la semana",
+      "date": "09/10/05"
+    },
+    "sent-psyco": {
+      "sender": "psycoone12@hotmail.com",
+      "subject": "Frenzy URGENTE",
+      "date": "10/10/05"
+    },
+    "sent-old": {
+      "sender": "soporte@coralia.net",
+      "subject": "Problema con la cuenta",
+      "date": "08/10/05"
+    },
+    "sent-mom": {
+      "sender": "nora.paz@hotmail.com",
+      "subject": "No olvides llamar",
+      "date": "07/10/05"
+    },
+    "sent-notes": {
+      "sender": "tutorias@universidad.edu",
+      "subject": "Confirmación de tutoría",
+      "date": "05/10/05"
+    },
+    "spam-love": {
+      "sender": "Ofertas Tom",
+      "subject": "¿QUIERES CONSEGUIR AMOR?",
+      "date": "10/10/05"
+    },
+    "spam-prize": {
+      "sender": "Premios Internacionales",
+      "subject": "¡Has ganado un teléfono móvil!",
+      "date": "11/10/05"
+    },
+    "spam-pharmacy": {
+      "sender": "Farmacia Mundial",
+      "subject": "RE: Oferta exclusiva — solo hoy",
+      "date": "07/10/05"
+    },
+    "spam-chain": {
+      "sender": "Cadena de la suerte",
+      "subject": "RE: RE: Reenvía esto a 10 personas",
+      "date": "06/10/05"
+    },
+    "spam-dialup": {
+      "sender": "Internet Fácil",
+      "subject": "¡Conéctate más rápido!",
+      "date": "04/10/05"
+    },
+    "draft-birthday": {
+      "sender": "alexasanch3z@hotmail.com",
+      "subject": "Feliz cumple!!",
+      "date": "08/10/05"
+    },
+    "draft-question": {
+      "sender": "(sin destinatario)",
+      "subject": "Pregunta sobre el edificio",
+      "date": "10/10/05"
+    }
+  },
+  "dynamicRows": {
+    "recovered": {
+      "sender": "[remitente desconocido]",
+      "subject": "Mensaje recuperado",
+      "date": "11/10/05"
+    },
+    "frenzy": {
+      "sender": "Frenzy",
+      "subject": "Gracias por preocuparte.",
+      "date": "11/10/05"
+    },
+    "unknown-room-1": {
+      "sender": "usuario_desconocido@coralia.net",
+      "subject": "¿Cuántas puertas había?",
+      "date": "11/10/05"
+    },
+    "unknown-room-2": {
+      "sender": "usuario_desconocido@coralia.net",
+      "subject": "La habitación sin ventanas",
+      "date": "11/10/05"
+    },
+    "final-message": {
+      "sender": "vela.skyline@coralia.net",
+      "subject": "FINAL",
+      "date": "11/10/05"
+    },
+    "breakfast-note": {
+      "sender": "Nora Paz",
+      "subject": "¿Vas a desayunar?",
+      "date": "10/10/05 08:03"
+    },
+    "reload-clue": {
+      "sender": "sistema@coralia.net",
+      "subject": "Una nota de sincronización",
+      "date": "10/10/05 08:04"
+    },
+    "hospital-papers": {
+      "sender": "Hospital Central",
+      "subject": "Documentación pendiente",
+      "date": "10/10/05 16:03"
+    },
+    "post-psyco": {
+      "sender": "Psyco",
+      "subject": "Vela, contesta cuando despiertes",
+      "date": "11/10/05 00:26"
+    },
+    "post-rushia": {
+      "sender": "Rushia",
+      "subject": "Te guardé el puesto",
+      "date": "11/10/05 10:18"
+    },
+    "post-lewis": {
+      "sender": "Lewis",
+      "subject": "¿Tienes los apuntes de hoy?",
+      "date": "11/10/05 16:42"
+    },
+    "daily-friend": {
+      "sender": "Rafa · rafa_05@hotmail.com",
+      "subject": "¿Te fuiste tan rápido?",
+      "date": "10/10/05 09:14"
+    },
+    "sync-incomplete": {
+      "sender": "Coralia Mail",
+      "subject": "Sincronización incompleta",
+      "date": "10/10/05 11:06"
+    },
+    "did-you-get-it": {
+      "sender": "Andrea",
+      "subject": "¿Te llegó lo que te mandé?",
+      "date": "10/10/05 15:37"
+    },
+    "halloween-event": {
+      "sender": "Moda Coralia",
+      "subject": "Halloween está a la vuelta de la esquina",
+      "date": "10/10/05 09:36"
+    },
+    "halloween-costume": {
+      "sender": "Andrea",
+      "subject": "¿Ya sabes de qué te vas a disfrazar?",
+      "date": "10/10/05 10:12"
+    },
+    "halloween-party": {
+      "sender": "Rafa",
+      "subject": "Re: ¿Hacemos algo para Halloween?",
+      "date": "10/10/05 14:48"
+    }
+  },
+  "messages": {
+    "thread-frenzy": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver a la bandeja</button><h2>te dejo tunear el correo :)</h2><div class=\"meta\">Conversación entre Frenzy y Vela<br>Fecha: Martes, 4 de octubre de 2005</div><div class=\"thread-intro\">Frenzy acaba de enterarse de que Vela ya tiene su propia dirección de Coralia. La conversación sigue guardada en la bandeja.</div><div class=\"thread-chat\"><div class=\"thread-message frenzy\"><span class=\"who\">Frenzy · frenzy.x@hotmail.com</span>¡¡POR FIN tienes correo propio!! Te voy a pasar un par de cositas para que dejes esa cuenta bonita. La interfaz por defecto parece hecha por alguien que odia los colores jajaja.<span class=\"thread-file\">▧ aero_theme.cor · tema para Coralia</span><span class=\"when\">16:42</span></div><div class=\"thread-message vela\"><span class=\"who\">Vela · vela.skyline@coralia.net</span>JAJAJA llevo diez minutos intentando cambiar el fondo. ¿Por qué todo tiene que estar escondido en Opciones? Pásame eso, por favor. Pero nada de poner mi correo rosa chicle.</div><div class=\"thread-message frenzy\"><span class=\"who\">Frenzy · frenzy.x@hotmail.com</span>Rosa chicle era mi segunda opción 😔. También te mando unos iconitos y una firma que hice. Si algo se rompe, no fui yo. (Sí fui yo.)<span class=\"thread-file\">▧ mini_icons.zip · 4 iconos</span><span class=\"when\">16:47</span></div><div class=\"thread-message vela\"><span class=\"who\">Vela · vela.skyline@coralia.net</span>La firma quedó bonita, no te voy a mentir. Te debo una. Cuando nos veamos me ayudas a dejarlo todo bien y te invito algo. Gracias por emocionarte más que yo con mi propio correo, tontito 💚<span class=\"when\">16:51</span></div><div class=\"thread-message frenzy\" style=\"margin-top:10px\"><span class=\"who\">Frenzy · frenzy.x@hotmail.com</span>Jeje, gracias, pero no si yo te invito primero, listilla 🩵<span class=\"when\">16:53</span></div></div>"
+    },
+    "thread-psyco": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver a la bandeja</button><h2>RE: apodos horribles</h2><div class=\"meta\">Conversación entre Psyco y Vela<br>Fecha: Miércoles, 5 de octubre de 2005</div>\n      <div class=\"thread-intro\">Un intercambio viejo entre dos amigos que ya se escribían antes de que todo esto pasara.</div>\n      <div class=\"thread-chat\">\n        <div class=\"thread-message friend\"><span class=\"who\">Psyco · psycoone12@hotmail.com</span>Por cierto, te guardé como Avellana.<span class=\"when\">19:08</span></div>\n        <div class=\"thread-message vela\"><span class=\"who\">Vela · vela.skyline@coralia.net</span>Jajaja, ¿¡!? Yo te agregué como Sicótico, pareces uno cuando hablas.</div>\n        <div class=\"thread-message friend\"><span class=\"who\">Psyco · psycoone12@hotmail.com</span>Bueno, al menos no sueno como un fruto seco, y tiene un estilo Psyco-Delico. Da igual. Escríbeme por acá, no reviso mucho el celular del trabajo, y también te pasaré chisme.</div>\n        <div class=\"thread-message vela\"><span class=\"who\">Vela · vela.skyline@coralia.net</span>Bueno, la verdad es que esto es mucho más cómodo. Eres un buen amigo, aunque tus apodos sean criminales.<span class=\"when\">19:13</span></div>\n      </div>"
+    },
+    "spam-love": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver a correo no deseado</button><h2>ASUNTO: ¿QUIERES CONSEGUIR AMOR?</h2><div class=\"meta\">De: ofertas_tom@ofertas-mail.net<br>Para: vela.skyline@coralia.net<br>Fecha: Lunes, 10 de octubre de 2005, 09:12<br>Clasificación: Correo no deseado</div><div class=\"bodytext\">¡¡¡HOLA, [AMIG@]!!! ¿¿¿QUIERES CONSEGUIR AMOR???\n\nVamos todos en este mundo necesitamos, AMOR, dulce y poderoso AMOR salido de nuestra alma, este te lleva al cielo, no es AMOR del corazón, porque es de seguro ya conseguiste MAMITA, solamente tienes que entrar a mi sitio web y te mostraré cómo ganar el AMOR de 199.7 dólares sin ningún esfuerzo!\n\n¡¡¡OFERTA POR TIEMPO LIMITADO!!! ¡¡¡NO DEJES QUE EL AMOR SE TE ESCAPE!!! [¡HAZ CLIC, GRAN CLIENTE!]\n\nP. D.: Los clientes más atentos siempre encuentran palabras especiales escondidas por la página y la red. ¡El premio grande no se anuncia dos veces!</div><div class=\"attachment\">[HIPERVÍNCULO BLOQUEADO]<br><span style=\"font-size:11px\">Coralia ha bloqueado este enlace porque podría ser peligroso.</span></div><div class=\"side-note\" style=\"margin:14px 0 0\">Mensaje detectado automáticamente como correo no deseado.</div>"
+    },
+    "spam-prize": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver a correo no deseado</button><h2>¡Has ganado un teléfono móvil!</h2><div class=\"meta\">De: premios_urgentes@win-big.example<br>Para: vela.skyline@coralia.net<br>Fecha: Martes, 11 de octubre de 2005, 10:44</div><div class=\"bodytext\">FELICIDADES!!! Su dirección ha sido seleccionada al azar para recibir un teléfono móvil completamente GRATIS.\n\nResponda con su nombre completo, dirección y número de tarjeta para confirmar el envío.\n\nNO PIERDA ESTA OPORTUNIDAD ÚNICA!!!</div><div class=\"attachment\">[ADJUNTO BLOQUEADO] premio.exe</div>"
+    },
+    "spam-pharmacy": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver a correo no deseado</button><h2>RE: Oferta exclusiva — solo hoy</h2><div class=\"meta\">De: ofertas_medicas@bulk-mail.example<br>Para: vela.skyline@coralia.net<br>Fecha: Viernes, 7 de octubre de 2005, 02:08</div><div class=\"bodytext\">Hello dear customer!\n\nSpecial offer just for YOU. Buy today and get 70% discount. This message is not spam, please do not report us.\n\nClick here to unsubscribe from all future messages.</div><div class=\"attachment\">[HIPERVÍNCULO BLOQUEADO]</div>"
+    },
+    "movistar": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver a la bandeja</button><h2>Nuevo mensaje de voz de Movistar - 555-3492</h2><div class=\"meta\">De: Buzon_Movistar_Auto@movistar.com<br>Para: vela.skyline@coralia.net<br>Fecha: Lunes, 10 de octubre de 2005, 2:00 AM</div><div class=\"bodytext\">Estimado cliente,\n\nUsted tiene un nuevo mensaje de voz en su buzón automático. Puede escuchar la grabación adjunta a continuación.</div><div class=\"attachment\" style=\"display:block;max-width:520px\"><div style=\"font-weight:bold;margin-bottom:8px\">♫ MOVISTAR_VM_05_REC.AMR.mp3</div><div style=\"font-size:11px;margin-bottom:10px\">Mensaje de voz · Archivo de audio</div><audio controls preload=\"metadata\" style=\"width:100%\"><source src=\"MOVISTAR_VM_05_REC.AMR.mp3\" type=\"audio/mpeg\">Tu navegador no puede reproducir este audio.</audio></div>"
+    },
+    "welcome": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver a la bandeja</button><h2>Bienvenida a Coralia</h2><div class=\"meta\">De: equipo@coralia.net<br>Para: vela.skyline@coralia.net<br>Fecha: Sábado, 3 de septiembre de 2005, 16:20</div><div class=\"bodytext\">¡Hola!\n\nGracias por crear tu cuenta Coralia Mail. Aquí podrás mantenerte en contacto con tus amigos, compartir archivos y guardar tus mensajes importantes.\n\nEsperamos que disfrutes de tu pequeño espacio en Internet.\n\n— El equipo de Coralia</div>"
+    },
+    "support-sync": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver a la bandeja</button><h2>¿No encuentras un mensaje?</h2><div class=\"meta\">De: soporte@coralia.net<br>Para: vela.skyline@coralia.net<br>Fecha: Martes, 11 de octubre de 2005, 08:02</div><div class=\"bodytext\">Hola, Vela:\n\nA veces algunos mensajes tardan un poco en aparecer mientras se completa la sincronización del buzón. Si notas que falta alguno, prueba a actualizar la página dentro de unos minutos.\n\nGracias por usar Coralia Mail.\n— Soporte técnico</div>"
+    },
+    "daily-friend": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver a la bandeja</button><h2>¿Te fuiste tan rápido?</h2><div class=\"meta\">De: rafa_05@hotmail.com<br>Para: vela.skyline@coralia.net<br>Fecha: <span class=\"message-date\">Lunes, 10 de octubre de 2005, 09:14</span></div><div class=\"bodytext\">Ey, ¿todo bien? Ayer desapareciste rapidísimo después de vernos jajaja. Te iba a mandar el meme del grupo, pero creo que al final se lo envié a todo el mundo menos a ti 💀. Cuando llegues a la U me cuentas qué pasó. Ah, y encontré el enlace de esa página rara que te dije; luego te lo paso.</div>"
+    },
+    "sync-incomplete": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver a la bandeja</button><h2>Sincronización incompleta</h2><div class=\"meta\">De: sistema@coralia.net<br>Para: vela.skyline@coralia.net<br>Fecha: <span class=\"message-date\">Lunes, 10 de octubre de 2005, 11:06</span></div><div class=\"bodytext\">No todos los mensajes se han descargado correctamente.\n\nAlgunos elementos podrían aparecer después de la próxima actualización. No es necesario volver a iniciar sesión.</div>"
+    },
+    "did-you-get-it": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver a la bandeja</button><h2>¿Te llegó lo que te mandé?</h2><div class=\"meta\">De: andrea.mora@hotmail.com<br>Para: vela.skyline@coralia.net<br>Fecha: <span class=\"message-date\">Lunes, 10 de octubre de 2005, 15:37</span></div><div class=\"bodytext\">Oye, te mandé una cosa anoche y no sé si te llegó. No es urgente, pero dime cuando puedas porque el archivo me tardó siglos en subir jajaja.</div>"
+    },
+    "breakfast-note": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver a la bandeja</button><h2>¿Vas a desayunar?</h2><div class=\"meta\">De: nora.paz@hotmail.com<br>Para: vela.skyline@coralia.net<br>Fecha: <span class=\"message-date\">Lunes, 10 de octubre de 2005, 08:03</span></div><div class=\"bodytext\">Vela, te dejé algo preparado por si te levantas con hambre. No te vayas sin comer nada, ¿sí? Ayer estabas distraída y casi se te olvida hasta despedirte. Cuando puedas me cuentas cómo te fue.</div>"
+    },
+    "halloween-event": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver a la bandeja</button><h2>Halloween está a la vuelta de la esquina</h2><div class=\"meta\">De: novedades@moda-coralia.net<br>Para: vela.skyline@coralia.net<br>Fecha: Lunes, 10 de octubre de 2005, 09:36</div><div class=\"bodytext\">¡Prepara tu look para Halloween!\n\nEsta semana llegaron accesorios nuevos: cinturones anchos, collares, pulseras, hebillas y maquillaje de fantasía. También tenemos ideas sencillas para armar un disfraz con ropa que ya tienes en casa.\n\n¿Lo mejor? ¡No necesitas gastar mucho para destacar en la fiesta!\n\nModa Coralia · Tu estilo, a tu manera.</div><div class=\"attachment\">▧ catalogo_halloween_05.jpg &nbsp; (vista previa no disponible)</div>"
+    },
+    "halloween-costume": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver a la bandeja</button><h2>¿Ya sabes de qué te vas a disfrazar?</h2><div class=\"meta\">De: andrea.mora@hotmail.com<br>Para: vela.skyline@coralia.net<br>Fecha: Lunes, 10 de octubre de 2005, 10:12</div><div class=\"bodytext\">Oye, pregunta importante: ¿ya sabes de qué te vas a disfrazar para Halloween? Yo sigo sin decidirme y no quiero terminar poniéndome lo primero que encuentre jajaja.\n\nSi ves algo bonito en la tienda de tus papás, mándame una foto. Prometo no copiarte… demasiado.</div>"
+    },
+    "halloween-party": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver a la bandeja</button><h2>Re: ¿Hacemos algo para Halloween?</h2><div class=\"meta\">De: rafa_05@hotmail.com<br>Para: vela.skyline@coralia.net<br>Fecha: Lunes, 10 de octubre de 2005, 14:48</div><div class=\"bodytext\">La gente del grupo está hablando de hacer algo para Halloween el sábado 29. Nada confirmado todavía, pero dijeron que cada uno puede llevar algo de comer y que no hace falta un disfraz caro.\n\nSi se arma, te aviso. Y no, no pienso ir vestido de fantasma con una sábana, ya lo hice una vez y casi me caigo por las escaleras.</div>"
+    },
+    "reload-clue": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver a la bandeja</button><h2>Una nota de sincronización</h2><div class=\"meta\">De: sistema@coralia.net<br>Para: vela.skyline@coralia.net<br>Fecha: Lunes, 10 de octubre de 2005, 08:04</div><div class=\"bodytext\">Hay ecos que solo se distinguen cuando el cristal vuelve a su sitio. El cuarto reflejo no será igual al primero.</div>"
+    },
+    "hospital-papers": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver a la bandeja</button><h2>Documentación pendiente — Hospital Central</h2><div class=\"meta\">De: admisiones@hospitalcentral.example<br>Para: vela.skyline@coralia.net<br>Fecha: <span class=\"message-date\">Lunes, 10 de octubre de 2005, 16:03</span></div><div class=\"bodytext\">Buenas tardes. Seguimos pendientes de los documentos personales del paciente Frenzy que se mencionaron durante la llamada. ¿Podría traerlos o confirmar cuándo estarán disponibles? Por ahora solo tenemos un registro incompleto y no podemos cerrar el ingreso.</div>"
+    },
+    "post-psyco": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver a la bandeja</button><h2>Vela, contesta cuando despiertes</h2><div class=\"meta\">De: psycoone12@hotmail.com<br>Para: vela.skyline@coralia.net<br>Fecha: Martes, 11 de octubre de 2005, 00:26</div><div class=\"bodytext\">Avellana, sé que es tardísimo, pero ¿estás despierta?\n\nMe acaba de llegar una notificación rarísima relacionada con Frenzy y no sé si escribirte o esperar a mañana. Si ves esto, mándame aunque sea un punto para saber que estás bien.</div>"
+    },
+    "post-rushia": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver a la bandeja</button><h2>Te guardé el puesto</h2><div class=\"meta\">De: rushia.mori@hotmail.com<br>Para: vela.skyline@coralia.net<br>Fecha: Martes, 11 de octubre de 2005, 10:18</div><div class=\"bodytext\">Holiii, mañana voy a llegar un poco antes a la universidad. Te guardo puesto como siempre. Ah, y encontré una tienda con unos accesorios que te gustarían demasiado jajaja. Luego te paso la dirección.</div>"
+    },
+    "post-lewis": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver a la bandeja</button><h2>¿Tienes los apuntes de hoy?</h2><div class=\"meta\">De: lewis.ramirez@hotmail.com<br>Para: vela.skyline@coralia.net<br>Fecha: Martes, 11 de octubre de 2005, 16:42</div><div class=\"bodytext\">Vela, perdón por escribirte tan tarde. ¿Tienes los apuntes de la clase? Me distraje con lo del trabajo grupal y me perdí la mitad de la explicación. Te debo un café.</div>"
+    },
+    "inbox-class": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver a la bandeja</button><h2>¿Me pasas los apuntes?</h2><div class=\"meta\">De: andrea.mora@hotmail.com<br>Para: vela.skyline@coralia.net<br>Fecha: Domingo, 9 de octubre de 2005, 18:21</div><div class=\"bodytext\">Holaa, ¿me puedes pasar lo que anotaste de la última clase? Me perdí cuando el profesor empezó a explicar lo del trabajo y después no entendí qué había que entregar. Creo que dijo que era para el jueves, pero no estoy segura. Si tienes también la parte del tablero, mejor, porque la foto que tomé salió toda borrosa. Te debo una :)</div>"
+    },
+    "inbox-party": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver a la bandeja</button><h2>Re: Lo del sábado</h2><div class=\"meta\">De: nora.paz@hotmail.com<br>Para: vela.skyline@coralia.net<br>Fecha: Sábado, 8 de octubre de 2005, 13:04</div><div class=\"bodytext\">Vela, acuérdate de avisarme cuando llegues y de no volver sola tan tarde. Si vas a la fiesta, lleva el teléfono cargado y dime con quién vas a estar. Dejé algo de comer en la nevera por si llegas con hambre. Y, por favor, no olvides las llaves; la copia sigue en el mismo lugar de siempre. Cuídate.</div>"
+    },
+    "inbox-random": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver a la bandeja</button><h2>jajaja mira esto</h2><div class=\"meta\">De: rafa_05@hotmail.com<br>Para: vela.skyline@coralia.net<br>Fecha: Jueves, 6 de octubre de 2005, 21:36</div><div class=\"bodytext\">No sé por qué me dio tanta risa esto, pero tenía que mandártelo. Me lo pasó alguien del grupo y nadie sabe quién lo hizo primero. La imagen se ve fatal porque la reenviaron como cinco veces, pero mira la esquina de abajo, parece que hay algo escrito ahí. Seguro es un error de compresión o una tontería. Después me dices si te acuerdas de dónde salió.</div><div class=\"attachment\">▧ imagen_adjunta.jpg &nbsp; (vista previa no disponible)</div>"
+    },
+    "sent-party": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver a enviados</button><h2>Fotos de la fiesta</h2><div class=\"meta\">De: vela.skyline@coralia.net<br>Para: nora.paz@hotmail.com<br>Fecha: Lunes, 10 de octubre de 2005, 18:32</div><div class=\"bodytext\">Te mando las fotos que tomé en la reunión familiar. Algunas salieron movidas, pero hay unas bonitas. Las comprimí para que no pesaran tanto; si quieres las originales, te las paso cuando llegue a casa. Gracias por ayudarme a guardar todo al final. Avísame si prefieres que imprima alguna.</div>"
+    },
+    "sent-class": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver a enviados</button><h2>Apuntes de la semana</h2><div class=\"meta\">De: vela.skyline@coralia.net<br>Para: grupo.universidad@hotmail.com<br>Fecha: Domingo, 9 de octubre de 2005, 20:06</div><div class=\"bodytext\">Hola, adjunto los apuntes de hoy. Si alguien tiene lo que explicó el profesor al final, ¿me lo puede pasar? Creo que mencionó unas páginas del libro y una actividad para la próxima semana, pero justo estaba copiando lo anterior y no alcancé a escucharlo. Revisen también la fecha del documento por si me equivoqué al guardarlo. Gracias.</div><div class=\"attachment\">▧ apuntes_semana.doc &nbsp; (archivo no disponible)</div>"
+    },
+    "sent-psyco": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver a enviados</button><h2>Frenzy URGENTE</h2><div class=\"meta\">De: vela.skyline@coralia.net<br>Para: psycoone12@hotmail.com<br>Fecha: <span id=\"sentPsycoDate\">Martes, 11 de octubre de 2005, 00:12</span></div><div class=\"bodytext\">Frenzy está en estado de shock en el Hospital Central.\n\nEn la madrugada, luego de la fiesta a la que nunca pudo llegar, lo encontraron cerca del edificio unos guardias; está frío y con la mirada perdida. Su corazón late como siempre, pero está... ¡¿en shock?! No está herido, solamente... está frío, ¡no lo entiendo!\n\nEs como si algo se le metió, o como si no tuviera algo. De verdad, al inicio cuando me dijeron pensé que era una broma, ojalá hubiera sido así... Me tocó llegar y tomar las llaves en su tapete para buscar sus papeles; solo encontré sus cosas de la universidad y una cédula. ¡No sé qué hacer! No puedo hacer esto sola. Lo único que sé es que me envió este mensaje de voz y... te lo voy a adjuntar.\n\nNo te asustes, ¿ok? Es tu compañero de trabajo, es nuestro amigo, tú sabes que no está loco. Creo que alguien lo asustó o le hizo algo crítico. O tal vez no debió meterse en ese lugar tan paranormal.\n\nPor favor, no me respondas a este mensaje. Y si vas a ayudarme, ve al Hospital Central.</div><div class=\"attachment\" style=\"display:block;max-width:520px\"><div style=\"font-weight:bold;margin-bottom:7px\">♫ MOVISTAR_VM_05_REC.AMR.mp3</div><div style=\"font-size:11px;color:#a54a4a\">Archivo adjunto no disponible</div><div style=\"margin-top:8px;padding:8px;background:#f8eaea;border:1px solid #e0b4b4;color:#944848\">No se puede encontrar el archivo. Es posible que se haya movido o eliminado.</div></div>"
+    },
+    "sent-old": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver a enviados</button><h2>Problema con la cuenta</h2><div class=\"meta\">De: vela.skyline@coralia.net<br>Para: soporte@coralia.net<br>Fecha: Sábado, 8 de octubre de 2005, 11:48</div><div class=\"bodytext\">Hola. Algunos mensajes antiguos no aparecen en mi bandeja y no recuerdo haberlos borrado. ¿Hay alguna forma de recuperarlos?</div>"
+    },
+    "sent-mom": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver a enviados</button><h2>No olvides llamar</h2><div class=\"meta\">De: vela.skyline@coralia.net<br>Para: nora.paz@hotmail.com<br>Fecha: Viernes, 7 de octubre de 2005, 17:02</div><div class=\"bodytext\">Hola, hoy salgo un poco tarde de la universidad porque nos dejaron terminar una actividad en grupo. Te llamo cuando llegue, no te preocupes. Puede que pase primero por la tienda a comprar algo para cenar, así que si no contesto enseguida es por eso. Dejo las llaves donde siempre.</div>"
+    },
+    "sent-notes": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver a enviados</button><h2>Confirmación de tutoría</h2><div class=\"meta\">De: vela.skyline@coralia.net<br>Para: tutorias@universidad.edu<br>Fecha: Miércoles, 5 de octubre de 2005, 09:18</div><div class=\"bodytext\">Buenos días. Confirmo que asistiré a la tutoría del viernes. ¿Podrían indicarme si debo llevar el ejercicio que quedó pendiente o si lo revisaremos directamente durante la sesión? También quería confirmar que el horario sigue siendo el de las nueve de la mañana. Muchas gracias.</div>"
+    },
+    "spam-chain": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver a correo no deseado</button><h2>RE: RE: Reenvía esto a 10 personas</h2><div class=\"meta\">De: suerte_infinita@cadena-mail.example<br>Para: vela.skyline@coralia.net<br>Fecha: Jueves, 6 de octubre de 2005, 06:10</div><div class=\"bodytext\">Si no reenvías este correo antes de medianoche, tendrás siete años de mala suerte. Si lo reenvías, recibirás una sorpresa increíble. ¡No rompas la cadena!</div>"
+    },
+    "spam-dialup": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver a correo no deseado</button><h2>¡Conéctate más rápido!</h2><div class=\"meta\">De: ventas@internet-facil.example<br>Para: vela.skyline@coralia.net<br>Fecha: Martes, 4 de octubre de 2005, 11:42</div><div class=\"bodytext\">¿Cansado de esperar mientras carga una página? ¡Cambia hoy mismo a nuestro nuevo servicio de conexión ultrarrápida! Oferta válida por tiempo limitado.</div><div class=\"attachment\">[INFORMACIÓN DEL SERVICIO NO DISPONIBLE]</div>"
+    },
+    "draft-birthday": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver a borradores</button><h2>Feliz cumple!!</h2><div class=\"meta\">Para: alexasanch3z@hotmail.com<br>Guardado: Sábado, 8 de octubre de 2005, 22:14</div><div class=\"bodytext\">¡Alexa!, feliz cumpleaños. Espero que tengas un día tranquilo y bonito. No te voy a decir todavía qué te compré, pero espero que te guste. Gracias por estar pendiente de mí incluso cuando ando distraída con la universidad. Te doy el regalo cuando nos veamos. Y guarda un pedazo de torta para mí.</div><div class=\"attachment\">Borrador sin enviar</div>"
+    },
+    "draft-question": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver a borradores</button><h2>Pregunta sobre el edificio</h2><div class=\"meta\">Para: (sin destinatario)<br>Guardado: Lunes, 10 de octubre de 2005, 23:08</div><div class=\"bodytext\">¿Alguien sabe cómo se llama el edificio que queda detrás de la avenida? El que tiene las ventanas tapadas.</div><div class=\"attachment\">Borrador sin enviar</div>"
+    },
+    "recovered": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver a la bandeja</button><h2>Mensaje recuperado</h2><div class=\"meta\">De: <span>remitente desconocido</span><br>Para: vela.skyline@coralia.net<br>Fecha: Martes, 11 de octubre de 2005, 00:03</div><div class=\"bodytext\">Este mensaje no debería aparecer aquí.\n\nSi has conseguido verlo, significa que todavía queda algo en esta cuenta que no pudieron borrar.</div>"
+    },
+    "frenzy": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver a la bandeja</button><button type=\"button\" id=\"returnVoidButton\" aria-label=\"Salir de Void Mode y volver a Coralia Mail\">RETORNAR</button><h2>Gracias por preocuparte.</h2><div class=\"meta\">De: <span class=\"frenzy-name\">Frenzy</span> &lt;frenzy.x@hotmail.com&gt;<br>Para: vela.skyline@coralia.net<br>Fecha: Martes, 11 de octubre de 2005, 00:17<br><span style=\"color:#8ca5a7\">Este mensaje no aparece en el registro de actividad.</span></div><div class=\"bodytext\">Gracias por preocuparte.\n\nNo hacía falta que hablaras tan alto cuando entraste.\n\n— F.</div><div class=\"attachment\" style=\"display:block;max-width:520px\"><div style=\"font-weight:bold;margin-bottom:8px\">♫ Sin título.wav</div><div style=\"font-size:11px;margin-bottom:10px\">Archivo adjunto · Grabación recuperada</div><audio controls preload=\"metadata\" style=\"width:100%\"><source src=\"Sin%20titulo.wav\" type=\"audio/wav\">Tu navegador no puede reproducir este audio.</audio><div style=\"font-size:11px;margin-top:8px;color:#668f95\">Nota: el remitente no figura en el historial de envío.</div></div>"
+    },
+    "unknown-room-1": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver a la bandeja</button><h2>¿Cuántas puertas había?</h2><div class=\"meta\">De: usuario_desconocido@coralia.net<br>Para: vela.skyline@coralia.net<br>Fecha: Martes, 11 de octubre de 2005, 01:26<br><span style=\"color:#8ca5a7\">El servidor no pudo verificar el remitente.</span></div><div class=\"bodytext\">No recuerdo que hubiera tantas puertas.\n\nLa habitación del fondo no estaba en el plano. Desde el pasillo parecía pequeña, pero por dentro seguía y seguía.\n\n¿Tú también la viste?</div>"
+    },
+    "unknown-room-2": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver a la bandeja</button><h2>La habitación sin ventanas</h2><div class=\"meta\">De: usuario_desconocido@coralia.net<br>Para: vela.skyline@coralia.net<br>Fecha: Martes, 11 de octubre de 2005, 02:11<br><span style=\"color:#8ca5a7\">Mensaje recibido sin conexión activa.</span></div><div class=\"bodytext\">Había una silla en el centro. Nada más.\n\nNo había ventanas, pero entraba luz por alguna parte. Cuando me di la vuelta, la puerta ya no estaba donde la había dejado.\n\nNo vuelvas a buscarla.</div>"
+    },
+    "final-message": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver a la bandeja</button><h2>FINAL</h2><div class=\"meta\">De: vela.skyline@coralia.net<br>Para: vela.skyline@coralia.net<br>Fecha: Martes, 11 de octubre de 2005, 23:59</div><div class=\"bodytext\">Revisa tus mensajes mañana</div>"
+    },
+    "prepared-message": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver a la bandeja</button><h2>¿PREPARADOS?</h2><div class=\"meta\">De: bofinderdy@howmail.html<br>Para: vela.skyline@coralia.net<br>Fecha: Miércoles, 12 de octubre de 2005, 00:14<br><span style=\"color:#8ca5a7\">El servidor no pudo verificar el remitente.</span></div><div class=\"bodytext\">Oh, amiguita…\n\nTu amante seguro estará.\n\nCréeme, después de esto,\nnadie los querrá volver a mirar.\n\nPero otro problema encontrarás…\n¿Cómo sabes que esto no va a regresar?\n\nLa cinta verás,\nal edificio llegarás\ny me vas a encontrar.\n\nPero dime, ¿estás segura\nde cuál es la realidad?</div>"
+    },
+    "hidden-room": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver</button><h2>IMG_111005_0317.JPG</h2><div class=\"meta\">Archivo recuperado · 11/10/2005 · 03:17 AM</div><div class=\"bodytext\">La imagen está dañada. Sin embargo, hay algo escrito en los datos del archivo:</div><div class=\"attachment\" style=\"display:block;text-align:center;padding:28px 12px\"><div style=\"font-size:44px;letter-spacing:8px;color:#72b7b6\">◌ ◯ ◌</div><div style=\"margin-top:14px;color:#527e85\">NO ESTABAS SOLA</div><div style=\"font-size:11px;margin-top:8px\">Vista previa no disponible</div></div>"
+    },
+    "hidden-note": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver</button><h2>Nota sin remitente</h2><div class=\"meta\">Ubicación: datos temporales de Coralia<br>Fecha: desconocida</div><div class=\"bodytext\">No abras la puerta cuando vuelva a sonar.\n\nNo soy yo quien está escribiendo esto.</div>"
+    },
+    "cuerpo-fallido": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver</button>\n        <h2>Archivo de registro: Cuerpo Fallido</h2>\n        <div class=\"meta\">Ubicación: Sistema de respaldo · 555-3492</div>\n        <div class=\"secret-image-view\">\n          <img src=\"Cuerpo_fallido.jpg\" alt=\"Cuerpo Fallido - Frenzy\">\n          <div class=\"bodytext\" style=\"text-align:center\">El registro visual muestra anomalías térmicas y distorsión en el sujeto[cite: 2].</div>\n        </div>"
+    },
+    "busca-cuerpos": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver</button>\n        <h2>EL BUSCA CUERPOS</h2>\n        <div class=\"meta\">Entidad detectada en sector desconocido</div>\n        <div class=\"secret-image-view\">\n          <img src=\"recuerda.jpg\" alt=\"El Busca Cuerpos\">\n          <div class=\"bodytext\" style=\"text-align:center; white-space:pre-line; color:#244b58; font-weight:bold;\">\n            No se quien soy\n            Tu si lo sabes\n            Tal vez en algun momento\n            Dejaras de escapar\n            Pero mientras tanto\n            Me daras algo de ti\n            Y yo te recordare.\n          </div>\n        </div>"
+    }
+  },
+  "updates": {
+    "2026-10-31": {
+      "label": "Actualización del 31 de octubre",
+      "messageKeys": [
+        "halloween-vhs-01",
+        "halloween-vhs-02"
+      ],
+      "note": "Añade nuevas entradas aquí en futuras actualizaciones; no hace falta modificar los mensajes anteriores."
+    }
+  },
+  "media": {
+    "videos": {
+      "halloween-vhs-01": {
+        "es": {
+          "src": "media/videos/halloween-vhs-01-es.mp4",
+          "subtitles": "subtitles/es.vtt"
+        },
+        "en": {
+          "src": "media/videos/halloween-vhs-01-en.mp4",
+          "subtitles": "subtitles/en.vtt"
+        }
+      },
+      "halloween-vhs-02": {
+        "es": {
+          "src": "media/videos/halloween-vhs-02-es.mp4",
+          "subtitles": "subtitles/es.vtt"
+        },
+        "en": {
+          "src": "media/videos/halloween-vhs-02-en.mp4",
+          "subtitles": "subtitles/en.vtt"
+        }
+      }
+    }
+  },
+  "subtitleFiles": {
+    "movistarVm05": "subtitles/es.json#movistarVm05",
+    "sinTitulo": "subtitles/es.json#sinTitulo"
+  },
+  "futureContentWorkflow": {
+    "messageViews": "Añade la vista de cada mensaje una sola vez dentro de messages con una clave estable. El contenido se mantiene en español aquí; la versión inglesa usará la misma clave.",
+    "mailRows": "Añade remitente, asunto y fecha a mailRows para mensajes iniciales o a dynamicRows para mensajes revelados después.",
+    "datedUpdates": "Registra las actualizaciones en updates con una clave de fecha YYYY-MM-DD y las claves de contenido de esa tanda.",
+    "videos": "Dentro de un mensaje, usa <video controls data-localized-video=\"halloween-vhs-01\"></video>. Registra archivos y subtítulos por idioma en media/videos.json.",
+    "important": "La progresión narrativa sigue conectada al JavaScript original. Los textos nuevos ya no tendrán que extraerse dos veces, pero una nueva tanda narrativa debe conectarse una vez a la lógica de actualización."
+  }
+}
