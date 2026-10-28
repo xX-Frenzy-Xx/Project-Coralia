@@ -25,6 +25,11 @@
  });
  if(lang!=='en') return;
  const map=dictionary.translations||{};
+function replaceFlexible(value, from, to) {
+   value = value.split(from).join(to);
+   const pattern = from.split(/\s+/).map(part => part.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('\\s+');
+   return value.replace(new RegExp(pattern, 'g'), to);
+ }
  const pairs=Object.entries(map).sort((a,b)=>b[0].length-a[0].length);
  function translateRoot(root){
    const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);
@@ -32,18 +37,18 @@
    for(const node of nodes){
      if(!node.nodeValue.trim()) continue;
      let value=node.nodeValue;
-     for(const [from,to] of pairs) { if(!from) continue; value=value.split(from).join(to); const pattern=from.split(/\\s+/).map(part=>part.replace(/[.*+?^${}()|[\\]\\\\]/g,'\\\\for(const [from,to] of pairs) if(from && value.includes(from)) value=value.split(from).join(to);')).join('\\\\s+'); value=value.replace(new RegExp(pattern,'g'),to); }
+     for (const [from,to] of pairs) { if (from) value = replaceFlexible(value, from, to); }
      node.nodeValue=value;
    }
    const attrs=['placeholder','title','aria-label','alt'];
    root.querySelectorAll?.('*').forEach(el=>attrs.forEach(attr=>{
      const value=el.getAttribute(attr); if(!value)return;
-     let next=value; for(const [from,to] of pairs) if(from && next.includes(from)) next=next.split(from).join(to);
+     let next=value; for (const [from,to] of pairs) if (from) next=replaceFlexible(next, from, to);
      if(next!==value)el.setAttribute(attr,next);
    }));
  }
  translateRoot(document.body);
- const observer=new MutationObserver(records=>records.forEach(rec=>rec.addedNodes.forEach(node=>{if(node.nodeType===1 && !['SCRIPT','STYLE'].includes(node.tagName))translateRoot(node);else if(node.nodeType===3){let v=node.nodeValue;for(const [from,to] of pairs){if(!from)continue;v=v.split(from).join(to);const pattern=from.split(/\\s+/).map(part=>part.replace(/[.*+?^${}()|[\\]\\\\]/g,'\\\\for(const [from,to] of pairs)if(from&&v.includes(from))v=v.split(from).join(to);node.nodeValue=v;')).join('\\\\s+');v=v.replace(new RegExp(pattern,'g'),to);}node.nodeValue=v;}})));
+        if(node.nodeType===3){let v=node.nodeValue;for(const [from,to] of pairs)if(from)v=replaceFlexible(v,from,to);node.nodeValue=v;}
  observer.observe(document.body,{childList:true,subtree:true});
  document.title='Project Coralia';
 })();
