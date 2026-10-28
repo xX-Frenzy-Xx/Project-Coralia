@@ -128,20 +128,20 @@
       nodes.forEach(node => {
         if (!node.nodeValue.trim()) return;
         let value=node.nodeValue;
-        translationPairs.forEach(([from,to]) => { if(from && value.includes(from)) value=value.split(from).join(to); });
+        translationPairs.forEach(([from,to]) => { if(!from) return; value=value.split(from).join(to); const pattern=from.split(/\\s+/).map(part=>part.replace(/[.*+?^${}()|[\\]\\\\]/g,'\\\\translationPairs.forEach(([from,to]) => { if(from && value.includes(from)) value=value.split(from).join(to); });')).join('\\\\s+'); value=value.replace(new RegExp(pattern,'g'),to); });
         node.nodeValue=value;
       });
       const attrs=['placeholder','title','aria-label','alt'];
       root.querySelectorAll?.('*').forEach(el=>attrs.forEach(attr=>{
         const value=el.getAttribute(attr); if(!value)return;
-        let next=value; translationPairs.forEach(([from,to])=>{if(from&&next.includes(from))next=next.split(from).join(to);});
+        let next=value; translationPairs.forEach(([from,to])=>{if(!from)return;next=next.split(from).join(to);const pattern=from.split(/\\s+/).map(part=>part.replace(/[.*+?^${}()|[\\]\\\\]/g,'\\\\translationPairs.forEach(([from,to])=>{if(from&&next.includes(from))next=next.split(from).join(to);});')).join('\\\\s+');next=next.replace(new RegExp(pattern,'g'),to);});
         if(next!==value)el.setAttribute(attr,next);
       }));
     }
     translateRoot(document.body);
     new MutationObserver(records=>records.forEach(record=>record.addedNodes.forEach(node=>{
       if(node.nodeType===1 && !['SCRIPT','STYLE'].includes(node.tagName)) translateRoot(node);
-      else if(node.nodeType===3){let value=node.nodeValue;translationPairs.forEach(([from,to])=>{if(from&&value.includes(from))value=value.split(from).join(to);});node.nodeValue=value;}
+      else if(node.nodeType===3){let value=node.nodeValue;translationPairs.forEach(([from,to])=>{if(!from)return;value=value.split(from).join(to);const pattern=from.split(/\\s+/).map(part=>part.replace(/[.*+?^${}()|[\\]\\\\]/g,'\\\\translationPairs.forEach(([from,to])=>{if(from&&value.includes(from))value=value.split(from).join(to);});node.nodeValue=value;')).join('\\\\s+');value=value.replace(new RegExp(pattern,'g'),to);});node.nodeValue=value;}
     }))).observe(document.body,{childList:true,subtree:true});
     document.title='Coralia Mail';
   }
