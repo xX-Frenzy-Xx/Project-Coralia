@@ -39,7 +39,7 @@
     const panel = ensureCaptionPanel(audio);
     const languageLabel = lang === 'en' ? 'English subtitles' : 'Subtítulos en español';
     panel.dataset.language = lang;
-    panel.textContent = languageLabel + ' · Reproduce el audio para ver los subtítulos.';
+    panel.textContent = languageLabel + (lang === 'en' ? ' · Play the audio to see captions.' : ' · Reproduce el audio para ver los subtítulos.');
     if (audio.dataset.coraliaCaptionListener === 'true') {
       audio.removeEventListener('timeupdate', audio._coraliaCaptionUpdate);
       audio.removeEventListener('seeked', audio._coraliaCaptionUpdate);
@@ -48,9 +48,9 @@
     const update = () => {
       const now = audio.currentTime * 1000;
       const cue = cues.find(item => now >= item[0] && now < item[1]);
-      panel.textContent = cue ? captionText(cue) : (audio.paused ? languageLabel + ' · Reproduce el audio para ver los subtítulos.' : '');
+      panel.textContent = cue ? captionText(cue) : (audio.paused ? languageLabel + (lang === 'en' ? ' · Play the audio to see captions.' : ' · Reproduce el audio para ver los subtítulos.') : '');
     };
-    const end = () => { panel.textContent = languageLabel + ' · Fin de la grabación.'; };
+    const end = () => { panel.textContent = languageLabel + (lang === 'en' ? ' · End of recording.' : ' · Fin de la grabación.'); };
     audio._coraliaCaptionUpdate = update;
     audio._coraliaCaptionEnd = end;
     audio.addEventListener('timeupdate', update);
@@ -99,10 +99,14 @@
   function initializeMedia(root = document) {
     root.querySelectorAll('audio[data-localized-audio]').forEach(audio => {
       if (audio.dataset.coraliaConfigured === 'true') return;
+      audio.dataset.coraliaConfigured = 'loading';
       configureAudio(audio, audio.dataset.localizedAudio, language()).catch(error => {
+        audio.dataset.coraliaConfigured = 'false';
         console.warn('No se pudieron preparar los subtítulos del audio:', error);
         const panel = ensureCaptionPanel(audio);
-        panel.textContent = 'No se pudieron cargar los subtítulos. Recarga la página e inténtalo de nuevo.';
+        panel.textContent = language() === 'en'
+          ? 'Subtitles could not be loaded. Reload the page and try again.'
+          : 'No se pudieron cargar los subtítulos. Recarga la página e inténtalo de nuevo.';
       });
     });
     root.querySelectorAll('video[data-localized-video]').forEach(video => {
