@@ -58,7 +58,7 @@ function replaceFlexible(value, from, to) {
      if(!node.nodeValue.trim()) continue;
      let value=node.nodeValue;
      for (const [from,to] of pairs) { if (from) value = replaceFlexible(value, from, to); }
-     node.nodeValue=value;
+     if(value!==node.nodeValue) node.nodeValue=value;
    }
    const attrs=['placeholder','title','aria-label','alt'];
    root.querySelectorAll?.('*').forEach(el=>attrs.forEach(attr=>{
@@ -68,11 +68,18 @@ function replaceFlexible(value, from, to) {
    }));
  }
  translateRoot(document.body);
- const observer=new MutationObserver(records=>records.forEach(record=>record.addedNodes.forEach(node=>{
-   if(node.nodeType===1 && !['SCRIPT','STYLE'].includes(node.tagName)) translateRoot(node);
-   else if(node.nodeType===3){let value=node.nodeValue;for(const [from,to] of pairs)if(from)value=replaceFlexible(value,from,to);node.nodeValue=value;}
- })));
- observer.observe(document.body,{childList:true,subtree:true});
+ const observer=new MutationObserver(records=>records.forEach(record=>{
+   if(record.type==='characterData'){
+     const node=record.target; let value=node.nodeValue;
+     for(const [from,to] of pairs) if(from) value=replaceFlexible(value,from,to);
+     if(value!==node.nodeValue) node.nodeValue=value;
+   }
+   record.addedNodes.forEach(node=>{
+     if(node.nodeType===1 && !['SCRIPT','STYLE'].includes(node.tagName)) translateRoot(node);
+     else if(node.nodeType===3){let value=node.nodeValue;for(const [from,to] of pairs)if(from)value=replaceFlexible(value,from,to);if(value!==node.nodeValue)node.nodeValue=value;}
+   });
+ }));
+ observer.observe(document.body,{childList:true,subtree:true,characterData:true});
  document.title='Project Coralia';
 })();
 </script>
