@@ -1,0 +1,816 @@
+{
+  "languagePrompt": "LANGUAGE",
+  "languageNames": {
+    "es": "Español Latino",
+    "en": "English"
+  },
+  "ui": {
+    "mailBrand": "◈ CORALIA MAIL",
+    "mailTagline": "Write your story!",
+    "backHub": "← Project Coralia",
+    "serviceStatus": "● Service available",
+    "mailVersion": "Coralia Mail v2.0 Beta",
+    "year": "2005",
+    "windowTitle": "Inbox - Coralia Mail",
+    "session": "Signed in as:",
+    "lastAccess": "Last access:",
+    "compose": "✉ Compose",
+    "refresh": "↻ Refresh",
+    "delete": "▣ Delete",
+    "options": "⚙ Options",
+    "folders": "Personal folders",
+    "inbox": "▣ Inbox",
+    "sent": "▤ Sent items",
+    "drafts": "▧ Drafts",
+    "trash": "♲ Deleted items",
+    "junk": "▣ Junk mail",
+    "sender": "Sender",
+    "recipient": "Recipient",
+    "subject": "Subject",
+    "date": "Date",
+    "backInbox": "← Back to inbox",
+    "backSent": "← Back to sent",
+    "backJunk": "← Back to junk mail",
+    "back": "← Back",
+    "searchLabel": "Search for a message or enter a word",
+    "searchPlaceholder": "Type here…",
+    "searchButton": "Search",
+    "ready": "Coralia Mail is ready.",
+    "noMessages": "There are no messages to display.",
+    "languageUnavailable": "English translation is available.",
+    "hubVersion": "VERSION 2 · STILL IN DEVELOPMENT AND RESEARCH",
+    "hubStatus": "ARCHIVE SYSTEM · 2026",
+    "hubNav": {
+      "home": "Home",
+      "archives": "Archives",
+      "people": "People",
+      "about": "About the project"
+    },
+    "hubEyebrow": "Team notes · archive under observation",
+    "hubTitle": "We're not quite sure<br>what we've found.",
+    "hubIntro": "Welcome to Project Coralia. We're Team Cheeseovery, a small group trying to recover an old website called Coralia Mail. From what we've been able to reconstruct, it existed between 2005 and 2006 and gradually fell out of use. Its security also seems to have been less than ideal.",
+    "hubFiction": "Project Coralia is an interactive work of fiction."
+  },
+  "mailRows": {
+    "support-sync": {
+      "sender": "soporte@coralia.net",
+      "subject": "Can't find a message?",
+      "date": "11/10/05"
+    },
+    "movistar": {
+      "sender": "Buzon_Movistar_Auto@movistar.com",
+      "subject": "New voicemail from Movistar - 555-3492",
+      "date": "10/10/05"
+    },
+    "inbox-class": {
+      "sender": "andrea.mora@hotmail.com",
+      "subject": "Can you send me your notes?",
+      "date": "09/10/05"
+    },
+    "inbox-party": {
+      "sender": "nora.paz@hotmail.com",
+      "subject": "Re: About Saturday",
+      "date": "08/10/05"
+    },
+    "inbox-random": {
+      "sender": "rafa_05@hotmail.com",
+      "subject": "lol look at this",
+      "date": "06/10/05"
+    },
+    "thread-psyco": {
+      "sender": "Psyco",
+      "subject": "RE: terrible nicknames",
+      "date": "05/10/05"
+    },
+    "thread-frenzy": {
+      "sender": "Frenzy",
+      "subject": "I'll let you customize the email :)",
+      "date": "04/10/05"
+    },
+    "welcome": {
+      "sender": "Coralia Mail",
+      "subject": "Welcome to Coralia",
+      "date": "03/09/05"
+    },
+    "sent-party": {
+      "sender": "nora.paz@hotmail.com",
+      "subject": "Party photos",
+      "date": "10/10/05"
+    },
+    "sent-class": {
+      "sender": "grupo.universidad@hotmail.com",
+      "subject": "Notes from the week",
+      "date": "09/10/05"
+    },
+    "sent-psyco": {
+      "sender": "psycoone12@hotmail.com",
+      "subject": "Frenzy URGENT",
+      "date": "10/10/05"
+    },
+    "sent-old": {
+      "sender": "soporte@coralia.net",
+      "subject": "Account problem",
+      "date": "08/10/05"
+    },
+    "sent-mom": {
+      "sender": "nora.paz@hotmail.com",
+      "subject": "Don't forget to call",
+      "date": "07/10/05"
+    },
+    "sent-notes": {
+      "sender": "tutorias@universidad.edu",
+      "subject": "Tutoring confirmation",
+      "date": "05/10/05"
+    },
+    "spam-love": {
+      "sender": "Ofertas Tom",
+      "subject": "WANT TO FIND LOVE?",
+      "date": "10/10/05"
+    },
+    "spam-prize": {
+      "sender": "Premios Internacionales",
+      "subject": "You've won a mobile phone!",
+      "date": "11/10/05"
+    },
+    "spam-pharmacy": {
+      "sender": "Farmacia Mundial",
+      "subject": "RE: Exclusive offer — today only",
+      "date": "07/10/05"
+    },
+    "spam-chain": {
+      "sender": "Cadena de la suerte",
+      "subject": "RE: RE: Forward this to 10 people",
+      "date": "06/10/05"
+    },
+    "spam-dialup": {
+      "sender": "Internet Fácil",
+      "subject": "Connect faster!",
+      "date": "04/10/05"
+    },
+    "draft-birthday": {
+      "sender": "alexasanch3z@hotmail.com",
+      "subject": "Happy birthday!!",
+      "date": "08/10/05"
+    },
+    "draft-question": {
+      "sender": "(no recipient)",
+      "subject": "Question about the building",
+      "date": "10/10/05"
+    }
+  },
+  "dynamicRows": {
+    "recovered": {
+      "sender": "[unknown sender]",
+      "subject": "Recovered message",
+      "date": "11/10/05"
+    },
+    "frenzy": {
+      "sender": "Frenzy",
+      "subject": "Thanks for worrying about me.",
+      "date": "11/10/05"
+    },
+    "unknown-room-1": {
+      "sender": "usuario_desconocido@coralia.net",
+      "subject": "How many doors were there?",
+      "date": "11/10/05"
+    },
+    "unknown-room-2": {
+      "sender": "usuario_desconocido@coralia.net",
+      "subject": "The room without windows",
+      "date": "11/10/05"
+    },
+    "final-message": {
+      "sender": "vela.skyline@coralia.net",
+      "subject": "FINAL",
+      "date": "11/10/05"
+    },
+    "breakfast-note": {
+      "sender": "Nora Paz",
+      "subject": "Are you going to have breakfast?",
+      "date": "10/10/05 08:03"
+    },
+    "reload-clue": {
+      "sender": "sistema@coralia.net",
+      "subject": "A sync note",
+      "date": "10/10/05 08:04"
+    },
+    "hospital-papers": {
+      "sender": "Hospital Central",
+      "subject": "Pending documentation",
+      "date": "10/10/05 16:03"
+    },
+    "post-psyco": {
+      "sender": "Psyco",
+      "subject": "Vela, reply when you wake up",
+      "date": "11/10/05 00:26"
+    },
+    "post-rushia": {
+      "sender": "Rushia",
+      "subject": "I saved you a seat",
+      "date": "11/10/05 10:18"
+    },
+    "post-lewis": {
+      "sender": "Lewis",
+      "subject": "Do you have today's notes?",
+      "date": "11/10/05 16:42"
+    },
+    "daily-friend": {
+      "sender": "Rafa · rafa_05@hotmail.com",
+      "subject": "Did you leave so quickly?",
+      "date": "10/10/05 09:14"
+    },
+    "sync-incomplete": {
+      "sender": "Coralia Mail",
+      "subject": "Sync incomplete",
+      "date": "10/10/05 11:06"
+    },
+    "did-you-get-it": {
+      "sender": "Andrea",
+      "subject": "Did you get what I sent you?",
+      "date": "10/10/05 15:37"
+    },
+    "halloween-event": {
+      "sender": "Moda Coralia",
+      "subject": "Halloween is just around the corner",
+      "date": "10/10/05 09:36"
+    },
+    "halloween-costume": {
+      "sender": "Andrea",
+      "subject": "Do you know what you're dressing up as yet?",
+      "date": "10/10/05 10:12"
+    },
+    "halloween-party": {
+      "sender": "Rafa",
+      "subject": "Re: Should we do something for Halloween?",
+      "date": "10/10/05 14:48"
+    }
+  },
+  "messages": {
+    "thread-frenzy": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back to inbox</button><h2>I'll let you customize the email :)</h2><div class=\"meta\">Conversation between Frenzy and Vela<br>Date: Tuesday, October 4, 2005</div><div class=\"thread-intro\">Frenzy has just found out that Vela has her own Coralia address. The conversation is still saved in the inbox.</div><div class=\"thread-chat\"><div class=\"thread-message frenzy\"><span class=\"who\">Frenzy · frenzy.x@hotmail.com</span>YOU FINALLY have your own email!! I'll send you a couple of things to make your account look nice. The default interface looks like it was made by someone who hates colors lol.<span class=\"thread-file\">▧ aero_theme.cor · theme for Coralia</span><span class=\"when\">16:42</span></div><div class=\"thread-message vela\"><span class=\"who\">Vela · vela.skyline@coralia.net</span>HAHAHA I've spent ten minutes trying to change the background. Why does everything have to be hidden under Options? Send it over, please. But don't make my email bubblegum pink.</div><div class=\"thread-message frenzy\"><span class=\"who\">Frenzy · frenzy.x@hotmail.com</span>Bubblegum pink was my second choice 😔. I'm also sending you some icons and a signature I made. If anything breaks, it wasn't me. (It was me.)<span class=\"thread-file\">▧ mini_icons.zip · 4 icons</span><span class=\"when\">16:47</span></div><div class=\"thread-message vela\"><span class=\"who\">Vela · vela.skyline@coralia.net</span>The signature turned out nice, I won't lie. I owe you one. When we meet up, help me get everything looking right and I'll treat you to something. Thanks for being more excited about my own email than I am, silly 💚<span class=\"when\">16:51</span></div><div class=\"thread-message frenzy\" style=\"margin-top:10px\"><span class=\"who\">Frenzy · frenzy.x@hotmail.com</span>Hehe, thanks, but not if I treat you first, smartypants 🩵<span class=\"when\">16:53</span></div></div>"
+    },
+    "thread-psyco": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back to inbox</button><h2>RE: terrible nicknames</h2><div class=\"meta\">Conversation between Psyco and Vela<br>Date: Wednesday, October 5, 2005</div>\n      <div class=\"thread-intro\">An old exchange between two friends who were already emailing each other before any of this happened.</div>\n      <div class=\"thread-chat\">\n        <div class=\"thread-message friend\"><span class=\"who\">Psyco · psycoone12@hotmail.com</span>By the way, I saved you as Hazelnut.<span class=\"when\">19:08</span></div>\n        <div class=\"thread-message vela\"><span class=\"who\">Vela · vela.skyline@coralia.net</span>Hahaha, what!? I saved you as Psycho, you sound like one when you talk.</div>\n        <div class=\"thread-message friend\"><span class=\"who\">Psyco · psycoone12@hotmail.com</span>Well, at least I don't sound like a nut, and it's got a Psyco-delic vibe. Whatever. Message me here; I don't check my work phone much, and I'll send you gossip too.</div>\n        <div class=\"thread-message vela\"><span class=\"who\">Vela · vela.skyline@coralia.net</span>Honestly, this is much more convenient. You're a good friend, even if your nicknames are criminal.<span class=\"when\">19:13</span></div>\n      </div>"
+    },
+    "spam-love": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back to junk mail</button><h2>SUBJECT: WANT TO FIND LOVE?</h2><div class=\"meta\">From: ofertas_tom@ofertas-mail.net<br>To: vela.skyline@coralia.net<br>Date: Monday, October 10, 2005, 09:12<br>Classification: Junk mail</div><div class=\"bodytext\">HELLO, [FRIEND]!!! WANT TO FIND LOVE???\n\nWe all need LOVE, sweet and powerful LOVE from the soul that takes you to heaven, not LOVE from the heart, because you surely already found that, BABY, just visit my website and I'll show you how to win LOVE worth $199.7 with no effort!\n\nLIMITED-TIME OFFER!!! DON'T LET LOVE SLIP AWAY!!! [CLICK HERE, VALUED CUSTOMER!]\n\nP.S.: The most attentive customers always find special words hidden across the page and the web. The big prize won't be announced twice!</div><div class=\"attachment\">[LINK BLOCKED]<br><span style=\"font-size:11px\">Coralia has blocked this link because it may be dangerous.</span></div><div class=\"side-note\" style=\"margin:14px 0 0\">Message automatically detected as junk mail.</div>"
+    },
+    "spam-prize": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back to junk mail</button><h2>You've won a mobile phone!</h2><div class=\"meta\">From: premios_urgentes@win-big.example<br>To: vela.skyline@coralia.net<br>Date: Tuesday, October 11, 2005, 10:44</div><div class=\"bodytext\">FELICIDADES!!! Your address has been randomly selected to receive a completely FREE mobile phone.\n\nReply with your full name, address, and card number to confirm delivery.\n\nDON'T MISS THIS UNIQUE OPPORTUNITY!!!</div><div class=\"attachment\">[ATTACHMENT BLOCKED] premio.exe</div>"
+    },
+    "spam-pharmacy": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back to junk mail</button><h2>RE: Exclusive offer — today only</h2><div class=\"meta\">From: ofertas_medicas@bulk-mail.example<br>To: vela.skyline@coralia.net<br>Date: Friday, October 7, 2005, 02:08</div><div class=\"bodytext\">Hello dear customer!\n\nSpecial offer just for YOU. Buy today and get 70% discount. This message is not spam, please do not report us.\n\nClick here to unsubscribe from all future messages.</div><div class=\"attachment\">[LINK BLOCKED]</div>"
+    },
+    "movistar": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back to inbox</button><h2>New voicemail from Movistar - 555-3492</h2><div class=\"meta\">From: Buzon_Movistar_Auto@movistar.com<br>To: vela.skyline@coralia.net<br>Date: Monday, October 10, 2005, 2:00 AM</div><div class=\"bodytext\">Estimado cliente,\n\nUsted tiene un nuevo mensaje de voz en su buzón automático. Puede escuchar la grabación adjunta a continuación.</div><div class=\"attachment\" style=\"display:block;max-width:520px\"><div style=\"font-weight:bold;margin-bottom:8px\">♫ MOVISTAR_VM_05_REC.AMR.mp3</div><div style=\"font-size:11px;margin-bottom:10px\">Voicemail · Audio file</div><audio controls preload=\"metadata\" style=\"width:100%\"><source src=\"MOVISTAR_VM_05_REC.AMR.mp3\" type=\"audio/mpeg\">Your browser cannot play this audio.</audio></div>"
+    },
+    "welcome": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back to inbox</button><h2>Welcome to Coralia</h2><div class=\"meta\">From: equipo@coralia.net<br>To: vela.skyline@coralia.net<br>Date: Saturday, September 3, 2005, 16:20</div><div class=\"bodytext\">Hello!\n\nThank you for creating your Coralia Mail account. Here you can stay in touch with friends, share files, and save your important messages.\n\nWe hope you enjoy your little space on the Internet.\n\n— The Coralia Team</div>"
+    },
+    "support-sync": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back to inbox</button><h2>Can't find a message?</h2><div class=\"meta\">From: soporte@coralia.net<br>To: vela.skyline@coralia.net<br>Date: Tuesday, October 11, 2005, 08:02</div><div class=\"bodytext\">Hi, Vela:\n\nSometimes messages take a little while to appear while your mailbox finishes syncing. If you notice one is missing, try refreshing the page in a few minutes.\n\nThanks for using Coralia Mail.\n— Technical Support</div>"
+    },
+    "daily-friend": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back to inbox</button><h2>Did you leave so quickly?</h2><div class=\"meta\">From: rafa_05@hotmail.com<br>To: vela.skyline@coralia.net<br>Date: <span class=\"message-date\">Monday, October 10, 2005, 09:14</span></div><div class=\"bodytext\">Hey, everything okay? You disappeared so quickly after we saw each other yesterday lol. I was going to send you the group meme, but I think I sent it to everyone except you 💀. Tell me what happened when you get to uni. Oh, and I found the link to that weird site I told you about; I'll send it later.</div>"
+    },
+    "sync-incomplete": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back to inbox</button><h2>Sync incomplete</h2><div class=\"meta\">From: sistema@coralia.net<br>To: vela.skyline@coralia.net<br>Date: <span class=\"message-date\">Monday, October 10, 2005, 11:06</span></div><div class=\"bodytext\">No todos los mensajes se han descargado correctamente.\n\nAlgunos elementos podrían aparecer después de la próxima actualización. No es necesario volver a iniciar sesión.</div>"
+    },
+    "did-you-get-it": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back to inbox</button><h2>Did you get what I sent you?</h2><div class=\"meta\">From: andrea.mora@hotmail.com<br>To: vela.skyline@coralia.net<br>Date: <span class=\"message-date\">Monday, October 10, 2005, 15:37</span></div><div class=\"bodytext\">Hey, I sent you something last night and don't know if it arrived. It's not urgent, but let me know when you can because that file took forever to upload lol.</div>"
+    },
+    "breakfast-note": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back to inbox</button><h2>Are you going to have breakfast?</h2><div class=\"meta\">From: nora.paz@hotmail.com<br>To: vela.skyline@coralia.net<br>Date: <span class=\"message-date\">Monday, October 10, 2005, 08:03</span></div><div class=\"bodytext\">Vela, I left something ready in case you wake up hungry. Don't leave without eating, okay? You were distracted yesterday and almost forgot to say goodbye. Tell me how it went when you can.</div>"
+    },
+    "halloween-event": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back to inbox</button><h2>Halloween is just around the corner</h2><div class=\"meta\">From: novedades@moda-coralia.net<br>To: vela.skyline@coralia.net<br>Date: Monday, October 10, 2005, 09:36</div><div class=\"bodytext\">Get your Halloween look ready!\n\nNew accessories arrived this week: wide belts, necklaces, bracelets, buckles, and fantasy makeup. We also have easy ideas for putting together a costume with clothes you already have at home.\n\nBest of all? You don't need to spend much to stand out at the party!\n\nCoralia Fashion · Your style, your way.</div><div class=\"attachment\">▧ catalogo_halloween_05.jpg &nbsp; (preview unavailable)</div>"
+    },
+    "halloween-costume": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back to inbox</button><h2>Do you know what you're dressing up as yet?</h2><div class=\"meta\">From: andrea.mora@hotmail.com<br>To: vela.skyline@coralia.net<br>Date: Monday, October 10, 2005, 10:12</div><div class=\"bodytext\">Hey, important question: do you know what you're dressing up as for Halloween yet? I still can't decide and don't want to end up wearing the first thing I find lol.\n\nIf you see anything cute at your parents' store, send me a photo. I promise not to copy you… too much.</div>"
+    },
+    "halloween-party": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back to inbox</button><h2>Re: Should we do something for Halloween?</h2><div class=\"meta\">From: rafa_05@hotmail.com<br>To: vela.skyline@coralia.net<br>Date: Monday, October 10, 2005, 14:48</div><div class=\"bodytext\">The group is talking about doing something for Halloween on Saturday the 29th. Nothing is confirmed yet, but they said everyone can bring something to eat and no one needs an expensive costume.\n\nI'll let you know if it happens. And no, I'm not going as a ghost in a bedsheet; I did that once and almost fell down the stairs.</div>"
+    },
+    "reload-clue": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back to inbox</button><h2>A sync note</h2><div class=\"meta\">From: sistema@coralia.net<br>To: vela.skyline@coralia.net<br>Date: Monday, October 10, 2005, 08:04</div><div class=\"bodytext\">Some echoes can only be distinguished when the glass returns to its place. The fourth reflection will not be like the first.</div>"
+    },
+    "hospital-papers": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back to inbox</button><h2>Pending documentation — Central Hospital</h2><div class=\"meta\">From: admisiones@hospitalcentral.example<br>To: vela.skyline@coralia.net<br>Date: <span class=\"message-date\">Monday, October 10, 2005, 16:03</span></div><div class=\"bodytext\">Good afternoon. We are still waiting for the personal documents for patient Frenzy that were mentioned during the call. Could you bring them in or confirm when they will be available? For now, we only have an incomplete record and cannot finalize the admission.</div>"
+    },
+    "post-psyco": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back to inbox</button><h2>Vela, reply when you wake up</h2><div class=\"meta\">From: psycoone12@hotmail.com<br>To: vela.skyline@coralia.net<br>Date: Tuesday, October 11, 2005, 00:26</div><div class=\"bodytext\">Hazelnut, I know it's really late, but are you awake?\n\nI just got a very strange notification related to Frenzy and don't know whether to text you or wait until morning. If you see this, send me even just a dot so I know you're okay.</div>"
+    },
+    "post-rushia": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back to inbox</button><h2>I saved you a seat</h2><div class=\"meta\">From: rushia.mori@hotmail.com<br>To: vela.skyline@coralia.net<br>Date: Tuesday, October 11, 2005, 10:18</div><div class=\"bodytext\">Hiii, I'm getting to university a little early tomorrow. I'll save you a seat like always. Oh, and I found a store with accessories you'd absolutely love lol. I'll send you the address later.</div>"
+    },
+    "post-lewis": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back to inbox</button><h2>Do you have today's notes?</h2><div class=\"meta\">From: lewis.ramirez@hotmail.com<br>To: vela.skyline@coralia.net<br>Date: Tuesday, October 11, 2005, 16:42</div><div class=\"bodytext\">Vela, sorry for texting so late. Do you have the class notes? I got distracted by the group project and missed half the explanation. I owe you a coffee.</div>"
+    },
+    "inbox-class": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back to inbox</button><h2>Can you send me your notes?</h2><div class=\"meta\">From: andrea.mora@hotmail.com<br>To: vela.skyline@coralia.net<br>Date: Sunday, October 9, 2005, 18:21</div><div class=\"bodytext\">Hiii, could you send me what you wrote down in the last class? I got lost when the professor started explaining the assignment and then didn't understand what we had to turn in. I think he said it was due Thursday, but I'm not sure. If you also have the board notes, even better, because the photo I took came out blurry. I owe you one :)</div>"
+    },
+    "inbox-party": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back to inbox</button><h2>Re: About Saturday</h2><div class=\"meta\">From: nora.paz@hotmail.com<br>To: vela.skyline@coralia.net<br>Date: Saturday, October 8, 2005, 13:04</div><div class=\"bodytext\">Vela, remember to let me know when you arrive and don't come home alone so late. If you go to the party, keep your phone charged and tell me who you'll be with. I left some food in the fridge in case you're hungry when you get back. And please don't forget your keys; the spare is still in the usual place. Take care.</div>"
+    },
+    "inbox-random": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back to inbox</button><h2>lol look at this</h2><div class=\"meta\">From: rafa_05@hotmail.com<br>To: vela.skyline@coralia.net<br>Date: Thursday, October 6, 2005, 21:36</div><div class=\"bodytext\">I don't know why this made me laugh so hard, but I had to send it to you. Someone in the group sent it to me and nobody knows who made it first. The image looks awful because it's been forwarded about five times, but look at the bottom corner; it seems like something's written there. Probably a compression error or something silly. Tell me later if you remember where it came from.</div><div class=\"attachment\">▧ imagen_adjunta.jpg &nbsp; (preview unavailable)</div>"
+    },
+    "sent-party": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back to sent</button><h2>Party photos</h2><div class=\"meta\">From: vela.skyline@coralia.net<br>To: nora.paz@hotmail.com<br>Date: Monday, October 10, 2005, 18:32</div><div class=\"bodytext\">I'm sending you the photos I took at the family gathering. Some came out blurry, but a few are nice. I compressed them so they wouldn't be too large; if you want the originals, I'll send them when I get home. Thanks for helping me put everything away at the end. Let me know if you'd like me to print any.</div>"
+    },
+    "sent-class": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back to sent</button><h2>Notes from the week</h2><div class=\"meta\">From: vela.skyline@coralia.net<br>To: grupo.universidad@hotmail.com<br>Date: Sunday, October 9, 2005, 20:06</div><div class=\"bodytext\">Hi, I'm attaching today's notes. If anyone has what the professor explained at the end, could you send it to me? I think he mentioned some pages from the book and an activity for next week, but I was copying the previous part and didn't hear him. Please also check the document date in case I saved it incorrectly. Thanks.</div><div class=\"attachment\">▧ apuntes_semana.doc &nbsp; (archivo no disponible)</div>"
+    },
+    "sent-psyco": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back to sent</button><h2>Frenzy URGENT</h2><div class=\"meta\">From: vela.skyline@coralia.net<br>To: psycoone12@hotmail.com<br>Date: <span id=\"sentPsycoDate\">Tuesday, October 11, 2005, 00:12</span></div><div class=\"bodytext\">Frenzy is in shock at Central Hospital.\n\nEarly this morning, after the party he never managed to reach, some guards found him near the building; he's cold and staring blankly. His heart is beating as usual, but he's... in shock?! He's not injured, just... cold. I don't understand!\n\nIt's as if something got inside him, or as if something is missing. When they first told me, I thought it was a joke; I wish it had been... I had to go over and take the keys from under his doormat to look for his papers; I only found his university things and an ID. I don't know what to do! I can't handle this alone. All I know is he sent me this voicemail and... I'm attaching it.\n\nPlease don't panic, okay? He's your coworker, our friend; you know he's not crazy. I think someone scared him or did something serious to him. Or maybe he shouldn't have gone into that paranormal place.\n\nPlease don't reply to this message. If you're going to help me, go straight to Central Hospital.</div><div class=\"attachment\" style=\"display:block;max-width:520px\"><div style=\"font-weight:bold;margin-bottom:7px\">♫ MOVISTAR_VM_05_REC.AMR.mp3</div><div style=\"font-size:11px;color:#a54a4a\">Archivo adjunto no disponible</div><div style=\"margin-top:8px;padding:8px;background:#f8eaea;border:1px solid #e0b4b4;color:#944848\">The file cannot be found. It may have been moved or deleted.</div></div>"
+    },
+    "sent-old": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back to sent</button><h2>Account problem</h2><div class=\"meta\">From: vela.skyline@coralia.net<br>To: soporte@coralia.net<br>Date: Saturday, October 8, 2005, 11:48</div><div class=\"bodytext\">Hello. Some old messages aren't showing up in my inbox, and I don't remember deleting them. Is there any way to recover them?</div>"
+    },
+    "sent-mom": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back to sent</button><h2>Don't forget to call</h2><div class=\"meta\">From: vela.skyline@coralia.net<br>To: nora.paz@hotmail.com<br>Date: Friday, October 7, 2005, 17:02</div><div class=\"bodytext\">Hi, I'll be leaving university a little late today because we were allowed to finish a group activity. I'll call you when I get home, don't worry. I might stop by the store first to buy something for dinner, so if I don't answer right away, that's why. I'll leave the keys where I always do.</div>"
+    },
+    "sent-notes": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back to sent</button><h2>Tutoring confirmation</h2><div class=\"meta\">From: vela.skyline@coralia.net<br>To: tutorias@universidad.edu<br>Date: Wednesday, October 5, 2005, 09:18</div><div class=\"bodytext\">Good morning. I'm confirming that I'll attend Friday's tutoring session. Could you let me know if I should bring the unfinished exercise or if we'll review it during the session? I also wanted to confirm that the time is still 9 a.m. Thank you very much.</div>"
+    },
+    "spam-chain": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back to junk mail</button><h2>RE: RE: Forward this to 10 people</h2><div class=\"meta\">From: suerte_infinita@cadena-mail.example<br>To: vela.skyline@coralia.net<br>Date: Thursday, October 6, 2005, 06:10</div><div class=\"bodytext\">If you don't forward this email before midnight, you'll have seven years of bad luck. If you do, you'll receive an incredible surprise. Don't break the chain!</div>"
+    },
+    "spam-dialup": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back to junk mail</button><h2>Connect faster!</h2><div class=\"meta\">From: ventas@internet-facil.example<br>To: vela.skyline@coralia.net<br>Date: Tuesday, October 4, 2005, 11:42</div><div class=\"bodytext\">Tired of waiting for a page to load? Switch to our new ultra-fast connection service today! Limited-time offer.</div><div class=\"attachment\">[INFORMACIÓN DEL SERVICIO NO DISPONIBLE]</div>"
+    },
+    "draft-birthday": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back to drafts</button><h2>Happy birthday!!</h2><div class=\"meta\">To: alexasanch3z@hotmail.com<br>Guardado: Saturday, October 8, 2005, 22:14</div><div class=\"bodytext\">Alexa! Happy birthday. I hope you have a peaceful, lovely day. I'm not telling you what I bought you yet, but I hope you'll like it. Thanks for looking out for me even when I'm distracted with university. I'll give you your gift when we meet. And save me a piece of cake.</div><div class=\"attachment\">Unsent draft</div>"
+    },
+    "draft-question": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back to drafts</button><h2>Question about the building</h2><div class=\"meta\">To: (sin destinatario)<br>Guardado: Monday, October 10, 2005, 23:08</div><div class=\"bodytext\">Does anyone know the name of the building behind the avenue? The one with the covered windows.</div><div class=\"attachment\">Unsent draft</div>"
+    },
+    "recovered": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back to inbox</button><h2>Recovered message</h2><div class=\"meta\">From: <span>remitente desconocido</span><br>To: vela.skyline@coralia.net<br>Date: Tuesday, October 11, 2005, 00:03</div><div class=\"bodytext\">This message shouldn't be here.\n\nIf you've managed to see it, it means there's still something in this account they couldn't erase.</div>"
+    },
+    "frenzy": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back to inbox</button><button type=\"button\" id=\"returnVoidButton\" aria-label=\"Salir de Void Mode y volver a Coralia Mail\">RETORNAR</button><h2>Thanks for worrying about me.</h2><div class=\"meta\">From: <span class=\"frenzy-name\">Frenzy</span> &lt;frenzy.x@hotmail.com&gt;<br>To: vela.skyline@coralia.net<br>Date: Tuesday, October 11, 2005, 00:17<br><span style=\"color:#8ca5a7\">This message doesn't appear in the activity log.</span></div><div class=\"bodytext\">Thanks for worrying about me.\n\nYou didn't need to speak so loudly when you came in.\n\n— F.</div><div class=\"attachment\" style=\"display:block;max-width:520px\"><div style=\"font-weight:bold;margin-bottom:8px\">♫ Sin título.wav</div><div style=\"font-size:11px;margin-bottom:10px\">Archivo adjunto · Grabación recuperada</div><audio controls preload=\"metadata\" style=\"width:100%\"><source src=\"Sin%20titulo.wav\" type=\"audio/wav\">Your browser cannot play this audio.</audio><div style=\"font-size:11px;margin-top:8px;color:#668f95\">Note: the sender does not appear in the sent history.</div></div>"
+    },
+    "unknown-room-1": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back to inbox</button><h2>How many doors were there?</h2><div class=\"meta\">From: usuario_desconocido@coralia.net<br>To: vela.skyline@coralia.net<br>Date: Tuesday, October 11, 2005, 01:26<br><span style=\"color:#8ca5a7\">The server couldn't verify the sender.</span></div><div class=\"bodytext\">I don't remember there being so many doors.\n\nThe room at the back wasn't on the floor plan. From the hallway it looked small, but inside it just kept going.\n\nDid you see it too?</div>"
+    },
+    "unknown-room-2": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back to inbox</button><h2>The room without windows</h2><div class=\"meta\">From: usuario_desconocido@coralia.net<br>To: vela.skyline@coralia.net<br>Date: Tuesday, October 11, 2005, 02:11<br><span style=\"color:#8ca5a7\">Message received without an active connection.</span></div><div class=\"bodytext\">There was a chair in the center. Nothing else.\n\nThere were no windows, but light came in from somewhere. When I turned around, the door was no longer where I'd left it.\n\nDon't go looking for it again.</div>"
+    },
+    "final-message": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back to inbox</button><h2>FINAL</h2><div class=\"meta\">From: vela.skyline@coralia.net<br>To: vela.skyline@coralia.net<br>Date: Tuesday, October 11, 2005, 23:59</div><div class=\"bodytext\">Check your messages tomorrow</div>"
+    },
+    "prepared-message": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back to inbox</button><h2>READY?</h2><div class=\"meta\">From: bofinderdy@howmail.html<br>To: vela.skyline@coralia.net<br>Date: Wednesday, October 12, 2005, 00:14<br><span style=\"color:#8ca5a7\">The server couldn't verify the sender.</span></div><div class=\"bodytext\">Oh, little friend…\n\nYour lover will surely be there.\n\nCréeme, después de esto,\nnadie los querrá volver a mirar.\n\nBut you'll find another problem…\nHow do you know this won't come back?\n\nLa cinta verás,\nal edificio llegarás\ny me vas a encontrar.\n\nPero dime, ¿estás segura\nde cuál es la realidad?</div>"
+    },
+    "hidden-room": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back</button><h2>IMG_111005_0317.JPG</h2><div class=\"meta\">Recovered file · 10/11/2005 · 03:17 AM</div><div class=\"bodytext\">The image is corrupted. However, something is written in the file metadata:</div><div class=\"attachment\" style=\"display:block;text-align:center;padding:28px 12px\"><div style=\"font-size:44px;letter-spacing:8px;color:#72b7b6\">◌ ◯ ◌</div><div style=\"margin-top:14px;color:#527e85\">YOU WERE NOT ALONE</div><div style=\"font-size:11px;margin-top:8px\">Vista previa no disponible</div></div>"
+    },
+    "hidden-note": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back</button><h2>Note with no sender</h2><div class=\"meta\">Location: Coralia temporary data<br>Date: unknown</div><div class=\"bodytext\">No abras la puerta cuando vuelva a sonar.\n\nNo soy yo quien está escribiendo esto.</div>"
+    },
+    "cuerpo-fallido": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back</button>\n        <h2>Log file: Failed Body</h2>\n        <div class=\"meta\">Location: Backup system · 555-3492</div>\n        <div class=\"secret-image-view\">\n          <img src=\"Cuerpo_fallido.jpg\" alt=\"Cuerpo Fallido - Frenzy\">\n          <div class=\"bodytext\" style=\"text-align:center\">The visual record shows thermal anomalies and distortion in the subject[cite: 2].</div>\n        </div>"
+    },
+    "busca-cuerpos": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back</button>\n        <h2>EL BUSCA CUERPOS</h2>\n        <div class=\"meta\">Entity detected in an unknown sector</div>\n        <div class=\"secret-image-view\">\n          <img src=\"recuerda.jpg\" alt=\"El Busca Cuerpos\">\n          <div class=\"bodytext\" style=\"text-align:center; white-space:pre-line; color:#244b58; font-weight:bold;\">\n            No se quien soy\n            Tu si lo sabes\n            Tal vez en algun momento\n            Dejaras de escapar\n            Pero mientras tanto\n            Me daras algo de ti\n            Y yo te recordare.\n          </div>\n        </div>"
+    }
+  },
+  "updates": {
+    "2026-10-31": {
+      "label": "Actualización del 31 de octubre",
+      "messageKeys": [
+        "halloween-vhs-01",
+        "halloween-vhs-02"
+      ],
+      "note": "Añade nuevas entradas aquí en futuras actualizaciones; no hace falta modificar los mensajes anteriores."
+    }
+  },
+  "media": {
+    "videos": {
+      "halloween-vhs-01": {
+        "es": {
+          "src": "media/videos/halloween-vhs-01-es.mp4",
+          "subtitles": "subtitles/es.vtt"
+        },
+        "en": {
+          "src": "media/videos/halloween-vhs-01-en.mp4",
+          "subtitles": "subtitles/en.vtt"
+        }
+      },
+      "halloween-vhs-02": {
+        "es": {
+          "src": "media/videos/halloween-vhs-02-es.mp4",
+          "subtitles": "subtitles/es.vtt"
+        },
+        "en": {
+          "src": "media/videos/halloween-vhs-02-en.mp4",
+          "subtitles": "subtitles/en.vtt"
+        }
+      }
+    }
+  },
+  "subtitleFiles": {
+    "movistarVm05": "subtitles/es.json#movistarVm05",
+    "sinTitulo": "subtitles/es.json#sinTitulo"
+  },
+  "futureContentWorkflow": {
+    "messageViews": "Añade la vista de cada mensaje una sola vez dentro de messages con una clave estable. El contenido se mantiene en español aquí; la versión inglesa usará la misma clave.",
+    "mailRows": "Añade remitente, asunto y fecha a mailRows para mensajes iniciales o a dynamicRows para mensajes revelados después.",
+    "datedUpdates": "Registra las actualizaciones en updates con una clave de fecha YYYY-MM-DD y las claves de contenido de esa tanda.",
+    "videos": "Dentro de un mensaje, usa <video controls data-localized-video=\"halloween-vhs-01\"></video>. Registra archivos y subtítulos por idioma en media/videos.json.",
+    "important": "La progresión narrativa sigue conectada al JavaScript original. Los textos nuevos ya no tendrán que extraerse dos veces, pero una nueva tanda narrativa debe conectarse una vez a la lógica de actualización."
+  },
+  "translations": {
+    "¿Cuál es tu idioma?": "LANGUAGE",
+    "¿Qué idioma prefieres?": "LANGUAGE",
+    "Inicio": "Home",
+    "Archivos": "Archives",
+    "Personas": "People",
+    "Sobre el proyecto": "About the project",
+    "VERSIÓN 2 · AÚN EN DESARROLLO E INVESTIGACIÓN": "VERSION 2 · STILL IN DEVELOPMENT AND RESEARCH",
+    "ARCHIVE SYSTEM · 2026": "ARCHIVE SYSTEM · 2026",
+    "Notas del equipo · archivo en observación": "Team notes · archive under observation",
+    "Explorar el archivo": "Explore the archive",
+    "Selecciona una sección para abrirla.": "Select a section to open it.",
+    "Bienvenido a Project Coralia. Somos el Team Cheeseovery, un pequeño grupo intentando recuperar una página antigua llamada Coralia Mail. Por lo que hemos podido reconstruir, existió entre 2005 y 2006 y dejó de usarse con el tiempo. También parece que su seguridad no era precisamente buena.": "Welcome to Project Coralia. We're Team Cheeseovery, a small group trying to recover an old website called Coralia Mail. From what we've been able to reconstruct, it existed between 2005 and 2006 and gradually fell out of use. Its security also seems to have been less than ideal.",
+    "Entre los archivos apareció la cuenta de una chica llamada Vela. A simple vista, sus correos parecen los de una adulta joven cualquiera. Pero hay un audio de Movistar que no encaja, mensajes que llegan tarde y cosas que cambian cuando volvemos a cargar la página. No sabemos si todo está relacionado. Queremos averiguarlo sin romper lo poco que queda.": "Among the files, we found an account belonging to a girl named Vela. At first glance, her emails look like those of any young adult. But there's a Movistar audio that doesn't add up, messages that arrive late, and things that change when we reload the page. We don't know if it's all connected. We want to find out without breaking what's left.",
+    "La página parece atascada en octubre de 2005. Por ahora, actualizar es lo único que nos deja avanzar. Si algo cambia, guarda la calma… y revisa dos veces.": "The page seems stuck in October 2005. For now, refreshing is the only way to make progress. If something changes, stay calm… and check twice.",
+    "Nota del equipo: alguien volvió a abrir un archivo que ya habíamos cerrado. Nadie recuerda haberlo hecho.": "Team note: someone reopened a file we'd already closed. No one remembers doing it.",
+    "Un servicio de correo de 2005. Revisa los mensajes y sigue las actualizaciones.": "An email service from 2005. Check the messages and follow the updates.",
+    "Registro de códigos descubiertos durante la investigación.": "A record of codes discovered during the investigation.",
+    "Grabaciones relacionadas con los archivos de Coralia.": "Recordings related to the Coralia files.",
+    "Material audiovisual archivado para su revisión.": "Audiovisual material archived for review.",
+    "Fichas incompletas. Algunos nombres no aparecen en registros posteriores a 2006.": "Incomplete profiles. Some names don't appear in records after 2006.",
+    "El archivo está en desarrollo. Los registros de códigos, audios y vídeos solo se marcarán como completados cuando Coralia Mail confirme ese progreso.": "The archive is still in development. Code, audio, and video records will only be marked complete once Coralia Mail confirms that progress.",
+    "Archivos disponibles": "Available archives",
+    "Abre una sección para consultar su estado.": "Open a section to check its status.",
+    "La bandeja de entrada original.": "The original inbox.",
+    "Los códigos y su estado de validación.": "Codes and their validation status.",
+    "Grabaciones escuchadas por completo.": "Recordings played all the way through.",
+    "Vídeos reproducidos hasta el final.": "Videos played to the end.",
+    "Project Coralia es un proyecto narrativo que conecta una interfaz contemporánea con rastros de una web de 2005. La experiencia está pensada para explorar, observar detalles y reconstruir una historia a partir de archivos digitales.": "Project Coralia is a narrative project connecting a contemporary interface with traces of a 2005 website. The experience invites you to explore, observe details, and reconstruct a story through digital archives.",
+    "Coralia Mail es una de las piezas centrales: su interfaz conserva la apariencia de un antiguo servicio de correo, mientras sus mensajes y cambios de estado revelan nuevas capas de la historia.": "Coralia Mail is one of its central pieces: its interface preserves the look of an old email service, while its messages and changing states reveal new layers of the story.",
+    "Este sitio funciona como índice y archivo. Las secciones se irán habilitando a medida que la experiencia y su sistema de progreso queden conectados.": "This site serves as an index and archive. Sections will become available as the experience and its progress system are connected.",
+    "← Volver a la bandeja": "← Back to inbox",
+    "← Volver a enviados": "← Back to sent",
+    "← Volver a correo no deseado": "← Back to junk mail",
+    "← Volver a borradores": "← Back to drafts",
+    "← Volver": "← Back",
+    "te dejo tunear el correo :)": "I'll let you customize the email :)",
+    "Conversación entre Frenzy y Vela": "Conversation between Frenzy and Vela",
+    "Un intercambio viejo entre dos amigos que ya se escribían antes de que todo esto pasara.": "An old exchange between two friends who were already emailing each other before any of this happened.",
+    "¿QUIERES CONSEGUIR AMOR?": "WANT TO FIND LOVE?",
+    "Nuevo mensaje de voz de Movistar - 555-3492": "New voicemail from Movistar - 555-3492",
+    "¡Hola! Gracias por crear tu cuenta Coralia Mail. Aquí podrás mantenerte en contacto con tus amigos, compartir archivos y guardar tus mensajes importantes. Esperamos que disfrutes de tu pequeño espacio en Internet.": "Hello! Thank you for creating your Coralia Mail account. Here you can stay in touch with friends, share files, and save your important messages. We hope you enjoy your little space on the Internet.",
+    "¿No encuentras un mensaje?": "Can't find a message?",
+    "¿Me pasas los apuntes?": "Can you send me your notes?",
+    "Re: Lo del sábado": "Re: About Saturday",
+    "ASUNTO:": "SUBJECT:",
+    "De:": "From:",
+    "Para:": "To:",
+    "Fecha:": "Date:",
+    "Guardado:": "Saved:",
+    "Ubicación:": "Location:",
+    "Archivo recuperado": "Recovered file",
+    "Nota sin remitente": "Note with no sender",
+    "Borrador sin enviar": "Unsent draft",
+    "Entrando a Coralia Mail...": "Entering Coralia Mail...",
+    "Recuperando bandeja de entrada": "Recovering inbox",
+    "Mensajes actualizados..?": "Messages updated..?",
+    "3 notificaciones nuevas": "3 new notifications",
+    "MODO DE PRUEBA": "TEST MODE",
+    "Progreso local de Coralia": "Local Coralia progress",
+    "Reiniciar ARG": "Reset ARG",
+    "Redactar": "Compose",
+    "Actualizar": "Refresh",
+    "Eliminar": "Delete",
+    "Opciones": "Options",
+    "Carpetas personales": "Personal folders",
+    "Bandeja de entrada": "Inbox",
+    "Mensajes enviados": "Sent items",
+    "Borradores": "Drafts",
+    "Elementos eliminados": "Deleted items",
+    "Correo no deseado": "Junk mail",
+    "Remitente": "Sender",
+    "Destinatario": "Recipient",
+    "Asunto": "Subject",
+    "Fecha": "Date",
+    "Buscar": "Search",
+    "Escribe aquí…": "Type here…",
+    "No hay mensajes para mostrar.": "There are no messages to display.",
+    "Último acceso:": "Last access:",
+    "Sesión iniciada como:": "Signed in as:",
+    "Servicio disponible": "Service available",
+    "¡Escribe tu historia!": "Write your story!",
+    "Archivo independiente · 2026": "Independent archive · 2026",
+    "Todo esto es ficción · más información": "This is all fiction · more information",
+    "El servidor no pudo verificar el remitente.": "The server couldn't verify the sender.",
+    "Mensaje recibido sin conexión activa.": "Message received without an active connection.",
+    "NO ESTABAS SOLA": "YOU WERE NOT ALONE",
+    "El BUSCA": "The SEEKER",
+    "luces verdes": "green lights",
+    "LUZ VERDE": "GREEN LIGHT",
+    "luces verdes... luces verdes...": "green lights... green lights...",
+    "Fecha: Martes, 4 de octubre de 2005": "Date: Tuesday, October 4, 2005",
+    "Frenzy acaba de enterarse de que Vela ya tiene su propia dirección de Coralia. La conversación sigue guardada en la bandeja.": "Frenzy has just found out that Vela has her own Coralia address. The conversation is still saved in the inbox.",
+    "¡¡POR FIN tienes correo propio!! Te voy a pasar un par de cositas para que dejes esa cuenta bonita. La interfaz por defecto parece hecha por alguien que odia los colores jajaja.": "YOU FINALLY have your own email!! I'll send you a couple of things to make your account look nice. The default interface looks like it was made by someone who hates colors lol.",
+    "▧ aero_theme.cor · tema para Coralia": "▧ aero_theme.cor · theme for Coralia",
+    "JAJAJA llevo diez minutos intentando cambiar el fondo. ¿Por qué todo tiene que estar escondido en Opciones? Pásame eso, por favor. Pero nada de poner mi correo rosa chicle.": "HAHAHA I've spent ten minutes trying to change the background. Why does everything have to be hidden under Options? Send it over, please. But don't make my email bubblegum pink.",
+    "Rosa chicle era mi segunda opción 😔. También te mando unos iconitos y una firma que hice. Si algo se rompe, no fui yo. (Sí fui yo.)": "Bubblegum pink was my second choice 😔. I'm also sending you some icons and a signature I made. If anything breaks, it wasn't me. (It was me.)",
+    "▧ mini_icons.zip · 4 iconos": "▧ mini_icons.zip · 4 icons",
+    "La firma quedó bonita, no te voy a mentir. Te debo una. Cuando nos veamos me ayudas a dejarlo todo bien y te invito algo. Gracias por emocionarte más que yo con mi propio correo, tontito 💚": "The signature turned out nice, I won't lie. I owe you one. When we meet up, help me get everything looking right and I'll treat you to something. Thanks for being more excited about my own email than I am, silly 💚",
+    "Jeje, gracias, pero no si yo te invito primero, listilla 🩵": "Hehe, thanks, but not if I treat you first, smartypants 🩵",
+    "RE: apodos horribles": "RE: terrible nicknames",
+    "Conversación entre Psyco y Vela": "Conversation between Psyco and Vela",
+    "Fecha: Miércoles, 5 de octubre de 2005": "Date: Wednesday, October 5, 2005",
+    "Por cierto, te guardé como Avellana.": "By the way, I saved you as Hazelnut.",
+    "Jajaja, ¿¡!? Yo te agregué como Sicótico, pareces uno cuando hablas.": "Hahaha, what!? I saved you as Psycho, you sound like one when you talk.",
+    "Bueno, al menos no sueno como un fruto seco, y tiene un estilo Psyco-Delico. Da igual. Escríbeme por acá, no reviso mucho el celular del trabajo, y también te pasaré chisme.": "Well, at least I don't sound like a nut, and it's got a Psyco-delic vibe. Whatever. Message me here; I don't check my work phone much, and I'll send you gossip too.",
+    "Bueno, la verdad es que esto es mucho más cómodo. Eres un buen amigo, aunque tus apodos sean criminales.": "Honestly, this is much more convenient. You're a good friend, even if your nicknames are criminal.",
+    "ASUNTO: ¿QUIERES CONSEGUIR AMOR?": "SUBJECT: WANT TO FIND LOVE?",
+    "De: ofertas_tom@ofertas-mail.net": "From: ofertas_tom@ofertas-mail.net",
+    "Para: vela.skyline@coralia.net": "To: vela.skyline@coralia.net",
+    "Fecha: Lunes, 10 de octubre de 2005, 09:12": "Date: Monday, October 10, 2005, 09:12",
+    "Clasificación: Correo no deseado": "Classification: Junk mail",
+    "¡¡¡HOLA, [AMIG@]!!! ¿¿¿QUIERES CONSEGUIR AMOR???\n\nVamos todos en este mundo necesitamos, AMOR, dulce y poderoso AMOR salido de nuestra alma, este te lleva al cielo, no es AMOR del corazón, porque es de seguro ya conseguiste MAMITA, solamente tienes que entrar a mi sitio web y te mostraré cómo ganar el AMOR de 199.7 dólares sin ningún esfuerzo!\n\n¡¡¡OFERTA POR TIEMPO LIMITADO!!! ¡¡¡NO DEJES QUE EL AMOR SE TE ESCAPE!!! [¡HAZ CLIC, GRAN CLIENTE!]\n\nP. D.: Los clientes más atentos siempre encuentran palabras especiales escondidas por la página y la red. ¡El premio grande no se anuncia dos veces!": "¡¡¡HOLA, [AMIG@]!!! ¿¿¿QUIERES CONSEGUIR AMOR???\n\nVamos todos en este mundo necesitamos, AMOR, dulce y poderoso AMOR salido de nuestra alma, este te lleva al cielo, no es AMOR del corazón, porque es de seguro ya conseguiste MAMITA, solamente tienes que entrar a mi sitio web y te mostraré cómo ganar el AMOR de 199.7 dólares sin ningún esfuerzo!\n\n¡¡¡OFERTA POR TIEMPO LIMITADO!!! ¡¡¡NO DEJES QUE EL AMOR SE TE ESCAPE!!! [CLICK HERE, VALUED CUSTOMER!]\n\nP.S.: The most attentive customers always find special words hidden across the page and the web. The big prize won't be announced twice!",
+    "[HIPERVÍNCULO BLOQUEADO]": "[LINK BLOCKED]",
+    "Coralia ha bloqueado este enlace porque podría ser peligroso.": "Coralia has blocked this link because it may be dangerous.",
+    "Mensaje detectado automáticamente como correo no deseado.": "Message automatically detected as junk mail.",
+    "¡Has ganado un teléfono móvil!": "You've won a mobile phone!",
+    "De: premios_urgentes@win-big.example": "From: premios_urgentes@win-big.example",
+    "Fecha: Martes, 11 de octubre de 2005, 10:44": "Date: Tuesday, October 11, 2005, 10:44",
+    "[ADJUNTO BLOQUEADO] premio.exe": "[ATTACHMENT BLOCKED] premio.exe",
+    "RE: Oferta exclusiva — solo hoy": "RE: Exclusive offer — today only",
+    "De: ofertas_medicas@bulk-mail.example": "From: ofertas_medicas@bulk-mail.example",
+    "Fecha: Viernes, 7 de octubre de 2005, 02:08": "Date: Friday, October 7, 2005, 02:08",
+    "De: Buzon_Movistar_Auto@movistar.com": "From: Buzon_Movistar_Auto@movistar.com",
+    "Fecha: Lunes, 10 de octubre de 2005, 2:00 AM": "Date: Monday, October 10, 2005, 2:00 AM",
+    "Mensaje de voz · Archivo de audio": "Voicemail · Audio file",
+    "Tu navegador no puede reproducir este audio.": "Your browser cannot play this audio.",
+    "Bienvenida a Coralia": "Welcome to Coralia",
+    "De: equipo@coralia.net": "From: equipo@coralia.net",
+    "Fecha: Sábado, 3 de septiembre de 2005, 16:20": "Date: Sábado, 3 de septiembre de 2005, 16:20",
+    "De: soporte@coralia.net": "From: soporte@coralia.net",
+    "Fecha: Martes, 11 de octubre de 2005, 08:02": "Date: Tuesday, October 11, 2005, 08:02",
+    "¿Te fuiste tan rápido?": "Did you leave so quickly?",
+    "De: rafa_05@hotmail.com": "From: rafa_05@hotmail.com",
+    "Fecha: ": "Date: ",
+    "Ey, ¿todo bien? Ayer desapareciste rapidísimo después de vernos jajaja. Te iba a mandar el meme del grupo, pero creo que al final se lo envié a todo el mundo menos a ti 💀. Cuando llegues a la U me cuentas qué pasó. Ah, y encontré el enlace de esa página rara que te dije; luego te lo paso.": "Hey, everything okay? You disappeared so quickly after we saw each other yesterday lol. I was going to send you the group meme, but I think I sent it to everyone except you 💀. Tell me what happened when you get to uni. Oh, and I found the link to that weird site I told you about; I'll send it later.",
+    "Sincronización incompleta": "Sync incomplete",
+    "De: sistema@coralia.net": "From: sistema@coralia.net",
+    "¿Te llegó lo que te mandé?": "Did you get what I sent you?",
+    "De: andrea.mora@hotmail.com": "From: andrea.mora@hotmail.com",
+    "Oye, te mandé una cosa anoche y no sé si te llegó. No es urgente, pero dime cuando puedas porque el archivo me tardó siglos en subir jajaja.": "Hey, I sent you something last night and don't know if it arrived. It's not urgent, but let me know when you can because that file took forever to upload lol.",
+    "¿Vas a desayunar?": "Are you going to have breakfast?",
+    "De: nora.paz@hotmail.com": "From: nora.paz@hotmail.com",
+    "Vela, te dejé algo preparado por si te levantas con hambre. No te vayas sin comer nada, ¿sí? Ayer estabas distraída y casi se te olvida hasta despedirte. Cuando puedas me cuentas cómo te fue.": "Vela, I left something ready in case you wake up hungry. Don't leave without eating, okay? You were distracted yesterday and almost forgot to say goodbye. Tell me how it went when you can.",
+    "Halloween está a la vuelta de la esquina": "Halloween is just around the corner",
+    "De: novedades@moda-coralia.net": "From: novedades@moda-coralia.net",
+    "Fecha: Lunes, 10 de octubre de 2005, 09:36": "Date: Monday, October 10, 2005, 09:36",
+    "▧ catalogo_halloween_05.jpg &nbsp; (vista previa no disponible)": "▧ catalogo_halloween_05.jpg &nbsp; (preview unavailable)",
+    "¿Ya sabes de qué te vas a disfrazar?": "Do you know what you're dressing up as yet?",
+    "Fecha: Lunes, 10 de octubre de 2005, 10:12": "Date: Monday, October 10, 2005, 10:12",
+    "Re: ¿Hacemos algo para Halloween?": "Re: Should we do something for Halloween?",
+    "Fecha: Lunes, 10 de octubre de 2005, 14:48": "Date: Monday, October 10, 2005, 14:48",
+    "Una nota de sincronización": "A sync note",
+    "Fecha: Lunes, 10 de octubre de 2005, 08:04": "Date: Monday, October 10, 2005, 08:04",
+    "Hay ecos que solo se distinguen cuando el cristal vuelve a su sitio. El cuarto reflejo no será igual al primero.": "Some echoes can only be distinguished when the glass returns to its place. The fourth reflection will not be like the first.",
+    "Documentación pendiente — Hospital Central": "Pending documentation — Central Hospital",
+    "De: admisiones@hospitalcentral.example": "From: admisiones@hospitalcentral.example",
+    "Buenas tardes. Seguimos pendientes de los documentos personales del paciente Frenzy que se mencionaron durante la llamada. ¿Podría traerlos o confirmar cuándo estarán disponibles? Por ahora solo tenemos un registro incompleto y no podemos cerrar el ingreso.": "Good afternoon. We are still waiting for the personal documents for patient Frenzy that were mentioned during the call. Could you bring them in or confirm when they will be available? For now, we only have an incomplete record and cannot finalize the admission.",
+    "Vela, contesta cuando despiertes": "Vela, reply when you wake up",
+    "De: psycoone12@hotmail.com": "From: psycoone12@hotmail.com",
+    "Fecha: Martes, 11 de octubre de 2005, 00:26": "Date: Tuesday, October 11, 2005, 00:26",
+    "Te guardé el puesto": "I saved you a seat",
+    "De: rushia.mori@hotmail.com": "From: rushia.mori@hotmail.com",
+    "Fecha: Martes, 11 de octubre de 2005, 10:18": "Date: Tuesday, October 11, 2005, 10:18",
+    "Holiii, mañana voy a llegar un poco antes a la universidad. Te guardo puesto como siempre. Ah, y encontré una tienda con unos accesorios que te gustarían demasiado jajaja. Luego te paso la dirección.": "Hiii, I'm getting to university a little early tomorrow. I'll save you a seat like always. Oh, and I found a store with accessories you'd absolutely love lol. I'll send you the address later.",
+    "¿Tienes los apuntes de hoy?": "Do you have today's notes?",
+    "De: lewis.ramirez@hotmail.com": "From: lewis.ramirez@hotmail.com",
+    "Fecha: Martes, 11 de octubre de 2005, 16:42": "Date: Tuesday, October 11, 2005, 16:42",
+    "Vela, perdón por escribirte tan tarde. ¿Tienes los apuntes de la clase? Me distraje con lo del trabajo grupal y me perdí la mitad de la explicación. Te debo un café.": "Vela, sorry for texting so late. Do you have the class notes? I got distracted by the group project and missed half the explanation. I owe you a coffee.",
+    "Fecha: Domingo, 9 de octubre de 2005, 18:21": "Date: Sunday, October 9, 2005, 18:21",
+    "Holaa, ¿me puedes pasar lo que anotaste de la última clase? Me perdí cuando el profesor empezó a explicar lo del trabajo y después no entendí qué había que entregar. Creo que dijo que era para el jueves, pero no estoy segura. Si tienes también la parte del tablero, mejor, porque la foto que tomé salió toda borrosa. Te debo una :)": "Hiii, could you send me what you wrote down in the last class? I got lost when the professor started explaining the assignment and then didn't understand what we had to turn in. I think he said it was due Thursday, but I'm not sure. If you also have the board notes, even better, because the photo I took came out blurry. I owe you one :)",
+    "Fecha: Sábado, 8 de octubre de 2005, 13:04": "Date: Saturday, October 8, 2005, 13:04",
+    "Vela, acuérdate de avisarme cuando llegues y de no volver sola tan tarde. Si vas a la fiesta, lleva el teléfono cargado y dime con quién vas a estar. Dejé algo de comer en la nevera por si llegas con hambre. Y, por favor, no olvides las llaves; la copia sigue en el mismo lugar de siempre. Cuídate.": "Vela, remember to let me know when you arrive and don't come home alone so late. If you go to the party, keep your phone charged and tell me who you'll be with. I left some food in the fridge in case you're hungry when you get back. And please don't forget your keys; the spare is still in the usual place. Take care.",
+    "jajaja mira esto": "lol look at this",
+    "Fecha: Jueves, 6 de octubre de 2005, 21:36": "Date: Thursday, October 6, 2005, 21:36",
+    "No sé por qué me dio tanta risa esto, pero tenía que mandártelo. Me lo pasó alguien del grupo y nadie sabe quién lo hizo primero. La imagen se ve fatal porque la reenviaron como cinco veces, pero mira la esquina de abajo, parece que hay algo escrito ahí. Seguro es un error de compresión o una tontería. Después me dices si te acuerdas de dónde salió.": "I don't know why this made me laugh so hard, but I had to send it to you. Someone in the group sent it to me and nobody knows who made it first. The image looks awful because it's been forwarded about five times, but look at the bottom corner; it seems like something's written there. Probably a compression error or something silly. Tell me later if you remember where it came from.",
+    "▧ imagen_adjunta.jpg &nbsp; (vista previa no disponible)": "▧ imagen_adjunta.jpg &nbsp; (preview unavailable)",
+    "Fotos de la fiesta": "Party photos",
+    "De: vela.skyline@coralia.net": "From: vela.skyline@coralia.net",
+    "Para: nora.paz@hotmail.com": "To: nora.paz@hotmail.com",
+    "Fecha: Lunes, 10 de octubre de 2005, 18:32": "Date: Monday, October 10, 2005, 18:32",
+    "Te mando las fotos que tomé en la reunión familiar. Algunas salieron movidas, pero hay unas bonitas. Las comprimí para que no pesaran tanto; si quieres las originales, te las paso cuando llegue a casa. Gracias por ayudarme a guardar todo al final. Avísame si prefieres que imprima alguna.": "I'm sending you the photos I took at the family gathering. Some came out blurry, but a few are nice. I compressed them so they wouldn't be too large; if you want the originals, I'll send them when I get home. Thanks for helping me put everything away at the end. Let me know if you'd like me to print any.",
+    "Apuntes de la semana": "Notes from the week",
+    "Para: grupo.universidad@hotmail.com": "To: grupo.universidad@hotmail.com",
+    "Fecha: Domingo, 9 de octubre de 2005, 20:06": "Date: Sunday, October 9, 2005, 20:06",
+    "Hola, adjunto los apuntes de hoy. Si alguien tiene lo que explicó el profesor al final, ¿me lo puede pasar? Creo que mencionó unas páginas del libro y una actividad para la próxima semana, pero justo estaba copiando lo anterior y no alcancé a escucharlo. Revisen también la fecha del documento por si me equivoqué al guardarlo. Gracias.": "Hi, I'm attaching today's notes. If anyone has what the professor explained at the end, could you send it to me? I think he mentioned some pages from the book and an activity for next week, but I was copying the previous part and didn't hear him. Please also check the document date in case I saved it incorrectly. Thanks.",
+    "Frenzy URGENTE": "Frenzy URGENT",
+    "Para: psycoone12@hotmail.com": "To: psycoone12@hotmail.com",
+    "No se puede encontrar el archivo. Es posible que se haya movido o eliminado.": "The file cannot be found. It may have been moved or deleted.",
+    "Problema con la cuenta": "Account problem",
+    "Para: soporte@coralia.net": "To: soporte@coralia.net",
+    "Fecha: Sábado, 8 de octubre de 2005, 11:48": "Date: Saturday, October 8, 2005, 11:48",
+    "Hola. Algunos mensajes antiguos no aparecen en mi bandeja y no recuerdo haberlos borrado. ¿Hay alguna forma de recuperarlos?": "Hello. Some old messages aren't showing up in my inbox, and I don't remember deleting them. Is there any way to recover them?",
+    "No olvides llamar": "Don't forget to call",
+    "Fecha: Viernes, 7 de octubre de 2005, 17:02": "Date: Friday, October 7, 2005, 17:02",
+    "Hola, hoy salgo un poco tarde de la universidad porque nos dejaron terminar una actividad en grupo. Te llamo cuando llegue, no te preocupes. Puede que pase primero por la tienda a comprar algo para cenar, así que si no contesto enseguida es por eso. Dejo las llaves donde siempre.": "Hi, I'll be leaving university a little late today because we were allowed to finish a group activity. I'll call you when I get home, don't worry. I might stop by the store first to buy something for dinner, so if I don't answer right away, that's why. I'll leave the keys where I always do.",
+    "Confirmación de tutoría": "Tutoring confirmation",
+    "Para: tutorias@universidad.edu": "To: tutorias@universidad.edu",
+    "Fecha: Miércoles, 5 de octubre de 2005, 09:18": "Date: Wednesday, October 5, 2005, 09:18",
+    "Buenos días. Confirmo que asistiré a la tutoría del viernes. ¿Podrían indicarme si debo llevar el ejercicio que quedó pendiente o si lo revisaremos directamente durante la sesión? También quería confirmar que el horario sigue siendo el de las nueve de la mañana. Muchas gracias.": "Good morning. I'm confirming that I'll attend Friday's tutoring session. Could you let me know if I should bring the unfinished exercise or if we'll review it during the session? I also wanted to confirm that the time is still 9 a.m. Thank you very much.",
+    "RE: RE: Reenvía esto a 10 personas": "RE: RE: Forward this to 10 people",
+    "De: suerte_infinita@cadena-mail.example": "From: suerte_infinita@cadena-mail.example",
+    "Fecha: Jueves, 6 de octubre de 2005, 06:10": "Date: Thursday, October 6, 2005, 06:10",
+    "Si no reenvías este correo antes de medianoche, tendrás siete años de mala suerte. Si lo reenvías, recibirás una sorpresa increíble. ¡No rompas la cadena!": "If you don't forward this email before midnight, you'll have seven years of bad luck. If you do, you'll receive an incredible surprise. Don't break the chain!",
+    "¡Conéctate más rápido!": "Connect faster!",
+    "De: ventas@internet-facil.example": "From: ventas@internet-facil.example",
+    "Fecha: Martes, 4 de octubre de 2005, 11:42": "Date: Tuesday, October 4, 2005, 11:42",
+    "¿Cansado de esperar mientras carga una página? ¡Cambia hoy mismo a nuestro nuevo servicio de conexión ultrarrápida! Oferta válida por tiempo limitado.": "Tired of waiting for a page to load? Switch to our new ultra-fast connection service today! Limited-time offer.",
+    "Feliz cumple!!": "Happy birthday!!",
+    "Para: alexasanch3z@hotmail.com": "To: alexasanch3z@hotmail.com",
+    "¡Alexa!, feliz cumpleaños. Espero que tengas un día tranquilo y bonito. No te voy a decir todavía qué te compré, pero espero que te guste. Gracias por estar pendiente de mí incluso cuando ando distraída con la universidad. Te doy el regalo cuando nos veamos. Y guarda un pedazo de torta para mí.": "Alexa! Happy birthday. I hope you have a peaceful, lovely day. I'm not telling you what I bought you yet, but I hope you'll like it. Thanks for looking out for me even when I'm distracted with university. I'll give you your gift when we meet. And save me a piece of cake.",
+    "Pregunta sobre el edificio": "Question about the building",
+    "Para: (sin destinatario)": "To: (sin destinatario)",
+    "¿Alguien sabe cómo se llama el edificio que queda detrás de la avenida? El que tiene las ventanas tapadas.": "Does anyone know the name of the building behind the avenue? The one with the covered windows?",
+    "Mensaje recuperado": "Recovered message",
+    "De: ": "From: ",
+    "Fecha: Martes, 11 de octubre de 2005, 00:03": "Date: Tuesday, October 11, 2005, 00:03",
+    "Gracias por preocuparte.": "Thanks for worrying about me.",
+    "Fecha: Martes, 11 de octubre de 2005, 00:17": "Date: Tuesday, October 11, 2005, 00:17",
+    "Gracias por preocuparte.\n\nNo hacía falta que hablaras tan alto cuando entraste.\n\n— F.": "Thanks for worrying about me.\n\nNo hacía falta que hablaras tan alto cuando entraste.\n\n— F.",
+    "¿Cuántas puertas había?": "How many doors were there?",
+    "De: usuario_desconocido@coralia.net": "From: usuario_desconocido@coralia.net",
+    "Fecha: Martes, 11 de octubre de 2005, 01:26": "Date: Tuesday, October 11, 2005, 01:26",
+    "La habitación sin ventanas": "The room without windows",
+    "Fecha: Martes, 11 de octubre de 2005, 02:11": "Date: Tuesday, October 11, 2005, 02:11",
+    "Fecha: Martes, 11 de octubre de 2005, 23:59": "Date: Tuesday, October 11, 2005, 23:59",
+    "Revisa tus mensajes mañana": "Check your messages tomorrow",
+    "¿PREPARADOS?": "READY?",
+    "De: bofinderdy@howmail.html": "From: bofinderdy@howmail.html",
+    "Fecha: Miércoles, 12 de octubre de 2005, 00:14": "Date: Miércoles, 12 de octubre de 2005, 00:14",
+    "Archivo recuperado · 11/10/2005 · 03:17 AM": "Recovered file · 10/11/2005 · 03:17 AM",
+    "La imagen está dañada. Sin embargo, hay algo escrito en los datos del archivo:": "The image is corrupted. However, something is written in the file metadata:",
+    "Ubicación: datos temporales de Coralia": "Location: Coralia temporary data",
+    "Fecha: desconocida": "Date: unknown",
+    "Archivo de registro: Cuerpo Fallido": "Log file: Failed Body",
+    "Ubicación: Sistema de respaldo · 555-3492": "Location: Backup system · 555-3492",
+    "El registro visual muestra anomalías térmicas y distorsión en el sujeto[cite: 2].": "The visual record shows thermal anomalies and distortion in the subject[cite: 2].",
+    "Entidad detectada en sector desconocido": "Entity detected in an unknown sector",
+    "\n            No se quien soy\n            Tu si lo sabes\n            Tal vez en algun momento\n            Dejaras de escapar\n            Pero mientras tanto\n            Me daras algo de ti\n            Y yo te recordare.\n          ": "\n            I don't know who I am\n            You know\n            Maybe someday\n            you'll stop running\n            But until then\n            you'll give me something of yourself\n            And I'll remember you.\n          ",
+    "Estimado cliente, Usted tiene un nuevo mensaje de voz en su buzón automático. Puede escuchar la grabación adjunta a continuación.": "Dear customer, you have a new voicemail in your automated mailbox. You can listen to the attached recording below.",
+    "Hola, Vela: A veces algunos mensajes tardan un poco en aparecer mientras se completa la sincronización del buzón. Si notas que falta alguno, prueba a actualizar la página dentro de unos minutos. Gracias por usar Coralia Mail. — Soporte técnico": "Hi, Vela: Sometimes messages take a little while to appear while your mailbox finishes syncing. If you notice one is missing, try refreshing the page in a few minutes. Thanks for using Coralia Mail. — Technical Support",
+    "No todos los mensajes se han descargado correctamente. Algunos elementos podrían aparecer después de la próxima actualización. No es necesario volver a iniciar sesión.": "Not all messages downloaded correctly. Some items may appear after the next refresh. You don't need to sign in again.",
+    "¡Prepara tu look para Halloween! Esta semana llegaron accesorios nuevos: cinturones anchos, collares, pulseras, hebillas y maquillaje de fantasía. También tenemos ideas sencillas para armar un disfraz con ropa que ya tienes en casa. ¿Lo mejor? ¡No necesitas gastar mucho para destacar en la fiesta! Moda Coralia · Tu estilo, a tu manera.": "Get your Halloween look ready! New accessories arrived this week: wide belts, necklaces, bracelets, buckles, and fantasy makeup. We also have easy ideas for putting together a costume with clothes you already have at home. Best of all? You don't need to spend much to stand out at the party! Coralia Fashion · Your style, your way.",
+    "Oye, pregunta importante: ¿ya sabes de qué te vas a disfrazar para Halloween? Yo sigo sin decidirme y no quiero terminar poniéndome lo primero que encuentre jajaja. Si ves algo bonito en la tienda de tus papás, mándame una foto. Prometo no copiarte… demasiado.": "Hey, important question: do you know what you're dressing up as for Halloween yet? I still can't decide and don't want to end up wearing the first thing I find lol. If you see anything cute at your parents' store, send me a photo. I promise not to copy you… too much.",
+    "La gente del grupo está hablando de hacer algo para Halloween el sábado 29. Nada confirmado todavía, pero dijeron que cada uno puede llevar algo de comer y que no hace falta un disfraz caro. Si se arma, te aviso. Y no, no pienso ir vestido de fantasma con una sábana, ya lo hice una vez y casi me caigo por las escaleras.": "The group is talking about doing something for Halloween on Saturday the 29th. Nothing is confirmed yet, but they said everyone can bring something to eat and no one needs an expensive costume. I'll let you know if it happens. And no, I'm not going as a ghost in a bedsheet; I did that once and almost fell down the stairs.",
+    "Avellana, sé que es tardísimo, pero ¿estás despierta? Me acaba de llegar una notificación rarísima relacionada con Frenzy y no sé si escribirte o esperar a mañana. Si ves esto, mándame aunque sea un punto para saber que estás bien.": "Hazelnut, I know it's really late, but are you awake? I just got a very strange notification related to Frenzy and don't know whether to text you or wait until morning. If you see this, send me even just a dot so I know you're okay.",
+    "Frenzy está en estado de shock en el Hospital Central. En la madrugada, luego de la fiesta a la que nunca pudo llegar, lo encontraron cerca del edificio unos guardias; está frío y con la mirada perdida. Su corazón late como siempre, pero está... ¡¿en shock?! No está herido, solamente... está frío, ¡no lo entiendo! Es como si algo se le metió, o como si no tuviera algo. De verdad, al inicio cuando me dijeron pensé que era una broma, ojalá hubiera sido así... Me tocó llegar y tomar las llaves en su tapete para buscar sus papeles; solo encontré sus cosas de la universidad y una cédula. ¡No sé qué hacer! No puedo hacer esto sola. Lo único que sé es que me envió este mensaje de voz y... te lo voy a adjuntar. No te asustes, ¿ok? Es tu compañero de trabajo, es nuestro amigo, tú sabes que no está loco. Creo que alguien lo asustó o le hizo algo crítico. O tal vez no debió meterse en ese lugar tan paranormal. Por favor, no me respondas a este mensaje. Y si vas a ayudarme, ve al Hospital Central.": "Frenzy is in shock at Central Hospital. Early this morning, after the party he never managed to reach, some guards found him near the building; he's cold and staring blankly. His heart is beating as usual, but he's... in shock?! He's not injured, he's just... cold. I don't understand! It's as if something got inside him, or as if something is missing. When they first told me, I honestly thought it was a joke. I wish it had been... I had to go over and take the keys from under his doormat to look for his papers; I only found his university things and an ID. I don't know what to do! I can't handle this alone. All I know is he sent me this voicemail and... I'm attaching it. Please don't panic, okay? He's your coworker, our friend; you know he's not crazy. I think someone scared him or did something serious to him. Or maybe he shouldn't have gone into that paranormal place. Please don't reply to this message. If you're going to help me, go straight to Central Hospital.",
+    "Este mensaje no debería aparecer aquí. Si has conseguido verlo, significa que todavía queda algo en esta cuenta que no pudieron borrar.": "This message shouldn't be here. If you've managed to see it, it means there's still something in this account they couldn't erase.",
+    "No hacía falta que hablaras tan alto cuando entraste.": "You didn't need to speak so loudly when you came in.",
+    "No recuerdo que hubiera tantas puertas. La habitación del fondo no estaba en el plano. Desde el pasillo parecía pequeña, pero por dentro seguía y seguía. ¿Tú también la viste?": "I don't remember there being so many doors. The room at the back wasn't on the floor plan. From the hallway it looked small, but inside it just kept going. Did you see it too?",
+    "Había una silla en el centro. Nada más. No había ventanas, pero entraba luz por alguna parte. Cuando me di la vuelta, la puerta ya no estaba donde la había dejado. No vuelvas a buscarla.": "There was a chair in the center. Nothing else. There were no windows, but light came in from somewhere. When I turned around, the door was no longer where I'd left it. Don't go looking for it again.",
+    "Oh, amiguita… Tu amante seguro estará. Créeme, después de esto, nadie los querrá volver a mirar. Pero otro problema encontrarás… ¿Cómo sabes que esto no va a regresar? La cinta verás, al edificio llegarás y me vas a encontrar. Pero dime, ¿estás segura de cuál es la realidad?": "Oh, little friend… Your lover will surely be there. Believe me, after this, no one will want to look at them again. But you'll find another problem… How do you know this won't come back? You'll see the tape, you'll reach the building, and you'll find me. But tell me, are you sure which one is reality?",
+    "Su dirección ha sido seleccionada al azar para recibir un teléfono móvil completamente GRATIS. Responda con su nombre completo, dirección y número de tarjeta para confirmar el envío. NO PIERDA ESTA OPORTUNIDAD ÚNICA!!!": "Your address has been randomly selected to receive a completely FREE mobile phone. Reply with your full name, address, and card number to confirm delivery. DON'T MISS THIS UNIQUE OPPORTUNITY!!!",
+    "¡¡¡HOLA, [AMIG@]!!! ¿¿¿QUIERES CONSEGUIR AMOR??? Vamos todos en este mundo necesitamos, AMOR, dulce y poderoso AMOR salido de nuestra alma, este te lleva al cielo, no es AMOR del corazón, porque es de seguro ya conseguiste MAMITA, solamente tienes que entrar a mi sitio web y te mostraré cómo ganar el AMOR de 199.7 dólares sin ningún esfuerzo! ¡¡¡OFERTA POR TIEMPO LIMITADO!!! ¡¡¡NO DEJES QUE EL AMOR SE TE ESCAPE!!!": "HELLO, [FRIEND]!!! WANT TO FIND LOVE??? We all need LOVE in this world, sweet and powerful LOVE from the soul that takes you to heaven. Not LOVE from the heart, because you surely already found that, BABY. Just visit my website and I'll show you how to win LOVE worth $199.7 with no effort! LIMITED-TIME OFFER!!! DON'T LET LOVE SLIP AWAY!!!",
+    "El registro visual muestra anomalías térmicas y distorsión en el sujeto": "The visual record shows thermal anomalies and distortion in the subject",
+    "¡Hola!": "Hello!",
+    "Gracias por crear tu cuenta Coralia Mail.": "Thank you for creating your Coralia Mail account.",
+    "Aquí podrás mantenerte en contacto con tus amigos, compartir archivos y guardar tus mensajes importantes.": "Here you can stay in touch with friends, share files, and save your important messages.",
+    "Esperamos que disfrutes de tu pequeño espacio en Internet.": "We hope you enjoy your little space on the Internet.",
+    "— El equipo de Coralia": "— The Coralia Team",
+    "Hola, Vela:": "Hi, Vela:",
+    "A veces algunos mensajes tardan un poco en aparecer mientras se completa la sincronización del buzón.": "Sometimes messages take a little while to appear while your mailbox finishes syncing.",
+    "Si notas que falta alguno, prueba a actualizar la página dentro de unos minutos.": "If you notice one is missing, try refreshing the page in a few minutes.",
+    "Gracias por usar Coralia Mail.": "Thanks for using Coralia Mail.",
+    "— Soporte técnico": "— Technical Support",
+    "¡FELICIDADES!!!": "CONGRATULATIONS!!!",
+    "Su dirección ha sido seleccionada al azar": "Your address has been randomly selected",
+    "para recibir un teléfono móvil completamente GRATIS.": "to receive a completely FREE mobile phone.",
+    "Responda con su nombre completo, dirección y número de tarjeta para confirmar el envío.": "Reply with your full name, address, and card number to confirm delivery.",
+    "NO PIERDA ESTA OPORTUNIDAD ÚNICA!!!": "DON'T MISS THIS UNIQUE OPPORTUNITY!!!",
+    "¡¡¡HOLA, [AMIG@]!!!": "HELLO, [FRIEND]!!!",
+    "¿¿¿QUIERES CONSEGUIR AMOR???": "WANT TO FIND LOVE???",
+    "Vamos todos en este mundo necesitamos,": "We all need",
+    "AMOR, dulce y poderoso AMOR salido de nuestra alma, este te lleva al cielo,": "LOVE, sweet and powerful LOVE from the soul that takes you to heaven,",
+    "no es AMOR del corazón, porque es de seguro ya conseguiste MAMITA,": "not LOVE from the heart, because you surely already found that, BABY,",
+    "solamente tienes que entrar a mi sitio web y te mostraré cómo ganar el AMOR de 199.7 dólares sin ningún esfuerzo!": "just visit my website and I'll show you how to win LOVE worth $199.7 with no effort!",
+    "¡¡¡OFERTA POR TIEMPO LIMITADO!!!": "LIMITED-TIME OFFER!!!",
+    "¡¡¡NO DEJES QUE EL AMOR SE TE ESCAPE!!!": "DON'T LET LOVE SLIP AWAY!!!",
+    "¡Prepara tu look para Halloween!": "Get your Halloween look ready!",
+    "Esta semana llegaron accesorios nuevos:": "New accessories arrived this week:",
+    "cinturones anchos, collares, pulseras, hebillas y maquillaje de fantasía.": "wide belts, necklaces, bracelets, buckles, and fantasy makeup.",
+    "También tenemos ideas sencillas para armar un disfraz con ropa que ya tienes en casa.": "We also have easy ideas for putting together a costume with clothes you already have at home.",
+    "¿Lo mejor? ¡No necesitas gastar mucho para destacar en la fiesta!": "Best of all? You don't need to spend much to stand out at the party!",
+    "Moda Coralia · Tu estilo, a tu manera.": "Coralia Fashion · Your style, your way.",
+    "Oye, pregunta importante:": "Hey, important question:",
+    "¿ya sabes de qué te vas a disfrazar para Halloween?": "do you know what you're dressing up as for Halloween yet?",
+    "Yo sigo sin decidirme y no quiero terminar poniéndome lo primero que encuentre jajaja.": "I still can't decide and don't want to end up wearing the first thing I find lol.",
+    "Si ves algo bonito en la tienda de tus papás, mándame una foto.": "If you see anything cute at your parents' store, send me a photo.",
+    "Prometo no copiarte… demasiado.": "I promise not to copy you… too much.",
+    "La gente del grupo está hablando de hacer algo para Halloween el sábado 29.": "The group is talking about doing something for Halloween on Saturday the 29th.",
+    "Nada confirmado todavía, pero dijeron que cada uno puede llevar algo de comer y que no hace falta un disfraz caro.": "Nothing is confirmed yet, but they said everyone can bring something to eat and no one needs an expensive costume.",
+    "Si se arma, te aviso.": "I'll let you know if it happens.",
+    "Y no, no pienso ir vestido de fantasma con una sábana, ya lo hice una vez y casi me caigo por las escaleras.": "And no, I'm not going as a ghost in a bedsheet; I did that once and almost fell down the stairs.",
+    "Avellana, sé que es tardísimo, pero ¿estás despierta?": "Hazelnut, I know it's really late, but are you awake?",
+    "Me acaba de llegar una notificación rarísima relacionada con Frenzy y no sé si escribirte o esperar a mañana.": "I just got a very strange notification related to Frenzy and don't know whether to text you or wait until morning.",
+    "Si ves esto, mándame aunque sea un punto para saber que estás bien.": "If you see this, send me even just a dot so I know you're okay.",
+    "¡No sé qué hacer!": "I don't know what to do!",
+    "No puedo hacer esto sola.": "I can't handle this alone.",
+    "Lo único que sé es que me envió este mensaje de voz y... te lo voy a adjuntar.": "All I know is he sent me this voicemail and... I'm attaching it.",
+    "No te asustes, ¿ok?": "Please don't panic, okay?",
+    "Es tu compañero de trabajo, es nuestro amigo, tú sabes que no está loco.": "He's your coworker, our friend; you know he's not crazy.",
+    "Creo que alguien lo asustó o le hizo algo crítico.": "I think someone scared him or did something serious to him.",
+    "O tal vez no debió meterse en ese lugar tan paranormal.": "Or maybe he shouldn't have gone into that paranormal place.",
+    "Por favor, no me respondas a este mensaje.": "Please don't reply to this message.",
+    "Y si vas a ayudarme, ve al Hospital Central.": "If you're going to help me, go straight to Central Hospital.",
+    "Este mensaje no debería aparecer aquí.": "This message shouldn't be here.",
+    "Si has conseguido verlo, significa que todavía queda algo en esta cuenta que no pudieron borrar.": "If you've managed to see it, it means there's still something in this account they couldn't erase.",
+    "No recuerdo que hubiera tantas puertas.": "I don't remember there being so many doors.",
+    "La habitación del fondo no estaba en el plano.": "The room at the back wasn't on the floor plan.",
+    "Desde el pasillo parecía pequeña, pero por dentro seguía y seguía.": "From the hallway it looked small, but inside it just kept going.",
+    "¿Tú también la viste?": "Did you see it too?",
+    "Había una silla en el centro.": "There was a chair in the center.",
+    "Nada más.": "Nothing else.",
+    "No había ventanas, pero entraba luz por alguna parte.": "There were no windows, but light came in from somewhere.",
+    "Cuando me di la vuelta, la puerta ya no estaba donde la había dejado.": "When I turned around, the door was no longer where I'd left it.",
+    "No vuelvas a buscarla.": "Don't go looking for it again.",
+    "Oh, amiguita…": "Oh, little friend…",
+    "Tu amante seguro estará.": "Your lover will surely be there.",
+    "Créeme, después de esto, nadie los querrá volver a mirar.": "Believe me, after this, no one will want to look at them again.",
+    "Pero otro problema encontrarás…": "But you'll find another problem…",
+    "¿Cómo sabes que esto no va a regresar?": "How do you know this won't come back?",
+    "La cinta verás, al edificio llegarás y me vas a encontrar.": "You'll see the tape, you'll reach the building, and you'll find me.",
+    "Pero dime, ¿estás segura de cuál es la realidad?": "But tell me, are you sure which one is reality?",
+    "Date: Saturday, 3 of September de 2005": "Date: Saturday, September 3, 2005",
+    "Date: Wednesday, 5 of October de 2005": "Date: Wednesday, October 5, 2005",
+    "Date: Thursday, 6 of October de 2005": "Date: Thursday, October 6, 2005",
+    "Date: Friday, 7 of October de 2005": "Date: Friday, October 7, 2005",
+    "Date: Saturday, 8 of October de 2005": "Date: Saturday, October 8, 2005",
+    "Date: Sunday, 9 of October de 2005": "Date: Sunday, October 9, 2005",
+    "Date: Monday, 10 of October de 2005": "Date: Monday, October 10, 2005",
+    "Date: Tuesday, 11 of October de 2005": "Date: Tuesday, October 11, 2005",
+    "Date: Wednesday, 12 of October de 2005": "Date: Wednesday, October 12, 2005",
+    "Frenzy está en estado de shock en el Hospital Central.\n\nEn la madrugada, luego de la fiesta a la que nunca pudo llegar, lo encontraron cerca del edificio unos guardias; está frío y con la mirada perdida. Su corazón late como siempre, pero está... ¡¿en shock?! No está herido, solamente... está frío, ¡no lo entiendo!\n\nEs como si algo se le metió, o como si no tuviera algo. De verdad, al inicio cuando me dijeron pensé que era una broma, ojalá hubiera sido así... Me tocó llegar y tomar las llaves en su tapete para buscar sus papeles; solo encontré sus cosas de la universidad y una cédula. ¡No sé qué hacer! No puedo hacer esto sola. Lo único que sé es que me envió este mensaje de voz y... te lo voy a adjuntar.\n\nNo te asustes, ¿ok? Es tu compañero de trabajo, es nuestro amigo, tú sabes que no está loco. Creo que alguien lo asustó o le hizo algo crítico. O tal vez no debió meterse en ese lugar tan paranormal.\n\nPor favor, no me respondas a este mensaje. Y si vas a ayudarme, ve al Hospital Central.": "Frenzy is in shock at Central Hospital.\n\nEarly this morning, after the party he never managed to reach, some guards found him near the building; he's cold and staring blankly. His heart is beating as usual, but he's... in shock?! He's not injured, just... cold. I don't understand!\n\nIt's as if something got inside him, or as if something is missing. When they first told me, I thought it was a joke; I wish it had been... I had to go over and take the keys from under his doormat to look for his papers; I only found his university things and an ID. I don't know what to do! I can't handle this alone. All I know is he sent me this voicemail and... I'm attaching it.\n\nPlease don't panic, okay? He's your coworker, our friend; you know he's not crazy. I think someone scared him or did something serious to him. Or maybe he shouldn't have gone into that paranormal place.\n\nPlease don't reply to this message. If you're going to help me, go straight to Central Hospital.",
+    "Este mensaje no aparece en el registro de actividad.": "This message doesn't appear in the activity log.",
+    "Documentación pendiente": "Pending documentation",
+    "Monday, 10 of October de 2005": "Monday, October 10, 2005",
+    "Tuesday, 11 of October de 2005": "Tuesday, October 11, 2005",
+    "Saturday, 8 of October de 2005": "Saturday, October 8, 2005",
+    "No sabemos muy bien": "We're not quite sure",
+    "qué encontramos.": "what we've found.",
+    "Bienvenido a Project Coralia. Somos el": "Welcome to Project Coralia. We're",
+    ", un pequeño grupo intentando recuperar una página antigua llamada Coralia Mail. Por lo que hemos podido reconstruir, existió entre 2005 y 2006 y dejó de usarse con el tiempo. También parece que su seguridad no era precisamente buena.": ", a small group trying to recover an old website called Coralia Mail. From what we've been able to reconstruct, it existed between 2005 and 2006 and gradually fell out of use. Its security also seems to have been less than ideal.",
+    "Abrir expedientes →": "Open files →",
+    "Iniciar sesión ↗": "Sign in ↗",
+    "Consultar registro →": "View records →",
+    "Índice del archivo": "Archive index",
+    "Archivo 02 · Registro": "Archive 02 · Records",
+    "Este apartado reunirá los códigos hallados y distinguirá entre los que se encontraron y los que se utilizaron correctamente.": "This section will collect discovered codes and distinguish between codes that were found and those that were used successfully.",
+    "Estado: la conexión de validación con Coralia Mail todavía no está configurada. No se mostrarán códigos como completados sin confirmación real.": "Status: validation with Coralia Mail has not been configured yet. Codes won't be marked complete without real confirmation.",
+    "Encontrar un código no equivale a utilizarlo. El registro final debe actualizarse desde el propio sistema de Coralia Mail.": "Finding a code is not the same as using it. The final record must be updated by Coralia Mail itself.",
+    "← Volver a archivos": "← Back to archives",
+    "Archivo 03 · Registro": "Archive 03 · Records",
+    "Este registro debe contar únicamente los audios escuchados por completo, no los que se abrieron o reprodujeron unos segundos.": "This record should count only audio listened to in full, not clips that were opened or played for a few seconds.",
+    "Estado de audio: pendiente de sincronización con el archivo de Coralia Mail.": "Audio status: waiting to sync with the Coralia Mail archive.",
+    "La página de correo conserva sus indicadores de progreso. Este Hub no inventará un porcentaje mientras no reciba señales verificables.": "The mail page keeps its own progress indicators. This Hub won't invent a percentage until it receives verifiable signals.",
+    "Archivo 04 · Registro": "Archive 04 · Records",
+    "Los vídeos aparecerán aquí cuando el sistema confirme que se han reproducido hasta el final.": "Videos will appear here once the system confirms they've played to the end.",
+    "Estado: pendiente de conectar los eventos de finalización de vídeo.": "Status: waiting to connect video completion events.",
+    "El progreso narrativo y el progreso de investigación deben guardarse por separado. Volver al presente no debe borrar lo descubierto.": "Story progress and investigation progress must be saved separately. Returning to the present must not erase what has been discovered.",
+    "Archivo 05 · Personas": "Archive 05 · People",
+    "Fichas construidas a partir de los correos recuperados. No rellenamos los huecos con suposiciones. En 2026, varias de estas personas no han podido ser localizadas.": "Profiles built from recovered emails. We don't fill gaps with assumptions. In 2026, several of these people have not been located.",
+    "FICHA 001 · IDENTIDAD CONFIRMADA": "PROFILE 001 · IDENTITY CONFIRMED",
+    "Último rastro: Coralia Mail · octubre de 2005": "Last trace: Coralia Mail · October 2005",
+    "20 años en los registros de la época; humana y bisexual. Estudiante universitaria y ayuda a sus padres en el almacén de ropa familiar. Sus mensajes la describen como tranquila, amable y observadora; cuando está sola puede ponerse ansiosa. Guarda dibujos y pequeños recuerdos, y le gustan la moda, los juegos de ritmo y los gatos.": "20 in the records from that time; human and bisexual. A university student who helps her parents at the family clothing warehouse. Her messages describe her as calm, kind, and observant; she can become anxious when alone. She keeps drawings and small mementos, and likes fashion, rhythm games, and cats.",
+    "La cuenta parece normal hasta que empiezan a aparecer archivos que no encajan con el resto de su correspondencia.": "The account seems normal until files begin appearing that don't fit with the rest of her correspondence.",
+    "LOCALIZACIÓN ACTUAL: DESCONOCIDA": "CURRENT LOCATION: UNKNOWN",
+    "FICHA 002 · ARCHIVO PARCIAL": "PROFILE 002 · PARTIAL FILE",
+    "Último rastro: mensaje privado · 11/10/2005": "Last trace: private message · 10/11/2005",
+    "El correo firmado por «Frenzy» demuestra que conocía a Vela y estaba preocupado por ella. La grabación adjunta y el comportamiento de la página sugieren que su acceso a la cuenta no era normal.": "The email signed by “Frenzy” shows that he knew Vela and was worried about her. The attached recording and the page's behavior suggest his access to the account wasn't normal.",
+    "El resto de la ficha permanece sin terminar. No hay datos suficientes para confirmar su identidad, ubicación ni qué ocurrió después.": "The rest of the profile remains incomplete. There isn't enough information to confirm his identity, location, or what happened afterward.",
+    "LOCALIZACIÓN ACTUAL: NO CONFIRMADA": "CURRENT LOCATION: UNCONFIRMED",
+    "FICHA 003 · DATOS INSUFICIENTES": "PROFILE 003 · INSUFFICIENT DATA",
+    "Último rastro: mensaje enviado de madrugada": "Last trace: message sent overnight",
+    "Su nombre aparece en la actividad recuperada después del mensaje de Frenzy. El contenido sugiere una relación cercana con Vela, pero todavía no tenemos una ficha fiable.": "His name appears in activity recovered after Frenzy's message. The content suggests a close relationship with Vela, but we still don't have a reliable profile.",
+    "No añadir detalles hasta recuperar más mensajes. Cualquier otra información sería especulación.": "Don't add details until more messages are recovered. Anything else would be speculation.",
+    "LOCALIZACIÓN ACTUAL: NO LOCALIZADO": "CURRENT LOCATION: NOT LOCATED",
+    "FICHA 004 · VÍNCULO VERIFICADO": "PROFILE 004 · VERIFIED CONNECTION",
+    "Relación registrada: madre de Vela": "Recorded relationship: Vela's mother",
+    "Su nombre aparece en un correo cotidiano sobre el desayuno. Es uno de los pocos rastros que conecta la cuenta con la vida de Vela fuera de la pantalla.": "Her name appears in an everyday email about breakfast. It's one of the few traces connecting the account to Vela's life beyond the screen.",
+    "No se ha recuperado información suficiente para establecer dónde está actualmente.": "Not enough information has been recovered to establish where she is now.",
+    "FICHA 005 · REGISTRO INCOMPLETO": "PROFILE 005 · INCOMPLETE RECORD",
+    "Último rastro: correo posterior a la anomalía": "Last trace: email after the anomaly",
+    "Un mensaje breve indica que conocía la rutina de Vela. No se ha encontrado una biografía fiable en los archivos disponibles.": "A brief message indicates that she knew Vela's routine. No reliable biography has been found in the available files.",
+    "NO LOCALIZADA · SIN REGISTROS RECIENTES": "NOT LOCATED · NO RECENT RECORDS",
+    "FICHA 006 · REGISTRO INCOMPLETO": "PROFILE 006 · INCOMPLETE RECORD",
+    "Último rastro: correo cotidiano": "Last trace: everyday email",
+    "Su nombre aparece en un mensaje sobre apuntes de clase. Por ahora, no hay más datos que permitan completar su ficha.": "His name appears in a message about class notes. For now, there isn't enough information to complete his profile.",
+    "NO LOCALIZADO · SIN REGISTROS RECIENTES": "NOT LOCATED · NO RECENT RECORDS",
+    "Registro actualizado en 2026. No se han encontrado ubicaciones actuales verificables. Algunas fichas parecen haber sido abiertas después de su último acceso registrado.": "Record updated in 2026. No verifiable current locations have been found. Some profiles appear to have been opened after their last recorded access.",
+    "Project Coralia · 2026": "Project Coralia · 2026",
+    "← Volver al inicio": "← Back to home"
+  }
+}
