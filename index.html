@@ -65,7 +65,8 @@ function updateArchiveProgress(){
  const videoDone=localStorage.getItem('coralia_teaser_video_watched_v1')==='true';
  const videoItem=document.querySelector('[data-video-progress="derrybound"]');
  if(videoItem){videoItem.classList.toggle('is-complete',videoDone);const state=videoItem.querySelector('.archive-state');if(state)state.textContent=videoDone?(isEn?'Watched completely':'Visto completo'):(isEn?'Pending playback':'Pendiente de reproducción');}
- const codesStatus=document.getElementById('codes-status');if(codesStatus)codesStatus.textContent=isEn?('Codes used: '+used.length+' / '+codeItems.length):('Códigos utilizados: '+used.length+' / '+codeItems.length);
+ const completedCodes=codeItems.filter(item=>used.includes(item.dataset.codeEntry)).length;
+ const codesStatus=document.getElementById('codes-status');if(codesStatus)codesStatus.textContent=isEn?('Codes used: '+completedCodes+' / '+codeItems.length):('Códigos utilizados: '+completedCodes+' / '+codeItems.length);
  const audioStatus=document.getElementById('audio-status');if(audioStatus)audioStatus.textContent=isEn?('Recordings completed: '+audioDone+' / 2'):('Grabaciones completadas: '+audioDone+' / 2');
  const videoStatus=document.getElementById('video-status');if(videoStatus)videoStatus.textContent=isEn?(videoDone?'Video completed: 1 / 1':'Videos completed: 0 / 1'):(videoDone?'Vídeo completado: 1 / 1':'Vídeos completados: 0 / 1');
 }
