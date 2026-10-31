@@ -33,11 +33,8 @@
 <script>
 (async function coraliaLanguage(){
  const versionKey='arg_storage_version';
- const currentVersion='2026-10-28-v2.5';
- if(localStorage.getItem(versionKey)!==currentVersion){
-   Object.keys(localStorage).forEach(item=>{if(item.startsWith('coralia_')&&item!=='coralia_language')localStorage.removeItem(item);});
-   localStorage.setItem(versionKey,currentVersion);
- }
+ const currentVersion='2026-10-31-v2.6';
+ if(localStorage.getItem(versionKey)!==currentVersion) localStorage.setItem(versionKey,currentVersion);
  const key='coralia_language';
  const gate=document.getElementById('languageGate');
  if(!localStorage.getItem(key) && gate) gate.style.display='flex';
