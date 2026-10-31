@@ -519,3 +519,9 @@ body{background:radial-gradient(ellipse at 12% 8%,#33452b 0,transparent 42%),rad
 .halloween-welcome strong{color:#d8bd8f}.halloween-welcome button,.devlog-toggle{border-color:#879b69;background:#293b25;color:#f4f0df}
 .devlog-toggle{border-color:#a9825b}.devlog-panel{border-color:#9a7955;background:#1b2418;color:#e9e5d5}
 .devlog-panel h2{color:#d7bc8e}.devlog-date{color:#b9c58b}
+
+/* Evidence-only missing-person files and a discreet help link. */
+.photo-placeholder{min-height:86px;margin:12px 0 15px;display:flex;align-items:center;justify-content:center;border:1px dashed #65745b;background:repeating-linear-gradient(135deg,#182218,#182218 8px,#1d291b 8px,#1d291b 16px);color:#9ba68b;font:10px/1.5 "Space Grotesk",Arial,sans-serif;letter-spacing:.16em;text-align:center;padding:10px}
+.hint-entry{margin:22px 0 4px;text-align:right}
+.hint-entry button{padding:5px 0;border:0;border-bottom:1px dotted #87966d;background:transparent;color:#aeb99a;font:11px "Space Grotesk",Arial,sans-serif;cursor:pointer;opacity:.72}
+.hint-entry button:hover{opacity:1;color:#e1d2ad}
