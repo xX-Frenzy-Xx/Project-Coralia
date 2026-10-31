@@ -503,3 +503,19 @@ body{background-color:#0d100b}
 .halloween-welcome{position:relative;margin:18px 0;padding:22px;border:1px solid #7d6334;background:linear-gradient(125deg,#1b2415,#2b1b12);color:#f8f2e4;border-radius:8px}
 .halloween-welcome strong{color:#ffc16b;font-size:1.25rem}.halloween-welcome p{line-height:1.65;max-width:70ch}.halloween-welcome button,.devlog-toggle{border:1px solid #9acb59;background:#182015;color:#f5f4e8;padding:9px 14px;border-radius:4px;cursor:pointer}
 .devlog-toggle{margin:12px 0;border-color:#e58a3a}.devlog-panel{padding:18px;margin:10px 0 22px;border:1px dashed #e58a3a;background:#17140f;color:#eee}.devlog-panel h2{color:#ffc16b}.devlog-date{font-size:.8rem;color:#9acb59}
+
+/* v2.6 — botanical archive with muted harvest accents */
+:root{--bg:#11180f;--panel:#1b2618;--panel2:#172116;--line:#394a32;--text:#f2efe4;--muted:#c0c5ad;--accent:#b9c58b}
+body{background:radial-gradient(ellipse at 12% 8%,#33452b 0,transparent 42%),radial-gradient(ellipse at 88% 82%,#563b29 0,transparent 38%),#11180f}
+.nav button:hover,.nav button[aria-current=true]{background:#263522;border-color:#506344}
+.card{background:linear-gradient(145deg,#1e2a1b,#151f15);border-color:#3c5035}
+.card .number,.eyebrow{color:#c4b18a}
+.card button,.primary{border-color:#7d7650;background:#66533a;color:#fff5e6}
+.card button:hover,.primary:hover{background:#7a6243}
+.detail{background:#192418;border-color:#46563a}.note{border-left-color:#b98b5f;background:#20291b;color:#e3dfcb}
+.human-note{border-left-color:#a2b47d;color:#e0e4d2!important}.quiet-warning{color:#c9bba3}.quiet-warning::before{color:#d0a47b}
+.person-card{border-color:#3c4d35;background:linear-gradient(145deg,#1d291b,#141e14)}
+.halloween-welcome{border-color:#7d8e5b;background:linear-gradient(125deg,#263a24,#483b29);color:#f4f0df}
+.halloween-welcome strong{color:#d8bd8f}.halloween-welcome button,.devlog-toggle{border-color:#879b69;background:#293b25;color:#f4f0df}
+.devlog-toggle{border-color:#a9825b}.devlog-panel{border-color:#9a7955;background:#1b2418;color:#e9e5d5}
+.devlog-panel h2{color:#d7bc8e}.devlog-date{color:#b9c58b}
