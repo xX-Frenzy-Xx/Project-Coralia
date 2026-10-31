@@ -1094,6 +1094,7 @@
     "El teaser recibido por Vela se registra únicamente cuando termina su reproducción.": "The teaser received by Vela is registered only when playback finishes.",
     "Teaser de Derrybound": "Derrybound teaser",
     "Adjunto al mensaje «Los tengo» · 13/10/2005": "Attached to the message “Los tengo” · 13/10/2005",
-    "El vídeo original se conserva en español. Los subtítulos y cualquier otro material VHS se trabajarán por separado más adelante.": "The original video remains in Spanish. Subtitles and any other VHS material will be handled separately later."
+    "El vídeo original se conserva en español. Los subtítulos y cualquier otro material VHS se trabajarán por separado más adelante.": "The original video remains in Spanish. Subtitles and any other VHS material will be handled separately later.",
+    "También acepta la tilde; requiere que el mensaje exista.": "The accented spelling also works; the message must have been unlocked."
   }
 }
