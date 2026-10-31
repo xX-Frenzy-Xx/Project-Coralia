@@ -260,3 +260,36 @@ body.day-11 .mailview h2{color:#71895d!important}
 body.day-11 .fakebutton{background:linear-gradient(180deg,#fffaf0,#e7e1cf)!important;color:#52664b!important;border-color:#c9c2a8!important}
 body.day-11 .footer{color:#f5ead8!important}
 @media(prefers-reduced-motion:reduce){.vela-orbit,.vela-initials,.vela-scan,.progress span{animation:none!important}}
+
+
+/* Día 11: conserva el fondo cálido y mejora el contraste con texto negro. */
+body.day-11, body.day-11 * { color:#171717 !important; text-shadow:none !important; }
+body.day-11 input, body.day-11 textarea { color:#171717 !important; }
+body.day-11 input::placeholder, body.day-11 textarea::placeholder { color:#444 !important; opacity:1; }
+
+/* Día 13: verde claro, como una recuperación limpia de la interfaz. */
+body.day-13 { background:#dcebd1 !important; background-image:radial-gradient(ellipse at 14% 15%,#f5f8e9 0%,transparent 52%),radial-gradient(ellipse at 88% 78%,#b7d5b0 0%,transparent 48%),linear-gradient(135deg,#e7f0d9,#c7dfc0 58%,#d8e8ca) !important; color:#263b2b !important; }
+body.day-13::before, body.day-13::after { display:none !important; }
+body.day-13 .topbar { background:linear-gradient(180deg,#c8dfbd,#a9cda7 60%,#91b991) !important; border-color:#8eae8d !important; color:#263b2b !important; }
+body.day-13 .brand, body.day-13 .tagline, body.day-13 .status { color:#263b2b !important; text-shadow:none !important; }
+body.day-13 .account { background:#edf4e7 !important; border-color:#a5c19d !important; color:#263b2b !important; }
+body.day-13 .windowbar, body.day-13 .listhead { background:linear-gradient(90deg,#d6e7cc,#e9f0dc) !important; color:#263b2b !important; border-color:#b4cba9 !important; text-shadow:none !important; }
+body.day-13 .sidebar { background:linear-gradient(180deg,#e7efdc,#d0e2c7) !important; border-color:#b4cba9 !important; color:#263b2b !important; }
+body.day-13 .sidehead, body.day-13 .folder, body.day-13 .folder .count, body.day-13 .side-note { color:#314a35 !important; }
+body.day-13 .folder.active { background:#f1f5e9 !important; border-color:#a9c49e !important; color:#203324 !important; }
+body.day-13 .main { background:#f4f7ed !important; color:#263b2b !important; }
+body.day-13 .accountline, body.day-13 .mailrow { background:#edf4e7 !important; border-color:#c1d4b7 !important; color:#263b2b !important; }
+body.day-13 .mailrow.unread, body.day-13 .mailrow .date { color:#263b2b !important; }
+body.day-13 .mailrow:hover { background:#dcebd2 !important; }
+body.day-13 .toolbar, body.day-13 .unlock { background:#e3edd9 !important; border-color:#b4cba9 !important; color:#263b2b !important; }
+body.day-13 .fakebutton, body.day-13 .attachment, body.day-13 .thread-file { background:#f4f7ed !important; border-color:#b4cba9 !important; color:#263b2b !important; }
+body.day-13 .mailview h2, body.day-13 .meta, body.day-13 .bodytext, body.day-13 .thread-intro, body.day-13 .feedback, body.day-13 .empty { color:#263b2b !important; text-shadow:none !important; }
+body.day-13 .meta { border-color:#c1d4b7 !important; }
+body.day-13 .thread-chat { background:#e3edd9 !important; border-color:#b4cba9 !important; }
+body.day-13 .thread-message.frenzy, body.day-13 .thread-message.friend { background:#f4f7ed !important; border-color:#c1d4b7 !important; color:#263b2b !important; }
+body.day-13 .thread-message.vela { background:#dcebd2 !important; border-color:#b4cba9 !important; color:#263b2b !important; }
+body.day-13 .thread-message .who, body.day-13 .thread-message .when, body.day-13 .footer { color:#314a35 !important; }
+body.day-13 input { background:#f4f7ed !important; border-color:#b4cba9 !important; color:#263b2b !important; }
+body.day-13 input::placeholder { color:#526d57 !important; opacity:1; }
+.derrybound-video-wrap { margin-top:14px; width:100%; }
+.derrybound-video-wrap video { display:block; width:min(100%,720px); max-height:70vh; background:#111; border:1px solid #a8b99f; border-radius:3px; }
