@@ -230,3 +230,37 @@ body.coralia-void{background:#000!important;background-image:none!important;colo
 body.coralia-pure-green .topbar{background:#243d34!important;border-color:#587a64!important;color:#f2f5ef!important}
 body.coralia-pure-green .brand,body.coralia-pure-green .tagline,body.coralia-pure-green .status{color:#f2f5ef!important;text-shadow:none!important}
 #refreshButton[aria-disabled="true"]{opacity:.48;cursor:not-allowed;filter:grayscale(.25)}
+
+/* v2.6 — warm sage, soft apricot and restrained terracotta */
+body{background-color:#8d9c78;background-image:radial-gradient(ellipse at 13% 18%,#f0d9b9 0%,#c5c49a 28%,transparent 67%),radial-gradient(ellipse at 88% 78%,#c58b65 0%,#a77a59 22%,transparent 58%),linear-gradient(135deg,#b5bd91 0%,#8fa27a 48%,#b9825e 100%)}
+body::before{opacity:.44;background-image:radial-gradient(circle at 9% 22%,#fff8e9a8 0 3px,#fff8e938 4px 13px,#9aa9782b 14px 15px,transparent 17px),radial-gradient(circle at 83% 17%,#fff8e9b8 0 2px,#fff8e93d 3px 9px,#9aa9782b 10px 11px,transparent 13px),radial-gradient(circle at 74% 72%,#fff8e9a0 0 4px,#fff8e935 5px 18px,#c58b652b 19px 20px,transparent 22px),radial-gradient(circle at 20% 78%,#fff8e990 0 2px,#fff8e930 3px 10px,#9aa9782b 11px 12px,transparent 14px)}
+body::after{opacity:.32}.topbar{background:linear-gradient(180deg,#718b5c,#58754c 58%,#405e43);border-bottom:2px solid #a9b98c}
+.brand{color:#fff9eb;text-shadow:1px 2px #405e43,0 0 10px #e5d8b580}.tagline,.status{color:#f1e8d7}
+.window{border-color:#81956d;box-shadow:0 10px 30px #4a503a35}.account{border-color:#a5ad87}
+.windowbar{background:linear-gradient(90deg,#9eaf80,#c3bd91);color:#344b35;border-color:#87986e}
+.toolbar{background:#e9e4d1;border-color:#b9b99b}.fakebutton{background:linear-gradient(180deg,#fffaf0,#e5e0cc);color:#52664b;border-color:#c4c3a5}
+.fakebutton:hover{background:linear-gradient(#fffdf6,#d9e0c6)}.sidebar{background:linear-gradient(180deg,#d7dfc1,#b9c8a1);border-right-color:#9eaf87}
+.sidehead,.folder{color:#526d4c}.folder.active{background:linear-gradient(90deg,#e5e8d1,#f4ead5);border-color:#b6c49b;color:#405f43;box-shadow:inset 3px 0 #a36f4d,0 0 12px #879c651c}
+.folder .count,.side-note{color:#75896b}.main{background:#f3efe3f2;color:#4d6047}
+.listhead{background:linear-gradient(90deg,#c8d4ad,#ead7b9);color:#465d43;border-bottom-color:#b3bd98}
+.mailrow{background-color:#f0eddf;color:#52664c;border-bottom-color:#d2d3b9}.mailrow:hover{background:linear-gradient(90deg,#fff8e9,#edf1df)}
+.mailrow.unread{color:#405b40}.mailrow .date{color:#9b8065}.mailview h2{color:#6b8558}.meta{border-color:#dedbc9;color:#8b806d}.bodytext{color:#596d56}
+.attachment{background:linear-gradient(135deg,#f4eedf,#e5e9d6);border-color:#c8d0b1;color:#687e58}
+.unlock{border-color:#c6c9a7;background:linear-gradient(135deg,#f6f0df,#e1e8d2);box-shadow:0 8px 22px #697c4b20}.unlock label{color:#617b52}
+input{border-color:#c4c9a9;outline-color:#9d704e;color:#53654b}input::placeholder{color:#a3a58a}
+.unlock button{border-color:#8d9d6d;background:linear-gradient(#a9b987,#718b5c)}.feedback{color:#82916e}
+.footer{color:#f4ead9;text-shadow:0 1px 2px #586447}.boot{background:radial-gradient(ellipse at 50% 38%,#f8f2e5,#dce4c8 65%,#c6a17e)}
+.bootbox{background:linear-gradient(145deg,#fffaf0,#e8ead8);border-color:#b4c49b;box-shadow:0 8px 35px #5b754b30,0 0 25px #fff8e9a8;color:#617c52}
+.bootlogo{color:#58764e}.progress{border-color:#b9c8a0;background:#f3f0df}.progress span{background:linear-gradient(90deg,#a7bb84,#d4a174,#e7c99d);box-shadow:0 0 8px #9ba97566}
+.vela-animation{position:relative;width:94px;height:94px;margin:14px auto 10px;display:grid;place-items:center}
+.vela-orbit{position:absolute;inset:4px;border:1px solid #a9b98c;border-radius:50%;animation:velaOrbit 5s linear infinite}
+.vela-orbit::before,.vela-orbit::after{content:"";position:absolute;width:7px;height:7px;border-radius:50%;background:#c88e66;box-shadow:0 0 0 4px #c88e6622}
+.vela-orbit::before{top:9px;left:10px}.vela-orbit::after{right:5px;bottom:18px;background:#81996b}
+.vela-envelope{position:absolute;top:-8px;left:35px;color:#a56e4e;font-size:17px;background:#fff8e9;padding:0 4px}
+.vela-initials{width:52px;height:52px;display:grid;place-items:center;border-radius:50%;background:linear-gradient(145deg,#a9bb85,#6f8c60);border:3px solid #f6efdf;color:#fff9eb;font-weight:bold;letter-spacing:.12em;box-shadow:0 3px 12px #667a4a38;animation:velaPulse 2s ease-in-out infinite}
+.vela-scan{position:absolute;left:20px;right:20px;top:46px;height:1px;background:#d49a70;box-shadow:0 0 8px #d49a70;animation:velaScan 2.2s ease-in-out infinite}
+.boot-caption{color:#58764e;font-weight:bold;font-size:12px;letter-spacing:.03em}.boot-subcaption{color:#8b876f;font-size:10px;margin-top:5px}
+.skip-boot{margin-top:13px;padding:5px 10px;border:1px solid #bdc6a4;border-radius:3px;background:#f7f2e4;color:#687e58;font:11px Tahoma,Verdana,sans-serif;cursor:pointer}
+@keyframes velaOrbit{to{transform:rotate(360deg)}}@keyframes velaPulse{50%{transform:scale(1.07);box-shadow:0 3px 18px #667a4a55}}
+@keyframes velaScan{0%,100%{transform:translateY(-15px);opacity:.2}50%{transform:translateY(15px);opacity:1}}
+@media(prefers-reduced-motion:reduce){.vela-orbit,.vela-initials,.vela-scan,.progress span{animation:none!important}}
