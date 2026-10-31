@@ -243,6 +243,78 @@
       "sender": "Rafa",
       "subject": "Re: ¿Hacemos algo para Halloween?",
       "date": "10/10/05 14:48"
+    },
+    "day12-vela-andrea": {
+      "folder": "sent",
+      "sender": "Vela Nova",
+      "subject": "RE: ¿Te llegó lo que te mandé?",
+      "date": "12/10/05 07:42"
+    },
+    "day12-vela-rushia": {
+      "folder": "sent",
+      "sender": "Vela Nova",
+      "subject": "RE: Te guardé el puesto",
+      "date": "12/10/05 07:56"
+    },
+    "day12-rushia-followup": {
+      "folder": "inbox",
+      "sender": "Rushia",
+      "subject": "Te mando la dirección",
+      "date": "12/10/05 09:13"
+    },
+    "day12-vela-psyco": {
+      "folder": "sent",
+      "sender": "Vela Nova",
+      "subject": "RE: Vela, contesta cuando despiertes",
+      "date": "12/10/05 09:21"
+    },
+    "day12-vela-lewis": {
+      "folder": "sent",
+      "sender": "Vela Nova",
+      "subject": "RE: ¿Tienes los apuntes de hoy?",
+      "date": "12/10/05 11:06"
+    },
+    "day12-lewis-followup": {
+      "folder": "inbox",
+      "sender": "Lewis",
+      "subject": "Re: Los apuntes sí abrieron",
+      "date": "12/10/05 11:18"
+    },
+    "day12-nora": {
+      "folder": "inbox",
+      "sender": "Nora Paz",
+      "subject": "Te dejé el almuerzo",
+      "date": "12/10/05 13:32"
+    },
+    "day12-andrea": {
+      "folder": "inbox",
+      "sender": "Andrea",
+      "subject": "¿Vienes el viernes?",
+      "date": "12/10/05 14:05"
+    },
+    "day12-rafa": {
+      "folder": "inbox",
+      "sender": "Rafa",
+      "subject": "Encontré el enlace",
+      "date": "12/10/05 17:26"
+    },
+    "day12-sync-attachment": {
+      "folder": "inbox",
+      "sender": "Coralia Mail",
+      "subject": "Adjunto no indexado",
+      "date": "12/10/05 18:06"
+    },
+    "day12-unknown-1": {
+      "folder": "inbox",
+      "sender": "[remitente no verificado]",
+      "subject": "No vuelvas a abrirlo",
+      "date": "12/10/05 22:14"
+    },
+    "prepared-message": {
+      "folder": "inbox",
+      "sender": "bofinderdy@howmail.html",
+      "subject": "¿PREPARADOS?",
+      "date": "12/10/05 23:59"
     }
   },
   "messages": {
@@ -361,7 +433,7 @@
       "html": "<button class=\"fakebutton back\" data-back>← Volver a la bandeja</button><h2>FINAL</h2><div class=\"meta\">De: vela.skyline@coralia.net<br>Para: vela.skyline@coralia.net<br>Fecha: Martes, 11 de octubre de 2005, 23:59</div><div class=\"bodytext\">Revisa tus mensajes mañana</div>"
     },
     "prepared-message": {
-      "html": "<button class=\"fakebutton back\" data-back>← Volver a la bandeja</button><h2>¿PREPARADOS?</h2><div class=\"meta\">De: bofinderdy@howmail.html<br>Para: vela.skyline@coralia.net<br>Fecha: Miércoles, 12 de octubre de 2005, 00:14<br><span style=\"color:#8ca5a7\">El servidor no pudo verificar el remitente.</span></div><div class=\"bodytext\">Oh, amiguita…\n\nTu amante seguro estará.\n\nCréeme, después de esto,\nnadie los querrá volver a mirar.\n\nPero otro problema encontrarás…\n¿Cómo sabes que esto no va a regresar?\n\nLa cinta verás,\nal edificio llegarás\ny me vas a encontrar.\n\nPero dime, ¿estás segura\nde cuál es la realidad?</div>"
+      "html": "<button class=\"fakebutton back\" data-back>← Volver a la bandeja</button><h2>¿PREPARADOS?</h2><div class=\"meta\">De: bofinderdy@howmail.html<br>Para: vela.skyline@coralia.net<br>Fecha: Miércoles, 12 de octubre de 2005, 23:59<br><span style=\"color:#8ca5a7\">El servidor no pudo verificar el remitente.</span></div><div class=\"bodytext\">Oh, amiguita…\n\nTu amante seguro estará.\n\nCréeme, después de esto,\nnadie los querrá volver a mirar.\n\nPero otro problema encontrarás…\n¿Cómo sabes que esto no va a regresar?\n\nLa cinta verás,\nal edificio llegarás\ny me vas a encontrar.\n\nPero dime, ¿estás segura\nde cuál es la realidad?</div>"
     },
     "hidden-room": {
       "html": "<button class=\"fakebutton back\" data-back>← Volver</button><h2>IMG_111005_0317.JPG</h2><div class=\"meta\">Archivo recuperado · 11/10/2005 · 03:17 AM</div><div class=\"bodytext\">La imagen está dañada. Sin embargo, hay algo escrito en los datos del archivo:</div><div class=\"attachment\" style=\"display:block;text-align:center;padding:28px 12px\"><div style=\"font-size:44px;letter-spacing:8px;color:#72b7b6\">◌ ◯ ◌</div><div style=\"margin-top:14px;color:#527e85\">NO ESTABAS SOLA</div><div style=\"font-size:11px;margin-top:8px\">Vista previa no disponible</div></div>"
@@ -374,6 +446,39 @@
     },
     "busca-cuerpos": {
       "html": "<button class=\"fakebutton back\" data-back>← Volver</button>\n        <h2>EL BUSCA CUERPOS</h2>\n        <div class=\"meta\">Entidad detectada en sector desconocido</div>\n        <div class=\"secret-image-view\">\n          <img src=\"recuerda.jpg\" alt=\"El Busca Cuerpos\">\n          <div class=\"bodytext\" style=\"text-align:center; white-space:pre-line; color:#244b58; font-weight:bold;\">\n            No se quien soy\n            Tu si lo sabes\n            Tal vez en algun momento\n            Dejaras de escapar\n            Pero mientras tanto\n            Me daras algo de ti\n            Y yo te recordare.\n          </div>\n        </div>"
+    },
+    "day12-vela-andrea": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver a enviados</button><h2>RE: ¿Te llegó lo que te mandé?</h2><div class=\"meta\">De: vela.skyline@coralia.net<br>Para: andrea.mora@hotmail.com<br>Fecha: Miércoles, 12 de octubre de 2005, 07:42</div><div class=\"bodytext\">¡Sí, ahora sí me llegó! Perdón por no contestar antes, ayer estuve entrando y saliendo del correo y creo que algunas cosas ni siquiera se descargaron bien. El archivo se abre, pero no muestra casi nada. ¿Tú puedes verlo normal?</div>"
+    },
+    "day12-vela-rushia": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver a enviados</button><h2>RE: Te guardé el puesto</h2><div class=\"meta\">De: vela.skyline@coralia.net<br>Para: rushia.mori@hotmail.com<br>Fecha: Miércoles, 12 de octubre de 2005, 07:56</div><div class=\"bodytext\">¡Gracias! Y perdón por desaparecer ayer. Hoy intentaré llegar a tiempo, aunque todavía tengo varias cosas pendientes. Pásame luego la dirección de esa tienda, que sí quiero ver los accesorios jajaja.</div>"
+    },
+    "day12-rushia-followup": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver a la bandeja</button><h2>Te mando la dirección</h2><div class=\"meta\">De: rushia.mori@hotmail.com<br>Para: vela.skyline@coralia.net<br>Fecha: Miércoles, 12 de octubre de 2005, 09:13</div><div class=\"bodytext\">¡Obvio! Te la mando en un rato. Y no te preocupes por ayer, pensé que estabas ocupada. Si al final no alcanzas a llegar temprano, te guardo el puesto igual.</div>"
+    },
+    "day12-vela-psyco": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver a enviados</button><h2>RE: Vela, contesta cuando despiertes</h2><div class=\"meta\">De: vela.skyline@coralia.net<br>Para: psycoone12@hotmail.com<br>Fecha: Miércoles, 12 de octubre de 2005, 09:21</div><div class=\"bodytext\">Estoy despierta, tranquilo. Perdón por dejarte esperando; necesitaba descansar un poco y tenía el correo hecho un desastre. No sé qué notificación te llegó, pero por ahora estoy bien. Luego hablamos, ¿sí?</div>"
+    },
+    "day12-vela-lewis": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver a enviados</button><h2>RE: ¿Tienes los apuntes de hoy?</h2><div class=\"meta\">De: vela.skyline@coralia.net<br>Para: lewis.ramirez@hotmail.com<br>Fecha: Miércoles, 12 de octubre de 2005, 11:06</div><div class=\"bodytext\">Te los adjunto otra vez. Creo que el primer envío se quedó a medias porque el archivo pesaba demasiado. Si no te deja abrirlo, avísame y te lo llevo impreso.</div>"
+    },
+    "day12-lewis-followup": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver a la bandeja</button><h2>Re: Los apuntes sí abrieron</h2><div class=\"meta\">De: lewis.ramirez@hotmail.com<br>Para: vela.skyline@coralia.net<br>Fecha: Miércoles, 12 de octubre de 2005, 11:18</div><div class=\"bodytext\">Ahora sí, gracias. Se descargaron dos copias con el mismo nombre, por cierto. Una está vacía y la otra tiene los apuntes. Seguro fue cosa del correo, pero te aviso por si acaso.</div>"
+    },
+    "day12-nora": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver a la bandeja</button><h2>Te dejé el almuerzo</h2><div class=\"meta\">De: nora.paz@hotmail.com<br>Para: vela.skyline@coralia.net<br>Fecha: Miércoles, 12 de octubre de 2005, 13:32</div><div class=\"bodytext\">Vela, te dejé algo preparado en la cocina. No sé si vas a salir otra vez, pero por lo menos come antes de irte. Anoche dejaste el teléfono cargando y casi se me olvida avisarte.</div>"
+    },
+    "day12-andrea": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver a la bandeja</button><h2>¿Vienes el viernes?</h2><div class=\"meta\">De: andrea.mora@hotmail.com<br>Para: vela.skyline@coralia.net<br>Fecha: Miércoles, 12 de octubre de 2005, 14:05</div><div class=\"bodytext\">Oye, estamos organizando lo del viernes. Nada complicado, solo juntarnos un rato después de clase. ¿Te apuntas? Rafa dijo que lleva algo para comer, aunque todavía no sabe qué jajaja.</div>"
+    },
+    "day12-rafa": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver a la bandeja</button><h2>Encontré el enlace</h2><div class=\"meta\">De: rafa_05@hotmail.com<br>Para: vela.skyline@coralia.net<br>Fecha: Miércoles, 12 de octubre de 2005, 17:26</div><div class=\"bodytext\">Te paso por fin la página que te había mencionado. A mí me abre a veces y otras se queda pensando. Tiene un diseño horrible, parece hecha por alguien que no sabe qué está haciendo. Si no carga, prueba más tarde.</div>"
+    },
+    "day12-sync-attachment": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver a la bandeja</button><h2>Adjunto no indexado</h2><div class=\"meta\">De: sistema@coralia.net<br>Para: vela.skyline@coralia.net<br>Fecha: Miércoles, 12 de octubre de 2005, 18:06</div><div class=\"bodytext\">Se ha detectado un archivo adjunto que no figura en el índice de mensajes.<br><br>Nombre: <strong>coralia_sync_12.tmp</strong><br>Estado: pendiente de verificación<br>Identificador de lote: 00666<br><br>No se requiere ninguna acción por parte del usuario.</div><div class=\"attachment\">▧ coralia_sync_12.tmp &nbsp; (vista previa no disponible)</div>"
+    },
+    "day12-unknown-1": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver a la bandeja</button><h2>No vuelvas a abrirlo</h2><div class=\"meta\">De: [remitente no verificado]<br>Para: vela.skyline@coralia.net<br>Fecha: Miércoles, 12 de octubre de 2005, 22:14</div><div class=\"bodytext\">No te pedí que lo buscaras.<br><br>Solo quería saber si todavía estaba ahí.<br><br>Ahora que lo has abierto otra vez, no lo cierres como la última vez.<br><br><span style=\"color:#8ca5a7\">[EL MENSAJE NO FIGURA EN EL HISTORIAL DEL SERVIDOR]</span></div>"
     }
   },
   "updates": {
