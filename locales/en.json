@@ -1060,6 +1060,10 @@
     "No se requiere ninguna acción por parte del usuario": "No action is required from the user.",
     "Sincronización  de 6 completada. Se han recuperado nuevos mensajes.": "Sync stage complete. New messages have been recovered.",
     "Sincronización ": "Synchronization ",
-    " de 6 completada. Se han recuperado nuevos mensajes.": " of 6 completed. New messages have been recovered."
+    " de 6 completada. Se han recuperado nuevos mensajes.": " of 6 completed. New messages have been recovered.",
+    "Revisa los mensajes recuperados y presta atención a los elementos que no encajan con el historial de la cuenta.": "Review the recovered messages and pay attention to anything that doesn't fit the account's history.",
+    "La cuenta ya permite actualizarse otra vez. Cada sincronización recupera una pequeña parte del correo pendiente.": "The account can be refreshed again. Each sync restores a small part of the pending mail.",
+    "La bandeja ya terminó de sincronizarse. Compara los mensajes nuevos con los registros anteriores; no todos parecen pertenecer al mismo historial.": "The inbox has finished syncing. Compare the new messages with earlier records; they don't all seem to belong to the same history.",
+    "Cuando un mensaje parezca bloquear la actualización, revisa primero ese mensaje. La fecha y el asunto importan más que cualquier palabra suelta.": "When a message seems to block the refresh, inspect that message first. Its date and subject matter more than any isolated word."
   }
 }
