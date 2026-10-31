@@ -180,7 +180,7 @@
       "date": "11/10/05"
     },
     "final-message": {
-      "sender": "vela.skyline@coralia.net",
+      "sender": "Yo",
       "subject": "FINAL",
       "date": "11/10/05"
     },
@@ -430,7 +430,7 @@
       "html": "<button class=\"fakebutton back\" data-back>← Volver a la bandeja</button><h2>La habitación sin ventanas</h2><div class=\"meta\">De: usuario_desconocido@coralia.net<br>Para: vela.skyline@coralia.net<br>Fecha: Martes, 11 de octubre de 2005, 02:11<br><span style=\"color:#8ca5a7\">Mensaje recibido sin conexión activa.</span></div><div class=\"bodytext\">Había una silla en el centro. Nada más.\n\nNo había ventanas, pero entraba luz por alguna parte. Cuando me di la vuelta, la puerta ya no estaba donde la había dejado.\n\nNo vuelvas a buscarla.</div>"
     },
     "final-message": {
-      "html": "<button class=\"fakebutton back\" data-back>← Volver a la bandeja</button><h2>FINAL</h2><div class=\"meta\">De: vela.skyline@coralia.net<br>Para: vela.skyline@coralia.net<br>Fecha: Martes, 11 de octubre de 2005, 23:59</div><div class=\"bodytext\">Revisa tus mensajes mañana</div>"
+      "html": "<button class=\"fakebutton back\" data-back>← Volver a la bandeja</button><h2>FINAL</h2><div class=\"meta\">De: Yo<br>Para: Vela<br>Fecha: Martes, 11 de octubre de 2005, 23:59</div><div class=\"bodytext\">Revisa tus mensajes mañana</div>"
     },
     "prepared-message": {
       "html": "<button class=\"fakebutton back\" data-back>← Volver a la bandeja</button><h2>¿PREPARADOS?</h2><div class=\"meta\">De: bofinderdy@howmail.html<br>Para: vela.skyline@coralia.net<br>Fecha: Miércoles, 12 de octubre de 2005, 23:59<br><span style=\"color:#8ca5a7\">El servidor no pudo verificar el remitente.</span></div><div class=\"bodytext\">Oh, amiguita…\n\nTu amante seguro estará.\n\nCréeme, después de esto,\nnadie los querrá volver a mirar.\n\nPero otro problema encontrarás…\n¿Cómo sabes que esto no va a regresar?\n\nLa cinta verás,\nal edificio llegarás\ny me vas a encontrar.\n\nPero dime, ¿estás segura\nde cuál es la realidad?</div>"
