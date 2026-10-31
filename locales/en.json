@@ -9,7 +9,7 @@
     "mailTagline": "Write your story!",
     "backHub": "← Project Coralia",
     "serviceStatus": "● Service available",
-    "mailVersion": "Coralia Mail v2.5 Beta",
+    "mailVersion": "Coralia Mail v2.6 Beta",
     "year": "2005",
     "windowTitle": "Inbox - Coralia Mail",
     "session": "Signed in as:",
@@ -38,7 +38,7 @@
     "ready": "Coralia Mail is ready.",
     "noMessages": "There are no messages to display.",
     "languageUnavailable": "English translation is available.",
-    "hubVersion": "VERSION 2.5 · STILL IN DEVELOPMENT AND RESEARCH",
+    "hubVersion": "VERSION 2.6 · INTERLUDE / HAPPY HALLOWEEN",
     "hubStatus": "ARCHIVE SYSTEM · 2026",
     "hubNav": {
       "home": "Home",
@@ -47,8 +47,8 @@
       "about": "About the project"
     },
     "hubEyebrow": "Team notes · archive under observation",
-    "hubTitle": "We're not quite sure<br>what we've found.",
-    "hubIntro": "Welcome to Project Coralia. We're Team Cheeseovery, a small group trying to recover an old website called Coralia Mail. From what we've been able to reconstruct, it existed between 2005 and 2006 and gradually fell out of use. Its security also seems to have been less than ideal.",
+    "hubTitle": "A Mystery<br>In Progress",
+    "hubIntro": "Welcome to Project Coralia. We're Team Cheeseovery, a small group trying to reconstruct Coralia Mail. We're not digital-recovery specialists, and we're still learning as we go through what's left, so we're not going to pretend we have all the answers. What we publish here is our progress, our questions, and the findings we've been able to confirm.",
     "hubFiction": "Project Coralia is an interactive work of fiction."
   },
   "mailRows": {
@@ -857,7 +857,7 @@
     "♲ Elementos eliminados": "♲ Deleted items",
     "▣ Correo no deseado": "▣ Junk mail",
     "© 2005 Coralia Network · Todos los derechos reservados · Coralia Mail v2.5 Beta": "© 2005 Coralia Network · All rights reserved · Coralia Mail v2.5 Beta",
-    "Coralia Mail v2.5 Beta": "Coralia Mail v2.5 Beta",
+    "Coralia Mail v2.5 Beta": "Coralia Mail v2.6 Beta",
     "Ofertas Tom y Andrea te han escrito.": "Tom's Offers and Andrea have emailed you.",
     "Han llegado tres mensajes nuevos.": "Three new messages have arrived.",
     "Se detectó un mensaje sin registro de envío.": "A message without a sending record was detected.",
@@ -888,6 +888,22 @@
     "CUERPOS": "BODIES",
     "EFECTO": "EFFECT",
     "Efecto": "Effect",
-    "Vella": "Vella"
+    "Vella": "Vella",
+    "Bienvenido a Project Coralia. Somos el <strong>Team Cheeseovery</strong>, un grupo pequeño que está intentando reconstruir Coralia Mail. No somos especialistas en recuperación digital y todavía estamos aprendiendo mientras revisamos lo que quedó, así que no vamos a fingir que tenemos todas las respuestas. Lo que publicamos aquí son nuestros avances, nuestras dudas y los hallazgos que hemos podido confirmar.": "Welcome to Project Coralia. We're Team Cheeseovery, a small group trying to reconstruct Coralia Mail. We're not digital-recovery specialists, and we're still learning as we go through what's left, so we're not going to pretend we have all the answers. What we publish here is our progress, our questions, and the findings we've been able to confirm.",
+    "Este Hub funciona como nuestra bitácora de investigación, pero también forma parte de la experiencia que estamos documentando. Lo que aparece aquí es la versión que hemos podido recuperar hasta ahora; algunas cosas todavía no encajan y puede que ciertos archivos tengan más que contar de lo que parece.": "This Hub works as our investigation log, but it's also part of the experience we're documenting. What appears here is the version we've been able to recover so far; some things still don't add up, and certain files may have more to tell than they seem to.",
+    "Coralia Mail fue un servicio de correo que parece haber funcionado entre 2005 y 2006. Entre cuentas abandonadas encontramos la de Vela Nova. Al principio parecía una cuenta común, hasta que apareció un audio de Movistar que no encaja, mensajes que llegan tarde y archivos que cambian al volver a cargar la página. Estamos intentando reconstruir qué ocurrió sin asumir que ya conocemos la respuesta.": "Coralia Mail appears to have been an email service active between 2005 and 2006. Among abandoned accounts, we found one belonging to Vela Nova. At first it looked ordinary, until we came across a Movistar audio that doesn't add up, messages arriving late, and files that change when the page is reloaded. We're trying to reconstruct what happened without assuming we already know the answer.",
+    "VERSIÓN 2.6 · INTERLUDIO / FELIZ HALLOWEEN": "VERSION 2.6 · INTERLUDE / HAPPY HALLOWEEN",
+    "Un Misterio": "A Mystery",
+    "En Progreso": "In Progress",
+    "¡Feliz Halloween!": "Happy Halloween!",
+    "Desde todo el equipo de Project Coralia queremos desearles un feliz Halloween. Hoy justamente teníamos una actualización del sitio… y, tomando en cuenta todas estas cosas de terror, ¿qué mejor día para indagar sobre una historia urbana paranormal?": "From everyone at Project Coralia, we wish you a happy Halloween! We had a site update planned for today… and with all the spooky things around this time of year, what better day to look into a paranormal urban legend?",
+    "Continuar al archivo": "Continue to archive",
+    "Devlog / Novedades": "Devlog / Updates",
+    "INTERLUDIO · 2.6": "INTERLUDE · 2.6",
+    "Halloween, nuevos registros y una sincronización que no debería tardar tanto.": "Halloween, new records, and a sync that shouldn't take this long.",
+    "31/10/2026 · Team Cheeseovery": "10/31/2026 · Team Cheeseovery",
+    "Vela Nova · recuperando la bandeja": "Vela Nova · restoring the inbox",
+    "Un momento, estamos ordenando los mensajes.": "One moment, we're sorting the messages.",
+    "Entrar ahora →": "Enter now →"
   }
 }
