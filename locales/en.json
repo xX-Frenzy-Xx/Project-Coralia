@@ -9,7 +9,7 @@
     "mailTagline": "Write your story!",
     "backHub": "← Project Coralia",
     "serviceStatus": "● Service available",
-    "mailVersion": "Coralia Mail v2.5 Beta",
+    "mailVersion": "Coralia Mail v2.6 Beta",
     "year": "2005",
     "windowTitle": "Inbox - Coralia Mail",
     "session": "Signed in as:",
@@ -38,7 +38,7 @@
     "ready": "Coralia Mail is ready.",
     "noMessages": "There are no messages to display.",
     "languageUnavailable": "English translation is available.",
-    "hubVersion": "VERSION 2.5 · STILL IN DEVELOPMENT AND RESEARCH",
+    "hubVersion": "VERSION 2.6 · INTERLUDE / HAPPY HALLOWEEN",
     "hubStatus": "ARCHIVE SYSTEM · 2026",
     "hubNav": {
       "home": "Home",
@@ -47,8 +47,8 @@
       "about": "About the project"
     },
     "hubEyebrow": "Team notes · archive under observation",
-    "hubTitle": "We're not quite sure<br>what we've found.",
-    "hubIntro": "Welcome to Project Coralia. We're Team Cheeseovery, a small group trying to recover an old website called Coralia Mail. From what we've been able to reconstruct, it existed between 2005 and 2006 and gradually fell out of use. Its security also seems to have been less than ideal.",
+    "hubTitle": "A Mystery<br>In Progress",
+    "hubIntro": "Welcome to Project Coralia. We're Team Cheeseovery, a small group trying to reconstruct Coralia Mail. We're not digital-recovery specialists, and we're still learning as we go through what's left, so we're not going to pretend we have all the answers. What we publish here is our progress, our questions, and the findings we've been able to confirm.",
     "hubFiction": "Project Coralia is an interactive work of fiction."
   },
   "mailRows": {
@@ -180,7 +180,7 @@
       "date": "11/10/05"
     },
     "final-message": {
-      "sender": "vela.skyline@coralia.net",
+      "sender": "Me",
       "subject": "FINAL",
       "date": "11/10/05"
     },
@@ -243,6 +243,84 @@
       "sender": "Rafa",
       "subject": "Re: Should we do something for Halloween?",
       "date": "10/10/05 14:48"
+    },
+    "day12-vela-andrea": {
+      "folder": "sent",
+      "sender": "Vela Nova",
+      "subject": "RE: Did you get what I sent you?",
+      "date": "12/10/05 07:42"
+    },
+    "day12-vela-rushia": {
+      "folder": "sent",
+      "sender": "Vela Nova",
+      "subject": "RE: I saved you a seat",
+      "date": "12/10/05 07:56"
+    },
+    "day12-rushia-followup": {
+      "folder": "inbox",
+      "sender": "Rushia",
+      "subject": "I'll send you the address",
+      "date": "12/10/05 09:13"
+    },
+    "day12-vela-psyco": {
+      "folder": "sent",
+      "sender": "Vela Nova",
+      "subject": "RE: Vela, reply when you wake up",
+      "date": "12/10/05 09:21"
+    },
+    "day12-vela-lewis": {
+      "folder": "sent",
+      "sender": "Vela Nova",
+      "subject": "RE: Do you have today's notes?",
+      "date": "12/10/05 11:06"
+    },
+    "day12-lewis-followup": {
+      "folder": "inbox",
+      "sender": "Lewis",
+      "subject": "Re: The notes opened this time",
+      "date": "12/10/05 11:18"
+    },
+    "day12-nora": {
+      "folder": "inbox",
+      "sender": "Nora Paz",
+      "subject": "I left your lunch ready",
+      "date": "12/10/05 13:32"
+    },
+    "day12-andrea": {
+      "folder": "inbox",
+      "sender": "Andrea",
+      "subject": "Are you coming on Friday?",
+      "date": "12/10/05 14:05"
+    },
+    "day12-rafa": {
+      "folder": "inbox",
+      "sender": "Rafa",
+      "subject": "I found the link",
+      "date": "12/10/05 17:26"
+    },
+    "day12-sync-attachment": {
+      "folder": "inbox",
+      "sender": "Coralia Mail",
+      "subject": "Unindexed attachment",
+      "date": "12/10/05 18:06"
+    },
+    "day12-unknown-1": {
+      "folder": "inbox",
+      "sender": "[unverified sender]",
+      "subject": "Don't open it again",
+      "date": "12/10/05 22:14"
+    },
+    "prepared-message": {
+      "folder": "inbox",
+      "sender": "bofinderdy@howmail.html",
+      "subject": "READY?",
+      "date": "12/10/05 23:59"
+    },
+    "day13-derrybound": {
+      "folder": "inbox",
+      "sender": "Derrybound",
+      "subject": "Los tengo",
+      "date": "13/10/05 00:03"
     }
   },
   "messages": {
@@ -274,7 +352,7 @@
       "html": "<button class=\"fakebutton back\" data-back>← Back to inbox</button><h2>Did you leave so quickly?</h2><div class=\"meta\">From: rafa_05@hotmail.com<br>To: vela.skyline@coralia.net<br>Date: <span class=\"message-date\">Monday, October 10, 2005, 09:14</span></div><div class=\"bodytext\">Hey, everything okay? You disappeared so quickly after we saw each other yesterday lol. I was going to send you the group meme, but I think I sent it to everyone except you 💀. Tell me what happened when you get to uni. Oh, and I found the link to that weird site I told you about; I'll send it later.</div>"
     },
     "sync-incomplete": {
-      "html": "<button class=\"fakebutton back\" data-back>← Back to inbox</button><h2>Sync incomplete</h2><div class=\"meta\">From: sistema@coralia.net<br>To: vela.skyline@coralia.net<br>Date: <span class=\"message-date\">Monday, October 10, 2005, 11:06</span></div><div class=\"bodytext\">No todos los mensajes se han descargado correctamente.\n\nAlgunos elementos podrían aparecer después de la próxima actualización. No es necesario volver a iniciar sesión.</div>"
+      "html": "<button class=\"fakebutton back\" data-back>← Back to inbox</button><h2>Sync incomplete</h2><div class=\"meta\">From: sistema@coralia.net<br>To: vela.skyline@coralia.net<br>Date: <span class=\"message-date\">Monday, October 10, 2005, 11:06</span></div><div class=\"bodytext\">Not all messages were downloaded correctly.\n\nSome items may appear after the next refresh. You do not need to sign in again.</div>"
     },
     "did-you-get-it": {
       "html": "<button class=\"fakebutton back\" data-back>← Back to inbox</button><h2>Did you get what I sent you?</h2><div class=\"meta\">From: andrea.mora@hotmail.com<br>To: vela.skyline@coralia.net<br>Date: <span class=\"message-date\">Monday, October 10, 2005, 15:37</span></div><div class=\"bodytext\">Hey, I sent you something last night and don't know if it arrived. It's not urgent, but let me know when you can because that file took forever to upload lol.</div>"
@@ -358,10 +436,10 @@
       "html": "<button class=\"fakebutton back\" data-back>← Back to inbox</button><h2>The room without windows</h2><div class=\"meta\">From: usuario_desconocido@coralia.net<br>To: vela.skyline@coralia.net<br>Date: Tuesday, October 11, 2005, 02:11<br><span style=\"color:#8ca5a7\">Message received without an active connection.</span></div><div class=\"bodytext\">There was a chair in the center. Nothing else.\n\nThere were no windows, but light came in from somewhere. When I turned around, the door was no longer where I'd left it.\n\nDon't go looking for it again.</div>"
     },
     "final-message": {
-      "html": "<button class=\"fakebutton back\" data-back>← Back to inbox</button><h2>FINAL</h2><div class=\"meta\">From: vela.skyline@coralia.net<br>To: vela.skyline@coralia.net<br>Date: Tuesday, October 11, 2005, 23:59</div><div class=\"bodytext\">Check your messages tomorrow</div>"
+      "html": "<button class=\"fakebutton back\" data-back>← Back to inbox</button><h2>FINAL</h2><div class=\"meta\">From: Me<br>To: Vela<br>Date: Tuesday, October 11, 2005, 23:59</div><div class=\"bodytext\">Check your messages tomorrow</div>"
     },
     "prepared-message": {
-      "html": "<button class=\"fakebutton back\" data-back>← Back to inbox</button><h2>READY?</h2><div class=\"meta\">From: bofinderdy@howmail.html<br>To: vela.skyline@coralia.net<br>Date: Wednesday, October 12, 2005, 00:14<br><span style=\"color:#8ca5a7\">The server couldn't verify the sender.</span></div><div class=\"bodytext\">Oh, little friend…\n\nYour lover will surely be there.\n\nCréeme, después de esto,\nnadie los querrá volver a mirar.\n\nBut you'll find another problem…\nHow do you know this won't come back?\n\nLa cinta verás,\nal edificio llegarás\ny me vas a encontrar.\n\nPero dime, ¿estás segura\nde cuál es la realidad?</div>"
+      "html": "<button class=\"fakebutton back\" data-back>← Back to inbox</button><h2>READY?</h2><div class=\"meta\">From: bofinderdy@howmail.html<br>To: vela.skyline@coralia.net<br>Date: Wednesday, October 12, 2005, 23:59<br><span style=\"color:#8ca5a7\">The server couldn't verify the sender.</span></div><div class=\"bodytext\">Oh, little friend…\n\nYour lover will surely be there.\n\nBelieve me, after this,\nno one will want to look at them again.\n\nBut you'll find another problem…\nHow do you know this won't come back?\n\nYou'll see the tape,\nyou'll reach the building,\nand you'll find me.\n\nBut tell me, are you sure\nwhich one is reality?</div>"
     },
     "hidden-room": {
       "html": "<button class=\"fakebutton back\" data-back>← Back</button><h2>IMG_111005_0317.JPG</h2><div class=\"meta\">Recovered file · 10/11/2005 · 03:17 AM</div><div class=\"bodytext\">The image is corrupted. However, something is written in the file metadata:</div><div class=\"attachment\" style=\"display:block;text-align:center;padding:28px 12px\"><div style=\"font-size:44px;letter-spacing:8px;color:#72b7b6\">◌ ◯ ◌</div><div style=\"margin-top:14px;color:#527e85\">YOU WERE NOT ALONE</div><div style=\"font-size:11px;margin-top:8px\">Vista previa no disponible</div></div>"
@@ -374,6 +452,42 @@
     },
     "busca-cuerpos": {
       "html": "<button class=\"fakebutton back\" data-back>← Back</button>\n        <h2>EL BUSCA CUERPOS</h2>\n        <div class=\"meta\">Entity detected in an unknown sector</div>\n        <div class=\"secret-image-view\">\n          <img src=\"recuerda.jpg\" alt=\"El Busca Cuerpos\">\n          <div class=\"bodytext\" style=\"text-align:center; white-space:pre-line; color:#244b58; font-weight:bold;\">\n            No se quien soy\n            Tu si lo sabes\n            Tal vez en algun momento\n            Dejaras de escapar\n            Pero mientras tanto\n            Me daras algo de ti\n            Y yo te recordare.\n          </div>\n        </div>"
+    },
+    "day12-vela-andrea": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back to sent</button><h2>RE: Did you get what I sent you?</h2><div class=\"meta\">From: vela.skyline@coralia.net<br>To: andrea.mora@hotmail.com<br>Date: Wednesday, October 12, 2005, 07:42</div><div class=\"bodytext\">Yes, it finally arrived! Sorry I didn't reply earlier. I kept checking my email yesterday, and I don't think some things downloaded properly. The file opens, but there's almost nothing in it. Can you see it normally?</div>"
+    },
+    "day12-vela-rushia": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back to sent</button><h2>RE: I saved you a seat</h2><div class=\"meta\">From: vela.skyline@coralia.net<br>To: rushia.mori@hotmail.com<br>Date: Wednesday, October 12, 2005, 07:56</div><div class=\"bodytext\">Thank you! And sorry for disappearing yesterday. I'll try to get there on time today, though I still have a few things to sort out. Send me the store address later; I really do want to see those accessories lol.</div>"
+    },
+    "day12-rushia-followup": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back to inbox</button><h2>I'll send you the address</h2><div class=\"meta\">From: rushia.mori@hotmail.com<br>To: vela.skyline@coralia.net<br>Date: Wednesday, October 12, 2005, 09:13</div><div class=\"bodytext\">Of course! I'll send it in a bit. And don't worry about yesterday; I figured you were busy. If you can't make it early after all, I'll save you a seat anyway.</div>"
+    },
+    "day12-vela-psyco": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back to sent</button><h2>RE: Vela, reply when you wake up</h2><div class=\"meta\">From: vela.skyline@coralia.net<br>To: psycoone12@hotmail.com<br>Date: Wednesday, October 12, 2005, 09:21</div><div class=\"bodytext\">I'm awake, don't worry. Sorry I left you waiting; I needed some rest and my inbox was a mess. I don't know what notification you got, but I'm okay for now. We'll talk later, alright?</div>"
+    },
+    "day12-vela-lewis": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back to sent</button><h2>RE: Do you have today's notes?</h2><div class=\"meta\">From: vela.skyline@coralia.net<br>To: lewis.ramirez@hotmail.com<br>Date: Wednesday, October 12, 2005, 11:06</div><div class=\"bodytext\">I'm attaching them again. I think the first upload got interrupted because the file was too large. If it won't open, let me know and I'll bring you a printed copy.</div>"
+    },
+    "day12-lewis-followup": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back to inbox</button><h2>Re: The notes opened this time</h2><div class=\"meta\">From: lewis.ramirez@hotmail.com<br>To: vela.skyline@coralia.net<br>Date: Wednesday, October 12, 2005, 11:18</div><div class=\"bodytext\">They opened this time, thanks. By the way, two copies with the same name downloaded. One is empty and the other has the notes. Probably just an email glitch, but I thought I'd let you know.</div>"
+    },
+    "day12-nora": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back to inbox</button><h2>I left your lunch ready</h2><div class=\"meta\">From: nora.paz@hotmail.com<br>To: vela.skyline@coralia.net<br>Date: Wednesday, October 12, 2005, 13:32</div><div class=\"bodytext\">Vela, I left something ready for you in the kitchen. I don't know if you're going out again, but at least eat before you leave. You left your phone charging last night and I almost forgot to tell you.</div>"
+    },
+    "day12-andrea": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back to inbox</button><h2>Are you coming on Friday?</h2><div class=\"meta\">From: andrea.mora@hotmail.com<br>To: vela.skyline@coralia.net<br>Date: Wednesday, October 12, 2005, 14:05</div><div class=\"bodytext\">Hey, we're planning something for Friday. Nothing big, just hanging out for a while after class. Are you in? Rafa said he'd bring something to eat, though he still doesn't know what lol.</div>"
+    },
+    "day12-rafa": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back to inbox</button><h2>I found the link</h2><div class=\"meta\">From: rafa_05@hotmail.com<br>To: vela.skyline@coralia.net<br>Date: Wednesday, October 12, 2005, 17:26</div><div class=\"bodytext\">Here's the page I told you about. It opens sometimes, and other times it just keeps loading. The design is awful, like it was made by someone who has no idea what they're doing. If it won't load, try again later.</div>"
+    },
+    "day12-sync-attachment": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back to inbox</button><h2>Unindexed attachment</h2><div class=\"meta\">From: system@coralia.net<br>To: vela.skyline@coralia.net<br>Date: Wednesday, October 12, 2005, 18:06</div><div class=\"bodytext\">An attachment was detected that does not appear in the message index.<br><br>Name: <strong>coralia_sync_12.tmp</strong><br>Status: pending verification<br>Batch identifier: 00666<br><br>No action is required from the user.</div><div class=\"attachment\">▧ coralia_sync_12.tmp &nbsp; (preview unavailable)</div>"
+    },
+    "day12-unknown-1": {
+      "html": "<button class=\"fakebutton back\" data-back>← Back to inbox</button><h2>Don't open it again</h2><div class=\"meta\">From: [unverified sender]<br>To: vela.skyline@coralia.net<br>Date: Wednesday, October 12, 2005, 22:14</div><div class=\"bodytext\">I didn't ask you to look for it.<br><br>I only wanted to know if it was still there.<br><br>Now that you've opened it again, don't close it like you did last time.<br><br><span style=\"color:#8ca5a7\">[MESSAGE NOT FOUND IN SERVER HISTORY]</span></div>"
+    },
+    "day13-derrybound": {
+      "html": "<button class=\"fakebutton back\" data-back>← Volver a la bandeja</button><h2>Los tengo</h2><div class=\"meta\">De: Derrybound<br>Para: Vela Nova &lt;vela.skyline@coralia.net&gt;<br>Fecha: Jueves, 13 de octubre de 2005, 00:03</div><div class=\"bodytext\">Los tengo.</div><div class=\"derrybound-video-wrap\"><video controls playsinline preload=\"metadata\" src=\"corrupted_buffer_video_teaser.mp4\" aria-label=\"Vídeo recibido de Derrybound\"></video></div>"
     }
   },
   "updates": {
@@ -825,7 +939,7 @@
     "Abrir →": "Open →",
     "Entrar ↗": "Enter ↗",
     "El archivo está en desarrollo.": "The archive is still in development.",
-    "Personas relacionadas": "Related people",
+    "Personas relacionadas": "Missing persons",
     "Ofertas Tom": "Tom's Offers",
     "Premios Internacionales": "International Prizes",
     "Farmacia Mundial": "World Pharmacy",
@@ -857,7 +971,7 @@
     "♲ Elementos eliminados": "♲ Deleted items",
     "▣ Correo no deseado": "▣ Junk mail",
     "© 2005 Coralia Network · Todos los derechos reservados · Coralia Mail v2.5 Beta": "© 2005 Coralia Network · All rights reserved · Coralia Mail v2.5 Beta",
-    "Coralia Mail v2.5 Beta": "Coralia Mail v2.5 Beta",
+    "Coralia Mail v2.5 Beta": "Coralia Mail v2.6 Beta",
     "Ofertas Tom y Andrea te han escrito.": "Tom's Offers and Andrea have emailed you.",
     "Han llegado tres mensajes nuevos.": "Three new messages have arrived.",
     "Se detectó un mensaje sin registro de envío.": "A message without a sending record was detected.",
@@ -888,6 +1002,77 @@
     "CUERPOS": "BODIES",
     "EFECTO": "EFFECT",
     "Efecto": "Effect",
-    "Vella": "Vella"
+    "Vella": "Vella",
+    "Bienvenido a Project Coralia. Somos el <strong>Team Cheeseovery</strong>, un grupo pequeño que está intentando reconstruir Coralia Mail. No somos especialistas en recuperación digital y todavía estamos aprendiendo mientras revisamos lo que quedó, así que no vamos a fingir que tenemos todas las respuestas. Lo que publicamos aquí son nuestros avances, nuestras dudas y los hallazgos que hemos podido confirmar.": "Welcome to Project Coralia. We're Team Cheeseovery, a small group trying to reconstruct Coralia Mail. We're not digital-recovery specialists, and we're still learning as we go through what's left, so we're not going to pretend we have all the answers. What we publish here is our progress, our questions, and the findings we've been able to confirm.",
+    "Este Hub funciona como nuestra bitácora de investigación, pero también forma parte de la experiencia que estamos documentando. Lo que aparece aquí es la versión que hemos podido recuperar hasta ahora; algunas cosas todavía no encajan y puede que ciertos archivos tengan más que contar de lo que parece.": "This Hub works as our investigation log, but it's also part of the experience we're documenting. What appears here is the version we've been able to recover so far; some things still don't add up, and certain files may have more to tell than they seem to.",
+    "Coralia Mail fue un servicio de correo que parece haber funcionado entre 2005 y 2006. Entre cuentas abandonadas encontramos la de Vela Nova. Al principio parecía una cuenta común, hasta que apareció un audio de Movistar que no encaja, mensajes que llegan tarde y archivos que cambian al volver a cargar la página. Estamos intentando reconstruir qué ocurrió sin asumir que ya conocemos la respuesta.": "Coralia Mail appears to have been an email service active between 2005 and 2006. Among abandoned accounts, we found one belonging to Vela Nova. At first it looked ordinary, until we came across a Movistar audio that doesn't add up, messages arriving late, and files that change when the page is reloaded. We're trying to reconstruct what happened without assuming we already know the answer.",
+    "VERSIÓN 2.6 · INTERLUDIO / FELIZ HALLOWEEN": "VERSION 2.6 · INTERLUDE / HAPPY HALLOWEEN",
+    "Un Misterio": "A Mystery",
+    "En Progreso": "In Progress",
+    "¡Feliz Halloween!": "Happy Halloween!",
+    "Desde todo el equipo de Project Coralia queremos desearles un feliz Halloween. Hoy justamente teníamos una actualización del sitio… y, tomando en cuenta todas estas cosas de terror, ¿qué mejor día para indagar sobre una historia urbana paranormal?": "From everyone at Project Coralia, we wish you a happy Halloween! We had a site update planned for today… and with all the spooky things around this time of year, what better day to look into a paranormal urban legend?",
+    "Continuar al archivo": "Continue to archive",
+    "Devlog / Novedades": "Devlog / Updates",
+    "INTERLUDIO · 2.6": "INTERLUDE · 2.6",
+    "Halloween, nuevos registros y una sincronización que no debería tardar tanto.": "Halloween, new records, and a sync that shouldn't take this long.",
+    "31/10/2026 · Team Cheeseovery": "10/31/2026 · Team Cheeseovery",
+    "Vela Nova · recuperando la bandeja": "Vela Nova · restoring the inbox",
+    "Un momento, estamos ordenando los mensajes.": "One moment, we're sorting the messages.",
+    "Entrar ahora →": "Enter now →",
+    "Bienvenido a Project Coralia. Somos el ": "Welcome to Project Coralia. We're ",
+    ", un grupo pequeño que está intentando reconstruir Coralia Mail. No somos especialistas en recuperación digital y todavía estamos aprendiendo mientras revisamos lo que quedó, así que no vamos a fingir que tenemos todas las respuestas. Lo que publicamos aquí son nuestros avances, nuestras dudas y los hallazgos que hemos podido confirmar.": ", a small group trying to reconstruct Coralia Mail. We're not digital-recovery specialists, and we're still learning as we go through what's left, so we're not going to pretend we have all the answers. What we publish here is our progress, our questions, and the findings we've been able to confirm.",
+    "Se buscan": "Missing persons",
+    "Consultar expedientes →": "View case files →",
+    "Archivo 05 · Búsqueda abierta": "Archive 05 · Open search",
+    "Expedientes elaborados únicamente con los registros recuperados. No se han encontrado fotografías verificables. Las edades corresponden a los datos disponibles de la época; cuando no hay una fuente fiable, se indica expresamente.": "Case files compiled only from recovered records. No verified photographs have been found. Ages reflect the available records from that period; where no reliable source exists, this is stated explicitly.",
+    "EXPEDIENTE 001 · IDENTIDAD CONFIRMADA": "CASE FILE 001 · IDENTITY CONFIRMED",
+    "EXPEDIENTE 002 · IDENTIDAD PARCIAL": "CASE FILE 002 · PARTIAL IDENTITY",
+    "EXPEDIENTE 003 · DATOS LIMITADOS": "CASE FILE 003 · LIMITED INFORMATION",
+    "EXPEDIENTE 004 · VÍNCULO VERIFICADO": "CASE FILE 004 · VERIFIED CONNECTION",
+    "EXPEDIENTE 005 · REGISTRO PARCIAL": "CASE FILE 005 · PARTIAL RECORD",
+    "EXPEDIENTE 006 · REGISTRO PARCIAL": "CASE FILE 006 · PARTIAL RECORD",
+    "FOTOGRAFÍA NO ENCONTRADA": "NO PHOTOGRAPH FOUND",
+    "Edad registrada: 20 años · Último rastro: Coralia Mail, 12/10/2005": "Recorded age: 20 · Last trace: Coralia Mail, October 12, 2005",
+    "Estudiante universitaria. Los correos recuperados la muestran en contacto frecuente con amistades y familiares. También se ha confirmado que ayuda en el almacén de ropa de sus padres.": "University student. Recovered emails show her in frequent contact with friends and family. It has also been confirmed that she helps at her parents' clothing warehouse.",
+    "La cuenta parecía ordinaria hasta que comenzaron a aparecer mensajes y archivos que no coinciden con el historial conocido.": "The account appeared ordinary until messages and files began appearing that do not match its known history.",
+    "ESTADO: NO LOCALIZADA": "STATUS: NOT LOCATED",
+    "Edad registrada: 19 años · Último rastro: mensaje privado, 11/10/2005": "Recorded age: 19 · Last trace: private message, October 11, 2005",
+    "El correo firmado como «Frenzy» confirma un vínculo cercano con Vela. La grabación adjunta no coincide con los registros normales de actividad de la cuenta.": "The email signed “Frenzy” confirms a close connection to Vela. The attached recording does not match the account's normal activity records.",
+    "No se ha podido verificar su identidad completa ni su paradero actual.": "His full identity and current whereabouts have not been verified.",
+    "ESTADO: NO LOCALIZADO": "STATUS: NOT LOCATED",
+    "Edad: no determinada · Último rastro: correo, 12/10/2005": "Age: undetermined · Last trace: email, October 12, 2005",
+    "Su dirección aparece en conversaciones personales con Vela. Los mensajes recuperados indican que estaba intentando ponerse en contacto con ella.": "His address appears in personal conversations with Vela. Recovered messages indicate that he was trying to contact her.",
+    "No hay información suficiente para establecer su identidad civil ni su ubicación.": "There is not enough information to establish his legal identity or location.",
+    "ESTADO: SIN LOCALIZACIÓN CONFIRMADA": "STATUS: LOCATION UNCONFIRMED",
+    "Edad: no determinada · Relación registrada: madre de Vela": "Age: undetermined · Recorded relationship: Vela's mother",
+    "Su nombre aparece en mensajes cotidianos dirigidos a Vela. Es uno de los pocos rastros que conecta la cuenta con su entorno familiar.": "Her name appears in everyday messages addressed to Vela. It is one of the few traces connecting the account to her family life.",
+    "No se han recuperado datos actuales que permitan confirmar dónde se encuentra.": "No current information has been recovered to confirm where she is.",
+    "Sus mensajes mencionan encuentros habituales con Vela y actividades relacionadas con la universidad. No se ha encontrado una ficha personal fiable.": "Her messages mention regular meetups with Vela and university-related activities. No reliable personal file has been found.",
+    "Su nombre aparece en conversaciones relacionadas con apuntes y actividades de clase. No hay más información verificable en los archivos consultados.": "His name appears in conversations about notes and class activities. No further verifiable information is available in the records reviewed.",
+    "Registro actualizado en 2026. No se han encontrado fotografías ni ubicaciones actuales verificables. Algunas fichas parecen haber sido abiertas después de su último acceso registrado.": "Record updated in 2026. No photographs or verifiable current locations have been found. Some files appear to have been opened after their last recorded access.",
+    "¿Necesitas una pista?": "Need a hint?",
+    "Pistas": "Hints",
+    "Notas no catalogadas": "Uncatalogued notes",
+    "Estas notas no forman parte del registro oficial del Team Cheeseovery. Se han conservado porque parecen describir cómo continuar la revisión.": "These notes are not part of Team Cheeseovery's official records. They have been kept because they seem to describe how to continue the investigation.",
+    "ESTADO DE LA INVESTIGACIÓN": "INVESTIGATION STATUS",
+    "12 mensajes recuperados. La cuenta ha avanzado al 13 de octubre de 2005.": "12 messages recovered. The account has advanced to October 13, 2005.",
+    "La actualización no responde. Revisa el mensaje FINAL y elimínalo para continuar.": "The refresh is unresponsive. Check the FINAL message and delete it to continue.",
+    "El mensaje FINAL se eliminó. La actualización vuelve a responder.": "The FINAL message was deleted. Refresh is responding again.",
+    "La bandeja vuelve a aceptar actualizaciones.": "The inbox is accepting refreshes again.",
+    "La sincronización del 12 de octubre ya terminó.": "The October 12 synchronization is complete.",
+    "Sincronización finalizada": "Synchronization complete",
+    "Mensajes recuperados · ": "Messages recovered · ",
+    "Se han añadido dos mensajes a la cuenta.": "Two messages have been added to the account.",
+    "La bandeja ha terminado de reconstruirse. Hay registros nuevos.": "The inbox has finished rebuilding. New records are available.",
+    "¿Volver hacia atrás?": "Go back?",
+    "No todos los mensajes se han descargado correctamente.": "Not all messages were downloaded correctly.",
+    "No se requiere ninguna acción por parte del usuario": "No action is required from the user.",
+    "Sincronización  de 6 completada. Se han recuperado nuevos mensajes.": "Sync stage complete. New messages have been recovered.",
+    "Sincronización ": "Synchronization ",
+    " de 6 completada. Se han recuperado nuevos mensajes.": " of 6 completed. New messages have been recovered.",
+    "Revisa los mensajes recuperados y presta atención a los elementos que no encajan con el historial de la cuenta.": "Review the recovered messages and pay attention to anything that doesn't fit the account's history.",
+    "La cuenta ya permite actualizarse otra vez. Cada sincronización recupera una pequeña parte del correo pendiente.": "The account can be refreshed again. Each sync restores a small part of the pending mail.",
+    "La bandeja ya terminó de sincronizarse. Compara los mensajes nuevos con los registros anteriores; no todos parecen pertenecer al mismo historial.": "The inbox has finished syncing. Compare the new messages with earlier records; they don't all seem to belong to the same history.",
+    "Cuando un mensaje parezca bloquear la actualización, revisa primero ese mensaje. La fecha y el asunto importan más que cualquier palabra suelta.": "When a message seems to block the refresh, inspect that message first. Its date and subject matter more than any isolated word."
   }
 }

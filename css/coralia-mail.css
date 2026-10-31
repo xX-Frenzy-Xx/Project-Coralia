@@ -230,3 +230,66 @@ body.coralia-void{background:#000!important;background-image:none!important;colo
 body.coralia-pure-green .topbar{background:#243d34!important;border-color:#587a64!important;color:#f2f5ef!important}
 body.coralia-pure-green .brand,body.coralia-pure-green .tagline,body.coralia-pure-green .status{color:#f2f5ef!important;text-shadow:none!important}
 #refreshButton[aria-disabled="true"]{opacity:.48;cursor:not-allowed;filter:grayscale(.25)}
+
+
+/* v2.6: original Coralia Mail skin, with a limited October 11 palette shift. */
+.vela-animation{position:relative;width:94px;height:94px;margin:14px auto 10px;display:grid;place-items:center}
+.vela-orbit{position:absolute;inset:4px;border:1px solid #8bc9ca;border-radius:50%;animation:velaOrbit 5s linear infinite}
+.vela-orbit::before,.vela-orbit::after{content:"";position:absolute;width:7px;height:7px;border-radius:50%;background:#2d9aa3;box-shadow:0 0 0 4px #2d9aa322}
+.vela-orbit::before{top:9px;left:10px}.vela-orbit::after{right:5px;bottom:18px;background:#70b9a7}
+.vela-envelope{position:absolute;top:-8px;left:35px;color:#2d788a;font-size:17px;background:#f7fffd;padding:0 4px}
+.vela-initials{width:52px;height:52px;display:grid;place-items:center;border-radius:50%;background:linear-gradient(145deg,#8bc9ca,#3c9aa4);border:3px solid #f6ffff;color:#fff;font-weight:bold;letter-spacing:.12em;box-shadow:0 3px 12px #397f8838;animation:velaPulse 2s ease-in-out infinite}
+.vela-scan{position:absolute;left:20px;right:20px;top:46px;height:1px;background:#4eabb2;box-shadow:0 0 8px #4eabb2;animation:velaScan 2.2s ease-in-out infinite}
+.boot-caption{color:#2d788a;font-weight:bold;font-size:12px;letter-spacing:.03em}.boot-subcaption{color:#6689a0;font-size:10px;margin-top:5px}
+.skip-boot{margin-top:13px;padding:5px 10px;border:1px solid #8bc9ca;border-radius:3px;background:#f7fffd;color:#2d788a;font:11px Tahoma,Verdana,sans-serif;cursor:pointer}
+@keyframes velaOrbit{to{transform:rotate(360deg)}}@keyframes velaPulse{50%{transform:scale(1.07);box-shadow:0 3px 18px #397f8855}}
+@keyframes velaScan{0%,100%{transform:translateY(-15px);opacity:.2}50%{transform:translateY(15px);opacity:1}}
+.boot{z-index:1000!important}
+body.day-11{background-color:#9aa985!important;background-image:radial-gradient(ellipse at 14% 15%,#ead8bd 0%,transparent 52%),radial-gradient(ellipse at 88% 78%,#bd8a68 0%,transparent 48%),linear-gradient(135deg,#b8c3a0,#8ea17c 58%,#b98768)!important}
+body.day-11 .topbar{background:linear-gradient(180deg,#71865e,#536f4b 60%,#405b43)!important;border-color:#b9c69a!important}
+body.day-11 .windowbar{background:linear-gradient(90deg,#b8c59c,#ddc7a7)!important;color:#41573d!important;border-color:#a2b18a!important}
+body.day-11 .toolbar{background:#e9e4d3!important;border-color:#c3b99f!important}
+body.day-11 .sidebar{background:linear-gradient(180deg,#dce3c9,#bdcba8)!important;border-right-color:#a6b28f!important}
+body.day-11 .folder{color:#526d4c!important}
+body.day-11 .folder.active{background:linear-gradient(90deg,#e7ead9,#f4e8d5)!important;border-color:#b7c59d!important;color:#405b43!important}
+body.day-11 .main{background:#f5f0e5!important;color:#52664c!important}
+body.day-11 .listhead{background:linear-gradient(90deg,#d0d9bb,#ead8bd)!important;color:#465d43!important}
+body.day-11 .mailrow{background-color:#f4f0e4!important;color:#52664c!important;border-bottom-color:#d8d4c2!important}
+body.day-11 .mailrow:hover{background:linear-gradient(90deg,#fff8e9,#edf1df)!important}
+body.day-11 .mailview h2{color:#71895d!important}
+body.day-11 .fakebutton{background:linear-gradient(180deg,#fffaf0,#e7e1cf)!important;color:#52664b!important;border-color:#c9c2a8!important}
+body.day-11 .footer{color:#f5ead8!important}
+@media(prefers-reduced-motion:reduce){.vela-orbit,.vela-initials,.vela-scan,.progress span{animation:none!important}}
+
+
+/* Día 11: conserva el fondo cálido y mejora el contraste con texto negro. */
+body.day-11, body.day-11 * { color:#171717 !important; text-shadow:none !important; }
+body.day-11 input, body.day-11 textarea { color:#171717 !important; }
+body.day-11 input::placeholder, body.day-11 textarea::placeholder { color:#444 !important; opacity:1; }
+
+/* Día 13: verde claro, como una recuperación limpia de la interfaz. */
+body.day-13 { background:#dcebd1 !important; background-image:radial-gradient(ellipse at 14% 15%,#f5f8e9 0%,transparent 52%),radial-gradient(ellipse at 88% 78%,#b7d5b0 0%,transparent 48%),linear-gradient(135deg,#e7f0d9,#c7dfc0 58%,#d8e8ca) !important; color:#263b2b !important; }
+body.day-13::before, body.day-13::after { display:none !important; }
+body.day-13 .topbar { background:linear-gradient(180deg,#c8dfbd,#a9cda7 60%,#91b991) !important; border-color:#8eae8d !important; color:#263b2b !important; }
+body.day-13 .brand, body.day-13 .tagline, body.day-13 .status { color:#263b2b !important; text-shadow:none !important; }
+body.day-13 .account { background:#edf4e7 !important; border-color:#a5c19d !important; color:#263b2b !important; }
+body.day-13 .windowbar, body.day-13 .listhead { background:linear-gradient(90deg,#d6e7cc,#e9f0dc) !important; color:#263b2b !important; border-color:#b4cba9 !important; text-shadow:none !important; }
+body.day-13 .sidebar { background:linear-gradient(180deg,#e7efdc,#d0e2c7) !important; border-color:#b4cba9 !important; color:#263b2b !important; }
+body.day-13 .sidehead, body.day-13 .folder, body.day-13 .folder .count, body.day-13 .side-note { color:#314a35 !important; }
+body.day-13 .folder.active { background:#f1f5e9 !important; border-color:#a9c49e !important; color:#203324 !important; }
+body.day-13 .main { background:#f4f7ed !important; color:#263b2b !important; }
+body.day-13 .accountline, body.day-13 .mailrow { background:#edf4e7 !important; border-color:#c1d4b7 !important; color:#263b2b !important; }
+body.day-13 .mailrow.unread, body.day-13 .mailrow .date { color:#263b2b !important; }
+body.day-13 .mailrow:hover { background:#dcebd2 !important; }
+body.day-13 .toolbar, body.day-13 .unlock { background:#e3edd9 !important; border-color:#b4cba9 !important; color:#263b2b !important; }
+body.day-13 .fakebutton, body.day-13 .attachment, body.day-13 .thread-file { background:#f4f7ed !important; border-color:#b4cba9 !important; color:#263b2b !important; }
+body.day-13 .mailview h2, body.day-13 .meta, body.day-13 .bodytext, body.day-13 .thread-intro, body.day-13 .feedback, body.day-13 .empty { color:#263b2b !important; text-shadow:none !important; }
+body.day-13 .meta { border-color:#c1d4b7 !important; }
+body.day-13 .thread-chat { background:#e3edd9 !important; border-color:#b4cba9 !important; }
+body.day-13 .thread-message.frenzy, body.day-13 .thread-message.friend { background:#f4f7ed !important; border-color:#c1d4b7 !important; color:#263b2b !important; }
+body.day-13 .thread-message.vela { background:#dcebd2 !important; border-color:#b4cba9 !important; color:#263b2b !important; }
+body.day-13 .thread-message .who, body.day-13 .thread-message .when, body.day-13 .footer { color:#314a35 !important; }
+body.day-13 input { background:#f4f7ed !important; border-color:#b4cba9 !important; color:#263b2b !important; }
+body.day-13 input::placeholder { color:#526d57 !important; opacity:1; }
+.derrybound-video-wrap { margin-top:14px; width:100%; }
+.derrybound-video-wrap video { display:block; width:min(100%,720px); max-height:70vh; background:#111; border:1px solid #a8b99f; border-radius:3px; }
