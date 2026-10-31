@@ -180,7 +180,7 @@
       "date": "11/10/05"
     },
     "final-message": {
-      "sender": "vela.skyline@coralia.net",
+      "sender": "Me",
       "subject": "FINAL",
       "date": "11/10/05"
     },
@@ -430,7 +430,7 @@
       "html": "<button class=\"fakebutton back\" data-back>← Back to inbox</button><h2>The room without windows</h2><div class=\"meta\">From: usuario_desconocido@coralia.net<br>To: vela.skyline@coralia.net<br>Date: Tuesday, October 11, 2005, 02:11<br><span style=\"color:#8ca5a7\">Message received without an active connection.</span></div><div class=\"bodytext\">There was a chair in the center. Nothing else.\n\nThere were no windows, but light came in from somewhere. When I turned around, the door was no longer where I'd left it.\n\nDon't go looking for it again.</div>"
     },
     "final-message": {
-      "html": "<button class=\"fakebutton back\" data-back>← Back to inbox</button><h2>FINAL</h2><div class=\"meta\">From: vela.skyline@coralia.net<br>To: vela.skyline@coralia.net<br>Date: Tuesday, October 11, 2005, 23:59</div><div class=\"bodytext\">Check your messages tomorrow</div>"
+      "html": "<button class=\"fakebutton back\" data-back>← Back to inbox</button><h2>FINAL</h2><div class=\"meta\">From: Me<br>To: Vela<br>Date: Tuesday, October 11, 2005, 23:59</div><div class=\"bodytext\">Check your messages tomorrow</div>"
     },
     "prepared-message": {
       "html": "<button class=\"fakebutton back\" data-back>← Back to inbox</button><h2>READY?</h2><div class=\"meta\">From: bofinderdy@howmail.html<br>To: vela.skyline@coralia.net<br>Date: Wednesday, October 12, 2005, 23:59<br><span style=\"color:#8ca5a7\">The server couldn't verify the sender.</span></div><div class=\"bodytext\">Oh, little friend…\n\nYour lover will surely be there.\n\nBelieve me, after this,\nno one will want to look at them again.\n\nBut you'll find another problem…\nHow do you know this won't come back?\n\nYou'll see the tape,\nyou'll reach the building,\nand you'll find me.\n\nBut tell me, are you sure\nwhich one is reality?</div>"
