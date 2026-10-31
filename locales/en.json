@@ -346,7 +346,7 @@
       "html": "<button class=\"fakebutton back\" data-back>← Back to inbox</button><h2>Did you leave so quickly?</h2><div class=\"meta\">From: rafa_05@hotmail.com<br>To: vela.skyline@coralia.net<br>Date: <span class=\"message-date\">Monday, October 10, 2005, 09:14</span></div><div class=\"bodytext\">Hey, everything okay? You disappeared so quickly after we saw each other yesterday lol. I was going to send you the group meme, but I think I sent it to everyone except you 💀. Tell me what happened when you get to uni. Oh, and I found the link to that weird site I told you about; I'll send it later.</div>"
     },
     "sync-incomplete": {
-      "html": "<button class=\"fakebutton back\" data-back>← Back to inbox</button><h2>Sync incomplete</h2><div class=\"meta\">From: sistema@coralia.net<br>To: vela.skyline@coralia.net<br>Date: <span class=\"message-date\">Monday, October 10, 2005, 11:06</span></div><div class=\"bodytext\">No todos los mensajes se han descargado correctamente.\n\nAlgunos elementos podrían aparecer después de la próxima actualización. No es necesario volver a iniciar sesión.</div>"
+      "html": "<button class=\"fakebutton back\" data-back>← Back to inbox</button><h2>Sync incomplete</h2><div class=\"meta\">From: sistema@coralia.net<br>To: vela.skyline@coralia.net<br>Date: <span class=\"message-date\">Monday, October 10, 2005, 11:06</span></div><div class=\"bodytext\">Not all messages were downloaded correctly.\n\nSome items may appear after the next refresh. You do not need to sign in again.</div>"
     },
     "did-you-get-it": {
       "html": "<button class=\"fakebutton back\" data-back>← Back to inbox</button><h2>Did you get what I sent you?</h2><div class=\"meta\">From: andrea.mora@hotmail.com<br>To: vela.skyline@coralia.net<br>Date: <span class=\"message-date\">Monday, October 10, 2005, 15:37</span></div><div class=\"bodytext\">Hey, I sent you something last night and don't know if it arrived. It's not urgent, but let me know when you can because that file took forever to upload lol.</div>"
@@ -433,7 +433,7 @@
       "html": "<button class=\"fakebutton back\" data-back>← Back to inbox</button><h2>FINAL</h2><div class=\"meta\">From: vela.skyline@coralia.net<br>To: vela.skyline@coralia.net<br>Date: Tuesday, October 11, 2005, 23:59</div><div class=\"bodytext\">Check your messages tomorrow</div>"
     },
     "prepared-message": {
-      "html": "<button class=\"fakebutton back\" data-back>← Back to inbox</button><h2>READY?</h2><div class=\"meta\">From: bofinderdy@howmail.html<br>To: vela.skyline@coralia.net<br>Date: Wednesday, October 12, 2005, 23:59<br><span style=\"color:#8ca5a7\">The server couldn't verify the sender.</span></div><div class=\"bodytext\">Oh, little friend…\n\nYour lover will surely be there.\n\nBelieve me, after this,\nno one will want to look at them again.\n\nBut you'll find another problem…\nHow do you know this won't come back?\n\nYou'll see the tape,\ny you'll reach the building,\nand you'll find me.\n\nBut tell me, are you sure\nwhich one is reality?</div>"
+      "html": "<button class=\"fakebutton back\" data-back>← Back to inbox</button><h2>READY?</h2><div class=\"meta\">From: bofinderdy@howmail.html<br>To: vela.skyline@coralia.net<br>Date: Wednesday, October 12, 2005, 23:59<br><span style=\"color:#8ca5a7\">The server couldn't verify the sender.</span></div><div class=\"bodytext\">Oh, little friend…\n\nYour lover will surely be there.\n\nBelieve me, after this,\nno one will want to look at them again.\n\nBut you'll find another problem…\nHow do you know this won't come back?\n\nYou'll see the tape,\nyou'll reach the building,\nand you'll find me.\n\nBut tell me, are you sure\nwhich one is reality?</div>"
     },
     "hidden-room": {
       "html": "<button class=\"fakebutton back\" data-back>← Back</button><h2>IMG_111005_0317.JPG</h2><div class=\"meta\">Recovered file · 10/11/2005 · 03:17 AM</div><div class=\"bodytext\">The image is corrupted. However, something is written in the file metadata:</div><div class=\"attachment\" style=\"display:block;text-align:center;padding:28px 12px\"><div style=\"font-size:44px;letter-spacing:8px;color:#72b7b6\">◌ ◯ ◌</div><div style=\"margin-top:14px;color:#527e85\">YOU WERE NOT ALONE</div><div style=\"font-size:11px;margin-top:8px\">Vista previa no disponible</div></div>"
@@ -1050,7 +1050,7 @@
     "La actualización no responde. Revisa el mensaje FINAL y elimínalo para continuar.": "The refresh is unresponsive. Check the FINAL message and delete it to continue.",
     "El mensaje FINAL se eliminó. La actualización vuelve a responder.": "The FINAL message was deleted. Refresh is responding again.",
     "La bandeja vuelve a aceptar actualizaciones.": "The inbox is accepting refreshes again.",
-    "La sincronización del 12 de octubre ya terminó.": "The October 12 sync is already complete.",
+    "La sincronización del 12 de octubre ya terminó.": "The October 12 synchronization is complete.",
     "Sincronización finalizada": "Synchronization complete",
     "Mensajes recuperados · ": "Messages recovered · ",
     "Se han añadido dos mensajes a la cuenta.": "Two messages have been added to the account.",
@@ -1058,6 +1058,8 @@
     "¿Volver hacia atrás?": "Go back?",
     "No todos los mensajes se han descargado correctamente.": "Not all messages were downloaded correctly.",
     "No se requiere ninguna acción por parte del usuario": "No action is required from the user.",
-    "Sincronización  de 6 completada. Se han recuperado nuevos mensajes.": "Sync stage complete. New messages have been recovered."
+    "Sincronización  de 6 completada. Se han recuperado nuevos mensajes.": "Sync stage complete. New messages have been recovered.",
+    "Sincronización ": "Synchronization ",
+    " de 6 completada. Se han recuperado nuevos mensajes.": " of 6 completed. New messages have been recovered."
   }
 }
