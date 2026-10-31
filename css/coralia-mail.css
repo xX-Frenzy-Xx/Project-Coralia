@@ -264,3 +264,6 @@ input{border-color:#c4c9a9;outline-color:#9d704e;color:#53654b}input::placeholde
 @keyframes velaOrbit{to{transform:rotate(360deg)}}@keyframes velaPulse{50%{transform:scale(1.07);box-shadow:0 3px 18px #667a4a55}}
 @keyframes velaScan{0%,100%{transform:translateY(-15px);opacity:.2}50%{transform:translateY(15px);opacity:1}}
 @media(prefers-reduced-motion:reduce){.vela-orbit,.vela-initials,.vela-scan,.progress span{animation:none!important}}
+
+/* Keep the entry animation above any narrative blackout layer. */
+.boot{z-index:1000!important}
